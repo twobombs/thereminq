@@ -1,2 +1,2 @@
-# qracknet
+# QrackNet
 QrackNet
