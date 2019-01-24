@@ -5,7 +5,7 @@ RUN git clone --recursive https://github.com/vm6502q/qrack.git
 RUN git clone --recursive https://github.com/SoftwareQuTech/SimulaQron.git
 
 # install features
-RUN apt-get update && apt-get -y install build-essential wget vim-common opencl-headers
+RUN apt-get update && apt-get -y install build-essential cmake wget vim-common opencl-headers
 
 # ADD cmake-3.13.3.tar.gz / 
 # RUN cd  /cmake-3.13.3 && ./configure && make && make install
