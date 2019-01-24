@@ -35,7 +35,7 @@ WORKDIR $WORKSPACE/SimulaQron
 # projectq fails to install without pybind11 pre-installed
 # qutip is also badly behaved so installed separately
 RUN pip install pybind11
-RUN cat ./SimulaQron/requirements.txt | sed /qutip/d | xargs pip install
+RUN cd /SimulaQron && cat ./requirements.txt | sed /qutip/d | xargs pip install
 RUN pip install qutip
 
 # Fetch rustLib dependencies
