@@ -36,8 +36,8 @@ WORKDIR $WORKSPACE/SimulaQron
 # qutip is also badly behaved so installed separately
 RUN pip install pybind11
 RUN python3.6 -m pip install black
-RUN cd /SimulaQron && cat ./requirements.txt | sed /qutip/d | xargs pip install
-RUN pip install qutip
+RUN cd /SimulaQron && cat ./requirements.txt | sed /qutip/d | xargs python3.6 -m pip install
+RUN python3.6 -m pip install qutip
 
 # Fetch rustLib dependencies
 RUN cd /SimulaQron/cqc/rustLib && cargo update
