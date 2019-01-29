@@ -7,9 +7,6 @@ RUN git clone --recursive https://github.com/SoftwareQuTech/SimulaQron.git
 # install features
 RUN apt-get update && apt-get -y install build-essential cmake wget vim-common opencl-headers
 
-# ADD cmake-3.13.3.tar.gz / 
-# RUN cd  /cmake-3.13.3 && ./configure && make && make install
-
 # Qrack install & dependancies 
 RUN cd /qrack/include && mkdir CL
 COPY cl12.hpp /qrack/include/CL/cl.hpp
@@ -19,10 +16,9 @@ RUN cd /qrack && mkdir _build && cd _build && cmake .. && make all && make insta
 # Install Rust and cargo
 RUN apt-get install -y rustc cargo
 
-# Install Python 3
+# Install Python 3 and link as default
 RUN apt-get install -y python3.6 python3-pip python3-tk
-# RUN ln -s /usr/bin/python3 /usr/bin/python
-# RUN ln -s /usr/bin/pip3 /usr/bin/pip
+RUN rm /usr/bin/pyhton && rm /usr/bin/pip && ln -s /usr/bin/python3 /usr/bin/python && ln -s /usr/bin/pip3 /usr/bin/pip
 RUN apt-get -y install language-pack-en
 ENV LANG="en_US.UTF-8"
 
