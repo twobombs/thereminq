@@ -41,4 +41,6 @@ RUN cd /SimulaQron/cqc/rustLib && cargo update && cd /workspace && rm -rf Simula
 # Setup the necessary environment variables
 ENV NETSIM=$WORKSPACE/SimulaQron
 ENV PYTHONPATH=$WORKSPACE:$PYTHONPATH
+
+EXPOSE 8801-8811
  
