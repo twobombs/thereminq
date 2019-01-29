@@ -36,7 +36,7 @@ RUN cd /SimulaQron && cat ./requirements.txt | sed /qutip/d | xargs python3.6 -m
 RUN python3.6 -m pip install qutip
 
 # Fetch rustLib dependencies and cleanup install
-RUN cd /SimulaQron/cqc/rustLib && cargo update && cd /workspace && rm -f SimulaQron && ln -s /SimulaQron /workspace/SimulaQron
+RUN cd /SimulaQron/cqc/rustLib && cargo update && cd /workspace && rm -rf SimulaQron && ln -s /SimulaQron /workspace/SimulaQron
 
 # Setup the necessary environment variables
 ENV NETSIM=$WORKSPACE/SimulaQron
