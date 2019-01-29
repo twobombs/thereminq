@@ -18,7 +18,7 @@ RUN apt-get install -y rustc cargo
 
 # Install Python 3 and link as default
 RUN apt-get install -y python3.6 python3-pip python3-tk
-RUN rm /usr/bin/python && rm /usr/bin/pip && ln -s /usr/bin/python3 /usr/bin/python && ln -s /usr/bin/pip3 /usr/bin/pip
+RUN rm /usr/bin/python && ln -s /usr/bin/python3 /usr/bin/python && ln -s /usr/bin/pip3 /usr/bin/pip
 RUN apt-get -y install language-pack-en
 ENV LANG="en_US.UTF-8"
 
