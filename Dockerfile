@@ -7,6 +7,9 @@ RUN git clone --recursive https://github.com/SoftwareQuTech/SimulaQron.git
 # install features
 RUN apt-get update && apt-get -y install build-essential cmake wget vim-common opencl-headers
 
+# install filebeat for ES 
+RUN curl -L -O https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-6.6.0-amd64.deb && dpkg -i filebeat-6.6.0-amd64.deb
+
 # Qrack install & dependancies 
 RUN cd /qrack/include && mkdir CL
 COPY cl12.hpp /qrack/include/CL/cl.hpp
