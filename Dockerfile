@@ -5,7 +5,7 @@ RUN git clone --recursive https://github.com/vm6502q/qrack.git
 RUN git clone --recursive https://github.com/SoftwareQuTech/SimulaQron.git
 
 # install features
-RUN apt-get update && apt-get -y install build-essential cmake wget vim-common opencl-headers curl
+RUN apt-get update && apt-get -y install build-essential cmake wget vim-common opencl-headers curl && apt-get clean all
 
 # install filebeat for ES 
 RUN curl -L -O https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-6.6.0-amd64.deb && dpkg -i filebeat-6.6.0-amd64.deb
@@ -17,12 +17,12 @@ RUN cd /qrack && mkdir _build && cd _build && cmake .. && make all && make insta
 
 # SimulaQron install dependancies ( from Dockerfile@SimulaQron )
 # Install Rust and cargo
-RUN apt-get install -y rustc cargo
+RUN apt-get install -y rustc cargo && apt-get clean all
 
 # Install Python 3 and link as default
 RUN apt-get install -y python3.6 python3-pip python3-tk
 RUN rm /usr/bin/python && ln -s /usr/bin/python3 /usr/bin/python && ln -s /usr/bin/pip3 /usr/bin/pip
-RUN apt-get -y install language-pack-en
+RUN apt-get -y install language-pack-en && apt-get clean all
 ENV LANG="en_US.UTF-8"
 
 # Add the working directory
