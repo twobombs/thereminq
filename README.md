@@ -1,3 +1,6 @@
-# QrackNet
+# QrackNet: Qrack, SimulaQron and OpenCL
 
-A Dockerfile that Qracks over the Net using the CUDA-CLuster container image as base
+Qrack - Qbit Hardware Emulation Stack
+SimulaQron - Qbit Networking stack 
+OpenCL support for Intel, AMD and NVidia 
+cuda-cluster and deploy-nvidia-docker base
