@@ -9,3 +9,4 @@
 
 Todo:
 - ProjectQ Interconnect ( in Dev )
+- Elastic Search/Lucene Interface
