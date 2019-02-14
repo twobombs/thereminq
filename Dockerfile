@@ -7,8 +7,8 @@ RUN git clone --recursive https://github.com/SoftwareQuTech/SimulaQron.git
 # install features
 RUN apt-get update && apt-get -y install build-essential cmake wget vim-common opencl-headers curl && apt-get clean all
 
-# install filebeat for ES 
-RUN curl -L -O https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-6.6.0-amd64.deb && dpkg -i filebeat-6.6.0-amd64.deb
+# install metricbeat for ES 6.5.4
+RUN curl -L -O https://artifacts.elastic.co/downloads/beats/metricbeat/metricbeat-6.5.4-amd64.deb && dpkg -i metricbeat-6.5.4-amd64.deb
 
 # Qrack install & dependancies 
 RUN cd /qrack/include && mkdir CL
