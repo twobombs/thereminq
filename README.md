@@ -10,3 +10,6 @@
 Todo:
 - ProjectQ Interconnect ( in Dev )
 - Elastic Search/Lucene Interface
+
+Build on top of CUDA-CLuster
+- WebVNC, CUDA 9.2+ & OpenCL 1.2+ with NV, AMD & Intel HW support
