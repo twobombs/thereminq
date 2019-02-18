@@ -4,8 +4,6 @@
 
 - Qrack - Qbit Hardware Emulation Stack
 - SimulaQron - Qbit Networking stack 
-- OpenCL support for Intel ( Works ), AMD ( Dev ) and NVidia ( Alpha ) 
-- CUDA-CLuster as base image
 
 Todo:
 - ProjectQ Interconnect ( in Dev )
