@@ -13,7 +13,7 @@ RUN curl -L -O https://artifacts.elastic.co/downloads/beats/metricbeat/metricbea
 # Qrack install & dependancies 
 RUN cd /qrack/include && mkdir CL
 COPY cl12.hpp /qrack/include/CL/cl.hpp
-RUN cd /qrack && mkdir _build && cd _build && cmake -DENABLE_COMPLEX8=OFF .. && make all && make install
+RUN cd /qrack && mkdir _build && cd _build && cmake .. && make all && make install
 
 # SimulaQron install dependancies ( from Dockerfile@SimulaQron )
 # Install Rust and cargo
