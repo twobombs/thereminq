@@ -7,12 +7,12 @@ RUN git clone --recursive https://github.com/SoftwareQuTech/SimulaQron.git
 # install features
 RUN apt-get update && apt-get -y install build-essential cmake wget vim-common opencl-headers curl && apt-get clean all
 
-# install metricbeat for ES 6.5.4
+# install metricbeat for ES 7.0.0
 RUN curl -L -O https://artifacts.elastic.co/downloads/beats/metricbeat/metricbeat-7.0.0-beta1-amd64.deb && dpkg -i metricbeat-7.0.0-beta1-amd64.deb && rm metricbeat-7.0.0-beta1-amd64.deb
 
 # Qrack install & dependancies 
 RUN cd /qrack/include && mkdir CL
-COPY cl12.hpp /qrack/include/CL/cl.hpp
+# COPY cl12.hpp /qrack/include/CL/cl.hpp
 RUN cd /qrack && mkdir _build && cd _build && cmake .. && make all && make install
 
 # SimulaQron install dependancies ( from Dockerfile@SimulaQron )
@@ -39,7 +39,10 @@ RUN cd /SimulaQron && cat ./requirements.txt | sed /qutip/d | xargs python3.6 -m
 RUN python3.6 -m pip install qutip
 
 # Fetch rustLib dependencies and cleanup install
-RUN cd /SimulaQron/cqc/rustLib && cargo update && cd /workspace && rm -rf SimulaQron && ln -s /SimulaQron /workspace/SimulaQron
+RUN cd /SimulaQron/cqc/rustLib && cargo update 
+
+# workspace cleanup
+# RUN && cd /workspace && rm -rf SimulaQron && ln -s /SimulaQron /workspace/SimulaQron
 
 # Setup the necessary environment variables
 ENV NETSIM=$WORKSPACE/SimulaQron
