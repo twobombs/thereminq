@@ -1,7 +1,7 @@
 FROM twobombs/cudacluster
 
 # clone repos
-RUN git clone --recursive https://github.com/vm6502q/qrack.git
+RUN git clone --recursive https://github.com/twobombs/qrack.git
 RUN git clone --recursive https://github.com/SoftwareQuTech/SimulaQron.git
 
 # install features
