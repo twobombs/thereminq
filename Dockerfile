@@ -16,8 +16,8 @@ RUN cd /qrack/include && mkdir CL
 RUN cd /qrack && mkdir _build && cd _build && cmake .. && make all && make install && cd .. && doxygen doxygen.config && ln -s /var/www/html /qrack/doc/html
 
 # SimulaQron install dependancies ( from Dockerfile@SimulaQron )
-# Install Rust and cargo ( temp disabled )
-# RUN apt-get install -y rustc cargo && apt-get clean all
+# Install Rust and cargo 
+RUN apt-get install -y rustc cargo && apt-get clean all
 
 # Install Python 3 and link as default
 RUN apt-get install -y python3.6 python3-pip python3-tk
@@ -38,8 +38,8 @@ RUN python3.6 -m pip install black
 RUN cd /SimulaQron && cat ./requirements.txt | sed /qutip/d | xargs python3.6 -m pip install
 RUN python3.6 -m pip install qutip
 
-# Fetch rustLib dependencies and cleanup install
-RUN cd /SimulaQron/cqc/rustLib && cargo update 
+# Fetch rustLib dependencies and cleanup install ( temp disabled )
+# RUN cd /SimulaQron/cqc/rustLib && cargo update 
 
 # workspace cleanup
 RUN cd /workspace && rm -rf SimulaQron && ln -s /SimulaQron /workspace/SimulaQron
