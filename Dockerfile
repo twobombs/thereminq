@@ -5,7 +5,7 @@ RUN git clone --recursive https://github.com/twobombs/qrack.git
 RUN git clone --recursive https://github.com/SoftwareQuTech/SimulaQron.git
 
 # install features
-RUN apt-get update && apt-get -y install build-essential cmake wget vim-common opencl-headers curl && apt-get clean all
+RUN apt-get update && apt-get -y install build-essential cmake wget vim-common opencl-headers curl doxygen nginx && apt-get clean all
 
 # install metricbeat for ES 7.0.0
 RUN curl -L -O https://artifacts.elastic.co/downloads/beats/metricbeat/metricbeat-7.0.0-beta1-amd64.deb && dpkg -i metricbeat-7.0.0-beta1-amd64.deb && rm metricbeat-7.0.0-beta1-amd64.deb
@@ -13,11 +13,11 @@ RUN curl -L -O https://artifacts.elastic.co/downloads/beats/metricbeat/metricbea
 # Qrack install & dependancies 
 RUN cd /qrack/include && mkdir CL
 # COPY cl12.hpp /qrack/include/CL/cl.hpp
-RUN cd /qrack && mkdir _build && cd _build && cmake .. && make all && make install
+RUN cd /qrack && mkdir _build && cd _build && cmake .. && make all && make install && cd .. && doxygen doxygen.config && ln /var/www/html /qrack/doc/html
 
 # SimulaQron install dependancies ( from Dockerfile@SimulaQron )
-# Install Rust and cargo
-RUN apt-get install -y rustc cargo && apt-get clean all
+# Install Rust and cargo ( temp disabled )
+# RUN apt-get install -y rustc cargo && apt-get clean all
 
 # Install Python 3 and link as default
 RUN apt-get install -y python3.6 python3-pip python3-tk
@@ -48,5 +48,5 @@ RUN cd /workspace && rm -rf SimulaQron && ln -s /SimulaQron /workspace/SimulaQro
 ENV NETSIM=$WORKSPACE/SimulaQron
 ENV PYTHONPATH=$WORKSPACE:$PYTHONPATH
 
-EXPOSE 8801-8811
+EXPOSE 80, 8801-8811
  
