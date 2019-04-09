@@ -13,7 +13,7 @@ RUN curl -L -O https://artifacts.elastic.co/downloads/beats/metricbeat/metricbea
 # Qrack install & dependancies 
 RUN cd /qrack/include && mkdir CL
 # COPY cl12.hpp /qrack/include/CL/cl.hpp
-RUN cd /qrack && mkdir _build && cd _build && cmake .. && make all && make install && cd .. && doxygen doxygen.config && ln /var/www/html /qrack/doc/html
+RUN cd /qrack && mkdir _build && cd _build && cmake .. && make all && make install && cd .. && doxygen doxygen.config && ln -s /var/www/html /qrack/doc/html
 
 # SimulaQron install dependancies ( from Dockerfile@SimulaQron )
 # Install Rust and cargo ( temp disabled )
