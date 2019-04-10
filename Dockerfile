@@ -15,38 +15,15 @@ RUN cd /qrack/include && mkdir CL
 # COPY cl12.hpp /qrack/include/CL/cl.hpp
 RUN cd /qrack && mkdir _build && cd _build && cmake .. && make all && make install && cd .. && doxygen doxygen.config && ln -s /var/www/html /qrack/doc/html
 
-# SimulaQron install dependancies ( from Dockerfile@SimulaQron )
-# Install Rust and cargo 
-RUN apt-get install -y rustc cargo && apt-get clean all
+# Install Python 3
+RUN apt-get install -y python3 python3-pip python3-tk
 
-# Install Python 3 and link as default
-RUN apt-get install -y python3.6 python3-pip python3-tk
-RUN rm /usr/bin/python && ln -s /usr/bin/python3 /usr/bin/python && ln -s /usr/bin/pip3 /usr/bin/pip
-RUN apt-get -y install language-pack-en && apt-get clean all
+# Set a UTF-8 locale - this is needed for some python packages to play nice
+RUN apt-get -y install language-pack-en
 ENV LANG="en_US.UTF-8"
 
-# Add the working directory
-ARG WORKSPACE=/workspace
-ADD . $WORKSPACE/SimulaQron
-WORKDIR $WORKSPACE/SimulaQron
+RUN pip3 install simulaqron
 
-# SimulaQron dependencies
-# projectq fails to install without pybind11 pre-installed
-# qutip is also badly behaved so installed separately
-RUN python3.6 -m pip install pybind11
-RUN python3.6 -m pip install black
-RUN cd /SimulaQron && cat ./requirements.txt | sed /qutip/d | xargs python3.6 -m pip install
-RUN python3.6 -m pip install qutip
-
-# Fetch rustLib dependencies and cleanup install ( temp disabled )
-# RUN cd /SimulaQron/cqc/rustLib && cargo update 
-
-# workspace cleanup
-RUN cd /workspace && rm -rf SimulaQron && ln -s /SimulaQron /workspace/SimulaQron
-
-# Setup the necessary environment variables
-ENV NETSIM=$WORKSPACE/SimulaQron
-ENV PYTHONPATH=$WORKSPACE:$PYTHONPATH
 
 EXPOSE 80, 8801-8811
  
