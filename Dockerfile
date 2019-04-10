@@ -25,5 +25,4 @@ ENV LANG="en_US.UTF-8"
 RUN pip3 install simulaqron
 
 
-EXPOSE 80, 8801-8811
- 
+EXPOSE 80 8801-8811
