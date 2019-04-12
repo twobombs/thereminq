@@ -15,14 +15,16 @@ RUN curl -L -O https://artifacts.elastic.co/downloads/beats/metricbeat/metricbea
 RUN cd /qrack/include && mkdir CL
 RUN cd /qrack && mkdir _build && cd _build && cmake .. && make all && make install && cd .. && doxygen doxygen.config && ln -s /var/www/html /qrack/doc/html
 
-# ProjectQ install
-RUN python -m pip install --user projectq --with-qracksimulator
-
-# Install SimulaQron 
+# install python3
 RUN apt-get install -y python3 python3-pip python3-tk
 # Set a UTF-8 locale - this is needed for some python packages to play nice
 RUN apt-get -y install language-pack-en
 ENV LANG="en_US.UTF-8"
+
+# ProjectQ install
+RUN python -m pip install --user projectq --with-qracksimulator
+
+# Install SimulaQron 
 RUN pip3 install simulaqron
 
 EXPOSE 80 8801-8811
