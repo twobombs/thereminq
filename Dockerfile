@@ -22,7 +22,8 @@ RUN apt-get -y install language-pack-en
 ENV LANG="en_US.UTF-8"
 
 # ProjectQ install
-RUN pip3 install --user --global-option=--with-qracksimulator projectq
+RUN pip3 install --user projectq
+# --global-option=--with-qracksimulator
 
 # Install SimulaQron 
 RUN pip3 install simulaqron
