@@ -1,8 +1,9 @@
-# QrackNet: Qrack, SimulaQron and OpenCL
+# QrackNet: Qrack, ProjectQ, SimulaQron and OpenCL
 
 ![](https://img.shields.io/docker/automated/jrottenberg/ffmpeg.svg)
 
 - Qrack - Qbit Hardware Emulation Stack
+- ProjectQ - QC Interface
 - SimulaQron - Qbit Networking stack 
 
 Todo:
