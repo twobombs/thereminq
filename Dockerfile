@@ -22,6 +22,8 @@ RUN apt-get -y install language-pack-en
 ENV LANG="en_US.UTF-8"
 
 # ProjectQ install
+# pybind11 workaround
+RUN pip3 install pybind11
 RUN pip3 install --user projectq
 # --global-option=--with-qracksimulator
 
