@@ -9,7 +9,7 @@ RUN git clone --recursive https://github.com/vm6502q/ProjectQ.git
 RUN apt-get update && apt-get -y install build-essential cmake wget vim-common opencl-headers curl doxygen nginx && apt-get clean all
 
 # install metricbeat for ES 7.0.0
-RUN curl -L -O https://artifacts.elastic.co/downloads/beats/metricbeat/metricbeat-7.0.0-beta1-amd64.deb && dpkg -i metricbeat-7.0.0-beta1-amd64.deb && rm metricbeat-7.0.0-beta1-amd64.deb
+RUN curl -L -O https://artifacts.elastic.co/downloads/beats/metricbeat/metricbeat-7.0.0-amd64.deb && dpkg -i metricbeat-7.0.0-amd64.deb && rm metricbeat-7.0.0-amd64.deb
 
 # Qrack install & dependancies 
 RUN cd /qrack/include && mkdir CL
