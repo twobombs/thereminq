@@ -23,7 +23,7 @@ ENV LANG="en_US.UTF-8"
 
 # ProjectQ install
 # pybind11 workaround
-# RUN pip3 install pybind11
+RUN pip3 install pybind11
 
 #pip3 upgrade
 RUN pip3 -V && pip3 install --upgrade pip && pip3 -V
