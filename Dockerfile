@@ -24,6 +24,8 @@ ENV LANG="en_US.UTF-8"
 # ProjectQ install
 # pybind11 workaround
 RUN pip3 install pybind11
+# rebuild workaround
+RUN cd /ProjectQ && pip3 install --user .
 RUN cd /ProjectQ && pip3 install --user  --global-option="--with-qracksimulator" .
 
 # Install SimulaQron 
