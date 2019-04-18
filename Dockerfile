@@ -13,7 +13,7 @@ RUN curl -L -O https://artifacts.elastic.co/downloads/beats/metricbeat/metricbea
 
 # Qrack install & dependancies 
 RUN cd /qrack/include && mkdir CL
-RUN cd /qrack && mkdir _build && cd _build && cmake .. && make all && make install && cd .. && doxygen doxygen.config && ln -s /var/www/html /qrack/doc/html
+RUN cd /qrack && mkdir _build && cd _build && cmake .. && make all && make install && cd .. && doxygen doxygen.config && mv /var/www/html /var/www/old_html && ln -s /qrack/doc/html /var/www/html
 
 # install python3
 RUN apt-get install -y python3 python3-pip python3-tk
