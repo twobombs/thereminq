@@ -31,4 +31,7 @@ RUN cd /ProjectQ && pip3 install --user  --global-option="--with-qracksimulator"
 # Install SimulaQron 
 RUN pip3 install simulaqron
 
-EXPOSE 80 8801-8811
+# Install jupyter
+RUN pip3 install jupyter
+
+EXPOSE 80 8801-8811 8888
