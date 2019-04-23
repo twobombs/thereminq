@@ -1,0 +1,4 @@
+# run node instance ( under development - not all services integrated )
+
+service nginx start
+jupyter notebook --ip=0.0.0.0 --port=8888 --allow-root &
