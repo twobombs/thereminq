@@ -34,4 +34,7 @@ RUN pip3 install simulaqron
 # Install jupyter
 RUN pip3 install jupyter
 
+# node run script
+COPY run-node /root/
+
 EXPOSE 80 8801-8811 8888
