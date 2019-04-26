@@ -4,6 +4,7 @@ FROM twobombs/cudacluster
 RUN git clone --recursive https://github.com/twobombs/qrack.git
 RUN git clone --recursive https://github.com/SoftwareQuTech/SimulaQron.git
 RUN git clone --recursive https://github.com/vm6502q/ProjectQ.git
+RUN git clone --recursive https://github.com/XanaduAI/pennylane-pq.git
 
 # install features
 RUN apt-get update && apt-get -y install build-essential cmake wget vim-common opencl-headers curl doxygen nginx && apt-get clean all
@@ -30,6 +31,10 @@ RUN cd /ProjectQ && pip3 install --user  --global-option="--with-qracksimulator"
 
 # Install SimulaQron 
 RUN pip3 install simulaqron
+
+# Install pennylane
+RUN pip3 install pennylane_pq
+RUN cd /pennylane-pq && make test
 
 # Install jupyter
 RUN pip3 install jupyter
