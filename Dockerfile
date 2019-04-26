@@ -7,7 +7,7 @@ RUN git clone --recursive https://github.com/vm6502q/ProjectQ.git
 RUN git clone --recursive https://github.com/XanaduAI/pennylane-pq.git
 
 # install features
-RUN apt-get update && apt-get -y install build-essential cmake wget vim-common opencl-headers curl doxygen nginx && apt-get clean all
+RUN apt-get update && apt-get -y install build-essential cmake wget vim-common opencl-headers curl libfreetype6-dev doxygen nginx && apt-get clean all
 
 # install metricbeat for ES 7.0.0
 RUN curl -L -O https://artifacts.elastic.co/downloads/beats/metricbeat/metricbeat-7.0.0-amd64.deb && dpkg -i metricbeat-7.0.0-amd64.deb && rm metricbeat-7.0.0-amd64.deb
@@ -25,6 +25,7 @@ ENV LANG="en_US.UTF-8"
 # ProjectQ install
 # pybind11 workaround
 RUN pip3 install pybind11
+RUN pip3 install sphinx sphinx_rtd_theme
 # rebuild workaround
 RUN cd /ProjectQ && pip3 install --user .
 RUN cd /ProjectQ && pip3 install --user  --global-option="--with-qracksimulator" .
