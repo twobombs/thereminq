@@ -1,4 +1,4 @@
-# QrackNet: a networked container stack made for Qrack, ProjectQ, SimulaQron and OpenCL
+# QrackNet: a networked container stack made for Qrack, ProjectQ, SimulaQron on OpenCL
 
 ![](https://img.shields.io/docker/automated/jrottenberg/ffmpeg.svg)
 
