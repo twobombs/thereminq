@@ -16,6 +16,9 @@ RUN curl -L -O https://artifacts.elastic.co/downloads/beats/metricbeat/metricbea
 RUN cd /qrack/include && mkdir CL
 RUN cd /qrack && mkdir _build && cd _build && cmake .. && make all && make install && cd .. && doxygen doxygen.config && mv /var/www/html /var/www/old_html && mkdir /var/www/html && cd /var/www/html && mkdir qrack && ln -s /qrack/doc/html /var/www/html/qrack
 
+# AMD OCL driver docs
+RUN cd /var/www/html && mkdir amd && ln -s /var/opt/amdgpu-pro-local/doc /var/www/html/amd
+
 # install python3
 RUN apt-get install -y python3 python3-pip python3-tk
 # Set a UTF-8 locale - this is needed for some python packages to play nice
