@@ -37,6 +37,8 @@ RUN cd /ProjectQ/docs && make html && cd /var/www/html/ && mkdir projectq && ln 
 # Install SimulaQron 
 RUN pip3 install simulaqron
 RUN cd /SimulaQron && make verify && cd /SimulaQron/docs && make html && cd /var/www/html && mkdir simulaqron && ln -s /SimaQron/docs/_build/html /var/www/html/simulaqron
+# set default backend to projectq instead of the default
+RUN simulaqron set backend projectq
 
 # Install pennylane
 RUN pip3 install pennylane_pq
