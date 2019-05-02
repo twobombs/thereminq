@@ -36,7 +36,7 @@ RUN cd /ProjectQ/docs && make html && cd /var/www/html/ && mkdir projectq && ln 
 
 # Install SimulaQron 
 RUN pip3 install simulaqron
-RUN cd /SimulaQron/docs && make html && cd /var/www/html && mkdir simulaqron && ln -s /SimaQron/docs/_build/html /var/www/html/simulaqron
+RUN cd /SimulaQron && make verify && cd /SimulaQron/docs && make html && cd /var/www/html && mkdir simulaqron && ln -s /SimaQron/docs/_build/html /var/www/html/simulaqron
 
 # Install pennylane
 RUN pip3 install pennylane_pq
