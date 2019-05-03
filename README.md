@@ -5,6 +5,7 @@
 - Qrack - Qbit OCL Hardware Emulation Stack > https://github.com/vm6502q/qrack
 - ProjectQ - QC Interconnect, Qrack OCL fork > https://github.com/vm6502q/ProjectQ
 - SimulaQron - Qbit Networking stack > https://github.com/SoftwareQuTech/SimulaQron
+- PennyLane - ProjectQ plugin > https://github.com/XanaduAI/pennylane-pq
 
 Todo:
 - Elastic Search/Lucene Interface for data interconnect
