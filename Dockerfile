@@ -32,7 +32,9 @@ RUN pip3 install sphinx sphinx_rtd_theme
 # rebuild workaround
 RUN cd /ProjectQ && pip3 install --user .
 RUN cd /ProjectQ && pip3 install --user  --global-option="--with-qracksimulator" .
-RUN cd /ProjectQ/docs && make html && cd /var/www/html/ && mkdir projectq && ln -s /ProjectQ/docs/_build/html /var/www/html/projectq
+
+# temp removed for html build error
+# RUN cd /ProjectQ/docs && make html && cd /var/www/html/ && mkdir projectq && ln -s /ProjectQ/docs/_build/html /var/www/html/projectq
 
 # Install SimulaQron 
 RUN pip3 install simulaqron
