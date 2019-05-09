@@ -54,3 +54,5 @@ COPY run-node /root/
 RUN chown 744 /root/run-node
 
 EXPOSE 80 8801-8811 8888
+
+ENTRYPOINT /root/run-node
