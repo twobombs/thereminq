@@ -54,7 +54,7 @@ RUN pip3 install jupyter
 
 # node run script, make runnable 
 COPY run-node /root/
-RUN chown 744 /root/run-node
+RUN chmod 744 /root/run-node
 
 EXPOSE 80 8801-8811 8888
 
