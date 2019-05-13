@@ -14,3 +14,9 @@ Build on top of CUDA-CLuster
 - WebVNC, CUDA 9.2+ & OpenCL 1.2+ with NV, AMD & Intel HW support
 
 /me did none of the coding: just created this stack so that you don't need to
+
+Code from the following awesome companies and initiatives are included in this container
+
+![](https://user-images.githubusercontent.com/12692227/57654809-61c07f00-75d5-11e9-9005-38d60d8d4db4.png)
+
+All rights belong to their respective owners.
