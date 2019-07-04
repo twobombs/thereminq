@@ -46,8 +46,8 @@ RUN pip3 install simulaqron
 RUN simulaqron set backend projectq
 
 # Install pennylane
-RUN pip3 install pennylane_pq
-RUN cd /pennylane-pq && make test
+# RUN pip3 install pennylane_pq
+# RUN cd /pennylane-pq && make test
 
 # Install jupyter
 RUN pip3 install jupyter
