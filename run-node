@@ -1,3 +1,4 @@
+#!/bin/bash
 # run node instance ( under development - not all services integrated )
 
 # X-run script for non-nvidia hosts
