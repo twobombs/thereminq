@@ -47,7 +47,7 @@ RUN simulaqron set backend projectq
 
 # Install pennylane
 RUN pip3 install pennylane_pq
-RUN cd /pennylane-pq && make test
+# RUN cd /pennylane-pq && make test
 
 # Install jupyter
 RUN pip3 install jupyter && pip3 install ipyparallel
