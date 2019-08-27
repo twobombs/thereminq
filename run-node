@@ -8,7 +8,7 @@ sleep 10
 export DISPLAY=:0&&startxfce4&
 sleep 10
 x0vncserver -display :0 -passwordfile /root/.vnc/passwd&
-libvirtd -d && service virtlogd start && service libvirt-bin start && brctl addbr br0 
+libvirtd -d && service virtlogd start && service libvirt-bin start && brctl addbr br0 && service ssh start
 
 # start web services
 service nginx start
