@@ -11,7 +11,7 @@ x0vncserver -display :0 -passwordfile /root/.vnc/passwd&
 libvirtd -d && service virtlogd start && service libvirt-bin start && brctl addbr br0 && service ssh start
 
 # start web services
-service nginx start
+service nginx start && spawn-fcgi -s /var/run/fcgiwrap.socket /usr/sbin/fcgiwrap
 jupyter notebook --ip=0.0.0.0 --port=8888 --allow-root --no-browser &
 
 # precompile cl kernels for Qrack
