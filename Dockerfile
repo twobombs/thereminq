@@ -49,13 +49,10 @@ RUN simulaqron set backend projectq
 RUN pip3 install pennylane_pq
 # RUN cd /pennylane-pq && make test
 
-# Install jupyter
-RUN pip3 install jupyter && pip3 install ipyparallel
-
 # node run script, make runnable 
 COPY run-node /root/
 RUN chmod 744 /root/run-node
 
-EXPOSE 22 80 8801-8811 8888
+EXPOSE 22 80 8801-8811
 
 ENTRYPOINT /root/run-node
