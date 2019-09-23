@@ -12,7 +12,6 @@ libvirtd -d && service virtlogd start && service libvirt-bin start && brctl addb
 
 # start web services
 service nginx start && spawn-fcgi -s /var/run/fcgiwrap.socket /usr/sbin/fcgiwrap
-jupyter notebook --ip=0.0.0.0 --port=8888 --allow-root --no-browser &
 
 # precompile cl kernels for Qrack
 qrack_cl_precompile
