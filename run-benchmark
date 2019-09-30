@@ -1,0 +1,3 @@
+# run (modified) benchmarks for load simulation and sizing benchmark
+cd /qrack/_build/
+./benchmarks --single --layer-qfusion -m=-1 --proc-opencl-single &
