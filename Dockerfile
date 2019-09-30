@@ -49,9 +49,12 @@ RUN simulaqron set backend projectq
 RUN pip3 install pennylane_pq
 # RUN cd /pennylane-pq && make test
 
-# node run script, make runnable 
+# node run & benchmark script, make runnable 
 COPY run-node /root/
 RUN chmod 744 /root/run-node
+
+COPY run-benchmark /root/
+RUN chmod 744 /root/run-benchmark
 
 EXPOSE 22 80 8801-8811
 
