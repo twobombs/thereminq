@@ -11,7 +11,7 @@ Todo:
 - Elastic Search/Lucene Interface for data interconnect
 
 Build on top of CUDA-CLuster
-- WebVNC, CUDA 9.2+ & OpenCL 1.2+ with NV, AMD & Intel HW support
+- WebVNC, CUDA 10.0+ & OpenCL 1.2+ with NV, AMD & Intel HW support
 
 /me did none of the coding: just created this stack so that you don't need to
 
