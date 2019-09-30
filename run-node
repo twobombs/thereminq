@@ -21,4 +21,12 @@ simulaqron set backend projectq
 simulaqron
 
 # run 5900 vncserver - nofork
-/usr/share/novnc/utils/launch.sh --vnc localhost:5900
+/usr/share/novnc/utils/launch.sh --vnc localhost:5900 &
+
+# run benchmark for output simulation
+cd /qrack/_build/
+./benchmarks --single --layer-qfusion -m=-1 --proc-opencl-single
+
+# TODO: output logging storage
+
+# end run
