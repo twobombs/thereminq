@@ -13,6 +13,9 @@ libvirtd -d && service virtlogd start && service libvirt-bin start && brctl addb
 # start web services
 service nginx start && spawn-fcgi -s /var/run/fcgiwrap.socket /usr/sbin/fcgiwrap
 
+# start monitoring
+service metricbeat start
+
 # precompile cl kernels for Qrack
 qrack_cl_precompile
 
