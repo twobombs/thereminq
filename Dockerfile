@@ -9,8 +9,11 @@ RUN git clone --recursive https://github.com/XanaduAI/pennylane-pq.git
 # install features
 RUN apt-get update && apt-get -y install build-essential cmake openssh-server wget vim-common pocl-opencl-icd opencl-headers curl libfreetype6-dev doxygen graphviz nginx fcgiwrap spawn-fcgi && apt-get clean all
 
-# install metricbeat for ES 7.0.0
-RUN curl -L -O https://artifacts.elastic.co/downloads/beats/metricbeat/metricbeat-7.0.0-amd64.deb && dpkg -i metricbeat-7.0.0-amd64.deb && rm metricbeat-7.0.0-amd64.deb
+# install metricbeat for ES 7.4+
+RUN wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add - 
+RUN apt-get install apt-transport-https
+RUN echo "deb https://artifacts.elastic.co/packages/7.x/apt stable main" | tee -a /etc/apt/sources.list.d/elastic-7.x.list
+RUN apt-get update && apt-get install metricbeat
 
 # Qrack install & dependancies 
 RUN cd /qrack/include && mkdir CL
