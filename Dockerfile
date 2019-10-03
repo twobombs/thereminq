@@ -14,7 +14,7 @@ RUN wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo apt-key
 RUN apt-get install apt-transport-https
 RUN echo "deb https://artifacts.elastic.co/packages/7.x/apt stable main" | tee -a /etc/apt/sources.list.d/elastic-7.x.list
 RUN apt-get update && apt-get install metricbeat
-COPY metricbeat.yaml /etc/metricbeat/
+COPY metricbeat.yml /etc/metricbeat/
 
 # Qrack install & dependancies 
 RUN cd /qrack/include && mkdir CL
