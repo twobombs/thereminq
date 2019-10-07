@@ -16,6 +16,7 @@ service nginx start && spawn-fcgi -s /var/run/fcgiwrap.socket /usr/sbin/fcgiwrap
 # start monitoring
 metricbeat setup &
 service metricbeat start
+service filebeat start
 
 # precompile cl kernels for Qrack
 qrack_cl_precompile
