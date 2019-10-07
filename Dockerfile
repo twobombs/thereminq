@@ -15,6 +15,7 @@ RUN apt-get install apt-transport-https
 RUN echo "deb https://artifacts.elastic.co/packages/7.x/apt stable main" | tee -a /etc/apt/sources.list.d/elastic-7.x.list
 RUN apt-get update && apt-get install metricbeat filebeat
 COPY metricbeat.yml /etc/metricbeat/
+COPY filebeat.yml /etc/filebeat/
 
 # Qrack install & dependancies 
 RUN cd /qrack/include && mkdir CL
