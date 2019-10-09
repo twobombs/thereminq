@@ -16,7 +16,7 @@ RUN echo "deb https://artifacts.elastic.co/packages/7.x/apt stable main" | tee -
 RUN apt-get update && apt-get install metricbeat filebeat auditbeat
 COPY metricbeat.yml /etc/metricbeat/
 COPY filebeat.yml /etc/filebeat/
-COPY auditbeat.yml /etc/auditbeat/
+# COPY auditbeat.yml /etc/auditbeat/
 
 # Qrack install & dependancies 
 RUN cd /qrack/include && mkdir CL
