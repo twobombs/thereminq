@@ -1,5 +1,4 @@
 #!/bin/bash
-# run node instance ( under development - not all services integrated )
 
 # X-run script for non-nvidia hosts
 rm /tmp/.X0-lock
@@ -9,9 +8,6 @@ export DISPLAY=:0&&startxfce4&
 sleep 10
 x0vncserver -display :0 -passwordfile /root/.vnc/passwd&
 libvirtd -d && service virtlogd start && service libvirt-bin start && brctl addbr br0 && service ssh start
-
-# start web services
-service nginx start && spawn-fcgi -s /var/run/fcgiwrap.socket /usr/sbin/fcgiwrap
 
 # start monitoring
 metricbeat setup &
