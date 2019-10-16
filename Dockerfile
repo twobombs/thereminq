@@ -23,9 +23,6 @@ COPY filebeat.yml /etc/filebeat/
 RUN cd /qrack/include && mkdir CL
 RUN cd /qrack && mkdir _build && cd _build && cmake -DENABLE_COMPLEX8=OFF .. && make all && make install
 
-# AMD OCL driver docs
-RUN cd /var/www/html && mkdir amd && ln -s /var/opt/amdgpu-pro-local/doc /var/www/html/amd
-
 # install python3
 RUN apt-get install -y python3 python3-pip python3-tk
 # Set a UTF-8 locale - this is needed for some python packages to play nice
