@@ -8,7 +8,7 @@ RUN git clone --recursive https://github.com/vm6502q/ProjectQ.git
 RUN git clone --recursive https://github.com/XanaduAI/pennylane-pq.git
 
 # install features
-RUN apt-get update && apt-get -y install build-essential cmake openssh-server wget vim-common pocl-opencl-icd opencl-headers curl libfreetype6-dev doxygen graphviz nginx fcgiwrap spawn-fcgi && apt-get clean all
+RUN apt-get update && apt-get -y install build-essential cmake openssh-server wget vim-common pocl-opencl-icd opencl-headers curl libfreetype6-dev && apt-get clean all
 
 # install metricbeat for ES 7.4+
 RUN wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add - 
@@ -21,7 +21,7 @@ COPY filebeat.yml /etc/filebeat/
 
 # Qrack install & dependancies 
 RUN cd /qrack/include && mkdir CL
-RUN cd /qrack && mkdir _build && cd _build && cmake -DENABLE_COMPLEX8=OFF .. && make all && make install && cd .. && doxygen doxygen.config && mv /var/www/html /var/www/old_html && mkdir /var/www/html && cd /var/www/html && mkdir qrack && ln -s /qrack/doc/html /var/www/html/qrack
+RUN cd /qrack && mkdir _build && cd _build && cmake -DENABLE_COMPLEX8=OFF .. && make all && make install
 
 # AMD OCL driver docs
 RUN cd /var/www/html && mkdir amd && ln -s /var/opt/amdgpu-pro-local/doc /var/www/html/amd
@@ -35,19 +35,12 @@ ENV LANG="en_US.UTF-8"
 # ProjectQ install
 # pybind11 workaround
 RUN pip3 install pybind11
-RUN pip3 install sphinx sphinx_rtd_theme
 # rebuild workaround
 RUN cd /ProjectQ && pip3 install --user .
 RUN cd /ProjectQ && pip3 install --user  --global-option="--with-qracksimulator" .
 
-# temp removed for html build error
-# RUN cd /ProjectQ/docs && make html && cd /var/www/html/ && mkdir projectq && ln -s /ProjectQ/docs/_build/html /var/www/html/projectq
-
 # Install SimulaQron 
 RUN pip3 install simulaqron
-
-# no simulaqron verify because fail
-# RUN cd /SimulaQron && make verify && cd /SimulaQron/docs && make html && cd /var/www/html && mkdir simulaqron && ln -s /SimaQron/docs/_build/html /var/www/html/simulaqron
 
 # set default backend to projectq instead of the default
 RUN simulaqron set backend projectq
