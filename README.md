@@ -7,7 +7,7 @@
 - SimulaQron - Qbit Networking stack > https://github.com/SoftwareQuTech/SimulaQron
 - PennyLane - ProjectQ plugin > https://github.com/XanaduAI/pennylane-pq
 
-Todo:
+In Progress:
 - Elastic Search/Lucene Interface for data interconnect
 
 Build on top of CUDA-CLuster
