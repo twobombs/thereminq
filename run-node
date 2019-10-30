@@ -1,20 +1,17 @@
 #!/bin/bash
 
 # start monitoring of kubelet state & qrack output
-metricbeat setup
-service metricbeat start
-service filebeat start
-
-# auditbeat setup
-# auditbeat -e
-# service apm-server start
+metricbeat setup &
+service metricbeat start &
+service filebeat start &
 
 # start the SimulaQron, ProjectQ, Qrack train
-simulaqron set backend projectq
-simulaqron
+simulaqron set backend projectq &
+simulaqron &
 
-# run benchmark for output simulation
-cd /qrack/_build/
+# precompile cl kernels for Qrack	
+cd /qrack/_build/ && ./qrack_cl_precompile
+# run benchmark for load & output simulation
 ./benchmarks --single --layer-qfusion -m=-1 --proc-opencl-single test_qft_permutation_round_trip_entangled
 
 # TODO: output logging storage
