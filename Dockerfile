@@ -48,6 +48,8 @@ RUN pip3 install pennylane_pq
 # node run & benchmark script, make runnable 
 COPY run-node /root/
 RUN chmod 744 /root/run-node
+#cleanup
+RUN rm /var/log/dpkg.log
 
 EXPOSE 22 80 8801-8811
 
