@@ -1,6 +1,6 @@
 #!/bin/bash
 # WebUI@6080
-rm /tmp/.X0-lock && mv /var/log/*.log /dev/null
+rm /tmp/.X0-lock && mv /var/log/*.log /root/logs/
 export LIBGL_ALWAYS_SOFTWARE=1&&Xvfb :0 -screen 0 1280x720x24 -ac&	
 export DISPLAY=:0&&startxfce4&	
 x0vncserver -display :0 -passwordfile /root/.vnc/passwd&
