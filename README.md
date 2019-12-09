@@ -6,8 +6,6 @@
 - ProjectQ - QC Interconnect, Qrack OCL fork > https://github.com/vm6502q/ProjectQ
 - SimulaQron - Qbit Networking stack > https://github.com/SoftwareQuTech/SimulaQron
 - PennyLane - ProjectQ plugin > https://github.com/XanaduAI/pennylane-pq
-
-In Progress:
 - Elastic Search/Lucene Interface for data interconnect
 
 Build on top of CUDA-CLuster
