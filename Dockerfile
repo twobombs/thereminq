@@ -49,7 +49,7 @@ RUN pip3 install pennylane_pq
 COPY run-node /root/
 RUN chmod 744 /root/run-node
 #cleanup
-RUN mkdir /root/logs && mv /var/log/*.log /root/logs/*
+RUN mkdir /root/logs && mv /var/log/*.log /root/logs/
 
 EXPOSE 22 80 8801-8811
 
