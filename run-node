@@ -24,4 +24,4 @@ cd /qrack/_build/ && ./qrack_cl_precompile
 ./benchmarks --proc-opencl-single -m=-1 --layer-qfusion --measure-output=/var/log/measured_qft.log [qft]
 
 # end run, do not stop container ( debug feature )
-tail -f /dev/null
+# tail -f /dev/null
