@@ -45,6 +45,9 @@ RUN simulaqron set backend projectq
 RUN pip3 install pennylane_pq
 # RUN cd /pennylane-pq && make test
 
+# install Gdrive upload tool
+RUN wget https://github.com/gdrive-org/gdrive/releases/download/2.1.0/gdrive-linux-x64 && chmod +x gdrive-linux-x64
+
 # node run & benchmark script, make runnable 
 COPY run-node /root/
 RUN chmod 744 /root/run-node
