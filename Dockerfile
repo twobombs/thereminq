@@ -48,6 +48,11 @@ RUN pip3 install pennylane_pq
 # install Gdrive upload tool
 RUN wget https://github.com/gdrive-org/gdrive/releases/download/2.1.0/gdrive-linux-x64 && chmod +x gdrive-linux-x64
 
+# install AWS s3 tooling
+RUN wget -O- -q http://s3tools.org/repo/deb-all/stable/s3tools.key | apt-key add -
+RUN wget http://s3tools.org/repo/deb-all/stable/s3tools.list -O /etc/apt/sources.list.d/s3tools.list
+RUN apt-get update && apt install s3cmd
+
 # node run & benchmark script, make runnable 
 COPY run-node /root/
 RUN chmod 744 /root/run-node
