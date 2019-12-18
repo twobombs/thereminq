@@ -51,6 +51,7 @@ RUN wget https://github.com/gdrive-org/gdrive/releases/download/2.1.0/gdrive-lin
 # install AWS s3 tooling
 RUN wget -O- -q https://s3tools.org/repo/deb-all/stable/s3tools.key | apt-key add -
 RUN wget https://s3tools.org/repo/deb-all/stable/s3tools.list -O /etc/apt/sources.list.d/s3tools.list
+RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys A9B1F3ED19ED2FDED5A5FBC6D49459D8C762B6E6
 RUN apt-get update && apt install s3cmd
 
 # node run & benchmark script, make runnable 
