@@ -45,6 +45,9 @@ RUN simulaqron set backend projectq
 RUN pip3 install pennylane_pq
 # RUN cd /pennylane-pq && make test
 
+# Install Qiskit
+RUN pip3 install qiskit
+
 # install Gdrive upload tool
 RUN wget https://github.com/gdrive-org/gdrive/releases/download/2.1.0/gdrive-linux-x64 && chmod +x gdrive-linux-x64
 
