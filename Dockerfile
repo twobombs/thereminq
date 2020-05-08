@@ -24,6 +24,7 @@ RUN cd /qrack && mkdir _build && cd _build && cmake -DENABLE_COMPLEX8=OFF .. && 
 
 # install python3
 RUN apt-get install -y python3 python3-pip python3-tk
+RUN pip3 install -U pip3 setuptools
 # Set a UTF-8 locale - this is needed for some python packages to play nice
 RUN apt-get -y install language-pack-en
 ENV LANG="en_US.UTF-8"
