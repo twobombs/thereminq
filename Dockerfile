@@ -23,7 +23,7 @@ RUN cd /qrack/include && mkdir CL
 RUN cd /qrack && mkdir _build && cd _build && cmake -DENABLE_COMPLEX8=OFF .. && make all && make install
 
 # install python3
-RUN apt-get install -y python3 python3-pip python3-tk
+RUN apt-get install -y python3 python3-pip python3-tk libblas-dev liblapack-dev
 RUN pip3 install -U setuptools
 # Set a UTF-8 locale - this is needed for some python packages to play nice
 RUN apt-get -y install language-pack-en
@@ -31,7 +31,7 @@ ENV LANG="en_US.UTF-8"
 
 # ProjectQ install
 # pybind11 workaround
-RUN pip3 install pybind11
+RUN pip3 install pybind11 
 # rebuild workaround
 RUN cd /ProjectQ && pip3 install --user .
 RUN cd /ProjectQ && pip3 install --user  --global-option="--with-qracksimulator" .
