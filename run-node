@@ -19,11 +19,11 @@ simulaqron &
 cd /qrack/_build/ && ./qrack_cl_precompile
 
 # run benchmark for load & output simulation
-./benchmarks --proc-opencl-single -m=25 --single --layer-qfusion --measure-output=/var/log/"measured_supreme_$(date +%F_%R).log" [supreme] 
+./benchmarks --proc-opencl-single -m=25 --single --measure-output=/var/log/"measured_supreme_$(date +%F_%R).log" [supreme] 
 # > /var/log/"measured_supreme_speed_$(date +%F_%R).log"
-./benchmarks --proc-opencl-single -m=25 --single --layer-qfusion --measure-output=/var/log/"measured_qft_$(date +%F_%R).log" [qft] 
+./benchmarks --proc-opencl-single -m=25 --single --measure-output=/var/log/"measured_qft_$(date +%F_%R).log" [qft] 
 # > /var/log/"measured_qft_speed_$(date +%F_%R).log"
-./benchmarks --proc-opencl-single -m=25 --single --layer-qfusion --measure-output=/var/log/"measured_cosmos_$(date +%F_%R).log" [cosmos] 
+./benchmarks --proc-opencl-single -m=25 --single --measure-output=/var/log/"measured_cosmos_$(date +%F_%R).log" [cosmos] 
 # > /var/log/"measured_cosmos_speed_$(date +%F_%R).log"
 
 # end run, do not stop container ( debug feature )
