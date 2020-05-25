@@ -1,9 +1,9 @@
 #!/bin/bash
 # WebUI@6080
 rm /tmp/.X0-lock && mv /var/log/*.log /root/logs/
-# export LIBGL_ALWAYS_SOFTWARE=1&&Xvfb :0 -screen 0 1280x720x24 -ac&	
-# export DISPLAY=:0&&startxfce4&	
-# x0vncserver -display :0 -passwordfile /root/.vnc/passwd&
+export LIBGL_ALWAYS_SOFTWARE=1&&Xvfb :0 -screen 0 1280x720x24 -ac&	
+export DISPLAY=:0&&startxfce4&	
+x0vncserver -display :0 -passwordfile /root/.vnc/passwd&
 
 # start monitoring of kubelet state & qrack output
 filebeat setup -e
@@ -12,18 +12,18 @@ service metricbeat start &
 service filebeat start &
 
 # start the SimulaQron, ProjectQ, Qrack train
-simulaqron set backend projectq &
-simulaqron &
+# simulaqron set backend projectq &
+# simulaqron &
 
 # precompile cl kernels for Qrack	
 cd /qrack/_build/ && ./qrack_cl_precompile
 
 # run benchmark for load & output simulation
-./benchmarks --proc-opencl-single -m=25 --single --measure-output=/var/log/"measured_supreme_$(date +%F_%R).log" [supreme] 
+# ./benchmarks --proc-opencl-single -m=25 --single --measure-output=/var/log/"measured_supreme_$(date +%F_%R).log" [supreme] 
 # > /var/log/"measured_supreme_speed_$(date +%F_%R).log"
-./benchmarks --proc-opencl-single -m=25 --single --measure-output=/var/log/"measured_qft_$(date +%F_%R).log" [qft] 
+# ./benchmarks --proc-opencl-single -m=25 --single --measure-output=/var/log/"measured_qft_$(date +%F_%R).log" [qft] 
 # > /var/log/"measured_qft_speed_$(date +%F_%R).log"
-./benchmarks --proc-opencl-single -m=25 --single --measure-output=/var/log/"measured_cosmos_$(date +%F_%R).log" [cosmos] 
+# ./benchmarks --proc-opencl-single -m=25 --single --measure-output=/var/log/"measured_cosmos_$(date +%F_%R).log" [cosmos] 
 # > /var/log/"measured_cosmos_speed_$(date +%F_%R).log"
 
 # end run, do not stop container ( debug feature )
