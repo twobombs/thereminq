@@ -19,7 +19,7 @@ service filebeat start &
 cd /qrack/_build/ && ./qrack_cl_precompile
 
 # run benchmark for load & output simulation
-./benchmarks --proc-opencl-single -m=-1 --single --measure-output=/var/log/"measured_supreme_$(date +%F_%R).log" [supreme] 
+./benchmarks --proc-opencl-multi -m=-1 --single --measure-output=/var/log/"measured_supreme_$(date +%F_%R).log" [supreme] 
 # > /var/log/"measured_supreme_speed_$(date +%F_%R).log"
 
 # end run, do not stop container ( debug feature )
