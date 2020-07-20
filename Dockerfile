@@ -20,7 +20,7 @@ COPY filebeat.yml /etc/filebeat/filebeat_new.yml
 
 # Qrack install & dependancies 
 RUN cd /qrack/include && mkdir CL
-RUN cd /qrack && mkdir _build && cd _build && cmake -DENABLE_COMPLEX8=OFF .. && make all && make install
+RUN cd /qrack && mkdir _build && cd _build && cmake -DENABLE_COMPLEX8=ON -DENABLE_COMPLEX_X2=ON -DQBCAPPOW=7 .. && make all && make install
 
 # install python3
 RUN apt-get install -y python3 python3-pip python3-tk libblas-dev liblapack-dev
