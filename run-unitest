@@ -1,0 +1,2 @@
+rm /tmp/.X0-lock && mv /var/log/*.log /root/logs/
+cd /qrack/_build/ && ./unittest
