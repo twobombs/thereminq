@@ -20,7 +20,7 @@ cd /qrack/_build/ && ./qrack_cl_precompile
 
 # run benchmark for load & output simulation
 
-./benchmarks --proc-opencl-multi -m=-1 --device-id=1 --single --measure-output=/var/log/"measured_cosmos_$(date +%F_%R).log" [cosmos] 
+./benchmarks --proc-opencl-multi -m=-1 --device-id=1 --enable-normalization --measure-output=/var/log/"measured_cosmos_$(date +%F_%R).log" [cosmos] 
 # > /var/log/"measured_cosmos_speed_$(date +%F_%R).log"
 
 # end run, do not stop container ( debug feature )
