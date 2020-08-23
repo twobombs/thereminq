@@ -40,6 +40,9 @@ RUN cd /ProjectQ && pip3 install --user .
 # Install SimulaQron 
 RUN pip3 install simulaqron
 
+# Install IBM QC connector
+RUn pip3 install -U IBMQuantumExperience
+
 # set default backend to projectq instead of the default
 RUN simulaqron set backend projectq
 
