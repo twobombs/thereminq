@@ -12,14 +12,14 @@ Build on top of CUDA-CLuster
 - WebVNC, CUDA 11.0+ & OpenCL 1.2+ with NV, AMD & Intel HW support
 
 Deploy QrackNet worker images by invoking docker worker image
-- docker run -d -v /var/log/qrack:/var/log/qrack twobombs:supreme-cpu
-- docker run --gpus all --device=/dev/dri:/dev/dri -d -v /var/log/qrack:/var/log/qrack twobombs:cosmos-gpu1
+- docker run -d --mount type=bind,source=/var/log/qrack,target=/var/log/qrack twobombs:supreme-cpu
+- docker run --gpus all --device=/dev/dri:/dev/dri -d --mount type=bind,source=/var/log/qrack,target=/var/log/qrack twobombs:cosmos-gpu1
 
 Deploy WebUI controller images by invoking docker controller image
 - docker run -p 6080:6080 -d twobombs/qracknet:controller
 - docker run --gpus all -p 6080:6080 --device/dev/dri:/dev/dri -d twobombs/qracknet:controller
 
-/me did none of the coding: just created this stack so that you don't need to
+/me did none of the coding: just created this stack so that you don't need to - this is a work in progess
 
 Code from the following awesome companies and initiatives are included in this container
 
