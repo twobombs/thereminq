@@ -1,5 +1,5 @@
 FROM twobombs/qracknet
-RUN apt install pocl-opencl-icd
+RUN apt install pocl-opencl-icd docker.io
 
 EXPOSE 22 80 8801-8811
 ENTRYPOINT /root/run-node
