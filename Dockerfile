@@ -55,6 +55,7 @@ RUN pip3 install qiskit
 
 # node run & benchmark script, make runnable 
 COPY runcosmos.sh /root/
+COPY runcosmosdocker.sh /root/
 COPY run-node /root/
 COPY run-cosmos /root/
 COPY run-cosmos-gpu2 /root/
@@ -64,6 +65,7 @@ COPY run-supreme /root/
 COPY run-supreme-gpu2 /root/
 
 RUN chmod 744 /root/runcosmos.sh
+RUN chmod 744 /root/runcosmosdocker.sh
 RUN chmod 744 /root/run-node
 RUN chmod 744 /root/run-cosmos
 RUN chmod 744 /root/run-cosmos-gpu2
