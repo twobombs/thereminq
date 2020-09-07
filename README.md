@@ -11,13 +11,14 @@
 Build on top of CUDA-CLuster
 - WebVNC, CUDA 11.0+ & OpenCL 1.2+ with NV, AMD & Intel HW support
 
-Deploy QrackNet worker images by invoking docker worker image
+Deploy single instances of QrackNet worker images by directly invoking docker worker images or deploy on your favorite orchestrator
 - docker run -d --mount type=bind,source=/var/log/qrack,target=/var/log/qrack twobombs:supreme-cpu
 - docker run --gpus all --device=/dev/dri:/dev/dri -d --mount type=bind,source=/var/log/qrack,target=/var/log/qrack twobombs:cosmos-gpu1
 
-Deploy WebUI controller images by invoking docker controller image
-- docker run -p 6080:6080 -d twobombs/qracknet:controller
-- docker run --gpus all -p 6080:6080 --device/dev/dri:/dev/dri -d twobombs/qracknet:controller
+Deploy WebUI controller images by invoking docker controller image,or deploy in similar fashion on your favorite (k8s/k3d/k3s/docker compatible) orchestrator
+- docker run --gpus all --privileged -p 6080:6080 -v /var/run/docker.sock:/var/run/docker.sock:ro --device=/dev/dri:/dev/dri -d twobombs/qracknet:controller
+
+* use --gpus all for NVidia-Docker hosts, in addition --privileged will expose all devices, and thus all GPUs in the system, eg: Intel iGPUs
 
 /me did none of the coding: just created this stack so that you don't need to - this is a work in progess
 
