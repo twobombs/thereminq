@@ -20,7 +20,7 @@ COPY filebeat.yml /etc/filebeat/filebeat_new.yml
 
 # Qrack install & dependancies 
 RUN cd /qrack/include && mkdir CL && cd /var/log && mkdir qrack
-RUN cd /qrack && mkdir _build && cd _build && cmake -DENABLE_COMPLEX8=ON -DENABLE_COMPLEX_X2=ON -DQBCAPPOW=7 .. && make all && make install
+RUN cd /qrack && mkdir _build && cd _build && cmake -DENABLE_COMPLEX8=OFF -DENABLE_COMPLEX_X2=ON -DQBCAPPOW=7 .. && make all && make install
 
 # install python3
 RUN apt-get install -y python3 python3-pip python3-tk libblas-dev liblapack-dev
@@ -41,7 +41,7 @@ RUN cd /ProjectQ && pip3 install --user .
 RUN pip3 install simulaqron
 
 # Install IBM QC connector
-RUn pip3 install -U IBMQuantumExperience
+RUN pip3 install -U IBMQuantumExperience
 
 # set default backend to projectq instead of the default
 RUN simulaqron set backend projectq
