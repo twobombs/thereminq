@@ -19,7 +19,7 @@ service filebeat start &
 cd /qrack/_build/ && ./qrack_cl_precompile
 
 # run benchmark for load & output simulation
-./benchmarks --proc-opencl-multi -m=-1 --device-id=1 --enable-normalization --measure-output=/var/log/qrack/"measured_qft_gpu2$(date +%F_%R_%S).log" [qft] 
+./benchmarks --proc-hybrid-multi -m=-1 --device-id=1 --enable-normalization --measure-output=/var/log/qrack/"measured_qft_gpu2$(date +%F_%R_%S).log" [qft] 
 # > /var/log/"measured_qft_speed_$(date +%F_%R).log"
 
 # end run, do not stop container ( debug feature )
