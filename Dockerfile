@@ -20,7 +20,7 @@ COPY filebeat.yml /etc/filebeat/filebeat.yml
 
 # Qrack install & dependancies 
 RUN cd /qrack/include && mkdir CL && cd /var/log && mkdir qrack
-RUN cd /qrack && mkdir _build && cd _build && cmake -DENABLE_COMPLEX8=OFF -DENABLE_COMPLEX_X2=ON -DQBCAPPOW=7 .. && make all && make install
+RUN cd /qrack && mkdir _build && cd _build && cmake -DENABLE_COMPLEX8=ON -DENABLE_COMPLEX_X2=ON -DQBCAPPOW=7 .. && make all && make install
 
 # install python3
 RUN apt-get install -y python3 python3-pip python3-tk libblas-dev liblapack-dev
@@ -58,12 +58,15 @@ COPY runcosmos.sh /root/
 COPY runcosmosdockergpu.sh /root/
 COPY run-node /root/
 COPY run-cosmos /root/
+COPY run-cosmos-cpu /root/
 COPY run-cosmos-gpu2 /root/
 COPY run-cosmos-gpu3 /root/
 COPY run-qft /root/
+COPY run-qft-cpu /root/
 COPY run-qft-gpu2 /root/
 COPY run-qft-gpu3 /root/
 COPY run-supreme /root/
+COPY run-supreme-cpu /root/
 COPY run-supreme-gpu2 /root/
 COPY run-supreme-gpu3 /root/
 
@@ -71,12 +74,15 @@ RUN chmod 744 /root/runcosmos.sh
 RUN chmod 744 /root/runcosmosdockergpu.sh
 RUN chmod 744 /root/run-node
 RUN chmod 744 /root/run-cosmos
+RUN chmod 744 /root/run-cosmos-cpu
 RUN chmod 744 /root/run-cosmos-gpu2
 RUN chmod 744 /root/run-cosmos-gpu3
 RUN chmod 744 /root/run-qft
+RUN chmod 744 /root/run-qft-cpu
 RUN chmod 744 /root/run-qft-gpu2
 RUN chmod 744 /root/run-qft-gpu3
 RUN chmod 744 /root/run-supreme
+RUN chmod 744 /root/run-supreme-cpu
 RUN chmod 744 /root/run-supreme-gpu2
 RUN chmod 744 /root/run-supreme-gpu3
 

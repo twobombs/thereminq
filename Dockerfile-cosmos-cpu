@@ -3,4 +3,4 @@ FROM twobombs/qracknet
 RUN apt install pocl-opencl-icd beignet-dev
 
 EXPOSE 22 80 8801-8811
-ENTRYPOINT /root/run-cosmos
+ENTRYPOINT /root/run-cosmos-cpu

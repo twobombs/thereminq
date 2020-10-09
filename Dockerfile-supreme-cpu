@@ -3,4 +3,4 @@ FROM twobombs/qracknet
 RUN apt install pocl-opencl-icd
 
 EXPOSE 22 80 8801-8811
-ENTRYPOINT /root/run-supreme
+ENTRYPOINT /root/run-supreme-cpu
