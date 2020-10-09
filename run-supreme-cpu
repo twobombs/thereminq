@@ -19,7 +19,7 @@ service filebeat start &
 cd /qrack/_build/ && ./qrack_cl_precompile
 
 # run benchmark for load & output simulation
-./benchmarks --proc-hybrid-multi -m=-1 --benchmark-samples=1 --enable-normalization --device-id=0 --measure-output=/var/log/qrack/"measured_supreme_$(date +%F_%R_%S).log" [supreme] 
+./benchmarks --proc-stabilizer --layer-qunit -m=-1 --benchmark-samples=1 --enable-normalization --device-id=0 --measure-output=/var/log/qrack/"measured_supreme_$(date +%F_%R_%S).log" [supreme] 
 # > /var/log/"measured_supreme_speed_$(date +%F_%R).log"
 
 # end run, do not stop container ( debug feature )
