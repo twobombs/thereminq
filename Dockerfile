@@ -7,7 +7,7 @@ RUN git clone --recursive https://github.com/vm6502q/ProjectQ.git
 RUN git clone --recursive https://github.com/XanaduAI/pennylane-pq.git
 
 # install features
-RUN apt-get update && apt-get -y install build-essential cmake openssh-server wget vim-common opencl-headers curl libfreetype6-dev && apt-get clean all
+RUN apt-get update && apt-get -y install build-essential cmake openssh-server wget vim-common opencl-headers curl libfreetype6-dev libboost-all-dev && apt-get clean all
 
 # install metricbeat for ES 7.4+
 RUN wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add - 
@@ -20,7 +20,7 @@ COPY filebeat.yml /etc/filebeat/filebeat.yml
 
 # Qrack install & dependancies 
 RUN cd /qrack/include && mkdir CL && cd /var/log && mkdir qrack
-RUN cd /qrack && mkdir _build && cd _build && cmake -DENABLE_COMPLEX8=ON -DENABLE_COMPLEX_X2=ON -DQBCAPPOW=7 .. && make all && make install
+RUN cd /qrack && mkdir _build && cd _build && cmake -DENABLE_COMPLEX8=ON -DENABLE_COMPLEX_X2=ON -DQBCAPPOW=6 .. && make all && make install
 
 # install python3
 RUN apt-get install -y python3 python3-pip python3-tk libblas-dev liblapack-dev
