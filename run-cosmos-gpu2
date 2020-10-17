@@ -20,7 +20,7 @@ cd /qrack/_build/ && ./qrack_cl_precompile
 
 # run benchmark for load & output simulation
 
-./benchmarks --proc-stabilizer --layer-qunit -m=-1 --device-id=1 --enable-normalization --measure-output=/var/log/qrack/"measured_cosmos_gpu2$(date +%F_%R_%S).log" [cosmos] 
+./benchmarks --proc-opencl-multi --layer-qunit -m=-1 --device-id=1 --enable-normalization --measure-output=/var/log/qrack/"measured_cosmos_gpu2$(date +%F_%R_%S).log" [cosmos] 
 # > /var/log/"measured_cosmos_speed_$(date +%F_%R).log"
 
 # end run, do not stop container ( debug feature )

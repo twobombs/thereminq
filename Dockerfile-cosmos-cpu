@@ -1,8 +1,6 @@
 FROM twobombs/qracknet
 
 RUN apt install pocl-opencl-icd beignet-dev
-COPY benchmarks_main.cpp /qrack/test/benchmarks_main.cpp
-RUN cd /qrack/_build && make clean && make all
 
 EXPOSE 22 80 8801-8811
 ENTRYPOINT /root/run-cosmos-cpu
