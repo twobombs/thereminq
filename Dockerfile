@@ -51,7 +51,7 @@ RUN pip3 install pennylane_pq
 # RUN cd /pennylane-pq && make test
 
 # Install Qiskit
-RUN pip3 install qiskit
+# RUN pip3 install qiskit
 
 # node run & benchmark script, make runnable 
 COPY runcosmos.sh /root/
