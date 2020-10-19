@@ -1,6 +1,6 @@
 # build qracknet image and its required services
 
-docker build -t twobombs/qracknet:latest ./
+docker build --no-cache -t twobombs/qracknet:latest ./
 
 docker build -t twobombs/qracknet:controller -f ./Dockerfile-controller .
 docker build -t twobombs/qracknet:cpu -f ./Dockerfile-cpu .
