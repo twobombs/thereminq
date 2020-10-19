@@ -68,6 +68,10 @@ COPY run-supreme /root/
 COPY run-supreme-cpu /root/
 COPY run-supreme-gpu2 /root/
 COPY run-supreme-gpu3 /root/
+COPY run-cosmos-nbody-cpu /root/
+COPY run-cosmos-nbody-gpu1 /root/
+COPY run-cosmos-nbody-gpu2 /root/
+COPY run-cosmos-nbody-gpu3 /root/
 
 RUN chmod 744 /root/runcosmosdockergpu.sh
 RUN chmod 744 /root/run-node
@@ -83,6 +87,11 @@ RUN chmod 744 /root/run-supreme
 RUN chmod 744 /root/run-supreme-cpu
 RUN chmod 744 /root/run-supreme-gpu2
 RUN chmod 744 /root/run-supreme-gpu3
+RUN chmod 744 /root/run-cosmos-nbody-cpu
+RUN chmod 744 /root/run-cosmos-nbody-gpu1
+RUN chmod 744 /root/run-cosmos-nbody-gpu2
+RUN chmod 744 /root/run-cosmos-nbody-gpu3
+
 
 #cleanup
 RUN mkdir /root/logs && mv /var/log/*.log /root/logs/

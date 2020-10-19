@@ -1,0 +1,27 @@
+#!/bin/bash
+# WebUI@6080
+rm /tmp/.X0-lock && mv /var/log/*.log /root/logs/
+# export LIBGL_ALWAYS_SOFTWARE=1&&Xvfb :0 -screen 0 1280x720x24 -ac&	
+# export DISPLAY=:0&&startxfce4&	
+# x0vncserver -display :0 -passwordfile /root/.vnc/passwd&
+
+# start monitoring of kubelet state & qrack output
+filebeat setup -e
+metricbeat setup &
+service metricbeat start &
+service filebeat start &
+
+# start the SimulaQron, ProjectQ, Qrack train
+# simulaqron set backend projectq &
+# simulaqron &
+
+# precompile cl kernels for Qrack	
+cd /qrack/_build/ && ./qrack_cl_precompile
+
+# run benchmark for load & output simulation
+
+./benchmarks --proc-opencl-multi --layer-qunit --benchmark-samples=100 --single --device-id=0 -m=9 --measure-output=/var/log/qrack/"measured_cosmos_$(date +%F_%R_%S).log" test_qft_cosmology
+# > /var/log/"measured_cosmos_speed_$(date +%F_%R).log"
+
+# end run, do not stop container ( debug feature )
+# tail -f /dev/null
