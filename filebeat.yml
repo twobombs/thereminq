@@ -25,7 +25,7 @@ filebeat.inputs:
 
   # Paths that should be crawled and fetched. Glob based paths.
   paths:
-    - /var/log/*.log
+    # - /var/log/*.log
     - /var/log/qrack/mea*
     #- c:\programdata\elasticsearch\logs\*
 
@@ -176,6 +176,14 @@ output.elasticsearch:
 processors:
   - add_host_metadata:
       when.not.contains.tags: forwarded
+  - decode_csv_fields:
+      fields:
+        message: log.qrack
+      separator: ","
+      ignore_missing: false
+      overwrite_keys: true
+      trim_leading_space: true
+      fail_on_error: true
 #  - add_cloud_metadata: ~
 #  - add_docker_metadata: ~
 #  - add_kubernetes_metadata: ~
