@@ -6,7 +6,8 @@
 docker pull twobombs/qracknet:cosmos-nbody-cpu
 
 docker run -d --mount type=bind,source=/var/log/qrack/,target=/var/log/qrack --mount type=bind,source=/root/.qrack/,target=/root/.qrack twobombs/qracknet:cosmos-nbody-cpu
+sleep 1
 docker run -d --mount type=bind,source=/var/log/qrack/,target=/var/log/qrack --mount type=bind,source=/root/.qrack/,target=/root/.qrack twobombs/qracknet:cosmos-nbody-cpu
 
 # run again
-./runnbody.sh
+./runnbodycpu.sh
