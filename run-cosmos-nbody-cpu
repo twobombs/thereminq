@@ -20,7 +20,7 @@ cd /qrack/_build/ && ./qrack_cl_precompile
 
 # run benchmark for load & output simulation
 
-./benchmarks --layer-qunit-multi --enable-normalization --benchmark-samples=1000 --single --device-id=0 -m=16 --measure-output=/var/log/qrack/"measured_cosmos_$(date +%F_%R_%S).log" test_qft_cosmology
+./benchmarks --layer-qunit-multi --benchmark-samples=1000 --single --device-id=0 -m=16 --measure-output=/var/log/qrack/"measured_cosmos_$(date +%F_%R_%S).log" test_qft_cosmology
 
 # end run, do not stop container ( debug feature )
 # tail -f /dev/null
