@@ -4,7 +4,7 @@ RUN apt update
 RUN apt install nvidia-cuda-toolkit libopenmpi-dev
 RUN pip3 install mpi4py
 RUN git clone https://github.com/treecode/Bonsai.git
-RUN cd /Bonsai/runtime && cmake -DUSE_CUB=0 -DUSE_DUST=1 -USE_OPENGL=1 && make 
+RUN # cd /Bonsai/runtime && cmake -DUSE_CUB=0 -DUSE_DUST=1 -USE_OPENGL=1 && make 
 
 EXPOSE 22 6080 8801-8811
 ENTRYPOINT /root/run-node
