@@ -1,10 +1,11 @@
 FROM twobombs/qracknet
 
 RUN apt update
-RUN apt install nvidia-cuda-toolkit 
+RUN apt install nvidia-cuda-toolkit && apt clean all
 RUN # apt install libopenmpi-dev && pip3 install mpi4py
 RUN git clone https://github.com/treecode/Bonsai.git
-RUN cd /Bonsai/runtime && cmake -DCMAKE_CXX_COMPILER=mpicxx -DUSE_CUB=0 -USE_OPENGL=1 && make 
+RUN cd /Bonsai/runtime/lib && mv linux linux_temp && mv linux_fpig_glew linux
+RUN cd /Bonsai/runtime && cmake -DCMAKE_CXX_COMPILER=mpicxx -DUSE_CUB=0 -DUSE_OPENGL=1 -DCUDA_CUDART_LIBRARY=/usr/local/cuda/lib64/libcudart.so && make 
 
 EXPOSE 22 6080 8801-8811
 ENTRYPOINT /root/run-node
