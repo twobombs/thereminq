@@ -8,17 +8,19 @@
 - PennyLane - ProjectQ plugin > https://github.com/XanaduAI/pennylane-pq
 - Elastic Search/Lucene Interface for data interconnect
 
-Build on top of CUDA-CLuster
+Build on top of the CUDA-CLuster stack, an addition to deploy-nvidia-docker
 - WebVNC, CUDA 11.0+ & OpenCL 1.2+ with NV, AMD & Intel HW support
 
 Deploy single instances of QrackNet worker images by directly invoking docker worker images or deploy on your favorite orchestrator
 - docker run -d --mount type=bind,source=/var/log/qrack,target=/var/log/qrack twobombs:supreme-cpu
-- docker run --gpus all --device=/dev/dri:/dev/dri -d --mount type=bind,source=/var/log/qrack,target=/var/log/qrack twobombs:cosmos-gpu1
+- docker run --device=/dev/dri:/dev/dri -d --mount type=bind,source=/var/log/qrack,target=/var/log/qrack twobombs:cosmos-gpu1
 
 Deploy WebUI controller images by invoking docker controller image,or deploy in similar fashion on your favorite (k8s/k3d/k3s/docker compatible) orchestrator
 - docker run --gpus all --privileged -p 6080:6080 -v /var/run/docker.sock:/var/run/docker.sock:ro --device=/dev/dri:/dev/dri -d twobombs/qracknet:controller
-
 * use --gpus all for NVidia-Docker hosts, in addition --privileged will expose all devices, and thus all GPUs in the system, eg: Intel iGPUs
+
+Deploy Bonsai visualisation ( requirement: Running NVidia X, CUDA and nvidia-docker on host )
+- docker run --gpus all -v /tmp/.X11-unix:/tmp/.X11-unix -e DISPLAY=$DISPLAY -p 6080:6080 -v /run/user/1000/gdm/Xauthority:/root/.Xauthority -h $HOSTNAME twobombs/qracknet:bonsai 
 
 /me did none of the coding: just created this stack so that you don't need to - this is a work in progess
 
