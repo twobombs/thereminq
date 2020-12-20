@@ -56,6 +56,7 @@ RUN pip3 install pennylane_pq
 # node run & benchmark script, make runnable 
 COPY runcosmosdockergpu.sh /root/
 COPY run-node /root/
+COPY run-bonsai /root/
 COPY run-cosmos /root/
 COPY run-cosmos-cpu /root/
 COPY run-cosmos-gpu2 /root/
@@ -75,6 +76,7 @@ COPY run-cosmos-nbody-gpu3 /root/
 
 RUN chmod 744 /root/runcosmosdockergpu.sh
 RUN chmod 744 /root/run-node
+RUN chmod 744 /root/run-bonsai
 RUN chmod 744 /root/run-cosmos
 RUN chmod 744 /root/run-cosmos-cpu
 RUN chmod 744 /root/run-cosmos-gpu2
