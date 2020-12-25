@@ -24,7 +24,7 @@ RUN cd /qrack/include && mkdir CL && cd /var/log && mkdir qrack
 RUN cd /qrack && mkdir _build && cd _build && cmake -DENABLE_COMPLEX8=ON -DENABLE_COMPLEX_X2=ON -DQBCAPPOW=6 .. && make all && make install
 
 # BigQrack install & dependancies
-RUN cd /qrack128/include && mkdir CL && cd /var/log && mkdir qrack
+RUN cd /qrack128/include && mkdir CL
 RUN cd /qrack128 && mkdir _build && cd _build && cmake -DENABLE_COMPLEX8=OFF -DENABLE_COMPLEX_X2=ON -DQBCAPPOW=7 -DENABLE_OCL_MEM_GUARDS=OFF .. && make all && make install
 
 # install python3
