@@ -25,7 +25,7 @@ RUN cd /qrack && mkdir _build && cd _build && cmake -DENABLE_COMPLEX8=ON -DENABL
 
 # BigQrack install & dependancies
 RUN cd /qrack128/include && mkdir CL
-RUN cd /qrack128 && mkdir _build && cd _build && cmake -DENABLE_COMPLEX8=OFF -DENABLE_COMPLEX_X2=ON -DQBCAPPOW=7 -DENABLE_OCL_MEM_GUARDS=OFF .. && make all && make install
+RUN cd /qrack128 && mkdir _build && cd _build && cmake -DENABLE_COMPLEX8=OFF -DENABLE_COMPLEX_X2=ON -DQBCAPPOW=6 -DENABLE_OCL_MEM_GUARDS=OFF .. && make all && make install
 
 # install python3
 RUN apt-get install -y python3 python3-pip python3-tk libblas-dev liblapack-dev
