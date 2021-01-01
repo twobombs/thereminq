@@ -9,6 +9,7 @@ RUN cd /Bonsai/runtime && cmake -DCMAKE_CXX_COMPILER=mpicxx -DUSE_CUB=0 -DUSE_OP
 
 #install amuse
 RUN apt-get install build-essential gfortran python-dev libopenmpi-dev openmpi-bin libgsl-dev cmake libfftw3-3 libfftw3-dev libgmp3-dev libmpfr6 libmpfr-dev libhdf5-serial-dev hdf5-tools python-nose python-numpy python-setuptools python-docutils python3-h5py python-setuptools git && pip3 install mpi4py && apt clean all
+RUN apt-get install python3-venv && apt-get clean all
 RUN mkdir /Amuse && cd Amuse && pip3 install --upgrade pip && pip3 install --upgrade virtualenv && python3 -m venv Amuse-env && pip3 install numpy docutils mpi4py h5py wheel && pip install scipy astropy jupyter pandas seaborn matplotlib && pip install amuse-framework && pip install amuse
 
 EXPOSE 22 6080 8801-8811
