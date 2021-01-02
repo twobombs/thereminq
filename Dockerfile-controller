@@ -1,4 +1,4 @@
-FROM twobombs/qracknet
+FROM twobombs/qracknet:bonsai
 
 RUN apt-get update && apt-get install -y pocl-opencl-icd && apt-get clean all
 
