@@ -8,6 +8,8 @@ x0vncserver -display $DISPLAY -passwordfile /root/.vnc/passwd &
 ulimit -s unlimited
 nvidia-smi
 
+startxfce4 &
+
 cd /Bonsai/runtime && ./bonsai2_slowdust -i model3_child_compact.tipsy
 
 # tail -f /dev/null
