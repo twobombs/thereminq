@@ -1,4 +1,4 @@
-# QrackNet: Qrack, ProjectQ, SimulaQron on OpenCL and CUDA
+# QrackNet: Qrack, ProjectQ, SimulaQron on OpenCL, CUDA
 
 ![](https://img.shields.io/docker/automated/jrottenberg/ffmpeg.svg)
 
@@ -7,6 +7,8 @@
 - SimulaQron - Qbit Networking stack > https://github.com/SoftwareQuTech/SimulaQron
 - PennyLane - ProjectQ plugin > https://github.com/XanaduAI/pennylane-pq
 - Elastic Search/Lucene Interface for data interconnect
+
+Images can be run independantly but are made to work with the vQbit infrastructure HELM repo at https://github.com/twobombs/helm
 
 Build on top of the CUDA-CLuster stack, an addition to deploy-nvidia-docker
 - WebVNC, CUDA 11.0+ & OpenCL 1.2+ with NV, AMD & Intel HW support
@@ -28,4 +30,4 @@ Code from the following awesome companies and initiatives are included in this c
 
 ![](https://user-images.githubusercontent.com/12692227/57654809-61c07f00-75d5-11e9-9005-38d60d8d4db4.png)
 
-All rights belong to their respective owners.
+All rights and kudos belong to their respective owners.
