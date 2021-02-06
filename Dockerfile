@@ -6,6 +6,7 @@ RUN cp -r /qrack /qrack128
 RUN git clone --recursive https://github.com/SoftwareQuTech/SimulaQron.git
 RUN git clone --recursive https://github.com/vm6502q/ProjectQ.git
 RUN git clone --recursive https://github.com/XanaduAI/pennylane-pq.git
+RUN git clone https://github.com/twobombs/qracknet.git
 
 # install features
 RUN apt-get update && apt-get -y install build-essential cmake openssh-server wget vim-common opencl-headers curl libfreetype6-dev libboost-all-dev && apt-get clean all
