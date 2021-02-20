@@ -1,4 +1,4 @@
 FROM twobombs/qracknet
 
 EXPOSE 22 80 8801-8811
-ENTRYPOINT /root/run-qft-gpu3
+ENTRYPOINT /root/run-cosmos-multi

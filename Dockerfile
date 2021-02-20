@@ -66,19 +66,19 @@ COPY run-bonsai /root/
 COPY run-cosmos /root/
 COPY run-cosmos-cpu /root/
 COPY run-cosmos-gpu2 /root/
-COPY run-cosmos-gpu3 /root/
+COPY run-cosmos-multi /root/
 COPY run-qft /root/
 COPY run-qft-cpu /root/
 COPY run-qft-gpu2 /root/
-COPY run-qft-gpu3 /root/
+COPY run-qft-multi /root/
 COPY run-supreme /root/
 COPY run-supreme-cpu /root/
 COPY run-supreme-gpu2 /root/
-COPY run-supreme-gpu3 /root/
+COPY run-supreme-multi /root/
 COPY run-cosmos-nbody-cpu /root/
 COPY run-cosmos-nbody-gpu1 /root/
 COPY run-cosmos-nbody-gpu2 /root/
-COPY run-cosmos-nbody-gpu3 /root/
+COPY run-cosmos-nbody-multi /root/
 
 RUN chmod 744 /root/runcosmosdockergpu.sh
 RUN chmod 744 /root/run-node
@@ -86,19 +86,19 @@ RUN chmod 744 /root/run-bonsai
 RUN chmod 744 /root/run-cosmos
 RUN chmod 744 /root/run-cosmos-cpu
 RUN chmod 744 /root/run-cosmos-gpu2
-RUN chmod 744 /root/run-cosmos-gpu3
+RUN chmod 744 /root/run-cosmos-multi
 RUN chmod 744 /root/run-qft
 RUN chmod 744 /root/run-qft-cpu
 RUN chmod 744 /root/run-qft-gpu2
-RUN chmod 744 /root/run-qft-gpu3
+RUN chmod 744 /root/run-qft-multi
 RUN chmod 744 /root/run-supreme
 RUN chmod 744 /root/run-supreme-cpu
 RUN chmod 744 /root/run-supreme-gpu2
-RUN chmod 744 /root/run-supreme-gpu3
+RUN chmod 744 /root/run-supreme-multi
 RUN chmod 744 /root/run-cosmos-nbody-cpu
 RUN chmod 744 /root/run-cosmos-nbody-gpu1
 RUN chmod 744 /root/run-cosmos-nbody-gpu2
-RUN chmod 744 /root/run-cosmos-nbody-gpu3
+RUN chmod 744 /root/run-cosmos-nbody-multi
 
 #cleanup
 RUN mkdir /root/logs && mv /var/log/*.log /root/logs/
