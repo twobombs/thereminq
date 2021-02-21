@@ -22,11 +22,9 @@ echo $square
 seq 0 $square > square.dec
 printf '%08X\n' $(< square.dec) > square.hex
 
-# make xz coordinates
-# cat square.hex square.hex square.hex square.hex square.hex square.hex square.hex square.hex square.hex square.hex > square10x.hex
+# make xz coordinates and convert to hex
 for i in {1..square};do cat square.hex; done > square10x.hex
-(awk '{for(i=0; i<=square; i++)print}' square.dec) > square10z.dec
-
+(awk '{for(j=0; j<=square; j++)print}' square.dec) > square10z.dec
 printf '%08X\n' $(< square10z.dec) > square10z.hex
 
 # assemble/weave final hex, convert to bin
