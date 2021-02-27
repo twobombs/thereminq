@@ -25,15 +25,14 @@ echo $square > cube.dec
 seq 0 $square > square.dec
 printf '%08X\n' $(< square.dec) > square.hex
 
-# make xz coordinates and convert to hex, delete previous z-axis results
-touch square10z.hex
-rm square10z.hex
+# default ID is 2
+yes 02 | head -n `cat points.dec` > id.hex
 
+# make xz coordinates and convert to hex
 for i in `cat square.dec` ; do seq 1 $square | xargs -i -- echo $i; done > square10x.dec
 for i in `cat square.dec` ; do cat square.hex ; done > square10z.hex
 
 printf '%08X\n' $(< square10x.dec) > square10x.hex
-# printf '%08X\n' $(< square10z.dec) > square10z.hex
 
 # add velocity nullpointers for xyz displacements
 yes 00000000 | head -n `cat points.dec` > displacex.hex
@@ -43,7 +42,7 @@ cp displacex.hex displacez.hex
 # assemble/weave final hex, convert to bin
 # add header data in front of measured bin data
 
-paste square10x.hex measuredm.hex square10z.hex measuredq.hex displacex.hex displacey.hex displacez.hex > xyzmxyz.hex
+paste id.hex square10x.hex measuredm.hex square10z.hex measuredq.hex displacex.hex displacey.hex displacez.hex > xyzmxyz.hex
 
 cat points.hex xyzmxyz.hex > bonsai.hex
 
