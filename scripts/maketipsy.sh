@@ -4,6 +4,18 @@
 ./convert_measured_values.sh > measured.hex
 awk '{ print > (NR % 2 ? "measuredq.hex" : "measuredm.hex") }' measured.hex
 
+
+# ==== here starts tipsy special declarations ======
+
+# T = time
+echo "0000000000000000" > time.hex
+echo "00030000" > ndim.hex
+echo "00000000" > nsph.hex
+echo "00000000" > ndark.hex
+echo "00010000" > version.hex
+
+# ==== here end tipsy special declarations =========
+
 # count the total amount of lines with values
 wc -l measured.hex | tr " " "\n"| grep -v measured.hex > rows.dec
 
@@ -42,9 +54,11 @@ cp displacex.hex displacez.hex
 # assemble/weave final hex, convert to bin
 # add header data in front of measured bin data
 
-paste id.hex square10x.hex measuredm.hex square10z.hex measuredq.hex displacex.hex displacey.hex displacez.hex > xyzmxyz.hex
+paste points.hex ndim.hex ndark.hex points.hex version.hex square10x.hex measuredm.hex square10z.hex measuredq.hex displacex.hex displacey.hex displacez.hex > xyzmxyz.hex
 
-cat points.hex xyzmxyz.hex > tipsy.hex
+# add time.hex in front of header+data
+
+cat time.hex xyzmxyz.hex > tipsy.hex
 
 # convert hex string data a bin file
-xxd -r -p bonsai.hex bonsai.bin
+xxd -r -p tipsy.hex tipsy.bin
