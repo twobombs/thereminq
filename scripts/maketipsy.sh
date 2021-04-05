@@ -30,6 +30,7 @@ pointssqr=$(echo "$points" | awk '{print sqrt($1)}')
 square=$( echo $pointssqr | awk '{printf "%.0f\n", $1}')
 
 # announce and declare the cube dimensions
+cat points.dec
 echo $square "x" $square
 echo $square > cube.dec
 
