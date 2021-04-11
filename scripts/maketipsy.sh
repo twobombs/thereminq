@@ -37,6 +37,13 @@ points=$(<points.dec)
 echo "amount of measured values clipped:" $points
 echo "conversion to tipsy started....."
 
+# clip measured.hex to dim specs
+clipped=$((points * 2))
+delta=$((rows - clipped))
+head -n -$delta measured.hex > measured2.hex
+mv measured2.hex measured.hex
+wc -l measured.hex
+
 # create default array row and make it hex
 seq 0 $square > square.dec
 printf '%08X\n' $(< square.dec) > square.hex
@@ -57,6 +64,15 @@ cp displacex.hex displacez.hex
 
 # assemble/weave final hex, convert to bin
 # add header data in front of measured bin data
+
+echo " "
+wc -l square10x.hex
+wc -l measuredm.hex
+wc -l square10z.hex
+wc -l measuredm.hex
+wc -l displacex.hex
+wc -l displacey.hex
+wc -l displacez.hex
 
 paste points.hex ndim.hex ndark.hex points.hex version.hex square10x.hex measuredm.hex square10z.hex measuredq.hex displacex.hex displacey.hex displacez.hex > xyzmxyz.hex
 
