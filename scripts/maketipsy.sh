@@ -29,11 +29,14 @@ pointssqr=$(echo "$points" | awk '{print sqrt($1)}')
 square=$( echo $pointssqr | awk '{printf "%.0f\n", $1}')
 echo $square > cube.dec
 
-# announce and declare raw point and the real cube dimensions
+# announce and declare raw points
+# make real cube dimensions and convert value to hex
 echo "original amount of measured values" $points
 echo "view will be "$square "x" $square
 echo $((square * square)) > points.dec
 points=$(<points.dec)
+printf '%08X\n' $(< points.dec) > points.hex
+
 echo "amount of measured values clipped:" $points
 echo "conversion to tipsy started....."
 
@@ -50,31 +53,40 @@ printf '%08X\n' $(< square.dec) > square.hex
 
 # default ID is 2
 yes 02 | head -n `cat points.dec` > id.hex
+yes 02000000 | head -n `cat points.dec` > idlong.hex
 
 # make xz coordinates and convert to hex
 time for i in `cat square.dec` ; do seq 1 $square | xargs -i -- echo $i; done > square10x.dec
 for i in `cat square.dec` ; do cat square.hex ; done > square10z.hex
-
 printf '%08X\n' $(< square10x.dec) > square10x.hex
 
 # add velocity nullpointers for xyz displacements
 yes 00000000 | head -n `cat points.dec` > displacex.hex
 cp displacex.hex displacey.hex
 cp displacex.hex displacez.hex
+cp displacex.hex dummy.hex
 
 # assemble/weave final hex, convert to bin
 # add header data in front of measured bin data
 
 echo " "
+cat points.dec
 wc -l square10x.hex
 wc -l measuredm.hex
 wc -l square10z.hex
 wc -l measuredm.hex
+wc -l dummy.hex
+wc -l idlong.hex
 wc -l displacex.hex
 wc -l displacey.hex
 wc -l displacez.hex
 
-paste points.hex ndim.hex ndark.hex points.hex version.hex square10x.hex measuredm.hex square10z.hex measuredq.hex displacex.hex displacey.hex displacez.hex > xyzmxyz.hex
+# convert points.hex from AB to BA format
+tail -c 5 points.hex > pointsvar.hex
+head -c 4 points.hex >> pointsvar.hex
+cat pointsvar.hex |  tr -d "\n" > points.hex
+
+paste points.hex ndim.hex ndark.hex points.hex version.hex measuredq.hex square10x.hex measuredm.hex square10z.hex displacex.hex displacey.hex displacez.hex dummy.hex dummy.hex square10x.hex square10z.hex > xyzmxyz.hex
 
 # add time.hex in front of header+data
 
