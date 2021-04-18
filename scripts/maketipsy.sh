@@ -2,10 +2,9 @@
 
 # convert logfiles into ascii hex and split in q and m
 ./convert_measured_values.sh > measured.hex
-awk '{ print > (NR % 2 ? "measuredq.hex" : "measuredm.hex") }' measured.hex
+# awk '{ print > (NR % 2 ? "measuredq.hex" : "measuredm.hex") }' measured.hex
 
-
-# ==== here starts tipsy special declarations ======
+# ==== here starts tipsy header declarations ======
 
 # T = time
 echo "0000000000000000" > time.hex
@@ -45,7 +44,13 @@ clipped=$((points * 2))
 delta=$((rows - clipped))
 head -n -$delta measured.hex > measured2.hex
 mv measured2.hex measured.hex
+
+# announce result and delta
+echo $delta
 wc -l measured.hex
+
+# split in q and m results from clipped measured.hex
+awk '{ print > (NR % 2 ? "measuredq.hex" : "measuredm.hex") }' measured.hex
 
 # create default array row and make it hex
 seq 0 $square > square.dec
@@ -55,10 +60,19 @@ printf '%08X\n' $(< square.dec) > square.hex
 yes 02 | head -n `cat points.dec` > id.hex
 yes 02000000 | head -n `cat points.dec` > idlong.hex
 
-# make xz coordinates and convert to hex
+# make xz coordinates, cut offsets, convert to hex
 time for i in `cat square.dec` ; do seq 1 $square | xargs -i -- echo $i; done > square10x.dec
-for i in `cat square.dec` ; do cat square.hex ; done > square10z.hex
+head -n -$square square10x.dec > square10xdelta.dec
+mv square10xdelta.dec square10x.dec
 printf '%08X\n' $(< square10x.dec) > square10x.hex
+
+for i in `cat square.dec` ; do cat square.hex ; done > square10z.hex
+head -n -$square square10z.hex > square10zdelta.hex
+mv square10zdelta.hex square10z.hex
+head -n -$square square10z.hex > square10zdelta.hex
+mv square10zdelta.hex square10z.hex
+head -n -1 square10z.hex > square10zdelta.hex
+mv square10zdelta.hex square10z.hex
 
 # add velocity nullpointers for xyz displacements
 yes 00000000 | head -n `cat points.dec` > displacex.hex
