@@ -22,14 +22,18 @@ wc -l measured.hex | tr " " "\n"| grep -v measured.hex > rows.dec
 rows=$(<rows.dec)
 echo $(( rows / 2 )) > points.dec
 
-# dim a square by making a real sqr of the amount of points
+# dim a square by making a real sqr of the amount of points with margin
 points=$(<points.dec)
 pointssqr=$(echo "$points" | awk '{print sqrt($1)}')
+
+# integer the sqrt, subtract margin
 square=$( echo $pointssqr | awk '{printf "%.0f\n", $1}')
+margin=$(( 1 ))
+square=$((square - margin))
 echo $square > cube.dec
 
 # announce and declare raw points
-# make real cube dimensions and convert value to hex
+# make real cube dimensions and convert value to hex for header
 echo "original amount of measured values" $points
 echo "view will be "$square "x" $square
 echo $((square * square)) > points.dec
