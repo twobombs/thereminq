@@ -4,7 +4,7 @@
 
 - Qrack - Qbit OCL Hardware Emulation Stack > https://github.com/vm6502q/qrack
 - Bonsai - Stellar data visualizer for QFT data and converter > https://github.com/treecode/Bonsai
-- Elastic Search/Lucene Interface for data interconnect
+- Elastic Search/Lucene Interface for data interconnect > https://www.elastic.co/downloads/
 
 Additional Qrack plugins:
 - ProjectQ - QC Interconnect, Qrack OCL fork > https://github.com/vm6502q/ProjectQ
