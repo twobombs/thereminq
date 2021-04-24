@@ -3,10 +3,13 @@
 ![](https://img.shields.io/docker/automated/jrottenberg/ffmpeg.svg)
 
 - Qrack - Qbit OCL Hardware Emulation Stack > https://github.com/vm6502q/qrack
+- Bonsai - Stellar data visualizer for QFT data and converter > https://github.com/treecode/Bonsai
+- Elastic Search/Lucene Interface for data interconnect
+
+Additional Qrack plugins:
 - ProjectQ - QC Interconnect, Qrack OCL fork > https://github.com/vm6502q/ProjectQ
 - SimulaQron - Qbit Networking stack > https://github.com/SoftwareQuTech/SimulaQron
 - PennyLane - ProjectQ plugin > https://github.com/XanaduAI/pennylane-pq
-- Elastic Search/Lucene Interface for data interconnect
 
 Images can be run independantly but are made to work with the vQbit infrastructure HELM repo at https://github.com/twobombs/helm
 
