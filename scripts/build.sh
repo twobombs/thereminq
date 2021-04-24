@@ -26,4 +26,5 @@ docker build -t twobombs/qracknet:supreme-gpu1 -f ./Dockerfile-supreme-gpu1 .
 docker build -t twobombs/qracknet:supreme-gpu2 -f ./Dockerfile-supreme-gpu2 .
 docker build -t twobombs/qracknet:supreme-multi -f ./Dockerfile-supreme-multi .
 
+docker build -t twobombs/qracknet:unittest -f ./Dockerfile-unittest .
 docker build -t twobombs/qracknet:dummyload -f ./Dockerfile-dummyload .
