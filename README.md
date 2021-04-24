@@ -1,4 +1,4 @@
-# QrackNet: Qrack, ProjectQ, SimulaQron on OpenCL, CUDA
+# QrackNet: Qrack, Qrack, ELK, Tipsy CUDA and OpenCL
 
 ![](https://img.shields.io/docker/automated/jrottenberg/ffmpeg.svg)
 
