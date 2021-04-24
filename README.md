@@ -1,4 +1,4 @@
-# QrackNet: Qrack, Qrack, ELK, Tipsy CUDA and OpenCL
+# QrackNet: Qrack, ELK, Tipsy, CUDA and OpenCL
 
 ![](https://img.shields.io/docker/automated/jrottenberg/ffmpeg.svg)
 
