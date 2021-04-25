@@ -104,7 +104,7 @@ tail -c 5 points.hex > pointsvar.hex
 head -c 4 points.hex >> pointsvar.hex
 cat pointsvar.hex |  tr -d "\n" > points.hex
 
-paste points.hex ndim.hex ndark.hex points.hex version.hex measuredq.hex square10x.hex measuredm.hex square10z.hex displacex.hex displacey.hex displacez.hex dummy.hex dummy.hex square10x.hex square10z.hex > xyzmxyz.hex
+paste points.hex ndim.hex nsph.hex ndark.hex points.hex version.hex measuredq.hex square10x.hex measuredm.hex square10z.hex displacex.hex displacey.hex displacez.hex dummy.hex dummy.hex square10x.hex square10z.hex > xyzmxyz.hex
 
 # add time.hex in front of header+data
 
