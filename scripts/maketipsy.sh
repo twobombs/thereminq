@@ -65,7 +65,7 @@ yes 02 | head -n `cat points.dec` > id.hex
 yes 02000000 | head -n `cat points.dec` > idlong.hex
 
 # make xz coordinates, cut offsets, convert to hex
-time for i in `cat square.dec` ; do seq 1 $square | xargs -i -- echo $i; done > square10x.dec
+for i in `cat square.dec` ; do yes $i | head -n $square; done > square10x.dec
 head -n -$square square10x.dec > square10xdelta.dec
 mv square10xdelta.dec square10x.dec
 printf '%08X\n' $(< square10x.dec) > square10x.hex
