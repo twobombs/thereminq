@@ -10,3 +10,4 @@ RUN (cd /usr/local/cuda/samples/1_Utilities/p2pBandwidthLatencyTest && make)
 RUN (cd /usr/local/cuda/samples/1_Utilities/topologyQuery && make)
 RUN (cd /usr/local/cuda/samples/5_Simulations/nbody && make)
 
+RUN apt install beignet-opencl-icd && apt clean all
