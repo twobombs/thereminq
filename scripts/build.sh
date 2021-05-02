@@ -1,6 +1,9 @@
 # build qracknet image and its required services
 
 # docker build --no-cache -t twobombs/qracknet:latest ./
+
+cd .. 
+
 docker build -t twobombs/qracknet:latest ./
 
 docker build -t twobombs/qracknet:controller -f ./Dockerfile-controller .
@@ -28,4 +31,5 @@ docker build -t twobombs/qracknet:supreme-multi -f ./Dockerfile-supreme-multi .
 
 docker build -t twobombs/qracknet:unittest -f ./Dockerfile-unittest .
 docker build -t twobombs/qracknet:dummyload -f ./Dockerfile-dummyload .
+docker build -t twobombs/qracknet:bonsai -f ./Dockerfile-bonsai .
 docker build -t twobombs/qracknet:dummyload -f ./Dockerfile-tipsydev .
