@@ -28,3 +28,4 @@ docker build -t twobombs/qracknet:supreme-multi -f ./Dockerfile-supreme-multi .
 
 docker build -t twobombs/qracknet:unittest -f ./Dockerfile-unittest .
 docker build -t twobombs/qracknet:dummyload -f ./Dockerfile-dummyload .
+docker build -t twobombs/qracknet:dummyload -f ./Dockerfile-tipsydev .
