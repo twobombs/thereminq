@@ -2,7 +2,7 @@ FROM twobombs/qracknet
 
 # install bonsai
 RUN apt update
-RUN apt install nvidia-cuda-toolkit cmake-curses-gui && apt clean all
+RUN apt install cmake-curses-gui && apt clean all
 RUN git clone https://github.com/treecode/Bonsai.git
 RUN cd /Bonsai/runtime/lib && mv linux linux_temp && mv linux_fpic_glew linux
 RUN cd /Bonsai/runtime && cmake -DCMAKE_CXX_COMPILER=mpicxx -DUSE_CUB=0 -DUSE_OPENGL=1 -DCUDA_CUDART_LIBRARY=/usr/local/cuda/lib64/libcudart.so && make && cd /Bonsai/tools/IO && make
