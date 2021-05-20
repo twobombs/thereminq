@@ -112,6 +112,9 @@ cat time.hex xyzmxyz.hex > tipsy.hex
 
 # convert hex string data a bin file
 xxd -r -p tipsy.hex tipsy.bin
+# aaaand convert to little indian
+hexdump -v -e '1/4 "%08x"' -e '"\n"' tipsy.bin | xxd -r -p >tipsy_hexdump.bin
+
 
 echo " "
 echo "done"
