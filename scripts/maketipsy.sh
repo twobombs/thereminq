@@ -100,9 +100,9 @@ wc -l displacey.hex
 wc -l displacez.hex
 
 # convert points.hex from AB to BA format
-tail -c 5 points.hex > pointsvar.hex
-head -c 4 points.hex >> pointsvar.hex
-cat pointsvar.hex |  tr -d "\n" > points.hex
+# tail -c 5 points.hex > pointsvar.hex
+# head -c 4 points.hex >> pointsvar.hex
+# cat pointsvar.hex |  tr -d "\n" > points.hex
 
 paste points.hex ndim.hex nsph.hex ndark.hex points.hex version.hex measuredq.hex square10x.hex measuredm.hex square10z.hex displacex.hex displacey.hex displacez.hex dummy.hex dummy.hex square10x.hex square10z.hex > xyzmxyz.hex
 
