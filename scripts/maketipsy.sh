@@ -123,12 +123,7 @@ wc -l displacey.hex
 wc -l displacez.hex
 
 # assemble/weave final hex, convert to bin
-# add header data in front of measured bin data
-
-paste points.hex ndim.hex nsph.hex ndark.hex points.hex version.hex measuredq.hex square10x.hex measuredm.hex square10z.hex displacex.hex displacey.hex displacez.hex dummy.hex dummy.hex square10x.hex square10z.hex > xyzmxyz.hex
-
-# add time.hex in front of header+data
-cat time.hex xyzmxyz.hex > tipsy.hex
+paste time.hex points.hex ndim.hex nsph.hex ndark.hex points.hex version.hex measuredq.hex square10x.hex measuredm.hex square10z.hex displacex.hex displacey.hex displacez.hex dummy.hex dummy.hex square10x.hex square10z.hex > tipsy.hex 
 
 # convert hex string data a bin file
 xxd -r -p tipsy.hex tipsy.bin
