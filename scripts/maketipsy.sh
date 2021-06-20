@@ -115,7 +115,7 @@ cat points.dec
 wc -l square10x.hex
 wc -l measuredm.hex
 wc -l square10z.hex
-wc -l measuredm.hex
+wc -l measuredq.hex
 wc -l dummy.hex
 wc -l idlong.hex
 wc -l displacex.hex
