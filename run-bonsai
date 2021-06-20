@@ -12,4 +12,4 @@ startxfce4 &
 
 cd /Bonsai/runtime && ./bonsai2_slowdust -i model3_child_compact.tipsy
 
-# tail -f /dev/null
+tail -f /dev/null
