@@ -8,6 +8,7 @@ RUN git clone --recursive https://github.com/vm6502q/ProjectQ.git
 RUN git clone --recursive https://github.com/XanaduAI/pennylane-pq.git
 RUN git clone https://github.com/twobombs/qracknet.git
 RUN git clone https://github.com/N-BodyShop/tipsy.git
+RUN git clone https://github.com/LeventErkok/crackNum.git
 
 # install features
 RUN apt-get update && apt-get -y install build-essential cmake openssh-server wget vim-common opencl-headers curl libfreetype6-dev libboost-all-dev && apt-get clean all
@@ -35,6 +36,11 @@ RUN pip3 install -U setuptools
 # Set a UTF-8 locale - this is needed for some python packages to play nice
 RUN apt-get -y install language-pack-en
 ENV LANG="en_US.UTF-8"
+
+# install haskell, crackNum + dependancies
+RUN apt-get install z3 
+RUN curl -sSL https://get.haskellstack.org/ | sh
+RUN cd crackNum && stack setup && stack build && stack init && stack build
 
 # ProjectQ install
 # pybind11 workaround
