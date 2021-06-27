@@ -40,7 +40,7 @@ ENV LANG="en_US.UTF-8"
 # install haskell, crackNum + dependancies
 RUN apt-get install z3 
 RUN curl -sSL https://get.haskellstack.org/ | sh
-RUN cd crackNum && stack setup && stack init && stack build
+RUN cd crackNum && stack path --local-bin && stack setup && stack init && stack build && stack install && stack clean
 
 # ProjectQ install
 # pybind11 workaround
