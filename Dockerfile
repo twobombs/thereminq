@@ -37,8 +37,8 @@ RUN pip3 install -U setuptools
 RUN apt-get -y install language-pack-en
 ENV LANG="en_US.UTF-8"
 
-# install haskell, crackNum + dependancies
-RUN apt-get install z3 
+# install haskell, z3, num-utils, crackNum + dependancies
+RUN apt-get install z3 num-utils
 RUN curl -sSL https://get.haskellstack.org/ | sh
 RUN cd crackNum && stack path --local-bin && stack setup && stack init && stack build && stack install && stack clean
 
