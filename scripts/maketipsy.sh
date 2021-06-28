@@ -110,6 +110,9 @@ cp displacex.hex displacey.hex
 cp displacex.hex displacez.hex
 cp displacex.hex dummy.hex
 
+# convert relevant rows to FloatHEX and fork
+for a in $(< measured.dec); do ./root/.local/bin/crackNum -f sp $a | grep "Hex layout" | tail -c 10 | tr -d ' ' ; done > measured.flex &
+
 echo "size checks:"
 cat points.dec
 wc -l square10x.hex
