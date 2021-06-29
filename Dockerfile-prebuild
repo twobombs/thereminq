@@ -1,0 +1,8 @@
+FROM twobombs/qracknet
+
+RUN tar -xf /qracknet/qrack-cosmos.tar.gz -C /var/og/
+RUN ./qracknet/scripts/maketipsy.sh
+
+EXPOSE 22 80 8801-8811
+
+ENTRYPOINT /root/run-node
