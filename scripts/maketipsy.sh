@@ -62,18 +62,23 @@ printf '%08X\n' $(< points.dec) > points.hex
 echo "amount of measured values clipped:" $points
 echo "conversion to tipsy started....."
 
-# clip measured.hex to dim specs
+# clip measured.hex and measured.dec to dim specs
 clipped=$((points * 2))
 delta=$((rows - clipped))
+# hex part
 head -n -$delta measured.hex > measured2.hex
 mv measured2.hex measured.hex
+# dec part
+head -n -$delta measured.dec > measured2.dec
+mv measured2.dec measured.dec
 
 # announce result and delta
 echo "clipped values:" $delta
 wc -l measured.hex
 
-# split in q and m results from clipped measured.hex
+# split in q and m results from clipped measured.hex and measured.dec
 awk '{ print > (NR % 2 ? "measuredq.hex" : "measuredm.hex") }' measured.hex
+awk '{ print > (NR % 2 ? "measuredq.dec" : "measuredm.dec") }' measured.dec
 
 # create default array row and make it hex
 seq 0 $square > square.dec
@@ -126,13 +131,13 @@ while read number; do echo "ibase=16; $number" | bc; done < square10z.hex > squa
 for a in $(< square10z.dec); do /root/.local/bin/crackNum -f sp $a | grep "Hex layout" | tail -c 10 | tr -d ' ' ; done > square10z.flex &
 echo "forked 3 of 5 "
 
-echo "prepare dataset "
-while read number; do echo "ibase=16; $number" | bc; done < measuredq.hex > measuredq.dec
+# echo "prepare dataset "
+# while read number; do echo "ibase=16; $number" | bc; done < measuredq.hex > measuredq.dec
 for a in $(< measuredq.dec); do /root/.local/bin/crackNum -f sp $a | grep "Hex layout" | tail -c 10 | tr -d ' ' ; done > measuredq.flex &
 echo "forked 4 of 5 "
 
-echo "prepare dataset - no fork"
-while read number; do echo "ibase=16; $number" | bc; done < measurem.hex > measuredm.dec
+echo "no fork"
+# while read number; do echo "ibase=16; $number" | bc; done < measurem.hex > measuredm.dec
 for a in $(< measuredm.dec); do /root/.local/bin/crackNum -f sp $a | grep "Hex layout" | tail -c 10 | tr -d ' ' ; done > measuredm.flex
 echo " last one done - 5 of 5 "
 
