@@ -100,7 +100,8 @@ mv square10xdelta.dec square10x.dec
 # convert x-coordinates outcome to hex
 printf '%08X\n' $(< square10x.dec) > square10x.hex
 
-# make z coordinates in hex on tipsy scale and cut it to size
+# make z coordinates in hex and dec on tipsy scale and cut it to size
+# hex
 for i in `cat square.dec` ; do cat squaretipsy.hex ; done > square10z.hex
 head -n -$square square10z.hex > square10zdelta.hex
 mv square10zdelta.hex square10z.hex
@@ -108,6 +109,17 @@ head -n -$square square10z.hex > square10zdelta.hex
 mv square10zdelta.hex square10z.hex
 head -n -1 square10z.hex > square10zdelta.hex
 mv square10zdelta.hex square10z.hex
+
+# dec: first convert
+while read number; do echo "ibase=16; $number" | bc; done < squaretipsy.hex > squaretipsy.dec
+
+for i in `cat square.dec` ; do cat squaretipsy.dec ; done > square10z.dec
+head -n -$square square10z.dec > square10zdelta.dec
+mv square10zdelta.dec square10z.dec
+head -n -$square square10z.dec > square10zdelta.dec
+mv square10zdelta.dec square10z.dec
+head -n -1 square10z.dec > square10zdelta.dec
+mv square10zdelta.dec square10z.dec
 
 # add velocity nullpointers for xyz displacements
 yes 00000000 | head -n `cat points.dec` > displacex.hex
@@ -121,32 +133,32 @@ echo "float conversion started"
 for a in $(< square10x.dec); do /root/.local/bin/crackNum -f sp $a | grep "Hex layout" | tail -c 10 | tr -d ' ' ; done > square10x.flex &
 echo "forked 1 of 5 "
 
-echo "prepare dataset "
-while read number; do echo "ibase=16; $number" | bc; done < squaretipsy.hex > squaretipsy.dec
 for a in $(< squaretipsy.dec); do /root/.local/bin/crackNum -f sp $a | grep "Hex layout" | tail -c 10 | tr -d ' ' ; done > squaretipsy.flex &
 echo "forked 2 of 5 "
 
-echo "prepare dataset "
-while read number; do echo "ibase=16; $number" | bc; done < square10z.hex > square10z.dec
 for a in $(< square10z.dec); do /root/.local/bin/crackNum -f sp $a | grep "Hex layout" | tail -c 10 | tr -d ' ' ; done > square10z.flex &
 echo "forked 3 of 5 "
 
-# echo "prepare dataset "
-# while read number; do echo "ibase=16; $number" | bc; done < measuredq.hex > measuredq.dec
 for a in $(< measuredq.dec); do /root/.local/bin/crackNum -f sp $a | grep "Hex layout" | tail -c 10 | tr -d ' ' ; done > measuredq.flex &
 echo "forked 4 of 5 "
 
-echo "no fork"
-# while read number; do echo "ibase=16; $number" | bc; done < measurem.hex > measuredm.dec
+echo "no fork on 5"
 for a in $(< measuredm.dec); do /root/.local/bin/crackNum -f sp $a | grep "Hex layout" | tail -c 10 | tr -d ' ' ; done > measuredm.flex
 echo " last one done - 5 of 5 "
 
 echo "size checks:"
 cat points.dec
+
 wc -l square10x.hex
 wc -l measuredm.hex
 wc -l square10z.hex
 wc -l measuredq.hex
+
+wc -l square10x.flex
+wc -l measuredm.flex
+wc -l square10z.flex
+wc -l measuredq.flex
+
 wc -l dummy.hex
 wc -l idlong.hex
 wc -l displacex.hex
