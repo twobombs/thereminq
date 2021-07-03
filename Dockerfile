@@ -9,6 +9,7 @@ RUN git clone --recursive https://github.com/XanaduAI/pennylane-pq.git
 RUN git clone https://github.com/twobombs/qracknet.git
 RUN git clone https://github.com/N-BodyShop/tipsy.git
 RUN git clone https://github.com/LeventErkok/crackNum.git
+RUN git clone https://github.com/tycho/nbody.git
 
 # install features
 RUN apt-get update && apt-get -y install build-essential cmake openssh-server wget vim-common opencl-headers curl libfreetype6-dev libboost-all-dev && apt-get clean all
