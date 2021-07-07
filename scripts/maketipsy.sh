@@ -130,22 +130,22 @@ cp displacex.hex dummy.hex
 # convert relevant rows to FloatHEX and fork
 echo "float conversion started"
 
-for a in $(< measuredm.dec); do /root/.local/bin/crackNum -f sp $a ; done > measuredm.flex &
+for a in $(< measuredm.dec); do /root/.local/bin/crackNum -f sp $a | grep "Hex layout" ; done > measuredm.flex &
 echo "forked 1 of 5 "
 
-for a in $(< squaretipsy.dec); do /root/.local/bin/crackNum -f sp $a ; done > squaretipsy.flex &
+for a in $(< squaretipsy.dec); do /root/.local/bin/crackNum -f sp $a | grep "Hex layout" ; done > squaretipsy.flex &
 echo "forked 2 of 5 "
 
-for a in $(< square10z.dec); do /root/.local/bin/crackNum -f sp $a ; done > square10z.flex &
+for a in $(< square10z.dec); do /root/.local/bin/crackNum -f sp $a | grep "Hex layout" ; done > square10z.flex &
 echo "forked 3 of 5 "
 
-for a in $(< measuredq.dec); do /root/.local/bin/crackNum -f sp $a ; done > measuredq.flex &
+for a in $(< measuredq.dec); do /root/.local/bin/crackNum -f sp $a | grep "Hex layout" ; done > measuredq.flex &
 echo "forked 4 of 5 "
 
 echo "no fork on 5"
 
 # watch -n1 ./sizing.sh &
-for a in $(< square10x.dec); do /root/.local/bin/crackNum -f sp $a ; done > square10x.flex
+for a in $(< square10x.dec); do /root/.local/bin/crackNum -f sp $a | grep "Hex layout" ; done > square10x.flex
 
 echo "last one done - 5 of 5 -"
 echo  "20 secs for tasks to finish"
