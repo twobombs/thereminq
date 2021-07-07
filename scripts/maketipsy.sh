@@ -130,7 +130,7 @@ cp displacex.hex dummy.hex
 # convert relevant rows to FloatHEX and fork
 echo "float conversion started"
 
-for a in $(< square10x.dec); do /root/.local/bin/crackNum -f sp $a ; done > square10x.flex &
+for a in $(< measuredm.dec); do /root/.local/bin/crackNum -f sp $a ; done > measuredm.flex &
 echo "forked 1 of 5 "
 
 for a in $(< squaretipsy.dec); do /root/.local/bin/crackNum -f sp $a ; done > squaretipsy.flex &
@@ -145,9 +145,11 @@ echo "forked 4 of 5 "
 echo "no fork on 5"
 
 # watch -n1 ./sizing.sh &
+for a in $(< square10x.dec); do /root/.local/bin/crackNum -f sp $a ; done > square10x.flex
 
-for a in $(< measuredm.dec); do /root/.local/bin/crackNum -f sp $a ; done > measuredm.flex
-echo " last one done - 5 of 5 "
+echo "last one done - 5 of 5 -"
+echo  "20 secs for tasks to finish"
+sleep 20
 
 # conversion of raw crackNum output to hex in fork
 echo "filter to fHEX"
