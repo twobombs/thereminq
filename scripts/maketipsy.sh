@@ -172,6 +172,11 @@ wc -l measuredm.flex
 wc -l square10z.flex
 wc -l measuredq.flex
 
+wc -l square10x.fhex
+wc -l measuredm.fhex
+wc -l square10z.fhex
+wc -l measuredq.fhex
+
 wc -l dummy.hex
 wc -l idlong.hex
 wc -l displacex.hex
@@ -181,7 +186,13 @@ wc -l displacez.hex
 # assemble/weave final hex, convert to bin
 paste time.hex points.hex ndim.hex nsph.hex ndark.hex points.hex version.hex measuredq.hex square10x.hex measuredm.hex square10z.hex displacex.hex displacey.hex displacez.hex dummy.hex dummy.hex square10x.hex square10z.hex > tipsy.hex 
 
-# convert hex string data a bin file
+# assemble/weave final float hex, convert to bin
+paste time.hex points.hex ndim.hex nsph.hex ndark.hex points.hex version.hex measuredq.fhex square10x.fhex measuredm.fhex square10z.fhex displacex.hex displacey.hex displacez.hex dummy.hex dummy.hex square10x.hex square10z.hex > tipsy-float.hex 
+
+# convert hex string data as a bin file
+xxd -r -p tipsy-float.hex tipsy-float.bin
+
+# convert hex string data as a bin file
 xxd -r -p tipsy.hex tipsy.bin
 # aaaand convert to little indian
 hexdump -v -e '1/4 "%08x"' -e '"\n"' tipsy.bin | xxd -r -p >tipsy_hexdump.bin
