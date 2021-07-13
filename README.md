@@ -16,7 +16,7 @@ Additional Qrack plugins:
 Images can be run independantly but are made to work with the vQbit infrastructure HELM repo at https://github.com/twobombs/helm
 
 Build on top of the CUDA-CLuster stack, an addition to deploy-nvidia-docker
-- WebVNC, CUDA 11.0+ & OpenCL 1.2+ with NV, AMD & Intel HW support
+- WebVNC, CUDA 11.2+ & OpenCL 1.2+ with NV, AMD & Intel HW support
 
 Deploy single instances of QrackNet worker images by directly invoking docker worker images or deploy on your favorite orchestrator
 - docker run -d --mount type=bind,source=/var/log/qrack,target=/var/log/qrack twobombs/qracknet:supreme-cpu
