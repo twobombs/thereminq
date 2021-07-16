@@ -1,6 +1,6 @@
 FROM twobombs/qracknet:controller
 
-ADD qrack-cosmos.tar.gz /var/log/
+ADD configfiles/qrack-cosmos.tar.gz /var/log/
 
 EXPOSE 22 80 8801-8811
 ENTRYPOINT /root/run-node

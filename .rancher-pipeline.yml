@@ -1,9 +1,0 @@
-stages:
-- name: qracknet
-  steps:
-  - publishImageConfig:
-      dockerfilePath: ./Dockerfile
-      buildContext: .
-      tag: qracknet-localbuild
-timeout: 60
-notification: {}

@@ -18,8 +18,8 @@ RUN wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo apt-key
 RUN apt-get install apt-transport-https
 RUN echo "deb https://artifacts.elastic.co/packages/7.x/apt stable main" | tee -a /etc/apt/sources.list.d/elastic-7.x.list
 RUN apt-get update && apt-get install metricbeat filebeat auditbeat && filebeat modules enable elasticsearch && filebeat modules enable system && filebeat modules enable osquery
-COPY metricbeat.yml /etc/metricbeat/
-COPY filebeat.yml /etc/filebeat/filebeat.yml
+COPY miscfiles/metricbeat.yml /etc/metricbeat/
+COPY miscfiles/filebeat.yml /etc/filebeat/filebeat.yml
 # COPY auditbeat.yml /etc/auditbeat/
 
 # Qrack install & dependancies 
@@ -67,25 +67,25 @@ RUN pip3 install pennylane_pq
 # RUN pip3 install qiskit
 
 # node run & benchmark script, make runnable 
-COPY runcosmosdockergpu.sh /root/
-COPY run-node /root/
-COPY run-bonsai /root/
-COPY run-cosmos /root/
-COPY run-cosmos-cpu /root/
-COPY run-cosmos-gpu2 /root/
-COPY run-cosmos-multi /root/
-COPY run-qft /root/
-COPY run-qft-cpu /root/
-COPY run-qft-gpu2 /root/
-COPY run-qft-multi /root/
-COPY run-supreme /root/
-COPY run-supreme-cpu /root/
-COPY run-supreme-gpu2 /root/
-COPY run-supreme-multi /root/
-COPY run-cosmos-nbody-cpu /root/
-COPY run-cosmos-nbody-gpu1 /root/
-COPY run-cosmos-nbody-gpu2 /root/
-COPY run-cosmos-nbody-multi /root/
+COPY runscripts/runcosmosdockergpu.sh /root/
+COPY runscripts/run-node /root/
+COPY runscripts/run-bonsai /root/
+COPY runscripts/run-cosmos /root/
+COPY runscripts/run-cosmos-cpu /root/
+COPY runscripts/run-cosmos-gpu2 /root/
+COPY runscripts/run-cosmos-multi /root/
+COPY runscripts/run-qft /root/
+COPY runscripts/run-qft-cpu /root/
+COPY runscripts/run-qft-gpu2 /root/
+COPY runscripts/run-qft-multi /root/
+COPY runscripts/run-supreme /root/
+COPY runscripts/run-supreme-cpu /root/
+COPY runscripts/run-supreme-gpu2 /root/
+COPY runscripts/run-supreme-multi /root/
+COPY runscripts/run-cosmos-nbody-cpu /root/
+COPY runscripts/run-cosmos-nbody-gpu1 /root/
+COPY runscripts/run-cosmos-nbody-gpu2 /root/
+COPY runscripts/run-cosmos-nbody-multi /root/
 
 RUN chmod 744 /root/runcosmosdockergpu.sh
 RUN chmod 744 /root/run-node
