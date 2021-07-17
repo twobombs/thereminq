@@ -18,8 +18,8 @@ RUN wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo apt-key
 RUN apt-get install apt-transport-https
 RUN echo "deb https://artifacts.elastic.co/packages/7.x/apt stable main" | tee -a /etc/apt/sources.list.d/elastic-7.x.list
 RUN apt-get update && apt-get install metricbeat filebeat auditbeat && filebeat modules enable elasticsearch && filebeat modules enable system && filebeat modules enable osquery
-COPY miscfiles/metricbeat.yml /etc/metricbeat/
-COPY miscfiles/filebeat.yml /etc/filebeat/filebeat.yml
+COPY configfiles/metricbeat.yml /etc/metricbeat/
+COPY configfiles/filebeat.yml /etc/filebeat/filebeat.yml
 # COPY auditbeat.yml /etc/auditbeat/
 
 # Qrack install & dependancies 
