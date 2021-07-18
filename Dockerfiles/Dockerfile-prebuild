@@ -1,6 +1,6 @@
 FROM twobombs/qracknet
 
-RUN tar -xf /qracknet/qrack-cosmos.tar.gz -C /var/log/
+RUN tar -xf /qracknet/miscfiles/qrack-cosmos.tar.gz -C /var/log/
 RUN apt install time
 RUN cat /proc/cpuinfo > /qracknet/scripts/cpuinfo.txt
 RUN cd /qracknet/scripts && /usr/bin/time ./maketipsy.sh
