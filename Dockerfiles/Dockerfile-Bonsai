@@ -1,4 +1,4 @@
-FROM twobombs/qracknet
+FROM twobombs/qracknet:prebuild
 
 # install bonsai
 RUN apt update
