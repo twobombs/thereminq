@@ -189,10 +189,12 @@ paste time.hex points.hex ndim.hex nsph.hex ndark.hex points.hex version.hex mea
 # assemble/weave final float hex, convert to bin
 paste time.hex points.hex ndim.hex nsph.hex ndark.hex points.hex version.hex measuredq.fhex square10x.fhex measuredm.fhex square10z.fhex displacex.hex displacey.hex displacez.hex dummy.hex dummy.hex square10x.hex square10z.hex > tipsy-float.hex 
 
-# convert hex string data as a bin file
+# convert float hex string data as a bin file
 xxd -r -p tipsy-float.hex tipsy-float.bin
+# aaaand convert to little indian
+hexdump -v -e '1/4 "%08x"' -e '"\n"' tipsy-float.bin | xxd -r -p >tipsy-float_hexdump.bin
 
-# convert hex string data as a bin file
+# convert int hex string data as a bin file
 xxd -r -p tipsy.hex tipsy.bin
 # aaaand convert to little indian
 hexdump -v -e '1/4 "%08x"' -e '"\n"' tipsy.bin | xxd -r -p >tipsy_hexdump.bin
