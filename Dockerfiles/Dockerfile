@@ -3,13 +3,7 @@ FROM twobombs/cudacluster
 # clone repos
 RUN git clone --recursive https://github.com/vm6502q/qrack.git
 RUN cp -r /qrack /qrack128
-RUN git clone --recursive https://github.com/SoftwareQuTech/SimulaQron.git
-RUN git clone --recursive https://github.com/vm6502q/ProjectQ.git
-RUN git clone --recursive https://github.com/XanaduAI/pennylane-pq.git
-RUN git clone https://github.com/twobombs/qracknet.git
-RUN git clone https://github.com/N-BodyShop/tipsy.git
-RUN git clone https://github.com/LeventErkok/crackNum.git
-RUN git clone https://github.com/pnnl/QASMBench.git
+RUN git clone --recursive https://github.com/SoftwareQuTech/SimulaQron.git && git clone --recursive https://github.com/vm6502q/ProjectQ.git && git clone --recursive https://github.com/XanaduAI/pennylane-pq.git && git clone https://github.com/twobombs/qracknet.git && git clone https://github.com/N-BodyShop/tipsy.git && git clone https://github.com/LeventErkok/crackNum.git && git clone https://github.com/pnnl/QASMBench.git
 
 # install features
 RUN apt-get update && apt-get -y install build-essential cmake openssh-server wget vim-common opencl-headers curl libfreetype6-dev libboost-all-dev && apt-get clean all
@@ -24,16 +18,13 @@ COPY configfiles/filebeat.yml /etc/filebeat/filebeat.yml
 # COPY auditbeat.yml /etc/auditbeat/
 
 # Qrack install & dependancies 
-RUN cd /qrack/include && mkdir CL && cd /var/log && mkdir qrack
-RUN cd /qrack && mkdir _build && cd _build && cmake -DFPPOW=5 -DUINTPOW=5 -DQBCAPPOW=5 -DENABLE_COMPLEX_X2=ON -DENABLE_OCL_MEM_GUARDS=OFF .. && make all && make install
+RUN cd /qrack/include && mkdir CL && cd /var/log && mkdir qrack && cd /qrack && mkdir _build && cd _build && cmake -DFPPOW=5 -DUINTPOW=5 -DQBCAPPOW=5 -DENABLE_COMPLEX_X2=ON -DENABLE_OCL_MEM_GUARDS=OFF .. && make all && make install
 
 # BigQrack install & dependancies
-RUN cd /qrack128/include && mkdir CL
-RUN cd /qrack128 && mkdir _build && cd _build && cmake -DFPPOW=6 -DUINTPOW=6 -DQBCAPPOW=6 -DENABLE_OCL_MEM_GUARDS=OFF .. && make all && make install
+RUN cd /qrack128/include && mkdir CL && cd /qrack128 && mkdir _build && cd _build && cmake -DFPPOW=6 -DUINTPOW=6 -DQBCAPPOW=6 -DENABLE_OCL_MEM_GUARDS=OFF .. && make all && make install
 
 # install python3
-RUN apt-get install -y python3 python3-pip python3-tk libblas-dev liblapack-dev
-RUN pip3 install -U setuptools
+RUN apt-get install -y python3 python3-pip python3-tk libblas-dev liblapack-dev && pip3 install -U setuptools
 # Set a UTF-8 locale - this is needed for some python packages to play nice
 RUN apt-get -y install language-pack-en
 ENV LANG="en_US.UTF-8"
@@ -69,44 +60,9 @@ RUN pip3 install qiskit
 
 # node run & benchmark script, make runnable 
 COPY runscripts/runcosmosdockergpu.sh /root/
-COPY runscripts/run-node /root/
-COPY runscripts/run-bonsai /root/
-COPY runscripts/run-cosmos /root/
-COPY runscripts/run-cosmos-cpu /root/
-COPY runscripts/run-cosmos-gpu2 /root/
-COPY runscripts/run-cosmos-multi /root/
-COPY runscripts/run-qft /root/
-COPY runscripts/run-qft-cpu /root/
-COPY runscripts/run-qft-gpu2 /root/
-COPY runscripts/run-qft-multi /root/
-COPY runscripts/run-supreme /root/
-COPY runscripts/run-supreme-cpu /root/
-COPY runscripts/run-supreme-gpu2 /root/
-COPY runscripts/run-supreme-multi /root/
-COPY runscripts/run-cosmos-nbody-cpu /root/
-COPY runscripts/run-cosmos-nbody-gpu1 /root/
-COPY runscripts/run-cosmos-nbody-gpu2 /root/
-COPY runscripts/run-cosmos-nbody-multi /root/
+COPY runscripts/run-* /root/
 
-RUN chmod 744 /root/runcosmosdockergpu.sh
-RUN chmod 744 /root/run-node
-RUN chmod 744 /root/run-bonsai
-RUN chmod 744 /root/run-cosmos
-RUN chmod 744 /root/run-cosmos-cpu
-RUN chmod 744 /root/run-cosmos-gpu2
-RUN chmod 744 /root/run-cosmos-multi
-RUN chmod 744 /root/run-qft
-RUN chmod 744 /root/run-qft-cpu
-RUN chmod 744 /root/run-qft-gpu2
-RUN chmod 744 /root/run-qft-multi
-RUN chmod 744 /root/run-supreme
-RUN chmod 744 /root/run-supreme-cpu
-RUN chmod 744 /root/run-supreme-gpu2
-RUN chmod 744 /root/run-supreme-multi
-RUN chmod 744 /root/run-cosmos-nbody-cpu
-RUN chmod 744 /root/run-cosmos-nbody-gpu1
-RUN chmod 744 /root/run-cosmos-nbody-gpu2
-RUN chmod 744 /root/run-cosmos-nbody-multi
+RUN chmod 744 /root/runcosmosdockergpu.sh && chmod 744 /root/run-*
 
 #cleanup
 RUN mkdir /root/logs && mv /var/log/*.log /root/logs/
