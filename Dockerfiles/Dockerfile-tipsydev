@@ -1,4 +1,4 @@
 FROM twobombs/qracknet:controller
 
-RUN apt-get update && apt-get install -y cuda-samples-11-2
+RUN apt-get update && apt-get install -y cuda-samples-11-2 && apt clean all
 RUN apt install beignet-opencl-icd && apt clean all
