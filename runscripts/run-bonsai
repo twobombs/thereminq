@@ -10,6 +10,6 @@ nvidia-smi
 
 startxfce4 &
 
-cd /Bonsai/runtime && ./bonsai2_slowdust -i model3_child_compact.tipsy
+cd /Bonsai/runtime && ./bonsai2_slowdust -i /qracknet/buildscripts/tipsy-float_hexdump.bin
 
 tail -f /dev/null
