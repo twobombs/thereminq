@@ -7,6 +7,9 @@ RUN git clone https://github.com/treecode/Bonsai.git
 RUN cd /Bonsai/runtime/lib && mv linux linux_temp && mv linux_fpic_glew linux
 RUN cd /Bonsai/runtime && cmake -DCMAKE_CXX_COMPILER=mpicxx -DUSE_CUB=0 -DUSE_OPENGL=1 -DCUDA_CUDART_LIBRARY=/usr/local/cuda/lib64/libcudart.so && make && cd /Bonsai/tools/IO && make
 
+# add demo data
+RUN tar -xf /qracknet/miscfiles/qrack-cosmos.tar.gz -C /var/log/
+
 #install amuse
 RUN apt-get install build-essential gfortran python-dev libopenmpi-dev openmpi-bin libgsl-dev cmake libfftw3-3 libfftw3-dev libgmp3-dev libmpfr6 libmpfr-dev libhdf5-serial-dev hdf5-tools python-nose python-numpy python-setuptools python-docutils python3-h5py python-setuptools git && pip3 install mpi4py && apt clean all
 RUN apt-get install python3-venv && apt-get clean all
