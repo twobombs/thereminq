@@ -58,6 +58,9 @@ RUN pip3 install pennylane_pq
 # Install Qiskit
 RUN pip3 install qiskit
 
+# Install pyqrack
+RUN pip3 install pyqrack
+
 # node run & benchmark script, make runnable 
 COPY runscripts/runcosmosdockergpu.sh /root/
 COPY runscripts/run-* /root/
