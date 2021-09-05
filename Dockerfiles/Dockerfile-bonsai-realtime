@@ -1,4 +1,6 @@
 FROM twobombs/qracknet:bonsai
 
+RUN rm /Bonsai/images/*
+
 EXPOSE 22 80 8801-8811
 ENTRYPOINT /root/run-bonsai-realtime
