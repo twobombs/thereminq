@@ -1,0 +1,13 @@
+#!/bin/bash
+
+rm /tmp/.X0-lock && mv /var/log/*.log /root/logs/
+
+x0vncserver -display $DISPLAY -passwordfile /root/.vnc/passwd &
+/usr/share/novnc/utils/launch.sh --vnc localhost:5900&
+
+ulimit -s unlimited
+nvidia-smi
+
+startxfce4 &
+
+cd /qracknet/buildscripts && ./maketipsy.sh && cd /Bonsai/runtime/ && ./bonsai2_slowdust -i /qracknet/buildscripts/tipsy-float_hexdump.bin 
