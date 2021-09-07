@@ -34,32 +34,23 @@ RUN apt-get install z3 num-utils
 RUN curl -sSL https://get.haskellstack.org/ | sh
 RUN cd crackNum && stack path --local-bin && stack setup && stack init && stack build && stack install && stack clean
 
-# ProjectQ install
-# pybind11 workaround
-RUN pip3 install pybind11 
-# rebuild workaround
-RUN cd /ProjectQ && pip3 install --user .
-# fails in 20.04
-# RUN cd /ProjectQ && pip3 install --user  --global-option="--with-qracksimulator" .
+# Install pyqrack
+RUN pip3 install pyqrack
 
 # Install SimulaQron 
 RUN pip3 install simulaqron
 
+# set default backend to pyqrack instead of the default
+# RUN simulaqron set backend pyqrack
+
 # Install IBM QC connector
 RUN pip3 install -U IBMQuantumExperience
 
-# set default backend to projectq instead of the default
-RUN simulaqron set backend projectq
-
 # Install pennylane
 RUN pip3 install pennylane_pq
-# RUN cd /pennylane-pq && make test
 
 # Install Qiskit
 RUN pip3 install qiskit
-
-# Install pyqrack
-RUN pip3 install pyqrack
 
 # node run & benchmark script, make runnable 
 COPY runscripts/runcosmosdockergpu.sh /root/
