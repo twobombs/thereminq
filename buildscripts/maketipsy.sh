@@ -47,11 +47,12 @@ echo "view will be "$square "x" $square
 # determine coordinate scaling factor 
 tipsymax=4294967295
 tipsy=$(($tipsymax/$square))
+echo "tipsy max factor " $tipsymax
 echo "tipsy scaling factor " $tipsy
 
 # determine quantum register scaling factor
 # number of qubits mask is hardcoded to 0xFFFFFFFF, 32 qbits
-tipsyq=$(($tipsymax/32))
+tipsyq=$(($tipsy/32))
 echo "tipsy quantum factor " $tipsyq
 
 # resize number of points via dim and make hex
@@ -93,7 +94,7 @@ yes 02 | head -n `cat points.dec` > id.hex
 yes 02000000 | head -n `cat points.dec` > idlong.hex
 
 # make x coordinates, cut offsets, convert to hex
-for i in `cat square.dec` ; do yes $(($i*$tipsy)) | head -n $square; done > square10x.dec
+for i in `cat square.dec` ; do yes $(($i*$tipsyq)) | head -n $square; done > square10x.dec
 head -n -$square square10x.dec > square10xdelta.dec
 mv square10xdelta.dec square10x.dec
 
@@ -121,6 +122,9 @@ mv square10zdelta.dec square10z.dec
 head -n -1 square10z.dec > square10zdelta.dec
 mv square10zdelta.dec square10z.dec
 
+# calculate total quantum volume output
+paste -d* measuredm.dec measuredq.dec | sed 's/$//' | bc > measuredvol.dec
+
 # add velocity nullpointers for xyz displacements
 yes 00000000 | head -n `cat points.dec` > displacex.hex
 cp displacex.hex displacey.hex
@@ -131,23 +135,26 @@ cp displacex.hex dummy.hex
 echo "float conversion started"
 
 for a in $(< measuredm.dec); do /root/.local/bin/crackNum -f sp $a | grep "Hex layout" ; done > measuredm.flex &
-echo "forked 1 of 5 "
+echo "forked 1 of 6 "
 
 for a in $(< squaretipsy.dec); do /root/.local/bin/crackNum -f sp $a | grep "Hex layout" ; done > squaretipsy.flex &
-echo "forked 2 of 5 "
+echo "forked 2 of 6 "
 
 for a in $(< square10z.dec); do /root/.local/bin/crackNum -f sp $a | grep "Hex layout" ; done > square10z.flex &
-echo "forked 3 of 5 "
+echo "forked 3 of 6 "
 
 for a in $(< measuredq.dec); do /root/.local/bin/crackNum -f sp $a | grep "Hex layout" ; done > measuredq.flex &
-echo "forked 4 of 5 "
+echo "forked 4 of 6 "
 
-echo "no fork on 5"
+for a in $(< measuredvol.dec); do /root/.local/bin/crackNum -f sp $a | grep "Hex layout" ; done > measuredvol.flex &
+echo "forked 5 of 6 "
+
+echo "no fork on 6"
 
 # watch -n1 ./sizing.sh &
 for a in $(< square10x.dec); do /root/.local/bin/crackNum -f sp $a | grep "Hex layout" ; done > square10x.flex
 
-echo "last one done - 5 of 5 -"
+echo "last one done - 6 of 6 -"
 echo  "20 secs for tasks to finish"
 sleep 20
 
@@ -158,6 +165,7 @@ grep "Hex layout" squaretipsy.flex | tr -d ' ' | tr -d 'Hexlayout:' > squaretips
 grep "Hex layout" square10z.flex | tr -d ' ' | tr -d 'Hexlayout:' > square10z.fhex &
 grep "Hex layout" measuredq.flex | tr -d ' ' | tr -d 'Hexlayout:' > measuredq.fhex &
 grep "Hex layout" measuredm.flex | tr -d ' ' | tr -d 'Hexlayout:' > measuredm.fhex
+grep "Hex layout" measuredvol.flex | tr -d ' ' | tr -d 'Hexlayout:' > measuredvol.fhex
 
 echo "size checks:"
 cat points.dec
@@ -171,11 +179,13 @@ wc -l square10x.flex
 wc -l measuredm.flex
 wc -l square10z.flex
 wc -l measuredq.flex
+wc -l measuredvol.flex
 
 wc -l square10x.fhex
 wc -l measuredm.fhex
 wc -l square10z.fhex
 wc -l measuredq.fhex
+wc -l measuredvol.fhex
 
 wc -l dummy.hex
 wc -l idlong.hex
@@ -187,7 +197,7 @@ wc -l displacez.hex
 paste time.hex points.hex ndim.hex nsph.hex ndark.hex points.hex version.hex measuredq.hex square10x.hex measuredm.hex square10z.hex displacex.hex displacey.hex displacez.hex dummy.hex dummy.hex square10x.hex square10z.hex > tipsy.hex 
 
 # assemble/weave final float hex, convert to bin
-paste time.hex points.hex ndim.hex nsph.hex ndark.hex points.hex version.hex measuredq.fhex square10x.fhex measuredm.fhex square10z.fhex displacex.hex displacey.hex displacez.hex dummy.hex dummy.hex square10x.hex square10z.hex > tipsy-float.hex 
+paste time.hex points.hex ndim.hex nsph.hex ndark.hex points.hex version.hex measuredvol.fhex square10x.fhex measuredm.fhex square10z.fhex displacex.hex displacey.hex displacez.hex dummy.hex dummy.hex square10x.hex square10z.hex > tipsy-float.hex 
 
 # convert float hex string data as a bin file
 xxd -r -p tipsy-float.hex tipsy-float.bin
