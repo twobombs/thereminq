@@ -47,7 +47,7 @@ echo "view will be "$square "x" $square
 # determine coordinate scaling factor 
 tipsymax=4294967295
 tipsy=$(($tipsymax/$square))
-echo "tipsy max factor " $tipsymax
+echo "tipsy maximum factor " $tipsymax
 echo "tipsy scaling factor " $tipsy
 
 # determine quantum register scaling factor
@@ -197,7 +197,7 @@ wc -l displacez.hex
 paste time.hex points.hex ndim.hex nsph.hex ndark.hex points.hex version.hex measuredq.hex square10x.hex measuredm.hex square10z.hex displacex.hex displacey.hex displacez.hex dummy.hex dummy.hex square10x.hex square10z.hex > tipsy.hex 
 
 # assemble/weave final float hex, convert to bin
-paste time.hex points.hex ndim.hex nsph.hex ndark.hex points.hex version.hex measuredvol.fhex square10x.fhex measuredm.fhex square10z.fhex displacex.hex displacey.hex displacez.hex dummy.hex dummy.hex square10x.hex square10z.hex > tipsy-float.hex 
+paste time.hex points.hex ndim.hex nsph.hex ndark.hex points.hex version.hex measuredvol.fhex square10x.fhex measuredvol.fhex square10z.fhex displacex.hex displacey.hex displacez.hex dummy.hex dummy.hex square10x.hex square10z.hex > tipsy-float.hex 
 
 # convert float hex string data as a bin file
 xxd -r -p tipsy-float.hex tipsy-float.bin
