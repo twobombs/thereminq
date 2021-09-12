@@ -25,7 +25,7 @@ RUN cd nbody && meson . build -Dopengl=true -Duse_cuda=true && ninja -C build
 
 # install OG tipsy tools
 RUN apt install libxaw7-dev libncurses5-dev libtinfo-dev
-RUN cd /tipsy && configure && make
+# RUN cd /tipsy/code && ./configure && make
 
 EXPOSE 22 6080 8801-8811
 ENTRYPOINT /root/run-bonsai
