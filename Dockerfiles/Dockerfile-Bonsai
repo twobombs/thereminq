@@ -21,7 +21,7 @@ RUN mkdir /Amuse && cd Amuse && pip3 install --upgrade pip && pip3 install --upg
 # install tycho's nbody
 RUN apt install meson libglew-dev libsdl2-dev
 RUN git clone https://github.com/tycho/nbody.git
-RUN cd nbody && meson . build -Dopengl=true && ninja -C build
+RUN cd nbody && meson . build -Dopengl=true -Duse_cuda=true && ninja -C build
 
 EXPOSE 22 6080 8801-8811
 ENTRYPOINT /root/run-bonsai
