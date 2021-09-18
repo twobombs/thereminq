@@ -21,7 +21,7 @@ COPY configfiles/filebeat.yml /etc/filebeat/filebeat.yml
 RUN cd /qrack/include && mkdir CL && cd /var/log && mkdir qrack && cd /qrack && mkdir _build && cd _build && cmake -DFPPOW=5 -DUINTPOW=5 -DQBCAPPOW=5 -DENABLE_COMPLEX_X2=ON -DENABLE_OCL_MEM_GUARDS=OFF .. && make all && make install
 
 # BigQrack install & dependancies
-RUN cd /qrack128/include && mkdir CL && cd /qrack128 && mkdir _build && cd _build && cmake -DFPPOW=6 -DUINTPOW=6 -DQBCAPPOW=6 -DENABLE_OCL_MEM_GUARDS=OFF .. && make all && make install
+RUN cd /qrack128/include && mkdir CL && cd /qrack128 && mkdir _build && cd _build && cmake -DFPPOW=6 -DUINTPOW=6 -DQBCAPPOW=6 -DENABLE_QUNIT_CPU_PARALLEL=OFF -DCMAKE_BUILD_TYPE=Debug -DENABLE_OCL_MEM_GUARDS=OFF .. && make all && make install
 
 # install python3
 RUN apt-get install -y python3 python3-pip python3-tk libblas-dev liblapack-dev && pip3 install -U setuptools
