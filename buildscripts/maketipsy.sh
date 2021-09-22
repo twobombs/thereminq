@@ -45,7 +45,7 @@ echo "original amount of measured values" $points
 echo "view will be "$square "x" $square
 
 # determine coordinate scaling factor 
-tipsymax=2147483647
+tipsymax=4294967295
 tipsy=$(($tipsymax/$square))
 echo "tipsy maximum factor " $tipsymax
 echo "tipsy scaling factor " $tipsy
