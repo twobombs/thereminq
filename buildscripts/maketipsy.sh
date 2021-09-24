@@ -168,30 +168,7 @@ grep "Hex layout" measuredm.flex | tr -d ' ' | tr -d 'Hexlayout:' > measuredm.fh
 grep "Hex layout" measuredvol.flex | tr -d ' ' | tr -d 'Hexlayout:' > measuredvol.fhex
 
 echo "size checks:"
-cat points.dec
-
-wc -l square10x.hex
-wc -l measuredm.hex
-wc -l square10z.hex
-wc -l measuredq.hex
-
-wc -l square10x.flex
-wc -l measuredm.flex
-wc -l square10z.flex
-wc -l measuredq.flex
-wc -l measuredvol.flex
-
-wc -l square10x.fhex
-wc -l measuredm.fhex
-wc -l square10z.fhex
-wc -l measuredq.fhex
-wc -l measuredvol.fhex
-
-wc -l dummy.hex
-wc -l idlong.hex
-wc -l displacex.hex
-wc -l displacey.hex
-wc -l displacez.hex
+./sizing.sh
 
 # assemble/weave final hex, convert to bin
 paste time.hex points.hex ndim.hex nsph.hex ndark.hex points.hex version.hex measuredq.hex square10x.hex measuredm.hex square10z.hex displacex.hex displacey.hex displacez.hex dummy.hex dummy.hex square10x.hex square10z.hex > tipsy.hex 
