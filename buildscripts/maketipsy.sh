@@ -188,14 +188,14 @@ xxd -r -p tipsy-float-basic.hex tipsy-float-basic.bin
 hexdump -v -e '1/4 "%08x"' -e '"\n"' tipsy-float-basic.bin | xxd -r -p >tipsy-float-basic_hexdump.bin
 
 # doubler - merge the two datasets into one view
-cat square10x.fhex square10x.fhex > square10x2.fhex
-cat square10x.hex square10x.hex > square10x2.hex
+cat square10x.fhex square10z.fhex > square10x2.fhex
+cat square10x.hex square10z.hex > square10x2.hex
 
-cat measuredq.fhex measuredvol.fhex > measuredq2.fhex
+cat measuredq.fhex measuredq.fhex > measuredq2.fhex
 cat measuredm.fhex measuredvol.fhex > measuredm2.fhex
 
-cat square10z.fhex square10z.fhex > square10z2.fhex
-cat square10z.hex square10z.hex > square10z2.hex
+cat square10z.fhex square10x.fhex > square10z2.fhex
+cat square10z.hex square10x.hex > square10z2.hex
 
 cat displacex.hex displacex.hex > displacex2.hex
 cat displacey.hex displacey.hex > displacey2.hex
