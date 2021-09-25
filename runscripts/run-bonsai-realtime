@@ -10,4 +10,4 @@ nvidia-smi
 
 startxfce4 &
 
-cd /qracknet/buildscripts && ./maketipsy.sh && cd /Bonsai/runtime/ && ./bonsai2_slowdust -i /qracknet/buildscripts/tipsy-float_hexdump.bin 
+cd /qracknet/buildscripts && ./maketipsy.sh && cd /Bonsai/runtime/ && ./bonsai2_slowdust -t 0.00001 -i /qracknet/buildscripts/tipsy-float_hexdump.bin 
