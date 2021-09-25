@@ -9,9 +9,8 @@ QrackNet aims to provide a suite of best-of-class tools designed to extend and v
 - Elastic Search/Lucene Interface for data interconnect > https://www.elastic.co/downloads/
 
 Additional Qrack plugins:
-- ProjectQ - QC Interconnect, Qrack OCL fork > https://github.com/vm6502q/ProjectQ
+- PyQrack - Python Qrack Interconnect
 - SimulaQron - Qbit Networking stack > https://github.com/SoftwareQuTech/SimulaQron
-- PennyLane - ProjectQ plugin > https://github.com/XanaduAI/pennylane-pq
 
 Images can be run independantly but are made to work with the vQbit infrastructure HELM repo at https://github.com/twobombs/helm
 
@@ -28,6 +27,8 @@ Deploy WebUI controller images by invoking docker controller image,or deploy in 
 
 Deploy Bonsai ( https://github.com/treecode/Bonsai ) visualisation - requirements: Running NVidia X, CUDA and NVidia-Docker on host 
 - docker run --gpus all -v /tmp/.X11-unix:/tmp/.X11-unix -e DISPLAY=$DISPLAY -p 6080:6080 -v /run/user/1000/gdm/Xauthority:/root/.Xauthority -h $HOSTNAME twobombs/qracknet:bonsai 
+
+![Screenshot from 2021-09-25 08-52-51](https://user-images.githubusercontent.com/12692227/134769131-7c9677f4-668f-488b-89e8-bb6c89550303.png)
 
 /me did none of the coding: just created this stack so that you don't need to - this is a work in progess
 
