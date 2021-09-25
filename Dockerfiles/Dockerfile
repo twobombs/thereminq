@@ -34,28 +34,9 @@ RUN apt-get install z3 num-utils && apt clean all
 RUN curl -sSL https://get.haskellstack.org/ | sh
 RUN cd crackNum && stack path --local-bin && stack setup && stack init && stack build && stack install && stack clean && rm -R /crackNum
 
-# Install pyqrack
-RUN pip3 install pyqrack
-
-# Install SimulaQron 
-RUN pip3 install simulaqron
-
-# set default backend to pyqrack instead of the default
-# RUN simulaqron set backend pyqrack
-
-# Install IBM QC connector
-RUN pip3 install -U IBMQuantumExperience
-
-# Install pennylane
-RUN pip3 install pennylane_pq
-
-# Install Qiskit
-RUN pip3 install qiskit
-
 # node run & benchmark script, make runnable 
 COPY runscripts/runcosmosdockergpu.sh /root/
 COPY runscripts/run-* /root/
-
 RUN chmod 744 /root/runcosmosdockergpu.sh && chmod 744 /root/run-*
 
 #cleanup
