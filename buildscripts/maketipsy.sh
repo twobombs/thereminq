@@ -155,8 +155,8 @@ echo "no fork on 6"
 for a in $(< square10x.dec); do /root/.local/bin/crackNum -f sp $(echo $a/$tipsy | bc -l) | grep "Hex layout" ; done > square10x.flex
 
 echo "last one done - 6 of 6 -"
-echo  "20 secs for tasks to finish"
-sleep 20
+echo  "40 secs for tasks to finish"
+sleep 40
 
 # conversion of raw crackNum output to hex in fork
 echo "filter to fHEX"
