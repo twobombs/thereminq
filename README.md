@@ -8,10 +8,6 @@ QrackNet aims to provide a suite of best-of-class tools designed to extend and v
 - Bonsai - Stellar data visualizer for QFT data and converter > https://github.com/treecode/Bonsai
 - Elastic Search/Lucene Interface for data interconnect > https://www.elastic.co/downloads/
 
-Additional Qrack plugins:
-- PyQrack - Python Qrack Interconnect
-- SimulaQron - Qbit Networking stack > https://github.com/SoftwareQuTech/SimulaQron
-
 Images can be run independantly but are made to work with the vQbit infrastructure HELM repo at https://github.com/twobombs/helm
 
 Build on top of the CUDA-CLuster stack https://github.com/twobombs/cudacluster an addition to deploy-nvidia-docker https://github.com/twobombs/deploy-nvidia-docker
