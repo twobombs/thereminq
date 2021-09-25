@@ -134,7 +134,7 @@ cp displacex.hex dummy.hex
 # convert relevant rows to FloatHEX and fork
 echo "float conversion started"
 
-for a in $(< measuredm.dec); do /root/.local/bin/crackNum -f sp $(echo $a/$tipsy | bc -l) | grep "Hex layout" ; done > measuredm.flex &
+for a in $(< measuredm.dec); do /root/.local/bin/crackNum -f sp $(echo $a/$tipsyq | bc -l) | grep "Hex layout" ; done > measuredm.flex &
 echo "forked 1 of 6 "
 
 for a in $(< squaretipsy.dec); do /root/.local/bin/crackNum -f sp $(echo $a/$tipsy | bc -l) | grep "Hex layout" ; done > squaretipsy.flex &
@@ -143,7 +143,7 @@ echo "forked 2 of 6 "
 for a in $(< square10z.dec); do /root/.local/bin/crackNum -f sp $(echo $a/$tipsy | bc -l) | grep "Hex layout" ; done > square10z.flex &
 echo "forked 3 of 6 "
 
-for a in $(< measuredq.dec); do /root/.local/bin/crackNum -f sp $(echo $a/$tipsy | bc -l) | grep "Hex layout" ; done > measuredq.flex &
+for a in $(< measuredq.dec); do /root/.local/bin/crackNum -f sp $a | grep "Hex layout" ; done > measuredq.flex &
 echo "forked 4 of 6 "
 
 for a in $(< measuredvol.dec); do /root/.local/bin/crackNum -f sp $(echo $a/$tipsy | bc -l) | grep "Hex layout" ; done > measuredvol.flex &
@@ -170,21 +170,19 @@ grep "Hex layout" measuredvol.flex | tr -d ' ' | tr -d 'Hexlayout:' > measuredvo
 echo "size checks:"
 ./sizing.sh
 
-# assemble/weave final hex, convert to bin
-paste time.hex points.hex ndim.hex nsph.hex ndark.hex points.hex version.hex measuredq.hex square10x.hex measuredm.hex square10z.hex displacex.hex displacey.hex displacez.hex dummy.hex dummy.hex square10x.hex square10z.hex > tipsy.hex 
-
 # assemble/weave final float hex, convert to bin
-paste time.hex points.hex ndim.hex nsph.hex ndark.hex points.hex version.hex measuredvol.fhex square10x.fhex measuredvol.fhex square10z.fhex displacex.hex displacey.hex displacez.hex dummy.hex dummy.hex square10x.hex square10z.hex > tipsy-float.hex 
-
+paste time.hex points.hex ndim.hex nsph.hex ndark.hex points.hex version.hex measuredvol.fhex square10x.fhex measuredvol.fhex square10z.fhex displacex.hex displacey.hex displacez.hex dummy.hex dummy.hex square10x.hex square10z.hex > tipsy-float.hex
 # convert float hex string data as a bin file
 xxd -r -p tipsy-float.hex tipsy-float.bin
 # aaaand convert to little indian
 hexdump -v -e '1/4 "%08x"' -e '"\n"' tipsy-float.bin | xxd -r -p >tipsy-float_hexdump.bin
 
+# assemble/weave final float hex, convert to bin
+paste time.hex points.hex ndim.hex nsph.hex ndark.hex points.hex version.hex measuredq.fhex square10x.fhex measuredm.fhex square10z.fhex displacex.hex displacey.hex displacez.hex dummy.hex dummy.hex square10x.hex square10z.hex > tipsy-float-basic.hex
 # convert int hex string data as a bin file
-xxd -r -p tipsy.hex tipsy.bin
+xxd -r -p tipsy-float-basic.hex tipsy-float-basic.bin
 # aaaand convert to little indian
-hexdump -v -e '1/4 "%08x"' -e '"\n"' tipsy.bin | xxd -r -p >tipsy_hexdump.bin
+hexdump -v -e '1/4 "%08x"' -e '"\n"' tipsy-float-basic.bin | xxd -r -p >tipsy-float-basic_hexdump.bin
 
 echo " "
 echo "done"
