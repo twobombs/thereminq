@@ -140,24 +140,21 @@ echo "float conversion started"
 for a in $(< measuredm.dec); do /root/.local/bin/crackNum -f sp $(echo $a/$tipsyq | bc -l) | grep "Hex layout" ; done > measuredm.flex &
 echo "forked 1 of 6 "
 
-for a in $(< squaretipsy.dec); do /root/.local/bin/crackNum -f sp $(echo $a/$tipsy | bc -l) | grep "Hex layout" ; done > squaretipsy.flex &
+for a in $(< square10z.dec); do /root/.local/bin/crackNum -f sp $(echo $a/$tipsy | bc -l) | grep "Hex layout" ; done > square10z.flex &
 echo "forked 2 of 6 "
 
-for a in $(< square10z.dec); do /root/.local/bin/crackNum -f sp $(echo $a/$tipsy | bc -l) | grep "Hex layout" ; done > square10z.flex &
+for a in $(< measuredq.dec); do /root/.local/bin/crackNum -f sp $a | grep "Hex layout" ; done > measuredq.flex &
 echo "forked 3 of 6 "
 
-for a in $(< measuredq.dec); do /root/.local/bin/crackNum -f sp $a | grep "Hex layout" ; done > measuredq.flex &
+for a in $(< square10x.dec); do /root/.local/bin/crackNum -f sp $(echo $a/$tipsy | bc -l) | grep "Hex layout" ; done > square10x.flex &
 echo "forked 4 of 6 "
 
-for a in $(< measuredvol.dec); do /root/.local/bin/crackNum -f sp $(echo $a/$tipsy | bc -l) | grep "Hex layout" ; done > measuredvol.flex &
-echo "forked 5 of 6 "
+echo "no fork on 5"
+for a in $(< measuredvol.dec); do /root/.local/bin/crackNum -f sp $(echo $a/$tipsy | bc -l) | grep "Hex layout" ; done > measuredvol.flex
 
-echo "no fork on 6"
-
-# watch -n1 ./sizing.sh &
-for a in $(< square10x.dec); do /root/.local/bin/crackNum -f sp $(echo $a/$tipsy | bc -l) | grep "Hex layout" ; done > square10x.flex
-
+for a in $(< squaretipsy.dec); do /root/.local/bin/crackNum -f sp $(echo $a/$tipsy | bc -l) | grep "Hex layout" ; done > squaretipsy.flex
 echo "last one done - 6 of 6 -"
+
 echo  "40 secs for tasks to finish"
 sleep 40
 
