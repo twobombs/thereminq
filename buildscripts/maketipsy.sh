@@ -146,7 +146,7 @@ echo "forked 2 of 6 "
 for a in $(< measuredq.dec); do /root/.local/bin/crackNum -f sp $a | grep "Hex layout" ; done > measuredq.flex &
 echo "forked 3 of 6 "
 
-for a in $(< square10x.dec); do /root/.local/bin/crackNum -f sp $(echo $a/$tipsy | bc -l) | grep "Hex layout" ; done > square10x.flex &
+for a in $(< square10x.dec); do /root/.local/bin/crackNum -f sp $(echo $a/$tipsyq | bc -l) | grep "Hex layout" ; done > square10x.flex &
 echo "forked 4 of 6 "
 
 echo "no fork on 5"
