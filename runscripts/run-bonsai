@@ -10,6 +10,6 @@ nvidia-smi
 
 startxfce4 &
 
-cd /Bonsai/runtime && ./bonsai2_slowdust -t 0.00001 --fullscreen --displayfps -i /qracknet/buildscripts/tipsy-float_hexdump.bin
+cd /Bonsai/runtime && ./bonsai2_slowdust -t 0.00001 --fullscreen on --displayfps -i /qracknet/buildscripts/tipsy-float_hexdump.bin
 
 tail -f /dev/null
