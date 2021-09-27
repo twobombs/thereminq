@@ -59,9 +59,11 @@ echo "tipsy quantum factor " $tipsyq
 echo $((square * square)) > points.dec
 points=$(<points.dec)
 echo $((points * 2)) > points2.dec
+echo $((points * 3)) > points3.dec
 
 printf '%08X\n' $(< points.dec) > points.hex
 printf '%08X\n' $(< points2.dec) > points2.hex
+printf '%08X\n' $(< points3.dec) > points3.hex
 
 echo "amount of measured values clipped:" $points
 echo "conversion to tipsy started....."
