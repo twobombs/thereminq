@@ -13,19 +13,5 @@ RUN apt install time
 RUN cat /proc/cpuinfo > /qracknet/cpuinfo.txt
 RUN cd /qracknet/buildscripts && /usr/bin/time ./maketipsy.sh
 
-#install amuse
-# RUN apt-get install build-essential gfortran python-dev libopenmpi-dev openmpi-bin libgsl-dev cmake libfftw3-3 libfftw3-dev libgmp3-dev libmpfr6 libmpfr-dev libhdf5-serial-dev hdf5-tools python-nose python-numpy python-setuptools python-docutils python3-h5py python-setuptools git && pip3 install mpi4py && apt clean all
-# RUN apt-get install python3-venv && apt-get clean all
-# RUN mkdir /Amuse && cd Amuse && pip3 install --upgrade pip && pip3 install --upgrade virtualenv && python3 -m venv Amuse-env && pip3 install numpy docutils mpi4py h5py wheel && pip install scipy astropy jupyter pandas seaborn matplotlib && pip install amuse-framework && pip install amuse
-
-# install tycho's nbody
-RUN apt install meson libglew-dev libsdl2-dev
-RUN git clone https://github.com/tycho/nbody.git
-RUN cd nbody && meson . build -Dopengl=true -Duse_cuda=true && ninja -C build
-
-# install OG tipsy tools
-RUN apt install libxaw7-dev libncurses5-dev libtinfo-dev
-# RUN cd /tipsy/code && ./configure && make
-
 EXPOSE 22 6080 8801-8811
 ENTRYPOINT /root/run-bonsai
