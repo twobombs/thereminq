@@ -37,3 +37,27 @@ paste time.hex points2.hex ndim.hex nsph.hex ndark.hex points2.hex version.hex m
 xxd -r -p tipsy-doubler.hex tipsy-doubler.bin
 # aaaand convert to little indian
 hexdump -v -e '1/4 "%08x"' -e '"\n"' tipsy-doubler.bin | xxd -r -p >tipsy-doubler_hexdump.bin
+
+# tripler - merge three datasets into one view
+cat square10x.fhex square10z.fhex measuredvol.fhex > square10x3.fhex
+cat measuredvol.fhex square10x.fhex square10z.fhex > measuredm3.fhex
+cat square10z.fhex measuredvol.fhex square10x.fhex > square10z3.fhex
+
+cat measuredvol.fhex measuredvol.fhex measuredvol.fhex > measuredq3.fhex
+
+cat displacex.hex displacex.hex displacex.hex > displacex3.hex
+cat displacey.hex displacey.hex displacey.hex > displacey3.hex
+cat displacez.hex displacez.hex displacez.hex > displacez3.hex
+
+cat square10x.hex square10z.hex square10x.fhex > square10x3.hex
+cat square10z.hex square10x.hex square10z.fhex > square10z3.hex
+cat dummy.hex dummy.hex dummy.hex > dummy3.hex
+
+# assemble/weave final hex, convert to bin
+paste time.hex points3.hex ndim.hex nsph.hex ndark.hex points3.hex version.hex measuredq3.fhex square10x3.fhex measuredm3.fhex square10z3.fhex displacex3.hex displacey3.hex displacez3.hex dummy3.hex dummy3.hex square10x3.fhex square10z3.fhex > tipsy-tripler.hex
+
+# convert int hex string data as a bin file
+xxd -r -p tipsy-tripler.hex tipsy-tripler.bin
+# aaaand convert to little indian
+hexdump -v -e '1/4 "%08x"' -e '"\n"' tipsy-tripler.bin | xxd -r -p >tipsy-tripler_hexdump.bin
+
