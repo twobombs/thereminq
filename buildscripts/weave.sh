@@ -31,7 +31,7 @@ cat square10z.hex square10x.hex > square10z2.hex
 cat dummy.hex dummy.hex > dummy2.hex
 
 # assemble/weave final hex, convert to bin
-paste time.hex points2.hex ndim.hex nsph.hex ndark.hex points2.hex version.hex measuredq2.fhex square10x2.fhex measuredm2.fhex square10z2.fhex displacex2.hex displacey2.hex displacez2.hex dummy2.hex dummy2.hex square10x2.fhex square10z2.fhex > tipsy-doubler.hex
+paste time.hex points2.hex ndim.hex nsph.hex ndark.hex points2.hex version.hex measuredq2.fhex square10x2.fhex measuredm2.fhex square10z2.fhex displacex2.hex displacey2.hex displacez2.hex dummy2.hex dummy2.hex square10x2.hex square10z2.hex > tipsy-doubler.hex
 
 # convert int hex string data as a bin file
 xxd -r -p tipsy-doubler.hex tipsy-doubler.bin
@@ -54,7 +54,7 @@ cat square10z.hex square10x.hex square10z.fhex > square10z3.hex
 cat dummy.hex dummy.hex dummy.hex > dummy3.hex
 
 # assemble/weave final hex, convert to bin
-paste time.hex points3.hex ndim.hex nsph.hex ndark.hex points3.hex version.hex measuredq3.fhex square10x3.fhex measuredm3.fhex square10z3.fhex displacex3.hex displacey3.hex displacez3.hex dummy3.hex dummy3.hex square10x3.fhex square10z3.fhex > tipsy-tripler.hex
+paste time.hex points3.hex ndim.hex nsph.hex ndark.hex points3.hex version.hex measuredq3.fhex square10x3.fhex measuredm3.fhex square10z3.fhex displacex3.hex displacey3.hex displacez3.hex dummy3.hex dummy3.hex square10x3.hex square10z3.hex > tipsy-tripler.hex
 
 # convert int hex string data as a bin file
 xxd -r -p tipsy-tripler.hex tipsy-tripler.bin
