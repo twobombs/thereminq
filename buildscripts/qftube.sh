@@ -4,7 +4,7 @@
 qube=$(<cube.dec)
 echo "qube repeat size:" $qube
 
-# paste -d '\n' $(yes square10x.fhex|head -$qube) > square10qube.fhex
+paste -d '\n' $(yes square10x.fhex|head -$qube) > square10qube.fhex
 
 for i in 'cat cube.dec' ; do cat measuredm.fhex ; done > measuredmqube.fhex
 
