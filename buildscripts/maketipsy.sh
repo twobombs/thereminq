@@ -177,5 +177,8 @@ echo "size checks:"
 echo "weaving tipsy output formats"
 ./weave.sh
 
+echo "setup cube of q/m-stream"
+./qftube.sh
+
 echo " "
 echo "done"
