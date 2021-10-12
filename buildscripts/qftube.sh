@@ -1,14 +1,28 @@
- !/bin/bash
+#!/bin/bash
+#
 qube=$(<cube.dec)
 echo "qube repeat size:" $qube
 
 paste -d '\n' $(yes square10x.fhex|head -$qube) > square10qube.fhex
 
-tee -a $(yes measuredmqube.fhex|head -$qube) <measuredm.fhex >/dev/null
-tee -a $(yes square10xqube.fhex|head -$qube) <square10x.fhex >/dev/null
-tee -a $(yes square10zqube.fhex|head -$qube) <square10z.fhex >/dev/null
-tee -a $(yes displacexqube.hex|head -$qube) <displacex.hex >/dev/null
-tee -a $(yes dummyqube.hex|head -$qube) <dummy.hex >/dev/null
+rm measuredmqube.fhex && rm  square10xqube.fhex && rm square10zqube.fhex && rm displacexqube.hex && rm dummyqube.hex
+
+yes measuredm.fhex | head -n $(cat cube.dec) | xargs cat> measuredmqube.fhex
+yes square10x.fhex | head -n $(cat cube.dec) | xargs cat> square10xqube.fhex
+yes square10z.fhex | head -n $(cat cube.dec) | xargs cat> square10zqube.fhex
+yes displacex.hex | head -n $(cat cube.dec) | xargs cat> displacexqube.hex
+yes dummy.hex | head -n $(cat cube.dec) | xargs cat> dummyqube.hex
+
+# qsizing
+cat pointsqubed.dec
+wc -l square10qube.fhex
+wc -l measuredmqube.fhex
+wc -l square10xqube.fhex
+wc -l square10zqube.fhex
+wc -l displacexqube.hex
+wc -l dummyqube.hex
+
+rm tipsy-qube.hex && rm tipsy-qube.bin && rm tipsy-qube_hexdump.bin
 
 # assemble/weave first float hex, convert to bin
 paste time.hex pointsqubed.hex ndim.hex nsph.hex ndark.hex pointsqubed.hex version.hex measuredmqube.fhex square10xqube.fhex square10qube.fhex square10zqube.fhex displacexqube.hex displacexqube.hex displacexqube.hex dummyqube.hex dummyqube.hex square10qube.fhex square10xqube.fhex > tipsy-qube.hex
