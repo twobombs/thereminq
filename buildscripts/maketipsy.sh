@@ -159,8 +159,8 @@ for a in $(< measuredvol.dec); do /root/.local/bin/crackNum -f sp $(echo $a/$tip
 for a in $(< squaretipsy.dec); do /root/.local/bin/crackNum -f sp $(echo $a/$tipsy | bc -l) | grep "Hex layout" ; done > squaretipsy.flex
 echo "last one done - 6 of 6 -"
 
-echo  "60 secs for tasks to finish"
-sleep 60
+echo  "20 secs for tasks to finish"
+sleep 20
 
 # conversion of raw crackNum output to hex in fork
 echo "filter to fHEX"
