@@ -45,7 +45,7 @@ echo "original amount of measured values" $points
 echo "view will be "$square "x" $square
 
 # determine coordinate scaling factor 
-tipsymax=4294967295
+tipsymax=33554431
 tipsy=$(($tipsymax/$square))
 echo "tipsy maximum factor " $tipsymax
 echo "tipsy scaling factor " $tipsy
@@ -141,7 +141,7 @@ cp displacex.hex dummy.hex
 # convert relevant rows to FloatHEX and fork
 echo "float conversion started"
 
-for a in $(< measuredm.dec); do /root/.local/bin/crackNum -f sp $(echo $a/$tipsyq | bc -l) | grep "Hex layout" ; done > measuredm.flex &
+for a in $(< measuredm.dec); do /root/.local/bin/crackNum -f sp $(echo $a/$tipsy | bc -l) | grep "Hex layout" ; done > measuredm.flex &
 echo "forked 1 of 6 "
 
 for a in $(< square10z.dec); do /root/.local/bin/crackNum -f sp $(echo $a/$tipsy | bc -l) | grep "Hex layout" ; done > square10z.flex &
@@ -150,7 +150,7 @@ echo "forked 2 of 6 "
 for a in $(< measuredq.dec); do /root/.local/bin/crackNum -f sp $a | grep "Hex layout" ; done > measuredq.flex &
 echo "forked 3 of 6 "
 
-for a in $(< square10x.dec); do /root/.local/bin/crackNum -f sp $(echo $a/$tipsyq | bc -l) | grep "Hex layout" ; done > square10x.flex &
+for a in $(< square10x.dec); do /root/.local/bin/crackNum -f sp $(echo $a/$tipsy | bc -l) | grep "Hex layout" ; done > square10x.flex &
 echo "forked 4 of 6 "
 
 echo "no fork on 5"
