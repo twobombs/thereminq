@@ -3,13 +3,16 @@
 qube=$(<cube.dec)
 echo "qube repeat size:" $qube
 
+rm measuredmqube.fhex && rm measuredvolqube.fhex && rm  square10xqube.fhex && rm square10zqube.fhex && rm displacexqube.hex && rm dummyqube.hex 
+
 paste -d '\n' $(yes square10x.fhex|head -$qube) > square10qube.fhex
 
-rm measuredmqube.fhex && rm  square10xqube.fhex && rm square10zqube.fhex && rm displacexqube.hex && rm dummyqube.hex
-
 yes measuredm.fhex | head -n $(cat cube.dec) | xargs cat> measuredmqube.fhex
+yes measuredvol.fhex | head -n $(cat cube.dec) | xargs cat> measuredvolqube.fhex
+
 yes square10x.fhex | head -n $(cat cube.dec) | xargs cat> square10xqube.fhex
 yes square10z.fhex | head -n $(cat cube.dec) | xargs cat> square10zqube.fhex
+
 yes displacex.hex | head -n $(cat cube.dec) | xargs cat> displacexqube.hex
 yes dummy.hex | head -n $(cat cube.dec) | xargs cat> dummyqube.hex
 
@@ -17,6 +20,7 @@ yes dummy.hex | head -n $(cat cube.dec) | xargs cat> dummyqube.hex
 cat pointsqubed.dec
 wc -l square10qube.fhex
 wc -l measuredmqube.fhex
+wc -l measuredvolqube.fhex
 wc -l square10xqube.fhex
 wc -l square10zqube.fhex
 wc -l displacexqube.hex
@@ -30,3 +34,6 @@ paste time.hex pointsqubed.hex ndim.hex nsph.hex ndark.hex pointsqubed.hex versi
 xxd -r -p tipsy-qube.hex tipsy-qube.bin
 # aaaand convert to little indian
 hexdump -v -e '1/4 "%08x"' -e '"\n"' tipsy-qube.bin | xxd -r -p >tipsy-qube_hexdump.bin
+
+# remove unreusable reproduceable artifacts
+rm measuredmqube.fhex && rm measuredvolqube.fhex && rm square10qube.fhex && rm square10xqube.fhex && rm square10zqube.fhex && rm displacexqube.hex && rm dummyqube.hex && rm tipsy-qube.hex
