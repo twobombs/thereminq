@@ -36,4 +36,4 @@ xxd -r -p tipsy-qube.hex tipsy-qube.bin
 hexdump -v -e '1/4 "%08x"' -e '"\n"' tipsy-qube.bin | xxd -r -p >tipsy-qube_hexdump.bin
 
 # remove unreusable reproduceable artifacts
-rm measuredmqube.fhex && rm measuredvolqube.fhex && rm square10qube.fhex && rm square10xqube.fhex && rm square10zqube.fhex && rm displacexqube.hex && rm dummyqube.hex && rm tipsy-qube.hex
+rm measuredmqube.fhex && rm measuredvolqube.fhex && rm square10qube.fhex && rm square10xqube.fhex && rm square10zqube.fhex && rm displacexqube.hex && rm dummyqube.hex && rm tipsy-qube.hex && rm tipsy-qube.bin
