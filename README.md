@@ -37,3 +37,6 @@ Code from the following awesome companies and initiatives are included in this c
 ![](https://user-images.githubusercontent.com/12692227/57654809-61c07f00-75d5-11e9-9005-38d60d8d4db4.png)
 
 All rights and kudos belong to their respective owners.
+
+Code of conduct : Contributor Covenant 
+https://github.com/EthicalSource/contributor_covenant
