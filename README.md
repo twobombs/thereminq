@@ -7,6 +7,7 @@ QrackNet aims to provide a suite of best-of-class tools designed to extend and v
 - Qrack - Qbit OCL Hardware Emulation Stack > https://github.com/vm6502q/qrack
 - Bonsai - Stellar data visualizer for QFT data and converter > https://github.com/treecode/Bonsai
 - Elastic Search/Lucene Interface for data interconnect > https://www.elastic.co/downloads/
+- TensorFlow/Board/Projector integrations > https://github.com/twobombs/tensors
 
 Images can be run independantly but are made to work with the vQbit infrastructure HELM repo at https://github.com/twobombs/helm
 
