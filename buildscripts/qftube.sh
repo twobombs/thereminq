@@ -7,6 +7,7 @@ rm measuredmqube.fhex && rm measuredvolqube.fhex && rm  square10xqube.fhex && rm
 
 paste -d '\n' $(yes square10x.fhex|head -$qube) > square10qube.fhex
 
+yes measuredq.fhex | head -n $(cat cube.dec) | xargs cat> measuredqqube.fhex
 yes measuredm.fhex | head -n $(cat cube.dec) | xargs cat> measuredmqube.fhex
 yes measuredvol.fhex | head -n $(cat cube.dec) | xargs cat> measuredvolqube.fhex
 
