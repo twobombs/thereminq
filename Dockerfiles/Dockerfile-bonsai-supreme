@@ -1,1 +1,6 @@
+FROM twobombs/qracknet:bonsai
 
+RUN cd /qracknet/buildscripts && /usr/bin/time ./supreme.sh
+
+EXPOSE 22 6080 8801-8811
+ENTRYPOINT /root/run-bonsai
