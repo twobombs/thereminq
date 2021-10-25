@@ -30,7 +30,7 @@ wc -l dummyqube.hex
 rm tipsy-qube.hex && rm tipsy-qube.bin && rm tipsy-qube_hexdump.bin
 
 # assemble/weave first float hex, convert to bin
-paste time.hex pointsqubed.hex ndim.hex nsph.hex ndark.hex pointsqubed.hex version.hex measuredmqube.fhex square10xqube.fhex square10qube.fhex measuredvolqube.fhex displacexqube.hex displacexqube.hex displacexqube.hex dummyqube.hex dummyqube.hex square10qube.fhex square10xqube.fhex > tipsy-qube.hex
+paste time.hex pointsqubed.hex ndim.hex nsph.hex ndark.hex pointsqubed.hex version.hex measuredvolqube.fhex square10zqube.fhex square10qube.fhex measuredmqube.fhex displacexqube.hex displacexqube.hex displacexqube.hex dummyqube.hex dummyqube.hex square10qube.fhex square10xqube.fhex > tipsy-qube.hex
 # convert float hex string data as a bin file
 xxd -r -p tipsy-qube.hex tipsy-qube.bin
 # aaaand convert to little indian
