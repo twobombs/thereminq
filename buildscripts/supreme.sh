@@ -1,4 +1,4 @@
 #!/bin/bash
 #
 # we fetch the sycamore 28 qbit over 14 depth and extract it for filter-feed
-mkdir supreme && cd supreme && wget https://datadryad.org/stash/downloads/file_stream/693522
+wget https://datadryad.org/stash/downloads/file_stream/693522
