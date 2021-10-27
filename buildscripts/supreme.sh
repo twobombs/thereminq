@@ -45,7 +45,7 @@ echo "forked 18"
 for a in $(< measurements_n28_m14_s9_e0_pEFGH.txt); do /root/.local/bin/crackNum -i28 0b $(echo $a) | grep "Hex layout" ; done > ../n28_m14_s9_e0_pEFGH.flex &
 echo "forked 19"
 for a in $(< measurements_n28_m14_s9_e6_pEFGH.txt); do /root/.local/bin/crackNum -i28 0b $(echo $a) | grep "Hex layout" ; done > ../n28_m14_s9_e6_pEFGH.flex
-echo "forked 20"
+echo "ready"
 
 echo  "60 secs for tasks to finish"
 sleep 60
