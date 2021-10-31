@@ -34,8 +34,74 @@ while read number; do echo $((2#$number)) ; done < measurements_n28_m14_s9_e6_pE
 echo "binary to decimal conversion done"
 
 # calculate decimal x-y coordinates for placement
+# one-liners:
 # awk '{x=28*-sin($1*0.000000084); print x;}' measured_supreme_28q14d.dec > measured_supreme_28q14d_x.dec
 # awk '{y=28*-cos($1*0.000000084); print y;}' measured_supreme_28q14d.dec > measured_supreme_28q14d_y.dec
+#
+# seprate in 2 x/y blocks: again a 40+ threads split
+#
+awk '{x=28*-sin($1*0.000000084); print x;}' measured_supreme_n28_m14_s0_e0_pEFGH.dec > measured_supreme_n28_m14_s0_e0_x.dec &
+awk '{y=28*-cos($1*0.000000084); print y;}' measured_supreme_n28_m14_s0_e0_pEFGH.dec > measured_supreme_n28_m14_s0_e0_y.dec &
+#
+awk '{x=28*-sin($1*0.000000084); print x;}' measured_supreme_n28_m14_s0_e6_pEFGH.dec > measured_supreme_n28_m14_s0_e6_x.dec &
+awk '{y=28*-cos($1*0.000000084); print y;}' measured_supreme_n28_m14_s0_e6_pEFGH.dec > measured_supreme_n28_m14_s0_e6_y.dec &
+#
+awk '{x=28*-sin($1*0.000000084); print x;}' measured_supreme_n28_m14_s1_e0_pEFGH.dec > measured_supreme_n28_m14_s1_e0_x.dec &
+awk '{y=28*-cos($1*0.000000084); print y;}' measured_supreme_n28_m14_s1_e0_pEFGH.dec > measured_supreme_n28_m14_s1_e0_y.dec &
+#
+awk '{x=28*-sin($1*0.000000084); print x;}' measured_supreme_n28_m14_s1_e6_pEFGH.dec > measured_supreme_n28_m14_s1_e6_x.dec &
+awk '{y=28*-cos($1*0.000000084); print y;}' measured_supreme_n28_m14_s1_e6_pEFGH.dec > measured_supreme_n28_m14_s1_e6_y.dec &
+#
+awk '{x=28*-sin($1*0.000000084); print x;}' measured_supreme_n28_m14_s2_e0_pEFGH.dec > measured_supreme_n28_m14_s2_e0_x.dec &
+awk '{y=28*-cos($1*0.000000084); print y;}' measured_supreme_n28_m14_s2_e0_pEFGH.dec > measured_supreme_n28_m14_s2_e0_y.dec &
+#
+awk '{x=28*-sin($1*0.000000084); print x;}' measured_supreme_n28_m14_s2_e6_pEFGH.dec > measured_supreme_n28_m14_s2_e6_x.dec &
+awk '{y=28*-cos($1*0.000000084); print y;}' measured_supreme_n28_m14_s2_e6_pEFGH.dec > measured_supreme_n28_m14_s2_e6_y.dec &
+#
+awk '{x=28*-sin($1*0.000000084); print x;}' measured_supreme_n28_m14_s3_e0_pEFGH.dec > measured_supreme_n28_m14_s3_e0_x.dec &
+awk '{y=28*-cos($1*0.000000084); print y;}' measured_supreme_n28_m14_s3_e0_pEFGH.dec > measured_supreme_n28_m14_s3_e0_y.dec &
+#
+awk '{x=28*-sin($1*0.000000084); print x;}' measured_supreme_n28_m14_s3_e6_pEFGH.dec > measured_supreme_n28_m14_s3_e6_x.dec &
+awk '{y=28*-cos($1*0.000000084); print y;}' measured_supreme_n28_m14_s3_e6_pEFGH.dec > measured_supreme_n28_m14_s3_e6_y.dec &
+#
+awk '{x=28*-sin($1*0.000000084); print x;}' measured_supreme_n28_m14_s4_e0_pEFGH.dec > measured_supreme_n28_m14_s4_e0_x.dec &
+awk '{y=28*-cos($1*0.000000084); print y;}' measured_supreme_n28_m14_s4_e0_pEFGH.dec > measured_supreme_n28_m14_s4_e0_y.dec &
+#
+awk '{x=28*-sin($1*0.000000084); print x;}' measured_supreme_n28_m14_s4_e6_pEFGH.dec > measured_supreme_n28_m14_s4_e6_x.dec &
+awk '{y=28*-cos($1*0.000000084); print y;}' measured_supreme_n28_m14_s4_e6_pEFGH.dec > measured_supreme_n28_m14_s4_e6_y.dec &
+#
+awk '{x=28*-sin($1*0.000000084); print x;}' measured_supreme_n28_m14_s5_e0_pEFGH.dec > measured_supreme_n28_m14_s5_e0_x.dec &
+awk '{y=28*-cos($1*0.000000084); print y;}' measured_supreme_n28_m14_s5_e0_pEFGH.dec > measured_supreme_n28_m14_s5_e0_y.dec &
+#
+awk '{x=28*-sin($1*0.000000084); print x;}' measured_supreme_n28_m14_s5_e6_pEFGH.dec > measured_supreme_n28_m14_s5_e6_x.dec &
+awk '{y=28*-cos($1*0.000000084); print y;}' measured_supreme_n28_m14_s5_e6_pEFGH.dec > measured_supreme_n28_m14_s5_e6_y.dec &
+#
+awk '{x=28*-sin($1*0.000000084); print x;}' measured_supreme_n28_m14_s6_e0_pEFGH.dec > measured_supreme_n28_m14_s6_e0_x.dec &
+awk '{y=28*-cos($1*0.000000084); print y;}' measured_supreme_n28_m14_s6_e0_pEFGH.dec > measured_supreme_n28_m14_s6_e0_y.dec &
+#
+awk '{x=28*-sin($1*0.000000084); print x;}' measured_supreme_n28_m14_s6_e6_pEFGH.dec > measured_supreme_n28_m14_s6_e6_x.dec &
+awk '{y=28*-cos($1*0.000000084); print y;}' measured_supreme_n28_m14_s6_e6_pEFGH.dec > measured_supreme_n28_m14_s6_e6_y.dec &
+#
+awk '{x=28*-sin($1*0.000000084); print x;}' measured_supreme_n28_m14_s7_e0_pEFGH.dec > measured_supreme_n28_m14_s7_e0_x.dec &
+awk '{y=28*-cos($1*0.000000084); print y;}' measured_supreme_n28_m14_s7_e0_pEFGH.dec > measured_supreme_n28_m14_s7_e0_y.dec &
+#
+awk '{x=28*-sin($1*0.000000084); print x;}' measured_supreme_n28_m14_s7_e6_pEFGH.dec > measured_supreme_n28_m14_s7_e6_x.dec &
+awk '{y=28*-cos($1*0.000000084); print y;}' measured_supreme_n28_m14_s7_e6_pEFGH.dec > measured_supreme_n28_m14_s7_e6_y.dec &
+#
+awk '{x=28*-sin($1*0.000000084); print x;}' measured_supreme_n28_m14_s8_e0_pEFGH.dec > measured_supreme_n28_m14_s8_e0_x.dec &
+awk '{y=28*-cos($1*0.000000084); print y;}' measured_supreme_n28_m14_s8_e0_pEFGH.dec > measured_supreme_n28_m14_s8_e0_y.dec &
+#
+awk '{x=28*-sin($1*0.000000084); print x;}' measured_supreme_n28_m14_s8_e6_pEFGH.dec > measured_supreme_n28_m14_s8_e6_x.dec &
+awk '{y=28*-cos($1*0.000000084); print y;}' measured_supreme_n28_m14_s8_e6_pEFGH.dec > measured_supreme_n28_m14_s8_e6_y.dec &
+#
+awk '{x=28*-sin($1*0.000000084); print x;}' measured_supreme_n28_m14_s9_e0_pEFGH.dec > measured_supreme_n28_m14_s9_e0_x.dec &
+awk '{y=28*-cos($1*0.000000084); print y;}' measured_supreme_n28_m14_s9_e0_pEFGH.dec > measured_supreme_n28_m14_s9_e0_y.dec &
+#
+awk '{x=28*-sin($1*0.000000084); print x;}' measured_supreme_n28_m14_s9_e6_pEFGH.dec > measured_supreme_n28_m14_s9_e6_x.dec &
+awk '{y=28*-cos($1*0.000000084); print y;}' measured_supreme_n28_m14_s9_e6_pEFGH.dec > measured_supreme_n28_m14_s9_e6_y.dec
+#
+echo "wait for all tasks to finish"
+sleep 20
 
 # this also needs at least 20 cores / 40 threads to fully execute 
 # oneliner: for a in $(< measured_supreme28q14d.dec); do /root/.local/bin/crackNum -f sp $(echo $a) | grep "Hex layout" ; done > ../n28_m14.flex
