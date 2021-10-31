@@ -2,6 +2,7 @@
 # this script fetches and converts the 28q14d sycamore results
 # and places those values in a tipsy AdS/CFT-style tincan graph 
 # a regular PC with 20 cores will take ~24 hours to complete
+# results of this calculation will be placed in the qracknet repo
 # 
 # we fetch the sycamore 28 qbit over 14 depth and extract it for filter-feed processing
 #
