@@ -5,6 +5,8 @@ wget https://datadryad.org/stash/downloads/file_stream/693522
 tar -xvzf 693522 && cd n28_m14
 cat measure* > measured_supreme_28q14d.txt
 
+while read number; do echo $((2#$number)) ; done < measured_supreme_28q14d.txt > measured_supreme_28q14d.dec
+
 # this needs at least 20 cores to execute
 for a in $(< measurements_n28_m14_s0_e0_pEFGH.txt); do /root/.local/bin/crackNum -i28 0b $(echo $a) | grep "Hex layout" ; done > ../n28_m14_s0_e0_pEFGH.flex &
 echo "forked 1"
