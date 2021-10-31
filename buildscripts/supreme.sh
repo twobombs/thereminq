@@ -30,10 +30,12 @@ while read number; do echo $((2#$number)) ; done < measurements_n28_m14_s8_e0_pE
 # while read number; do echo $((2#$number)) ; done < measurements_n28_m14_s8_e6_pEFGH.txt > measurements_n28_m14_s8_e6_pEFGH.dec &
 while read number; do echo $((2#$number)) ; done < measurements_n28_m14_s9_e0_pEFGH.txt > measurements_n28_m14_s9_e0_pEFGH.dec
 # while read number; do echo $((2#$number)) ; done < measurements_n28_m14_s9_e6_pEFGH.txt > measurements_n28_m14_s9_e6_pEFGH.dec
+echo "binary to decimal conversion done"
 
 # this also needs at least 20 cores / 40 threads to fully execute 
 # oneliner: for a in $(< measured_supreme28q14d.dec); do /root/.local/bin/crackNum -f sp $(echo $a) | grep "Hex layout" ; done > ../n28_m14.flex
 #
+echo "starting dec to float hex conversion" 
 for a in $(< measurements_n28_m14_s0_e0_pEFGH.dec); do /root/.local/bin/crackNum -f sp $(echo $a) | grep "Hex layout" ; done > ../n28_m14_s0_e0_pEFGH.flex &
 # for a in $(< measurements_n28_m14_s0_e6_pEFGH.dec); do /root/.local/bin/crackNum -f sp $(echo $a) | grep "Hex layout" ; done > ../n28_m14_s0_e6_pEFGH.flex &
 for a in $(< measurements_n28_m14_s1_e0_pEFGH.dec); do /root/.local/bin/crackNum -f sp $(echo $a) | grep "Hex layout" ; done > ../n28_m14_s1_e0_pEFGH.flex &
@@ -67,5 +69,6 @@ cd ..
 # rm -R /n28_m14
 
 # conversion of raw crackNum output to hex in fork
-echo "filter to fHEX"
+echo "filter to one fHEX file"
 grep "Hex layout" 28q14d.flex | tr -d ' ' | tr -d 'Hexlayout:' > 28q14d.fhex
+echo "done"
