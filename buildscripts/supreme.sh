@@ -1,9 +1,10 @@
 #!/bin/bash
 # this script fetches and converts the 28q14d sycamore results
-# it also places the values in an AdS/CFT-style tincan graph 
+# and places those values in a tipsy AdS/CFT-style tincan graph 
 # a regular PC with 20 cores will take ~24 hours to complete
 # 
 # we fetch the sycamore 28 qbit over 14 depth and extract it for filter-feed processing
+#
 wget https://datadryad.org/stash/downloads/file_stream/693522
 tar -xvzf 693522 && cd n28_m14
 cat measure* > measured_supreme_28q14d.txt
