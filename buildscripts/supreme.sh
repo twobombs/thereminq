@@ -29,8 +29,13 @@ while read number; do echo $((2#$number)) ; done < measurements_n28_m14_s7_e6_pE
 while read number; do echo $((2#$number)) ; done < measurements_n28_m14_s8_e0_pEFGH.txt > measurements_n28_m14_s8_e0_pEFGH.dec &
 while read number; do echo $((2#$number)) ; done < measurements_n28_m14_s8_e6_pEFGH.txt > measurements_n28_m14_s8_e6_pEFGH.dec &
 while read number; do echo $((2#$number)) ; done < measurements_n28_m14_s9_e0_pEFGH.txt > measurements_n28_m14_s9_e0_pEFGH.dec &
-while read number; do echo $((2#$number)) ; done < measurements_n28_m14_s9_e6_pEFGH.txt > measurements_n28_m14_s9_e6_pEFGH.dec
+while read number; do echo $((2#$number)) ; done < measurements_n28_m14_s9_e6_pEFGH.txt > measurements_n28_m14_s9_e6_pEFGH.dec &
+# while read number; do echo $((2#$number)) ; done < measured_supreme_28q14d.txt > measured_supreme_28q14d.dec
 echo "binary to decimal conversion done"
+
+# calculate decimal x-y coordinates for placement
+# awk '{x=28*-sin($1*0.000000084); print x;}' measured_supreme_28q14d.dec > measured_supreme_28q14d_x.dec
+# awk '{y=28*-cos($1*0.000000084); print y;}' measured_supreme_28q14d.dec > measured_supreme_28q14d_y.dec
 
 # this also needs at least 20 cores / 40 threads to fully execute 
 # oneliner: for a in $(< measured_supreme28q14d.dec); do /root/.local/bin/crackNum -f sp $(echo $a) | grep "Hex layout" ; done > ../n28_m14.flex
