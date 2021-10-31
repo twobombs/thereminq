@@ -1,5 +1,7 @@
 #!/bin/bash
-#
+# this script fetches and converts the 28q14d sycamore results
+# it also places the values in an AdS/CFT-style tincan graph 
+# 
 # we fetch the sycamore 28 qbit over 14 depth and extract it for filter-feed processing
 wget https://datadryad.org/stash/downloads/file_stream/693522
 tar -xvzf 693522 && cd n28_m14
