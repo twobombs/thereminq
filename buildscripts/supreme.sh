@@ -29,7 +29,7 @@ while read number; do echo $((2#$number)) ; done < measurements_n28_m14_s7_e6_pE
 while read number; do echo $((2#$number)) ; done < measurements_n28_m14_s8_e0_pEFGH.txt > measurements_n28_m14_s8_e0_pEFGH.dec &
 while read number; do echo $((2#$number)) ; done < measurements_n28_m14_s8_e6_pEFGH.txt > measurements_n28_m14_s8_e6_pEFGH.dec &
 while read number; do echo $((2#$number)) ; done < measurements_n28_m14_s9_e0_pEFGH.txt > measurements_n28_m14_s9_e0_pEFGH.dec &
-while read number; do echo $((2#$number)) ; done < measurements_n28_m14_s9_e6_pEFGH.txt > measurements_n28_m14_s9_e6_pEFGH.dec &
+while read number; do echo $((2#$number)) ; done < measurements_n28_m14_s9_e6_pEFGH.txt > measurements_n28_m14_s9_e6_pEFGH.dec
 # while read number; do echo $((2#$number)) ; done < measured_supreme_28q14d.txt > measured_supreme_28q14d.dec
 echo "binary to decimal conversion done"
 
