@@ -15,26 +15,26 @@ cat measure* > measured_supreme_28q14d.txt
 #
 # convert measured binary result to decimal for conversion and placement
 # 
-while read number; do echo $((2#$number)) ; done < measurements_n28_m14_s0_e0_pEFGH.txt > measurements_n28_m14_s0_e0_pEFGH.dec &
-while read number; do echo $((2#$number)) ; done < measurements_n28_m14_s0_e6_pEFGH.txt > measurements_n28_m14_s0_e6_pEFGH.dec &
-while read number; do echo $((2#$number)) ; done < measurements_n28_m14_s1_e0_pEFGH.txt > measurements_n28_m14_s1_e0_pEFGH.dec &
-while read number; do echo $((2#$number)) ; done < measurements_n28_m14_s1_e6_pEFGH.txt > measurements_n28_m14_s1_e6_pEFGH.dec &
-while read number; do echo $((2#$number)) ; done < measurements_n28_m14_s2_e0_pEFGH.txt > measurements_n28_m14_s2_e0_pEFGH.dec &
-while read number; do echo $((2#$number)) ; done < measurements_n28_m14_s2_e6_pEFGH.txt > measurements_n28_m14_s2_e6_pEFGH.dec &
-while read number; do echo $((2#$number)) ; done < measurements_n28_m14_s3_e0_pEFGH.txt > measurements_n28_m14_s3_e0_pEFGH.dec &
-while read number; do echo $((2#$number)) ; done < measurements_n28_m14_s3_e6_pEFGH.txt > measurements_n28_m14_s3_e6_pEFGH.dec &
-while read number; do echo $((2#$number)) ; done < measurements_n28_m14_s4_e0_pEFGH.txt > measurements_n28_m14_s4_e0_pEFGH.dec &
-while read number; do echo $((2#$number)) ; done < measurements_n28_m14_s4_e6_pEFGH.txt > measurements_n28_m14_s4_e6_pEFGH.dec
-while read number; do echo $((2#$number)) ; done < measurements_n28_m14_s5_e0_pEFGH.txt > measurements_n28_m14_s5_e0_pEFGH.dec &
-while read number; do echo $((2#$number)) ; done < measurements_n28_m14_s5_e6_pEFGH.txt > measurements_n28_m14_s5_e6_pEFGH.dec &
-while read number; do echo $((2#$number)) ; done < measurements_n28_m14_s6_e0_pEFGH.txt > measurements_n28_m14_s6_e0_pEFGH.dec &
-while read number; do echo $((2#$number)) ; done < measurements_n28_m14_s6_e6_pEFGH.txt > measurements_n28_m14_s6_e6_pEFGH.dec &
-while read number; do echo $((2#$number)) ; done < measurements_n28_m14_s7_e0_pEFGH.txt > measurements_n28_m14_s7_e0_pEFGH.dec &
-while read number; do echo $((2#$number)) ; done < measurements_n28_m14_s7_e6_pEFGH.txt > measurements_n28_m14_s7_e6_pEFGH.dec &
-while read number; do echo $((2#$number)) ; done < measurements_n28_m14_s8_e0_pEFGH.txt > measurements_n28_m14_s8_e0_pEFGH.dec &
-while read number; do echo $((2#$number)) ; done < measurements_n28_m14_s8_e6_pEFGH.txt > measurements_n28_m14_s8_e6_pEFGH.dec &
-while read number; do echo $((2#$number)) ; done < measurements_n28_m14_s9_e0_pEFGH.txt > measurements_n28_m14_s9_e0_pEFGH.dec &
-while read number; do echo $((2#$number)) ; done < measurements_n28_m14_s9_e6_pEFGH.txt > measurements_n28_m14_s9_e6_pEFGH.dec
+while read number; do echo $((2#$number)) ; done < measurements_n28_m14_s0_e0_pEFGH.txt > measured_supreme_n28_m14_s0_e0_pEFGH.dec &
+while read number; do echo $((2#$number)) ; done < measurements_n28_m14_s0_e6_pEFGH.txt > measured_supreme_n28_m14_s0_e6_pEFGH.dec &
+while read number; do echo $((2#$number)) ; done < measurements_n28_m14_s1_e0_pEFGH.txt > measured_supreme_n28_m14_s1_e0_pEFGH.dec &
+while read number; do echo $((2#$number)) ; done < measurements_n28_m14_s1_e6_pEFGH.txt > measured_supreme_n28_m14_s1_e6_pEFGH.dec &
+while read number; do echo $((2#$number)) ; done < measurements_n28_m14_s2_e0_pEFGH.txt > measured_supreme_n28_m14_s2_e0_pEFGH.dec &
+while read number; do echo $((2#$number)) ; done < measurements_n28_m14_s2_e6_pEFGH.txt > measured_supreme_n28_m14_s2_e6_pEFGH.dec &
+while read number; do echo $((2#$number)) ; done < measurements_n28_m14_s3_e0_pEFGH.txt > measured_supreme_n28_m14_s3_e0_pEFGH.dec &
+while read number; do echo $((2#$number)) ; done < measurements_n28_m14_s3_e6_pEFGH.txt > measured_supreme_n28_m14_s3_e6_pEFGH.dec &
+while read number; do echo $((2#$number)) ; done < measurements_n28_m14_s4_e0_pEFGH.txt > measured_supreme_n28_m14_s4_e0_pEFGH.dec &
+while read number; do echo $((2#$number)) ; done < measurements_n28_m14_s4_e6_pEFGH.txt > measured_supreme_n28_m14_s4_e6_pEFGH.dec
+while read number; do echo $((2#$number)) ; done < measurements_n28_m14_s5_e0_pEFGH.txt > measured_supreme_n28_m14_s5_e0_pEFGH.dec &
+while read number; do echo $((2#$number)) ; done < measurements_n28_m14_s5_e6_pEFGH.txt > measured_supreme_n28_m14_s5_e6_pEFGH.dec &
+while read number; do echo $((2#$number)) ; done < measurements_n28_m14_s6_e0_pEFGH.txt > measured_supreme_n28_m14_s6_e0_pEFGH.dec &
+while read number; do echo $((2#$number)) ; done < measurements_n28_m14_s6_e6_pEFGH.txt > measured_supreme_n28_m14_s6_e6_pEFGH.dec &
+while read number; do echo $((2#$number)) ; done < measurements_n28_m14_s7_e0_pEFGH.txt > measured_supreme_n28_m14_s7_e0_pEFGH.dec &
+while read number; do echo $((2#$number)) ; done < measurements_n28_m14_s7_e6_pEFGH.txt > measured_supreme_n28_m14_s7_e6_pEFGH.dec &
+while read number; do echo $((2#$number)) ; done < measurements_n28_m14_s8_e0_pEFGH.txt > measured_supreme_n28_m14_s8_e0_pEFGH.dec &
+while read number; do echo $((2#$number)) ; done < measurements_n28_m14_s8_e6_pEFGH.txt > measured_supreme_n28_m14_s8_e6_pEFGH.dec &
+while read number; do echo $((2#$number)) ; done < measurements_n28_m14_s9_e0_pEFGH.txt > measured_supreme_n28_m14_s9_e0_pEFGH.dec &
+while read number; do echo $((2#$number)) ; done < measurements_n28_m14_s9_e6_pEFGH.txt > measured_supreme_n28_m14_s9_e6_pEFGH.dec
 # while read number; do echo $((2#$number)) ; done < measured_supreme_28q14d.txt > measured_supreme_28q14d.dec
 echo "binary to decimal conversion done"
 
@@ -105,7 +105,7 @@ awk '{y=28*-cos($1*0.000000084); print y;}' measured_supreme_n28_m14_s9_e0_pEFGH
 awk '{x=28*-sin($1*0.000000084); print x;}' measured_supreme_n28_m14_s9_e6_pEFGH.dec > measured_supreme_n28_m14_s9_e6_x.dec &
 awk '{y=28*-cos($1*0.000000084); print y;}' measured_supreme_n28_m14_s9_e6_pEFGH.dec > measured_supreme_n28_m14_s9_e6_y.dec
 #
-echo "wait for all tasks to finish"
+echo "wait for all cos/sin tasks to finish"
 sleep 120
 #
 # convert coordinates from dec to float hex ( divided into 4 parts to keep below the 16 cores requirement )
@@ -113,6 +113,7 @@ sleep 120
 # for a in $(< measured_supreme_n28_m14_x.dec); do /root/.local/bin/crackNum -f sp $(echo $a) | grep "Hex layout" ; done > ../measured_supreme_n28_m14_x.flex &
 # for a in $(< measured_supreme_n28_m14_y.dec); do /root/.local/bin/crackNum -f sp $(echo $a) | grep "Hex layout" ; done > ../measured_supreme_n28_m14_y.flex &
 #
+echo"starting the long march"
 for a in $(< measured_supreme_n28_m14_s0_e0_x.dec); do /root/.local/bin/crackNum -f sp $(echo $a) | grep "Hex layout" ; done > ../measured_supreme_n28_m14_s0_e0_x.flex &
 for a in $(< measured_supreme_n28_m14_s0_e0_y.dec); do /root/.local/bin/crackNum -f sp $(echo $a) | grep "Hex layout" ; done > ../measured_supreme_n28_m14_s0_e0_y.flex &
 #
