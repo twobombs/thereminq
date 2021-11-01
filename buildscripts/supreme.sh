@@ -24,7 +24,7 @@ while read number; do echo $((2#$number)) ; done < measurements_n28_m14_s2_e6_pE
 while read number; do echo $((2#$number)) ; done < measurements_n28_m14_s3_e0_pEFGH.txt > measurements_n28_m14_s3_e0_pEFGH.dec &
 while read number; do echo $((2#$number)) ; done < measurements_n28_m14_s3_e6_pEFGH.txt > measurements_n28_m14_s3_e6_pEFGH.dec &
 while read number; do echo $((2#$number)) ; done < measurements_n28_m14_s4_e0_pEFGH.txt > measurements_n28_m14_s4_e0_pEFGH.dec &
-while read number; do echo $((2#$number)) ; done < measurements_n28_m14_s4_e6_pEFGH.txt > measurements_n28_m14_s4_e6_pEFGH.dec &
+while read number; do echo $((2#$number)) ; done < measurements_n28_m14_s4_e6_pEFGH.txt > measurements_n28_m14_s4_e6_pEFGH.dec
 while read number; do echo $((2#$number)) ; done < measurements_n28_m14_s5_e0_pEFGH.txt > measurements_n28_m14_s5_e0_pEFGH.dec &
 while read number; do echo $((2#$number)) ; done < measurements_n28_m14_s5_e6_pEFGH.txt > measurements_n28_m14_s5_e6_pEFGH.dec &
 while read number; do echo $((2#$number)) ; done < measurements_n28_m14_s6_e0_pEFGH.txt > measurements_n28_m14_s6_e0_pEFGH.dec &
@@ -182,6 +182,12 @@ for a in $(< measured_supreme_n28_m14_s9_e6_y.dec); do /root/.local/bin/crackNum
 echo  "120 secs for tasks to finish"
 sleep 120
 
+wc -l ../measured_supreme_n28_m14*
+
+# merge results into one file
+cat ../measured_supreme_n28_m14_s?_e?_x* > ../measured_supreme_n28_m14_x.flex
+cat ../measured_supreme_n28_m14_s?_e?_y* > ../measured_supreme_n28_m14_y.flex
+
 # this also needs at least 20 cores / 40 threads to fully execute 
 # oneliner: for a in $(< measured_supreme28q14d.dec); do /root/.local/bin/crackNum -f sp $(echo $a) | grep "Hex layout" ; done > ../n28_m14.flex
 #
@@ -207,8 +213,8 @@ for a in $(< measurements_n28_m14_s7_e0_pEFGH.dec); do /root/.local/bin/crackNum
 for a in $(< measurements_n28_m14_s7_e6_pEFGH.dec); do /root/.local/bin/crackNum -f sp $(echo $a) | grep "Hex layout" ; done > ../n28_m14_s7_e6_pEFGH.flex &
 for a in $(< measurements_n28_m14_s8_e0_pEFGH.dec); do /root/.local/bin/crackNum -f sp $(echo $a) | grep "Hex layout" ; done > ../n28_m14_s8_e0_pEFGH.flex &
 for a in $(< measurements_n28_m14_s8_e0_pEFGH.dec); do /root/.local/bin/crackNum -f sp $(echo $a) | grep "Hex layout" ; done > ../n28_m14_s8_e6_pEFGH.flex &
-for a in $(< measurements_n28_m14_s9_e0_pEFGH.dec); do /root/.local/bin/crackNum -f sp $(echo $a) | grep "Hex layout" ; done > ../n28_m14_s9_e0_pEFGH.flex
-# for a in $(< measurements_n28_m14_s9_e6_pEFGH.dec); do /root/.local/bin/crackNum -f sp $(echo $a) | grep "Hex layout" ; done > ../n28_m14_s9_e6_pEFGH.flex
+for a in $(< measurements_n28_m14_s9_e0_pEFGH.dec); do /root/.local/bin/crackNum -f sp $(echo $a) | grep "Hex layout" ; done > ../n28_m14_s9_e0_pEFGH.flex &
+for a in $(< measurements_n28_m14_s9_e6_pEFGH.dec); do /root/.local/bin/crackNum -f sp $(echo $a) | grep "Hex layout" ; done > ../n28_m14_s9_e6_pEFGH.flex
 echo "ready"
 
 echo  "120 secs for tasks to finish"
