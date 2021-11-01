@@ -1,7 +1,7 @@
 #!/bin/bash
 # this script fetches and converts the 28q14d sycamore results
 # and places those values in a tipsy AdS/CFT-style tincan graph 
-# a regular PC with 20 cores/threads will take ~24 hours to complete
+# a regular PC with 16 cores/threads will take ~24 hours to complete
 # results of this calculation will be placed in the qracknet repo
 # 
 # we fetch the sycamore 28 qbit over 14 depth and extract it for filter-feed processing
@@ -10,7 +10,7 @@ wget https://datadryad.org/stash/downloads/file_stream/693522
 tar -xvzf 693522 && cd n28_m14
 cat measure* > measured_supreme_28q14d.txt
 
-# the following scripts splices the workload into 20 separate 2-thread workloads. scale accordingly.
+# the following scripts splices the workload into 10 separate 2-thread workloads. scale accordingly.
 # oneliner is: while read number; do echo $((2#$number)) ; done < measured_supreme_28q14d.txt > measured_supreme_28q14d.dec
 #
 # convert measured binary result to decimal for conversion and placement
@@ -43,7 +43,7 @@ echo "binary to decimal conversion done"
 # awk '{x=28*-sin($1*0.000000084); print x;}' measured_supreme_28q14d.dec > measured_supreme_28q14d_x.dec
 # awk '{y=28*-cos($1*0.000000084); print y;}' measured_supreme_28q14d.dec > measured_supreme_28q14d_y.dec
 #
-# seprate in 2 x/y blocks: again a 40+ threads split
+# seprate in 4 x/y blocks: again a 10+ threads split
 #
 awk '{x=28*-sin($1*0.000000084); print x;}' measured_supreme_n28_m14_s0_e0_pEFGH.dec > measured_supreme_n28_m14_s0_e0_x.dec &
 awk '{y=28*-cos($1*0.000000084); print y;}' measured_supreme_n28_m14_s0_e0_pEFGH.dec > measured_supreme_n28_m14_s0_e0_y.dec &
@@ -108,7 +108,7 @@ awk '{y=28*-cos($1*0.000000084); print y;}' measured_supreme_n28_m14_s9_e6_pEFGH
 echo "wait for all tasks to finish"
 sleep 120
 #
-# convert coordinates from dec to float hex ( divided into 2 parts to keep below the 20 cores requirement )
+# convert coordinates from dec to float hex ( divided into 4 parts to keep below the 16 cores requirement )
 # 2 one-liners :
 # for a in $(< measured_supreme_n28_m14_x.dec); do /root/.local/bin/crackNum -f sp $(echo $a) | grep "Hex layout" ; done > ../measured_supreme_n28_m14_x.flex &
 # for a in $(< measured_supreme_n28_m14_y.dec); do /root/.local/bin/crackNum -f sp $(echo $a) | grep "Hex layout" ; done > ../measured_supreme_n28_m14_y.flex &
@@ -179,8 +179,8 @@ for a in $(< measured_supreme_n28_m14_s9_e0_y.dec); do /root/.local/bin/crackNum
 for a in $(< measured_supreme_n28_m14_s9_e6_x.dec); do /root/.local/bin/crackNum -f sp $(echo $a) | grep "Hex layout" ; done > ../measured_supreme_n28_m14_s9_e6_x.flex &
 for a in $(< measured_supreme_n28_m14_s9_e6_y.dec); do /root/.local/bin/crackNum -f sp $(echo $a) | grep "Hex layout" ; done > ../measured_supreme_n28_m14_s9_e6_y.flex
 #
-echo  "120 secs for tasks to finish"
-sleep 120
+echo  "240 secs for tasks to finish"
+sleep 240
 
 wc -l ../measured_supreme_n28_m14*
 
@@ -188,7 +188,7 @@ wc -l ../measured_supreme_n28_m14*
 cat ../measured_supreme_n28_m14_s?_e?_x* > ../measured_supreme_n28_m14_x.flex
 cat ../measured_supreme_n28_m14_s?_e?_y* > ../measured_supreme_n28_m14_y.flex
 
-# this also needs at least 20 cores / 40 threads to fully execute 
+# this also needs at least 16 cores / 16 threads to fully execute 
 # oneliner: for a in $(< measured_supreme28q14d.dec); do /root/.local/bin/crackNum -f sp $(echo $a) | grep "Hex layout" ; done > ../n28_m14.flex
 #
 echo "starting dec to float hex conversion" 
@@ -217,8 +217,8 @@ for a in $(< measurements_n28_m14_s9_e0_pEFGH.dec); do /root/.local/bin/crackNum
 for a in $(< measurements_n28_m14_s9_e6_pEFGH.dec); do /root/.local/bin/crackNum -f sp $(echo $a) | grep "Hex layout" ; done > ../n28_m14_s9_e6_pEFGH.flex
 echo "ready"
 
-echo  "120 secs for tasks to finish"
-sleep 120
+echo  "240 secs for tasks to finish"
+sleep 240
 
 wc -l ../n28_m14*
 
