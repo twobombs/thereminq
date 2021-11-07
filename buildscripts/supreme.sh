@@ -184,7 +184,7 @@ for a in $(< measured_supreme_n28_m14_s9_e6_y.dec); do /root/.local/bin/crackNum
 echo  "240 secs for tasks to finish"
 sleep 240
 
-wc -l ../measured_supreme_n28_m14*
+wc -l ../measured_supreme_n28_m14_s*
 
 # merge results into one file
 cat ../measured_supreme_n28_m14_s?_e?_x* > ../measured_supreme_n28_m14_x.flex
@@ -199,7 +199,7 @@ for a in $(< measurements_n28_m14_s0_e6_pEFGH.dec); do /root/.local/bin/crackNum
 for a in $(< measurements_n28_m14_s1_e0_pEFGH.dec); do /root/.local/bin/crackNum -f sp -- $(echo $a) | grep "Hex layout" ; done > ../n28_m14_s1_e0_pEFGH.flex &
 for a in $(< measurements_n28_m14_s1_e6_pEFGH.dec); do /root/.local/bin/crackNum -f sp -- $(echo $a) | grep "Hex layout" ; done > ../n28_m14_s1_e6_pEFGH.flex &
 for a in $(< measurements_n28_m14_s2_e0_pEFGH.dec); do /root/.local/bin/crackNum -f sp -- $(echo $a) | grep "Hex layout" ; done > ../n28_m14_s2_e0_pEFGH.flex &
-for a in $(< measurements_n28_m14_s2_e6_pEFGH.dec); do /root/.local/bin/crackNum -f sp -- $(echo $a) | grep "Hex layout" ; done > ../n28_m14_s0_e6_pEFGH.flex &
+for a in $(< measurements_n28_m14_s2_e6_pEFGH.dec); do /root/.local/bin/crackNum -f sp -- $(echo $a) | grep "Hex layout" ; done > ../n28_m14_s2_e6_pEFGH.flex &
 for a in $(< measurements_n28_m14_s3_e0_pEFGH.dec); do /root/.local/bin/crackNum -f sp -- $(echo $a) | grep "Hex layout" ; done > ../n28_m14_s3_e0_pEFGH.flex &
 for a in $(< measurements_n28_m14_s3_e6_pEFGH.dec); do /root/.local/bin/crackNum -f sp -- $(echo $a) | grep "Hex layout" ; done > ../n28_m14_s3_e6_pEFGH.flex &
 for a in $(< measurements_n28_m14_s4_e0_pEFGH.dec); do /root/.local/bin/crackNum -f sp -- $(echo $a) | grep "Hex layout" ; done > ../n28_m14_s4_e0_pEFGH.flex &
@@ -222,10 +222,10 @@ echo "ready"
 echo  "240 secs for tasks to finish"
 sleep 240
 
-wc -l ../n28_m14*
+wc -l ../n28_m14_s*
 
 # merge results into one file
-cat ../n28_m14_* > ../28q14d.flex
+cat ../n28_m14_s* > ../28q14d.flex
 cd .. 
 # rm -R /n28_m14
 
