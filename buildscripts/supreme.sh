@@ -189,7 +189,11 @@ wc -l ../measured_supreme_n28_m14_s*
 # merge results into one file
 cat ../measured_supreme_n28_m14_s?_e?_x* > ../measured_supreme_n28_m14_x.flex
 cat ../measured_supreme_n28_m14_s?_e?_y* > ../measured_supreme_n28_m14_y.flex
-
+#
+# convert to hex
+grep "Hex layout" ../measured_supreme_n28_m14_x.flex | tr -d ' ' | tr -d 'Hexlayout:' > ../measured_supreme_n28_m14_x.fhex
+grep "Hex layout" ../measured_supreme_n28_m14_y.flex | tr -d ' ' | tr -d 'Hexlayout:' > ../measured_supreme_n28_m14_y.fhex
+#
 # this also needs at least 16 cores / 16 threads to fully execute 
 # oneliner: for a in $(< measured_supreme28q14d.dec); do /root/.local/bin/crackNum -f sp $(echo $a) | grep "Hex layout" ; done > ../n28_m14.flex
 #
