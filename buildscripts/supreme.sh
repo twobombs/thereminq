@@ -248,7 +248,10 @@ head -n $(wc -l < 28q14d.fhex) square10zqube.fhex > measured_supreme_n28d14_z.fh
 yes 02 | head -n $(wc -l < 28q14d.fhex) > id28q14d.fhex
 yes 00000000 | head -n $(wc -l < 28q14d.fhex) > displace28q14d.fhex
 #
-
+#
+echo $(wc -l < 28q14d.fhex ) > points28q14d.dec
+printf '%08X\n' $(< points28q14d.dec) > points28q14d.hex
+#
 # assemble/weave hex, convert to bin
 paste time.hex points28q14d.hex ndim.hex nsph.hex ndark.hex points28q14d.hex version.hex 28q14d.fhex measured_supreme_n28_m14_x.fhex measured_supreme_n28d14_y.fhex measured_supreme_n28d14_z.fhex displace28q14d.hex displace28q14d.hex displace28q14d.hex displace28q14d.hex displace28q14d.hex measured_supreme_n28_m14_x.fhex measured_supreme_n28d14_z.fhex > tipsy-28q14d.hex
 # convert float hex string data as a bin file
