@@ -237,3 +237,16 @@ cd ..
 echo "filter to one fHEX file"
 grep "Hex layout" 28q14d.flex | tr -d ' ' | tr -d 'Hexlayout:' > 28q14d.fhex
 echo "done"
+
+#
+# make z-coordinates based on amount of values
+# lending from former coordinates calculations
+head -n $(wc -l < 28q14d.fhex) square10xqube.fhex > measured_supreme_n28d14_d.fhex
+head -n $(wc -l < 28q14d.fhex) square10zqube.fhex > measured_supreme_n28d14_z.fhex
+
+# create ID and void displacement vectors
+yes 02 | head -n $(wc -l < 28q14d.fhex) > id28q14d.fhex
+yes 00000000 | head -n $(wc -l < 28q14d.fhex) > displace28q14d.fhex
+#
+
+
