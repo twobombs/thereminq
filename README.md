@@ -36,10 +36,10 @@ Deploy Bonsai ( https://github.com/treecode/Bonsai ) visualisation - requirement
 If you get an error similar to "Cannot connect to :0" please look at http://wiki.ros.org/docker/Tutorials/GUI - xhost +local:root
 
 ![Screenshot_from_2021-09-25_08-52-34 (1)](https://user-images.githubusercontent.com/12692227/134770011-8db48546-4853-4735-a980-cfc866d1786f.png)
-![Screenshot from 2021-11-10 13-59-07](https://user-images.githubusercontent.com/12692227/141146433-9ffff23a-1aa3-4412-b12c-74e91d105401.png)
+![Screenshot from 2021-11-10 14-01-38](https://user-images.githubusercontent.com/12692227/141146591-1f7a8684-bdab-4b43-92d0-0f262d44a5d8.png)
 
 
-I did or helped with some of the coding for glue, speed and data generation: however, this stack was made so that you don't need to - this is a work in progess
+I did do or helped with some of the coding for glue, speed and data generation: however, this stack was made so that you don't need to - this is a work in progess
 
 Code from the following awesome companies and initiatives are included in this container
 
