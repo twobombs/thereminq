@@ -187,8 +187,8 @@ sleep 240
 wc -l ../measured_supreme_n28_m14_s*
 
 # merge results into one file
-cat ../measured_supreme_n28_m14_s?_e?_x* > ../measured_supreme_n28_m14_x.flex
-cat ../measured_supreme_n28_m14_s?_e?_y* > ../measured_supreme_n28_m14_y.flex
+cat ../measured_supreme_n28_m14_s?_e?_x* > ../measured_supreme_n28d14_x.flex
+cat ../measured_supreme_n28_m14_s?_e?_y* > ../measured_supreme_n28d14_y.flex
 #
 # convert to hex
 grep "Hex layout" ../measured_supreme_n28_m14_x.flex | tr -d ' ' | tr -d 'Hexlayout:' > ../measured_supreme_n28_m14_x.fhex
@@ -253,7 +253,7 @@ echo $(wc -l < 28q14d.fhex ) > points28q14d.dec
 printf '%08X\n' $(< points28q14d.dec) > points28q14d.hex
 #
 # assemble/weave hex, convert to bin
-paste time.hex points28q14d.hex ndim.hex nsph.hex ndark.hex points28q14d.hex version.hex 28q14d.fhex measured_supreme_n28_m14_x.fhex measured_supreme_n28d14_y.fhex measured_supreme_n28d14_z.fhex displace28q14d.hex displace28q14d.hex displace28q14d.hex displace28q14d.hex displace28q14d.hex measured_supreme_n28_m14_x.fhex measured_supreme_n28d14_z.fhex > tipsy-28q14d.hex
+paste time.hex points28q14d.hex ndim.hex nsph.hex ndark.hex points28q14d.hex version.hex 28q14d.fhex measured_supreme_n28d14_x.fhex measured_supreme_n28d14_y.fhex measured_supreme_n28d14_z.fhex displace28q14d.hex displace28q14d.hex displace28q14d.hex displace28q14d.hex displace28q14d.hex measured_supreme_n28_m14_x.fhex measured_supreme_n28d14_z.fhex > tipsy-28q14d.hex
 # convert float hex string data as a bin file
 xxd -r -p tipsy-28q14d.hex tipsy-28q14d.bin
 # aaaand convert to little indian
