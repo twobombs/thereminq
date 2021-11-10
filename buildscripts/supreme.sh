@@ -4,6 +4,17 @@
 # a regular PC with 16 cores/threads will take ~24 hours to complete
 # results of this calculation will be placed in the qracknet repo
 # 
+# ==== here starts tipsy header declarations ======
+
+# T = time
+echo "0000000000000000" > time.hex
+echo "00030000" > ndim.hex
+echo "00000000" > nsph.hex
+echo "00000000" > ndark.hex
+echo "00010000" > version.hex
+
+# ==== here end tipsy special declarations =========
+
 # we fetch the sycamore 28 qbit over 14 depth and extract it for filter-feed processing
 #
 wget https://datadryad.org/stash/downloads/file_stream/693522
