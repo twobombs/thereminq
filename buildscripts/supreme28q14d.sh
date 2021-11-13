@@ -2,7 +2,7 @@
 # this script fetches and converts the 28q14d sycamore results
 # and places those values in a tipsy AdS/CFT-style tincan graph 
 # a regular PC with 16 cores/threads will take ~24 hours to complete
-# results of this calculation will be placed in the qracknet repo
+# results of this calculation will be placed in the qracknet-graph repo
 # 
 # ==== here starts tipsy header declarations ======
 
