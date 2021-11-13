@@ -45,32 +45,32 @@ echo "binary to decimal conversion done"
 # seprate in 4 x/y blocks: again a 10+ threads split
 #
 echo "starting cos/sin x/y calculations"
-awk '{x=28*-sin($1*0.000000084); print x;}' measured_supreme_n12_m14_s0_e0_pEFGH.dec > measured_supreme_n12_m14_s0_e0_x.dec &
-awk '{y=28*-cos($1*0.000000084); print y;}' measured_supreme_n12_m14_s0_e0_pEFGH.dec > measured_supreme_n12_m14_s0_e0_y.dec &
+awk '{x=12*-sin($1*0.087912088); print x;}' measured_supreme_n12_m14_s0_e0_pEFGH.dec > measured_supreme_n12_m14_s0_e0_x.dec &
+awk '{y=12*-cos($1*0.087912088); print y;}' measured_supreme_n12_m14_s0_e0_pEFGH.dec > measured_supreme_n12_m14_s0_e0_y.dec &
 #
-awk '{x=28*-sin($1*0.000000084); print x;}' measured_supreme_n14_m14_s0_e0_pEFGH.dec > measured_supreme_n14_m14_s0_e0_x.dec &
-awk '{y=28*-cos($1*0.000000084); print y;}' measured_supreme_n14_m14_s0_e0_pEFGH.dec > measured_supreme_n14_m14_s0_e0_y.dec &
+awk '{x=14*-sin($1*0.021973997); print x;}' measured_supreme_n14_m14_s0_e0_pEFGH.dec > measured_supreme_n14_m14_s0_e0_x.dec &
+awk '{y=14*-cos($1*0.021973997); print y;}' measured_supreme_n14_m14_s0_e0_pEFGH.dec > measured_supreme_n14_m14_s0_e0_y.dec &
 #
-awk '{x=28*-sin($1*0.000000084); print x;}' measured_supreme_n16_m14_s0_e0_pEFGH.dec > measured_supreme_n16_m14_s0_e0_x.dec &
-awk '{y=28*-cos($1*0.000000084); print y;}' measured_supreme_n16_m14_s0_e0_pEFGH.dec > measured_supreme_n16_m14_s0_e0_y.dec &
+awk '{x=16*-sin($1*0.0055); print x;}' measured_supreme_n16_m14_s0_e0_pEFGH.dec > measured_supreme_n16_m14_s0_e0_x.dec &
+awk '{y=16*-cos($1*0.0055); print y;}' measured_supreme_n16_m14_s0_e0_pEFGH.dec > measured_supreme_n16_m14_s0_e0_y.dec &
 #
-awk '{x=28*-sin($1*0.000000084); print x;}' measured_supreme_n18_m14_s0_e0_pEFGH.dec > measured_supreme_n18_m14_s0_e0_x.dec &
-awk '{y=28*-cos($1*0.000000084); print y;}' measured_supreme_n18_m14_s0_e0_pEFGH.dec > measured_supreme_n18_m14_s0_e0_y.dec &
+awk '{x=18*-sin($1*0.001373296); print x;}' measured_supreme_n18_m14_s0_e0_pEFGH.dec > measured_supreme_n18_m14_s0_e0_x.dec &
+awk '{y=18*-cos($1*0.001373296); print y;}' measured_supreme_n18_m14_s0_e0_pEFGH.dec > measured_supreme_n18_m14_s0_e0_y.dec &
 #
-awk '{x=28*-sin($1*0.000000084); print x;}' measured_supreme_n20_m14_s0_e0_pEFGH.dec > measured_supreme_n20_m14_s0_e0_x.dec
-awk '{y=28*-cos($1*0.000000084); print y;}' measured_supreme_n20_m14_s0_e0_pEFGH.dec > measured_supreme_n20_m14_s0_e0_y.dec &
+awk '{x=20*-sin($1*0.000343323); print x;}' measured_supreme_n20_m14_s0_e0_pEFGH.dec > measured_supreme_n20_m14_s0_e0_x.dec
+awk '{y=20*-cos($1*0.000343323); print y;}' measured_supreme_n20_m14_s0_e0_pEFGH.dec > measured_supreme_n20_m14_s0_e0_y.dec &
 #
-awk '{x=28*-sin($1*0.000000084); print x;}' measured_supreme_n22_m14_s0_e0_pEFGH.dec > measured_supreme_n22_m14_s0_e0_x.dec &
-awk '{y=28*-cos($1*0.000000084); print y;}' measured_supreme_n22_m14_s0_e0_pEFGH.dec > measured_supreme_n22_m14_s0_e0_y.dec &
+awk '{x=22*-sin($1*0.000085831); print x;}' measured_supreme_n22_m14_s0_e0_pEFGH.dec > measured_supreme_n22_m14_s0_e0_x.dec &
+awk '{y=22*-cos($1*0.000085831); print y;}' measured_supreme_n22_m14_s0_e0_pEFGH.dec > measured_supreme_n22_m14_s0_e0_y.dec &
 #
-awk '{x=28*-sin($1*0.000000084); print x;}' measured_supreme_n24_m14_s0_e0_pEFGH.dec > measured_supreme_n24_m14_s0_e0_x.dec &
-awk '{y=28*-cos($1*0.000000084); print y;}' measured_supreme_n24_m14_s0_e0_pEFGH.dec > measured_supreme_n24_m14_s0_e0_y.dec &
+awk '{x=24*-sin($1*0.000021458); print x;}' measured_supreme_n24_m14_s0_e0_pEFGH.dec > measured_supreme_n24_m14_s0_e0_x.dec &
+awk '{y=24*-cos($1*0.000021458); print y;}' measured_supreme_n24_m14_s0_e0_pEFGH.dec > measured_supreme_n24_m14_s0_e0_y.dec &
 #
-awk '{x=28*-sin($1*0.000000084); print x;}' measured_supreme_n26_m14_s0_e0_pEFGH.dec > measured_supreme_n26_m14_s0_e0_x.dec &
-awk '{y=28*-cos($1*0.000000084); print y;}' measured_supreme_n26_m14_s0_e0_pEFGH.dec > measured_supreme_n26_m14_s0_e0_y.dec &
+awk '{x=26*-sin($1*0.000005364); print x;}' measured_supreme_n26_m14_s0_e0_pEFGH.dec > measured_supreme_n26_m14_s0_e0_x.dec &
+awk '{y=26*-cos($1*0.000005364); print y;}' measured_supreme_n26_m14_s0_e0_pEFGH.dec > measured_supreme_n26_m14_s0_e0_y.dec &
 #
-awk '{x=28*-sin($1*0.000000084); print x;}' measured_supreme_n28_m14_s0_e0_pEFGH.dec > measured_supreme_n28_m14_s0_e0_x.dec &
-awk '{y=28*-cos($1*0.000000084); print y;}' measured_supreme_n28_m14_s0_e0_pEFGH.dec > measured_supreme_n28_m14_s0_e0_y.dec
+awk '{x=28*-sin($1*0.000001341); print x;}' measured_supreme_n28_m14_s0_e0_pEFGH.dec > measured_supreme_n28_m14_s0_e0_x.dec &
+awk '{y=28*-cos($1*0.000001341); print y;}' measured_supreme_n28_m14_s0_e0_pEFGH.dec > measured_supreme_n28_m14_s0_e0_y.dec
 #
 #
 # convert coordinates from dec to float hex ( divided into 4 parts to keep below the 16 cores requirement )
@@ -79,32 +79,32 @@ awk '{y=28*-cos($1*0.000000084); print y;}' measured_supreme_n28_m14_s0_e0_pEFGH
 # for a in $(< measured_supreme_n??_m14_y.dec); do /root/.local/bin/crackNum -f sp $(echo $a) | grep "Hex layout" ; done > ../measured_supreme_n12-28_m14_y.flex &
 #
 echo "starting the long march"
-for a in $(< measured_supreme_n12_m14_s0_e0_x.dec); do /root/.local/bin/crackNum -f sp -- $(echo $a) | grep "Hex layout" ; done > ../measured_supreme_n12_m14_s0_e0_x.flex &
-for a in $(< measured_supreme_n12_m14_s0_e0_y.dec); do /root/.local/bin/crackNum -f sp -- $(echo $a) | grep "Hex layout" ; done > ../measured_supreme_n12_m14_s0_e0_y.flex &
+for a in $(< measured_supreme_n12_m14_s0_e0_x.dec); do /root/.local/bin/crackNum -f sp -- $(echo $a*12) | grep "Hex layout" ; done > ../measured_supreme_n12_m14_s0_e0_x.flex &
+for a in $(< measured_supreme_n12_m14_s0_e0_y.dec); do /root/.local/bin/crackNum -f sp -- $(echo $a*12) | grep "Hex layout" ; done > ../measured_supreme_n12_m14_s0_e0_y.flex &
 #
-for a in $(< measured_supreme_n14_m14_s0_e0_x.dec); do /root/.local/bin/crackNum -f sp -- $(echo $a) | grep "Hex layout" ; done > ../measured_supreme_n14_m14_s0_e0_x.flex &
-for a in $(< measured_supreme_n14_m14_s0_e0_y.dec); do /root/.local/bin/crackNum -f sp -- $(echo $a) | grep "Hex layout" ; done > ../measured_supreme_n14_m14_s0_e0_y.flex &
+for a in $(< measured_supreme_n14_m14_s0_e0_x.dec); do /root/.local/bin/crackNum -f sp -- $(echo $a*14) | grep "Hex layout" ; done > ../measured_supreme_n14_m14_s0_e0_x.flex &
+for a in $(< measured_supreme_n14_m14_s0_e0_y.dec); do /root/.local/bin/crackNum -f sp -- $(echo $a*14) | grep "Hex layout" ; done > ../measured_supreme_n14_m14_s0_e0_y.flex &
 #
-for a in $(< measured_supreme_n16_m14_s0_e0_x.dec); do /root/.local/bin/crackNum -f sp -- $(echo $a) | grep "Hex layout" ; done > ../measured_supreme_n16_m14_s0_e0_x.flex &
-for a in $(< measured_supreme_n16_m14_s0_e0_y.dec); do /root/.local/bin/crackNum -f sp -- $(echo $a) | grep "Hex layout" ; done > ../measured_supreme_n16_m14_s0_e0_y.flex &
+for a in $(< measured_supreme_n16_m14_s0_e0_x.dec); do /root/.local/bin/crackNum -f sp -- $(echo $a*16) | grep "Hex layout" ; done > ../measured_supreme_n16_m14_s0_e0_x.flex &
+for a in $(< measured_supreme_n16_m14_s0_e0_y.dec); do /root/.local/bin/crackNum -f sp -- $(echo $a*16) | grep "Hex layout" ; done > ../measured_supreme_n16_m14_s0_e0_y.flex &
 #
-for a in $(< measured_supreme_n18_m14_s0_e0_x.dec); do /root/.local/bin/crackNum -f sp -- $(echo $a) | grep "Hex layout" ; done > ../measured_supreme_n18_m14_s0_e0_x.flex &
-for a in $(< measured_supreme_n18_m14_s0_e0_y.dec); do /root/.local/bin/crackNum -f sp -- $(echo $a) | grep "Hex layout" ; done > ../measured_supreme_n18_m14_s0_e0_y.flex &
+for a in $(< measured_supreme_n18_m14_s0_e0_x.dec); do /root/.local/bin/crackNum -f sp -- $(echo $a*18) | grep "Hex layout" ; done > ../measured_supreme_n18_m14_s0_e0_x.flex &
+for a in $(< measured_supreme_n18_m14_s0_e0_y.dec); do /root/.local/bin/crackNum -f sp -- $(echo $a*18) | grep "Hex layout" ; done > ../measured_supreme_n18_m14_s0_e0_y.flex &
 #
-for a in $(< measured_supreme_n20_m14_s0_e0_x.dec); do /root/.local/bin/crackNum -f sp -- $(echo $a) | grep "Hex layout" ; done > ../measured_supreme_n20_m14_s0_e0_x.flex
-for a in $(< measured_supreme_n20_m14_s0_e0_y.dec); do /root/.local/bin/crackNum -f sp -- $(echo $a) | grep "Hex layout" ; done > ../measured_supreme_n20_m14_s0_e0_y.flex &
+for a in $(< measured_supreme_n20_m14_s0_e0_x.dec); do /root/.local/bin/crackNum -f sp -- $(echo $a*20) | grep "Hex layout" ; done > ../measured_supreme_n20_m14_s0_e0_x.flex
+for a in $(< measured_supreme_n20_m14_s0_e0_y.dec); do /root/.local/bin/crackNum -f sp -- $(echo $a*20) | grep "Hex layout" ; done > ../measured_supreme_n20_m14_s0_e0_y.flex &
 #
-for a in $(< measured_supreme_n22_m14_s0_e0_x.dec); do /root/.local/bin/crackNum -f sp -- $(echo $a) | grep "Hex layout" ; done > ../measured_supreme_n22_m14_s0_e0_x.flex &
-for a in $(< measured_supreme_n22_m14_s0_e0_y.dec); do /root/.local/bin/crackNum -f sp -- $(echo $a) | grep "Hex layout" ; done > ../measured_supreme_n22_m14_s0_e0_y.flex &
+for a in $(< measured_supreme_n22_m14_s0_e0_x.dec); do /root/.local/bin/crackNum -f sp -- $(echo $a*22) | grep "Hex layout" ; done > ../measured_supreme_n22_m14_s0_e0_x.flex &
+for a in $(< measured_supreme_n22_m14_s0_e0_y.dec); do /root/.local/bin/crackNum -f sp -- $(echo $a*22) | grep "Hex layout" ; done > ../measured_supreme_n22_m14_s0_e0_y.flex &
 #
-for a in $(< measured_supreme_n24_m14_s0_e0_x.dec); do /root/.local/bin/crackNum -f sp -- $(echo $a) | grep "Hex layout" ; done > ../measured_supreme_n24_m14_s0_e0_x.flex &
-for a in $(< measured_supreme_n24_m14_s0_e0_y.dec); do /root/.local/bin/crackNum -f sp -- $(echo $a) | grep "Hex layout" ; done > ../measured_supreme_n24_m14_s0_e0_y.flex &
+for a in $(< measured_supreme_n24_m14_s0_e0_x.dec); do /root/.local/bin/crackNum -f sp -- $(echo $a*24) | grep "Hex layout" ; done > ../measured_supreme_n24_m14_s0_e0_x.flex &
+for a in $(< measured_supreme_n24_m14_s0_e0_y.dec); do /root/.local/bin/crackNum -f sp -- $(echo $a*24) | grep "Hex layout" ; done > ../measured_supreme_n24_m14_s0_e0_y.flex &
 #
-for a in $(< measured_supreme_n26_m14_s0_e0_x.dec); do /root/.local/bin/crackNum -f sp -- $(echo $a) | grep "Hex layout" ; done > ../measured_supreme_n26_m14_s0_e0_x.flex &
-for a in $(< measured_supreme_n26_m14_s0_e0_y.dec); do /root/.local/bin/crackNum -f sp -- $(echo $a) | grep "Hex layout" ; done > ../measured_supreme_n26_m14_s0_e0_y.flex &
+for a in $(< measured_supreme_n26_m14_s0_e0_x.dec); do /root/.local/bin/crackNum -f sp -- $(echo $a*26) | grep "Hex layout" ; done > ../measured_supreme_n26_m14_s0_e0_x.flex &
+for a in $(< measured_supreme_n26_m14_s0_e0_y.dec); do /root/.local/bin/crackNum -f sp -- $(echo $a*26) | grep "Hex layout" ; done > ../measured_supreme_n26_m14_s0_e0_y.flex &
 #
-for a in $(< measured_supreme_n28_m14_s0_e0_x.dec); do /root/.local/bin/crackNum -f sp -- $(echo $a) | grep "Hex layout" ; done > ../measured_supreme_n28_m14_s0_e0_x.flex &
-for a in $(< measured_supreme_n28_m14_s0_e0_y.dec); do /root/.local/bin/crackNum -f sp -- $(echo $a) | grep "Hex layout" ; done > ../measured_supreme_n28_m14_s0_e0_y.flex
+for a in $(< measured_supreme_n28_m14_s0_e0_x.dec); do /root/.local/bin/crackNum -f sp -- $(echo $a*28) | grep "Hex layout" ; done > ../measured_supreme_n28_m14_s0_e0_x.flex &
+for a in $(< measured_supreme_n28_m14_s0_e0_y.dec); do /root/.local/bin/crackNum -f sp -- $(echo $a*28) | grep "Hex layout" ; done > ../measured_supreme_n28_m14_s0_e0_y.flex
 #
 echo  "240 secs for tasks to finish"
 sleep 240
