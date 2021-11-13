@@ -15,7 +15,7 @@ echo "00010000" > version.hex
 
 # ==== here end tipsy special declarations =========
 
-# we fetch the sycamore 28 qbit over 14 depth and extract it for filter-feed processing
+# we fetch the sycamore 12 to 28 qbit over 14 depth results and extract it for filter-feed processing
 #
 tar -xvzf ../../miscfiles/supreme_rings.tar.gz ./ && cd supreme_rings
 cat measure* > measured_supreme_12-28q14d.txt
