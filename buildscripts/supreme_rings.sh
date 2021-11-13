@@ -17,7 +17,7 @@ echo "00010000" > version.hex
 
 # we fetch the sycamore 12 to 28 qbit over 14 depth results and extract it for filter-feed processing
 #
-tar -xvzf ../../miscfiles/supreme_rings.tar.gz ./ && cd supreme_rings
+tar -xvzf /qracknet/miscfiles/sycamore_rings.tar.gz ./ && cd sycamore_rings
 cat measure* > measured_supreme_12-28q14d.txt
 
 # the following scripts splices the workload into 10 separate 2-thread workloads. scale accordingly.
@@ -78,7 +78,7 @@ awk '{y=28*-cos($1*0.000000084); print y;}' measured_supreme_n28_m14_s0_e0_pEFGH
 # for a in $(< measured_supreme_n??_m14_x.dec); do /root/.local/bin/crackNum -f sp $(echo $a) | grep "Hex layout" ; done > ../measured_supreme_n12-28_m14_x.flex &
 # for a in $(< measured_supreme_n??_m14_y.dec); do /root/.local/bin/crackNum -f sp $(echo $a) | grep "Hex layout" ; done > ../measured_supreme_n12-28_m14_y.flex &
 #
-echo"starting the long march"
+echo "starting the long march"
 for a in $(< measured_supreme_n12_m14_s0_e0_x.dec); do /root/.local/bin/crackNum -f sp -- $(echo $a) | grep "Hex layout" ; done > ../measured_supreme_n12_m14_s0_e0_x.flex &
 for a in $(< measured_supreme_n12_m14_s0_e0_y.dec); do /root/.local/bin/crackNum -f sp -- $(echo $a) | grep "Hex layout" ; done > ../measured_supreme_n12_m14_s0_e0_y.flex &
 #
