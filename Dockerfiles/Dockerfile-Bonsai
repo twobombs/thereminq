@@ -8,10 +8,10 @@ RUN cd /Bonsai/runtime/lib && mv linux linux_temp && mv linux_fpic_glew linux
 RUN cd /Bonsai/runtime && cmake -DCMAKE_CXX_COMPILER=mpicxx -DUSE_CUB=0 -DUSE_OPENGL=1 -DCUDA_CUDART_LIBRARY=/usr/local/cuda/lib64/libcudart.so && make && cd /Bonsai/tools/IO && make
 
 # add and convert demo data
-RUN tar -xf /qracknet/miscfiles/qrack-cosmos.tar.gz -C /var/log/
+RUN tar -xf /thereminq/miscfiles/qrack-cosmos.tar.gz -C /var/log/
 RUN apt install time
-RUN cat /proc/cpuinfo > /qracknet/cpuinfo.txt
-RUN cd /qracknet/buildscripts && /usr/bin/time ./maketipsy.sh
+RUN cat /proc/cpuinfo > /thereminq/cpuinfo.txt
+RUN cd /thereminq/buildscripts && /usr/bin/time ./maketipsy.sh
 
 EXPOSE 22 6080 8801-8811
 ENTRYPOINT /root/run-bonsai
