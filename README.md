@@ -1,8 +1,8 @@
-# QrackNet: Qrack, ELK, Tipsy, CUDA and OpenCL
+# ThereminQ: Qrack, ELK, Tipsy, CUDA and OpenCL
 
 ![](https://img.shields.io/docker/automated/jrottenberg/ffmpeg.svg)
 
-QrackNet aims to provide a suite of best-of-class tools designed to extend and visualize the data emanating from Quantum circuits using ELK, Tipsy and Jupyter on CUDA and OpenCL accelerators.
+ThereminQ aims to provide a suite of best-of-class tools designed to extend and visualize the data emanating from Quantum circuits using ELK, Tipsy and Jupyter on CUDA and OpenCL accelerators.
 
 - Qrack - Qbit OCL Hardware Emulation Stack > https://github.com/vm6502q/qrack
 - Bonsai - Stellar data visualizer for QFT data and converter > https://github.com/treecode/Bonsai
@@ -18,10 +18,10 @@ Images can be run independantly but are made to work with the vQbit infrastructu
 
 <img width="1435" alt="Screenshot 2021-05-04 at 15 10 27" src="https://user-images.githubusercontent.com/12692227/117008533-21d79280-aceb-11eb-993a-efa7d1123a1f.png">
 
-## Deploy an instance of QrackNet's WebUI controller container and/or select a specific workload type to run on your favorite orchestrator
-- docker run --gpus all --privileged -p 6080:6080 -v /var/run/docker.sock:/var/run/docker.sock:ro --device=/dev/dri:/dev/dri -d twobombs/qracknet:controller
-- docker run -d --mount type=bind,source=/var/log/qrack,target=/var/log/qrack twobombs/qracknet:supreme-cpu
-- docker run --gpus all --device=/dev/dri:/dev/dri -d --mount type=bind,source=/var/log/qrack,target=/var/log/qrack twobombs/qracknet:cosmos-gpu1 <br> <br>
+## Deploy an instance of ThereminQ's WebUI controller container and/or select a specific workload type to run on your favorite orchestrator
+- docker run --gpus all --privileged -p 6080:6080 -v /var/run/docker.sock:/var/run/docker.sock:ro --device=/dev/dri:/dev/dri -d twobombs/thereminq:controller
+- docker run -d --mount type=bind,source=/var/log/qrack,target=/var/log/qrack twobombs/thereminq:supreme-cpu
+- docker run --gpus all --device=/dev/dri:/dev/dri -d --mount type=bind,source=/var/log/qrack,target=/var/log/qrack twobombs/thereminq:cosmos-gpu1 <br> <br>
 use --gpus all for NVidia-Docker hosts, in addition --privileged will expose all GPUs in the system, eg: Intel iGPUs
 
 
