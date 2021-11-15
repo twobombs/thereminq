@@ -1,4 +1,4 @@
-# ThereminQ: Orchestrating Qrack, ELK, Bonsai and Tipsy on CUDA and OpenCL
+# Orchestrating Qrack, ELK, Bonsai and Tipsy on CUDA and OpenCL
 
 ![](https://img.shields.io/docker/automated/jrottenberg/ffmpeg.svg)
 
