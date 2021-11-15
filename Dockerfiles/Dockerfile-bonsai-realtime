@@ -1,4 +1,4 @@
-FROM twobombs/qracknet:bonsai
+FROM twobombs/thereminq:bonsai
 
 RUN rm /Bonsai/images/*
 

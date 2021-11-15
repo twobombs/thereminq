@@ -1,4 +1,4 @@
-FROM twobombs/qracknet:bonsai
+FROM twobombs/thereminq:bonsai
 
 EXPOSE 22 80 8801-8811
 ENTRYPOINT /root/run-node

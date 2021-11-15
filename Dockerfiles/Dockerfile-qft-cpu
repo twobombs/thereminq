@@ -1,4 +1,4 @@
-FROM twobombs/qracknet
+FROM twobombs/thereminq
 
 RUN apt install pocl-opencl-icd
 

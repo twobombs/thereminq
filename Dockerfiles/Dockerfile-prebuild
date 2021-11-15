@@ -1,4 +1,4 @@
-FROM twobombs/qracknet
+FROM twobombs/thereminq
 
 RUN tar -xf /qracknet/miscfiles/qrack-cosmos.tar.gz -C /var/log/
 RUN apt install time

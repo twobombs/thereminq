@@ -1,4 +1,4 @@
-FROM twobombs/qracknet
+FROM twobombs/thereminq
 
 # install bonsai
 RUN apt update

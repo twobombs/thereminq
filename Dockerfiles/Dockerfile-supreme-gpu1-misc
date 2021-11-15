@@ -1,4 +1,4 @@
-FROM twobombs/qracknet
+FROM twobombs/thereminq
 
 EXPOSE 22 80 8801-8811
 ENTRYPOINT /root/run-supreme-gpu1-misc

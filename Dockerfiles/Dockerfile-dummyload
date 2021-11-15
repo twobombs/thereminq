@@ -1,4 +1,4 @@
-FROM twobombs/qracknet:controller
+FROM twobombs/thereminq:controller
 
 ADD miscfiles/qrack-cosmos.tar.gz /var/log/
 
