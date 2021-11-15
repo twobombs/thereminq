@@ -1,4 +1,4 @@
-# Orchestrating Qrack, ELK, Bonsai and Tipsy on CUDA and OpenCL
+# Orchestrating Qrack, ELK, Bonsai and Tipsy on CUDA/OCL
 
 ![](https://img.shields.io/docker/automated/jrottenberg/ffmpeg.svg)
 
