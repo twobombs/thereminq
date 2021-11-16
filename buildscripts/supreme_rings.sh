@@ -122,15 +122,15 @@ grep "Hex layout" ../measured_supreme_n12-28d14_y.flex | tr -d ' ' | tr -d 'Hexl
 # oneliner: for a in $(< measured_supreme28q14d.dec); do /root/.local/bin/crackNum -f sp $(echo $a) | grep "Hex layout" ; done > ../n28_m14.flex
 #
 echo "starting dec to float hex conversion" 
-for a in $(< measurements_n12_m14_s0_e0_pEFGH.dec); do /root/.local/bin/crackNum -f sp -- $(echo $a*12) | grep "Hex layout" ; done > ../n12_m14_s0_e0_pEFGH.flex &
-for a in $(< measurements_n14_m14_s0_e0_pEFGH.dec); do /root/.local/bin/crackNum -f sp -- $(echo $a*14) | grep "Hex layout" ; done > ../n14_m14_s0_e0_pEFGH.flex &
-for a in $(< measurements_n16_m14_s0_e0_pEFGH.dec); do /root/.local/bin/crackNum -f sp -- $(echo $a*16) | grep "Hex layout" ; done > ../n16_m14_s0_e0_pEFGH.flex &
-for a in $(< measurements_n18_m14_s0_e0_pEFGH.dec); do /root/.local/bin/crackNum -f sp -- $(echo $a*18) | grep "Hex layout" ; done > ../n18_m14_s0_e0_pEFGH.flex &
-for a in $(< measurements_n20_m14_s0_e0_pEFGH.dec); do /root/.local/bin/crackNum -f sp -- $(echo $a*20) | grep "Hex layout" ; done > ../n20_m14_s0_e0_pEFGH.flex &
-for a in $(< measurements_n22_m14_s0_e0_pEFGH.dec); do /root/.local/bin/crackNum -f sp -- $(echo $a*22) | grep "Hex layout" ; done > ../n22_m14_s0_e0_pEFGH.flex &
-for a in $(< measurements_n24_m14_s0_e0_pEFGH.dec); do /root/.local/bin/crackNum -f sp -- $(echo $a*24) | grep "Hex layout" ; done > ../n24_m14_s0_e0_pEFGH.flex &
-for a in $(< measurements_n26_m14_s0_e0_pEFGH.dec); do /root/.local/bin/crackNum -f sp -- $(echo $a*26) | grep "Hex layout" ; done > ../n26_m14_s0_e0_pEFGH.flex &
-for a in $(< measurements_n28_m14_s0_e0_pEFGH.dec); do /root/.local/bin/crackNum -f sp -- $(echo $a*28) | grep "Hex layout" ; done > ../n28_m14_s0_e0_pEFGH.flex
+for a in $(< measured_supreme_n12_m14_s0_e0_pEFGH.dec); do /root/.local/bin/crackNum -f sp -- $(echo $a*12) | grep "Hex layout" ; done > ../n12_m14_s0_e0_pEFGH.flex &
+for a in $(< measured_supreme_n14_m14_s0_e0_pEFGH.dec); do /root/.local/bin/crackNum -f sp -- $(echo $a*14) | grep "Hex layout" ; done > ../n14_m14_s0_e0_pEFGH.flex &
+for a in $(< measured_supreme_n16_m14_s0_e0_pEFGH.dec); do /root/.local/bin/crackNum -f sp -- $(echo $a*16) | grep "Hex layout" ; done > ../n16_m14_s0_e0_pEFGH.flex &
+for a in $(< measured_supreme_n18_m14_s0_e0_pEFGH.dec); do /root/.local/bin/crackNum -f sp -- $(echo $a*18) | grep "Hex layout" ; done > ../n18_m14_s0_e0_pEFGH.flex &
+for a in $(< measured_supreme_n20_m14_s0_e0_pEFGH.dec); do /root/.local/bin/crackNum -f sp -- $(echo $a*20) | grep "Hex layout" ; done > ../n20_m14_s0_e0_pEFGH.flex &
+for a in $(< measured_supreme_n22_m14_s0_e0_pEFGH.dec); do /root/.local/bin/crackNum -f sp -- $(echo $a*22) | grep "Hex layout" ; done > ../n22_m14_s0_e0_pEFGH.flex &
+for a in $(< measured_supreme_n24_m14_s0_e0_pEFGH.dec); do /root/.local/bin/crackNum -f sp -- $(echo $a*24) | grep "Hex layout" ; done > ../n24_m14_s0_e0_pEFGH.flex &
+for a in $(< measured_supreme_n26_m14_s0_e0_pEFGH.dec); do /root/.local/bin/crackNum -f sp -- $(echo $a*26) | grep "Hex layout" ; done > ../n26_m14_s0_e0_pEFGH.flex &
+for a in $(< measured_supreme_n28_m14_s0_e0_pEFGH.dec); do /root/.local/bin/crackNum -f sp -- $(echo $a*28) | grep "Hex layout" ; done > ../n28_m14_s0_e0_pEFGH.flex
 #
 echo "ready"
 
