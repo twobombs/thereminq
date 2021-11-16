@@ -1,5 +1,5 @@
 #!/bin/bash
-# this script converts 4500k of the s0e0 12q/28q-14d sycamore results
+# this script converts 45000k of the s0e0 12q/28q-14d sycamore results
 # and places those values in a tipsy AdS/CFT-style concentric tincan graph 
 # a regular PC with 16 cores/threads will take ~12 hours to complete
 # results of this calculation will be placed in the qracknet-graph repo
