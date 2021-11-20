@@ -19,14 +19,14 @@ service filebeat start &
 cd /qrack/_build/ && ./qrack_cl_precompile
 
 # run benchmark for load & output simulation
-./benchmarks --proc-stabilizer-qpager --single -m=12 --benchmark-samples=1000 --benchmark-depth=14 --device-id=1 --measure-output=/var/log/qrack/"measured_supreme_gpu2$(date +%F_%R_%S).log" test_quantum_supremacy
-./benchmarks --proc-stabilizer-qpager --single -m=14 --benchmark-samples=1000 --benchmark-depth=14 --device-id=1 --measure-output=/var/log/qrack/"measured_supreme_gpu2$(date +%F_%R_%S).log" test_quantum_supremacy
-./benchmarks --proc-stabilizer-qpager --single -m=16 --benchmark-samples=1000 --benchmark-depth=14 --device-id=1 --measure-output=/var/log/qrack/"measured_supreme_gpu2$(date +%F_%R_%S).log" test_quantum_supremacy
-./benchmarks --proc-stabilizer-qpager --single -m=18 --benchmark-samples=1000 --benchmark-depth=14 --device-id=1 --measure-output=/var/log/qrack/"measured_supreme_gpu2$(date +%F_%R_%S).log" test_quantum_supremacy
-./benchmarks --proc-stabilizer-qpager --single -m=20 --benchmark-samples=1000 --benchmark-depth=14 --device-id=1 --measure-output=/var/log/qrack/"measured_supreme_gpu2$(date +%F_%R_%S).log" test_quantum_supremacy
-./benchmarks --proc-stabilizer-qpager --single -m=22 --benchmark-samples=1000 --benchmark-depth=14 --device-id=1 --measure-output=/var/log/qrack/"measured_supreme_gpu2$(date +%F_%R_%S).log" test_quantum_supremacy
-./benchmarks --proc-stabilizer-qpager --single -m=24 --benchmark-samples=1000 --benchmark-depth=14 --device-id=1 --measure-output=/var/log/qrack/"measured_supreme_gpu2$(date +%F_%R_%S).log" test_quantum_supremacy
-./benchmarks --proc-stabilizer-qpager --single -m=26 --benchmark-samples=1000 --benchmark-depth=14 --device-id=1 --measure-output=/var/log/qrack/"measured_supreme_gpu2$(date +%F_%R_%S).log" test_quantum_supremacy
+./benchmarks --proc-stabilizer-qpager --single -m=12 --samples=1000 --benchmark-depth=14 --device-id=1 --measure-output=/var/log/qrack/"measured_supreme_gpu2$(date +%F_%R_%S).log" test_quantum_supremacy
+./benchmarks --proc-stabilizer-qpager --single -m=14 --samples=1000 --benchmark-depth=14 --device-id=1 --measure-output=/var/log/qrack/"measured_supreme_gpu2$(date +%F_%R_%S).log" test_quantum_supremacy
+./benchmarks --proc-stabilizer-qpager --single -m=16 --samples=1000 --benchmark-depth=14 --device-id=1 --measure-output=/var/log/qrack/"measured_supreme_gpu2$(date +%F_%R_%S).log" test_quantum_supremacy
+./benchmarks --proc-stabilizer-qpager --single -m=18 --samples=1000 --benchmark-depth=14 --device-id=1 --measure-output=/var/log/qrack/"measured_supreme_gpu2$(date +%F_%R_%S).log" test_quantum_supremacy
+./benchmarks --proc-stabilizer-qpager --single -m=20 --samples=1000 --benchmark-depth=14 --device-id=1 --measure-output=/var/log/qrack/"measured_supreme_gpu2$(date +%F_%R_%S).log" test_quantum_supremacy
+./benchmarks --proc-stabilizer-qpager --single -m=22 --samples=1000 --benchmark-depth=14 --device-id=1 --measure-output=/var/log/qrack/"measured_supreme_gpu2$(date +%F_%R_%S).log" test_quantum_supremacy
+./benchmarks --proc-stabilizer-qpager --single -m=24 --samples=1000 --benchmark-depth=14 --device-id=1 --measure-output=/var/log/qrack/"measured_supreme_gpu2$(date +%F_%R_%S).log" test_quantum_supremacy
+./benchmarks --proc-stabilizer-qpager --single -m=26 --samples=1000 --benchmark-depth=14 --device-id=1 --measure-output=/var/log/qrack/"measured_supreme_gpu2$(date +%F_%R_%S).log" test_quantum_supremacy
 
 # end run, do not stop container ( debug feature )
 # tail -f /dev/null
