@@ -10,4 +10,4 @@ nvidia-smi
 
 startxfce4 &
 
-cd /qracknet/buildscripts && ./maketipsy.sh && cd /Bonsai/runtime/ && ./bonsai2_slowdust --displayfps -t 0.00001 --reducebodies 3 -i /qracknet/buildscripts/tipsy-qube_hexdump.bin
+cd /qracknet/buildscripts && ./makeqftipsy.sh && cd /Bonsai/runtime/ && ./bonsai2_slowdust --displayfps -t 0.00001 --reducebodies 3 -i /qracknet/buildscripts/tipsy-qube_hexdump.bin
