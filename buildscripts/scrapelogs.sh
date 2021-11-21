@@ -21,3 +21,10 @@ wc -l supreme_22q14d_results.txt
 wc -l supreme_24q14d_results.txt
 wc -l supreme_26q14d_results.txt
 wc -l supreme_28q14d_results.txt
+#
+# QFT results
+#
+cat measured_cosmos_* | grep ',27,' | grep -v 'TestName' | grep -v ',27,0' > cosmos_27q_results.txt
+#
+wc -l cosmos_27q_results.txt
+#
