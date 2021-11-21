@@ -2,15 +2,15 @@
 #
 # sycamore results:
 #
-cat measured_supreme_* | grep ',12,' | grep -v 'TestName' | grep -v ',12,0' > supreme_12q14d_results.txt
-cat measured_supreme_* | grep ',14,' | grep -v 'TestName' | grep -v ',14,0' > supreme_14q14d_results.txt
-cat measured_supreme_* | grep ',16,' | grep -v 'TestName' | grep -v ',16,0' > supreme_16q14d_results.txt
-cat measured_supreme_* | grep ',18,' | grep -v 'TestName' | grep -v ',18,0' > supreme_18q14d_results.txt
-cat measured_supreme_* | grep ',20,' | grep -v 'TestName' | grep -v ',20,0' > supreme_20q14d_results.txt
-cat measured_supreme_* | grep ',22,' | grep -v 'TestName' | grep -v ',22,0' > supreme_22q14d_results.txt
-cat measured_supreme_* | grep ',24,' | grep -v 'TestName' | grep -v ',24,0' > supreme_24q14d_results.txt
-cat measured_supreme_* | grep ',26,' | grep -v 'TestName' | grep -v ',26,0' > supreme_26q14d_results.txt
-cat measured_supreme_* | grep ',28,' | grep -v 'TestName' | grep -v ',28,0' > supreme_28q14d_results.txt
+cat /var/log/qrack/measured_supreme_* | grep ',12,' | grep -v 'TestName' | grep -v ',12,0' > supreme_12q14d_results.txt
+cat /var/log/qrack/measured_supreme_* | grep ',14,' | grep -v 'TestName' | grep -v ',14,0' > supreme_14q14d_results.txt
+cat /var/log/qrack/measured_supreme_* | grep ',16,' | grep -v 'TestName' | grep -v ',16,0' > supreme_16q14d_results.txt
+cat /var/log/qrack/measured_supreme_* | grep ',18,' | grep -v 'TestName' | grep -v ',18,0' > supreme_18q14d_results.txt
+cat /var/log/qrack/measured_supreme_* | grep ',20,' | grep -v 'TestName' | grep -v ',20,0' > supreme_20q14d_results.txt
+cat /var/log/qrack/measured_supreme_* | grep ',22,' | grep -v 'TestName' | grep -v ',22,0' > supreme_22q14d_results.txt
+cat /var/log/qrack/measured_supreme_* | grep ',24,' | grep -v 'TestName' | grep -v ',24,0' > supreme_24q14d_results.txt
+cat /var/log/qrack/measured_supreme_* | grep ',26,' | grep -v 'TestName' | grep -v ',26,0' > supreme_26q14d_results.txt
+cat /var/log/qrack/measured_supreme_* | grep ',28,' | grep -v 'TestName' | grep -v ',28,0' > supreme_28q14d_results.txt
 #
 wc -l supreme_12q14d_results.txt
 wc -l supreme_14q14d_results.txt
@@ -24,7 +24,7 @@ wc -l supreme_28q14d_results.txt
 #
 # QFT results
 #
-cat measured_cosmos_* | grep ',27,' | grep -v 'TestName' | grep -v ',27,0' > cosmos_27q_results.txt
+cat /var/log/qrack/measured_cosmos_* | grep ',27,' | grep -v 'TestName' | grep -v ',27,0' > cosmos_27q_results.txt
 #
 wc -l cosmos_27q_results.txt
 #
