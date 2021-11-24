@@ -11,6 +11,7 @@ cat /var/log/qrack/measured_supreme_* | grep ',22,' | grep -v 'TestName' | grep 
 cat /var/log/qrack/measured_supreme_* | grep ',24,' | grep -v 'TestName' | grep -v ',24,0' > supreme_24q14d_results.txt
 cat /var/log/qrack/measured_supreme_* | grep ',26,' | grep -v 'TestName' | grep -v ',26,0' > supreme_26q14d_results.txt
 cat /var/log/qrack/measured_supreme_* | grep ',28,' | grep -v 'TestName' | grep -v ',28,0' > supreme_28q14d_results.txt
+cat /var/log/qrack/measured_supreme_* | grep ',30,' | grep -v 'TestName' | grep -v ',30,0' > supreme_30q14d_results.txt
 #
 wc -l supreme_12q14d_results.txt
 wc -l supreme_14q14d_results.txt
@@ -21,6 +22,7 @@ wc -l supreme_22q14d_results.txt
 wc -l supreme_24q14d_results.txt
 wc -l supreme_26q14d_results.txt
 wc -l supreme_28q14d_results.txt
+wc -l supreme_30q14d_results.txt
 #
 # QFT results
 #
