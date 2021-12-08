@@ -22,7 +22,7 @@ awk '{x=28*-cos($1*0.0003)+90; print x;}' z10k.dec > z10k2cos.dec
 #
 # then we fetch the sycamore 12 to 28 qbit over 14 depth results and extract it for filter-feed processing
 #
-tar -xvzf /thereminq/miscfiles/qrack-supreme12-28q14d10k.tar.gz ./
+tar -xvzf /thereminq/miscfiles/qrack-supreme12-28q14d10k.tar.gz
 cd qrack-supreme12-28q14d10k
 #
 # splice and convert for multithreaded processing
