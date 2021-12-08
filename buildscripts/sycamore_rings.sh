@@ -17,7 +17,7 @@ echo "00010000" > version.hex
 
 # we fetch the sycamore 12 to 28 qbit over 14 depth results and extract it for filter-feed processing
 #
-tar -xvzf /qracknet/miscfiles/sycamore_rings.tar.gz ./ && cd sycamore_rings
+tar -xvzf /thereminq/miscfiles/sycamore_rings.tar.gz ./ && cd sycamore_rings
 cat measure* > measured_supreme_12-28q14d.txt
 
 # the following scripts splices the workload into 10 separate 2-thread workloads. scale accordingly.
