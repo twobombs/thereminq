@@ -16,5 +16,5 @@ echo "00010000" > version.hex
 
 # we fetch the sycamore 12 to 28 qbit over 14 depth results and extract it for filter-feed processing
 #
-tar -xvzf /qracknet/miscfiles/qrack-supreme12-28q14d10k.tar.gz ./ && cd qrack-supreme12-28q14d10k
+tar -xvzf /thereminq/miscfiles/qrack-supreme12-28q14d10k.tar.gz ./ && cd qrack-supreme12-28q14d10k
 #
