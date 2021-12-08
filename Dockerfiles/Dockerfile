@@ -2,7 +2,7 @@ FROM twobombs/cudacluster
 
 # clone repos
 RUN git clone --recursive https://github.com/vm6502q/qrack.git
-RUN cp -r /qrack /qrack128
+RUN cp -r /qrack /qrack128 && cp -r /qrack /qrack16
 RUN git clone --recursive https://github.com/SoftwareQuTech/SimulaQron.git && git clone --recursive https://github.com/XanaduAI/pennylane-pq.git && git clone https://github.com/twobombs/thereminq.git && git clone https://github.com/N-BodyShop/tipsy.git && git clone https://github.com/LeventErkok/crackNum.git && git clone https://github.com/pnnl/QASMBench.git
 
 # install features
@@ -22,6 +22,9 @@ RUN cd /qrack/include && mkdir CL && cd /var/log && mkdir qrack && cd /qrack && 
 
 # BigQrack install & dependancies
 RUN cd /qrack128/include && mkdir CL && cd /qrack128 && mkdir _build && cd _build && cmake -DFPPOW=6 -DUINTPOW=6 -DQBCAPPOW=6 -DENABLE_QUNIT_CPU_PARALLEL=OFF -DENABLE_OCL_MEM_GUARDS=OFF -DCMAKE_BUILD_TYPE=Debug .. && make all && make install
+
+# SmallQrack install & dependancies
+RUN cd /qrack16/include && mkdir CL && cd /qrack16 && mkdir _build && cd _build && cmake -DFPPOW=4 -DUINTPOW=4 -DQBCAPPOW=4 -DENABLE_QUNIT_CPU_PARALLEL=OFF -DENABLE_COMPLEX_X2=OFF -DENABLE_OCL_MEM_GUARDS=OFF -DCMAKE_BUILD_TYPE=Debug .. && make all && make install
 
 # install python3
 RUN apt-get install -y python3 python3-pip python3-tk libblas-dev liblapack-dev && pip3 install -U setuptools
