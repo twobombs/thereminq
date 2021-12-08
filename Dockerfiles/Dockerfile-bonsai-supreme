@@ -1,6 +1,6 @@
 FROM twobombs/thereminq:bonsai
 
-RUN cd /thereminq/buildscripts
+RUN cd /thereminq/buildscripts && ./sycamore_spheres.sh
 
 EXPOSE 22 6080 8801-8811
 ENTRYPOINT /root/run-bonsai
