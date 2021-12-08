@@ -102,7 +102,7 @@ for a in $(< measuredm22x.dec); do /root/.local/bin/crackNum -f sp -- $(echo $a*
 for a in $(< measuredm22y.dec); do /root/.local/bin/crackNum -f sp -- $(echo $a*22) | grep "Hex layout" ; done > ../measuredm22y.flex &
 #
 for a in $(< measuredm24x.dec); do /root/.local/bin/crackNum -f sp -- $(echo $a*24) | grep "Hex layout" ; done > ../measuredm24x.flex &
-for a in $(< measuredm24y.dec); do /root/.local/bin/crackNum -f sp -- $(echo $a*24) | grep "Hex layout" ; done > ../measuredm24y.flex &
+for a in $(< measuredm24y.dec); do /root/.local/bin/crackNum -f sp -- $(echo $a*24) | grep "Hex layout" ; done > ../measuredm24y.flex
 #
 for a in $(< measuredm26x.dec); do /root/.local/bin/crackNum -f sp -- $(echo $a*26) | grep "Hex layout" ; done > ../measuredm26x.flex &
 for a in $(< measuredm26y.dec); do /root/.local/bin/crackNum -f sp -- $(echo $a*26) | grep "Hex layout" ; done > ../measuredm26y.flex &
