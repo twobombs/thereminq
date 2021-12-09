@@ -24,7 +24,7 @@ RUN cd /qrack/include && mkdir CL && cd /var/log && mkdir qrack && cd /qrack && 
 RUN cd /qrack128/include && mkdir CL && cd /qrack128 && mkdir _build && cd _build && cmake -DFPPOW=6 -DUINTPOW=6 -DQBCAPPOW=6 -DENABLE_QUNIT_CPU_PARALLEL=OFF -DENABLE_OCL_MEM_GUARDS=OFF -DCMAKE_BUILD_TYPE=Debug .. && make all && make install
 
 # SmallQrack install & dependancies
-RUN cd /qrack16/include && mkdir CL && cd /qrack16 && mkdir _build && cd _build && cmake -DFPPOW=4 -DUINTPOW=4 -DQBCAPPOW=5 -DENABLE_QUNIT_CPU_PARALLEL=OFF -DENABLE_COMPLEX_X2=OFF -DENABLE_OCL_MEM_GUARDS=OFF -DCMAKE_BUILD_TYPE=Debug .. && make all && make install
+RUN cd /qrack16/include && mkdir CL && cd /qrack16 && mkdir _build && cd _build && cmake -DFPPOW=4 -DUINTPOW=5 -DQBCAPPOW=5 -DENABLE_QUNIT_CPU_PARALLEL=OFF -DENABLE_COMPLEX_X2=OFF -DENABLE_OCL_MEM_GUARDS=OFF -DCMAKE_BUILD_TYPE=Debug .. && make all && make install
 
 # install python3
 RUN apt-get install -y python3 python3-pip python3-tk libblas-dev liblapack-dev && pip3 install -U setuptools
