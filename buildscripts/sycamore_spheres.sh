@@ -3,8 +3,10 @@
 # and places those values in a tipsy bubble sphere graph 
 # results of this calculation will be placed in the qracknet-graph repo
 # 
+# create dir and enter
+mkdir sycamore_sphere && cd sycamore_sphere
+#
 # ==== here starts tipsy header declarations ======
-
 # T = time
 echo "0000000000000000" > time.hex
 echo "00030000" > ndim.hex
@@ -124,8 +126,8 @@ for a in $(< measuredq28.dec); do /root/.local/bin/crackNum -f sp -- $(echo $a*2
 #
 # z coordinates are also float-ed
 #
-for a in $(< z10kcos.dec); do /root/.local/bin/crackNum -f sp -- $(echo $a) | grep "Hex layout" ; done > z10k.flex
-for a in $(< z10k2cos.dec); do /root/.local/bin/crackNum -f sp -- $(echo $a) | grep "Hex layout" ; done > z10k2.flex
+for a in $(< ../z10kcos.dec); do /root/.local/bin/crackNum -f sp -- $(echo $a) | grep "Hex layout" ; done > z10k.flex
+for a in $(< ../z10k2cos.dec); do /root/.local/bin/crackNum -f sp -- $(echo $a) | grep "Hex layout" ; done > z10k2.flex
 #
 # merge results into one file
 cat ../measuredm??x* > ../measuredmx.flex
@@ -149,6 +151,7 @@ grep "Hex layout" ../measuredq.flex | tr -d ' ' | tr -d 'Hexlayout:' > ../measur
 #
 # the next part needs to be doublechecked for use in this script
 #
+cd ..
 # create ID and void displacement vectors
 yes 02 | head -n $(wc -l < measuredq.fhex) > id.fhex
 yes 00000000 | head -n $(wc -l < measuredq.fhex) > displace.fhex
