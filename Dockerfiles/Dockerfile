@@ -2,7 +2,8 @@ FROM twobombs/cudacluster
 
 # clone repos
 RUN git clone --recursive https://github.com/vm6502q/qrack.git
-RUN cp -r /qrack /qrack128 && cp -r /qrack /qrack16
+RUN cp -r /qrack /qrack128 
+RUN cp -r /qrack /qrack16
 RUN git clone --recursive https://github.com/SoftwareQuTech/SimulaQron.git && git clone --recursive https://github.com/XanaduAI/pennylane-pq.git && git clone https://github.com/twobombs/thereminq.git && git clone https://github.com/N-BodyShop/tipsy.git && git clone https://github.com/LeventErkok/crackNum.git && git clone https://github.com/pnnl/QASMBench.git
 
 # install features
