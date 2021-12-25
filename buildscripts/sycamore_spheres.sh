@@ -122,7 +122,7 @@ for a in $(< measuredq20.dec); do /root/.local/bin/crackNum -f sp -- $(echo $a*2
 for a in $(< measuredq22.dec); do /root/.local/bin/crackNum -f sp -- $(echo $a*22) | grep "Hex layout" ; done > ../measuredq22.flex &
 for a in $(< measuredq24.dec); do /root/.local/bin/crackNum -f sp -- $(echo $a*24) | grep "Hex layout" ; done > ../measuredq24.flex &
 for a in $(< measuredq26.dec); do /root/.local/bin/crackNum -f sp -- $(echo $a*26) | grep "Hex layout" ; done > ../measuredq26.flex &
-for a in $(< measuredq28.dec); do /root/.local/bin/crackNum -f sp -- $(echo $a*28) | grep "Hex layout" ; done > ../measuredq28.flex &
+for a in $(< measuredq28.dec); do /root/.local/bin/crackNum -f sp -- $(echo $a*28) | grep "Hex layout" ; done > ../measuredq28.flex 
 #
 # z coordinates are also float-ed
 #
