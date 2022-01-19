@@ -26,7 +26,7 @@ Initial vnc password is 00000000 - noVNC website is avaliable at port 6080
 - docker run -d --mount type=bind,source=/var/log/qrack,target=/var/log/qrack twobombs/thereminq:supreme-cpu
 - docker run --gpus all --device=/dev/dri:/dev/dri -d --mount type=bind,source=/var/log/qrack,target=/var/log/qrack twobombs/thereminq:cosmos-gpu1<br> <br>
 
-Experimental  'bqp=bpp' stabilizer_t_nn high qbit workload
+### Experimental  'bqp=bpp' stabilizer_t_nn high qbit workload
 - docker run --gpus all --device=/dev/dri:/dev/dri -d --mount type=bind,source=/var/log/qrack,target=/var/log/qrack twobombs/thereminq:tnn-gpu1<br> <br>
 use --gpus all for NVidia-Docker hosts, in addition --privileged will expose all GPUs in the system, eg: Intel iGPUs
 
