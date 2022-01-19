@@ -16,7 +16,7 @@ service filebeat start &
 # simulaqron &
 
 # precompile cl kernels for Qrack	
-cd /qrack/_build/ && ./qrack_cl_precompile
+cd /qrack128/_build/ && ./qrack_cl_precompile
 
 # run benchmark for load & output simulation
 ./benchmarks --layer-stabilizer-qpager -m=49 --benchmark-depth=7 --device-id=1 --samples=10 --measure-output=/var/log/qrack/"t_nn_$(date +%F_%R_%S).log" test_stabilizer_t_nn
