@@ -24,12 +24,22 @@ Initial vnc password is 00000000 - noVNC website is avaliable at port 6080
 ## Deploy an instance of ThereminQ's WebUI controller container and/or select a specific workload type to run on your favorite orchestrator
 - docker run --gpus all --privileged -p 6080:6080 -v /var/run/docker.sock:/var/run/docker.sock:ro --device=/dev/dri:/dev/dri -d twobombs/thereminq:controller
 - docker run -d --mount type=bind,source=/var/log/qrack,target=/var/log/qrack twobombs/thereminq:supreme-cpu
-- docker run --gpus all --device=/dev/dri:/dev/dri -d --mount type=bind,source=/var/log/qrack,target=/var/log/qrack twobombs/thereminq:cosmos-gpu1<br> <br>
+- docker run --gpus all --device=/dev/dri:/dev/dri -d --mount type=bind,source=/var/log/qrack,target=/var/log/qrack twobombs/thereminq:cosmos-gpu1
+- use --gpus all for NVidia-Docker hosts, in addition --privileged will expose all GPUs in the system, eg: Intel iGPUs<br> <br>
+
 
 ### Experimental  'bqp=bpp' stabilizer_t_nn high qbit workload
 - docker run --gpus all --device=/dev/dri:/dev/dri -d --mount type=bind,source=/var/log/qrack,target=/var/log/qrack twobombs/thereminq:tnn-gpu1<br> <br>
-use --gpus all for NVidia-Docker hosts, in addition --privileged will expose all GPUs in the system, eg: Intel iGPUs
 
+### Tips for Managing high-Qubit workloads
+- Workloads with full entanglement and/or Quantum simulations that are at or exceed 30+ Qubits
+- Mixed workloads based on longer/larger circuits with partial entanglement that exceed 36+ Qubits<br> <br>
+
+To prevent these workload from taking up all resources of the system it is good to take the following measures
+
+- System memory should be at least 16GB RAM with a minimum of 8 CPU cores due to the load on the system resources.
+- Start an instance with a limit for memory and/or swap. eg docker: '-m 8086m --memory-swap 120g'
+- Swap should be a dedicated and fast drive where possible NVMe RAID, equal to the bandwith of the GPU PCIe connection<br> <br>
 
 ![Screenshot from 2021-10-24 17-23-18](https://user-images.githubusercontent.com/12692227/138600777-607fda67-52d5-4e24-9f19-8e30f36ffa29.png)
 
