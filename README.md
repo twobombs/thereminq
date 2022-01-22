@@ -37,7 +37,7 @@ Initial vnc password is 00000000 - noVNC website is avaliable at port 6080
 
 To prevent these workload from taking up all resources of the system it is good to take the following measures
 
-- System memory should be at least 16GB RAM with a minimum of 8 CPU cores due to the load on the system resources.
+- System memory should be at least 16GB RAM with a minimum of 8 CPU cores
 - Start an instance with a limit for memory and/or swap. eg docker: '-m 8086m --memory-swap 120g'
 - Disable OOM killers in the kernel and/or the container orchestrator. eg docker: '--oom-kill-disable'
 - Swap should be a dedicated and fast drive where possible NVMe RAID, equal to the bandwith of the GPU PCIe connection<br> <br>
