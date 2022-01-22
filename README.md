@@ -39,6 +39,7 @@ To prevent these workload from taking up all resources of the system it is good 
 
 - System memory should be at least 16GB RAM with a minimum of 8 CPU cores due to the load on the system resources.
 - Start an instance with a limit for memory and/or swap. eg docker: '-m 8086m --memory-swap 120g'
+- Disable OOM killers in the kernel and/or the container orchestrator. eg docker: '--oom-kill-disable'
 - Swap should be a dedicated and fast drive where possible NVMe RAID, equal to the bandwith of the GPU PCIe connection<br> <br>
 
 ![Screenshot from 2021-10-24 17-23-18](https://user-images.githubusercontent.com/12692227/138600777-607fda67-52d5-4e24-9f19-8e30f36ffa29.png)
