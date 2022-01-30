@@ -2,7 +2,8 @@ FROM twobombs/cudacluster
 
 # clone repos
 RUN git clone --recursive https://github.com/vm6502q/qrack.git
-RUN cp -r /qrack /qrack128 
+RUN cp -r /qrack /qrack128
+RUN cp -r /qrack /qrack64
 RUN cp -r /qrack /qrack16
 RUN cp -r /qrack /qrack8
 RUN git clone --recursive https://github.com/SoftwareQuTech/SimulaQron.git && git clone https://github.com/twobombs/thereminq.git && git clone https://github.com/LeventErkok/crackNum.git && git clone https://github.com/pnnl/QASMBench.git
@@ -22,8 +23,11 @@ COPY configfiles/filebeat.yml /etc/filebeat/filebeat.yml
 # Qrack install & dependancies 
 RUN cd /qrack/include && mkdir CL && cd /var/log && mkdir qrack && cd /qrack && mkdir _build && cd _build && cmake -DENABLE_DEVRAND=ON -DFPPOW=5 -DUINTPOW=6 -DQBCAPPOW=6 -DENABLE_COMPLEX_X2=ON -DENABLE_OCL_MEM_GUARDS=OFF .. && make all && make install
 
+# 64Qrack install & dependancies
+RUN cd /qrack64/include && mkdir CL && cd /qrack128 && mkdir _build && cd _build && cmake -DENABLE_DEVRAND=ON -DFPPOW=6 -DUINTPOW=6 -DQBCAPPOW=6 -DENABLE_COMPLEX_X2=ON -DENABLE_OCL_MEM_GUARDS=OFF .. && make all && make install
+
 # BigQrack install & dependancies
-RUN cd /qrack128/include && mkdir CL && cd /qrack128 && mkdir _build && cd _build && cmake -DENABLE_DEVRAND=ON -DFPPOW=6 -DUINTPOW=6 -DQBCAPPOW=6 -DENABLE_COMPLEX_X2=ON -DENABLE_OCL_MEM_GUARDS=OFF .. && make all && make install
+RUN cd /qrack128/include && mkdir CL && cd /qrack128 && mkdir _build && cd _build && cmake -DENABLE_DEVRAND=ON -DFPPOW=7 -DUINTPOW=6 -DQBCAPPOW=6 -DENABLE_COMPLEX_X2=ON -DENABLE_OCL_MEM_GUARDS=OFF .. && make all && make install
 
 # SmallQrack install & dependancies
 RUN cd /qrack16/include && mkdir CL && cd /qrack16 && mkdir _build && cd _build && cmake -DENABLE_DEVRAND=ON -DFPPOW=4 -DUINTPOW=5 -DQBCAPPOW=5 -DENABLE_COMPLEX_X2=OFF -DENABLE_OCL_MEM_GUARDS=OFF .. && make all && make install
