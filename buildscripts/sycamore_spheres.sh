@@ -123,6 +123,10 @@ for a in $(< measuredq24.dec); do /root/.local/bin/crackNum -f sp -- $(echo $a) 
 for a in $(< measuredq26.dec); do /root/.local/bin/crackNum -f sp -- $(echo $a) | grep "Hex layout" ; done > measuredq26.flex &
 for a in $(< measuredq28.dec); do /root/.local/bin/crackNum -f sp -- $(echo $a) | grep "Hex layout" ; done > measuredq28.flex &
 #
+# z coordinates are also float-ed part a , integrated b/c speed
+#
+for a in $(< z10kcos.dec); do /root/.local/bin/crackNum -f sp -- $(echo $a) | grep "Hex layout" ; done > z10k.flex &
+#
 # convert qbit mass
 #
 for a in $(< measuredm12.dec); do /root/.local/bin/crackNum -f sp -- $(echo $a/268435 | bc -l) | grep "Hex layout" ; done > measuredm12.flex &
@@ -134,10 +138,9 @@ for a in $(< measuredm22.dec); do /root/.local/bin/crackNum -f sp -- $(echo $a/2
 for a in $(< measuredm24.dec); do /root/.local/bin/crackNum -f sp -- $(echo $a/268435 | bc -l) | grep "Hex layout" ; done > measuredm24.flex &
 for a in $(< measuredm26.dec); do /root/.local/bin/crackNum -f sp -- $(echo $a/268435 | bc -l) | grep "Hex layout" ; done > measuredm26.flex &
 for a in $(< measuredm28.dec); do /root/.local/bin/crackNum -f sp -- $(echo $a/268435 | bc -l) | grep "Hex layout" ; done > measuredm28.flex
-
-# z coordinates are also float-ed
 #
-for a in $(< z10kcos.dec); do /root/.local/bin/crackNum -f sp -- $(echo $a) | grep "Hex layout" ; done > z10k.flex
+# z coordinates are also float-ed part b , out of the loop b/c multithreaded outtro
+#
 for a in $(< z10k2cos.dec); do /root/.local/bin/crackNum -f sp -- $(echo $a) | grep "Hex layout" ; done > z10k2.flex
 #
 # merge results into one file
