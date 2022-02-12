@@ -11,7 +11,7 @@ RUN cd /Bonsai/runtime && cmake -DCMAKE_CXX_COMPILER=mpicxx -DUSE_CUB=0 -DUSE_OP
 RUN tar -xf /thereminq/miscfiles/qrack-cosmos.tar.gz -C /var/log/
 RUN apt install time
 RUN cat /proc/cpuinfo > /thereminq/cpuinfo.txt
-RUN cd /thereminq/buildscripts && /usr/bin/time ./makeqftipsy.sh && /usr/bin/time ./z10k.sh
+RUN cd /thereminq/buildscripts && /usr/bin/time ./sycamore_spheres.sh
 
 EXPOSE 22 6080 8801-8811
 ENTRYPOINT /root/run-bonsai
