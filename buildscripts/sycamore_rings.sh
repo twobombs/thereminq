@@ -135,8 +135,8 @@ for a in $(< z10k2cos.dec); do /root/.local/bin/crackNum -f sp -- $(echo $a) | g
 #
 echo "ready"
 #
-echo  "120 secs for tasks to finish"
-sleep 120
+echo  "300 secs for tasks to finish"
+sleep 300
 wc -l measured_supreme_n??_m14_s0_e0*.flex
 #
 # merge x/y results into one file
@@ -148,7 +148,7 @@ grep "Hex layout" measured_supreme_n12-28d14_x.flex | tr -d ' ' | tr -d 'Hexlayo
 grep "Hex layout" measured_supreme_n12-28d14_y.flex | tr -d ' ' | tr -d 'Hexlayout:' > measured_supreme_n12-28d14_y.fhex
 #
 
-wc -l n??_m14_s0_e0*.fhex
+wc -l n??_m14_s0_e0_pEFGH.flex
 
 # merge results into one file
 cat n??_m14_s0_e0_pEFGH.flex > 12-28q14d.flex
