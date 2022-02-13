@@ -10,6 +10,6 @@ nvidia-smi
 
 startxfce4 &
 
-cd /Bonsai/runtime && ./bonsai2_slowdust -t 0.00001 --displayfps -T 1000 --reducebodies 2 -i /thereminq/buildscripts/tipsy-qube_hexdump.bin
+cd /Bonsai/runtime && ./bonsai2_slowdust -t 0.00001 --displayfps -T 1000 --reducebodies 2 -i /thereminq/buildscripts/sycamore_sphere/qrack-supreme12-28q14d10k/sycamore_spheres_tipsy_hexdump.bin
 
 tail -f /dev/null
