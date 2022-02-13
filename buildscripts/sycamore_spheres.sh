@@ -24,8 +24,8 @@ echo "00010000" > version.hex
 # create a spere with z axis coordinate cos-system
 #
 seq 1 10000 > z10k.dec
-awk '{x=1.4*cos($1*0.00003); print x;}' z10k.dec > z10kcos.dec
-awk '{x=1.4*cos($1*0.00003)+90; print x;}' z10k.dec > z10k2cos.dec
+awk '{x=14*cos($1*0.0006); print x;}' z10k.dec > z10kcos.dec
+awk '{x=14*cos($1*0.0006)+90; print x;}' z10k.dec > z10k2cos.dec
 #
 #
 # splice and convert for multithreaded processing
