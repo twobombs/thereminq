@@ -24,9 +24,8 @@ echo "00010000" > version.hex
 # create a spere with z axis coordinate cos-system
 #
 seq 1 10000 > z10k.dec
-awk '{x=14*cos($1*0.0006); print x;}' z10k.dec > z10kcos.dec
-awk '{x=14*cos($1*0.0006)+90; print x;}' z10k.dec > z10k2cos.dec
-#
+awk -v OFMT='%f' '{x=12*cos($1*0.0006); print x;}' z10k.dec > z10kcos.dec
+awk -v OFMT='%f' '{x=12*cos($1*0.0006)+45; print x;}' z10k.dec > z10k2cos.dec
 #
 # splice and convert for multithreaded processing
 head -n 10000 supreme_12q14d_results.txt | tr , '\n' | grep -v test > supreme_12q14d_results.dec
@@ -49,7 +48,6 @@ awk '{ print > (NR % 2 ? "measuredq22.dec" : "measuredm22.dec") }' supreme_22q14
 awk '{ print > (NR % 2 ? "measuredq24.dec" : "measuredm24.dec") }' supreme_24q14d_results.dec
 awk '{ print > (NR % 2 ? "measuredq26.dec" : "measuredm26.dec") }' supreme_26q14d_results.dec
 awk '{ print > (NR % 2 ? "measuredq28.dec" : "measuredm28.dec") }' supreme_28q14d_results.dec
-#
 #
 #
 echo "starting cos/sin x/y calculations"
@@ -81,6 +79,61 @@ awk '{x=14*-sin($1*0.087912088); print x;}' measuredm28.dec > measuredm28x.dec
 awk '{y=14*-cos($1*0.087912088); print y;}' measuredm28.dec > measuredm28y.dec
 #
 #
+# subtract z coordinate from x/y points for spheres
+paste -d+ measuredm12x.dec z10kcos.dec > measuredbc12x.dec
+paste -d+ measuredm12y.dec z10kcos.dec > measuredbc12y.dec
+#
+cat measuredbc12x.dec | bc > measuredc12x.dec
+cat measuredbc12y.dec | bc > measuredc12y.dec
+#
+paste -d+ measuredm14x.dec z10kcos.dec > measuredbc14x.dec
+paste -d+ measuredm14y.dec z10kcos.dec > measuredbc14y.dec
+#
+cat measuredbc14x.dec | bc > measuredc14x.dec
+cat measuredbc14y.dec | bc > measuredc14y.dec
+#
+paste -d+ measuredm16x.dec z10kcos.dec > measuredbc16x.dec
+paste -d+ measuredm16y.dec z10kcos.dec > measuredbc16y.dec
+#
+cat measuredbc16x.dec | bc > measuredc16x.dec
+cat measuredbc16y.dec | bc > measuredc16y.dec
+#
+paste -d+ measuredm18x.dec z10kcos.dec > measuredbc18x.dec
+paste -d+ measuredm18y.dec z10kcos.dec > measuredbc18y.dec
+#
+cat measuredbc18x.dec | bc > measuredc18x.dec
+cat measuredbc18y.dec | bc > measuredc18y.dec
+#
+paste -d+ measuredm20x.dec z10kcos.dec > measuredbc20x.dec
+paste -d+ measuredm20y.dec z10kcos.dec > measuredbc20y.dec
+#
+cat measuredbc20x.dec | bc > measuredc20x.dec
+cat measuredbc20y.dec | bc > measuredc20y.dec
+#
+paste -d+ measuredm22x.dec z10kcos.dec > measuredbc22x.dec
+paste -d+ measuredm22y.dec z10kcos.dec > measuredbc22y.dec
+#
+cat measuredbc22x.dec | bc > measuredc22x.dec
+cat measuredbc22y.dec | bc > measuredc22y.dec
+#
+paste -d+ measuredm24x.dec z10kcos.dec > measuredbc24x.dec
+paste -d+ measuredm24y.dec z10kcos.dec > measuredbc24y.dec
+#
+cat measuredbc24x.dec | bc > measuredc24x.dec
+cat measuredbc24y.dec | bc > measuredc24y.dec
+#
+paste -d+ measuredm26x.dec z10kcos.dec > measuredbc26x.dec
+paste -d+ measuredm26y.dec z10kcos.dec > measuredbc26y.dec
+#
+cat measuredbc26x.dec | bc > measuredc26x.dec
+cat measuredbc26y.dec | bc > measuredc26y.dec
+#
+paste -d+ measuredm28x.dec z10kcos.dec > measuredbc28x.dec
+paste -d+ measuredm28y.dec z10kcos.dec > measuredbc28y.dec
+#
+cat measuredbc28x.dec | bc > measuredc28x.dec
+cat measuredbc28y.dec | bc > measuredc28y.dec
+#
 # convert q,m,x,y to float hex
 #
 #
@@ -110,6 +163,34 @@ for a in $(< measuredm26y.dec); do /root/.local/bin/crackNum -f sp -- $(echo $a)
 #
 for a in $(< measuredm28x.dec); do /root/.local/bin/crackNum -f sp -- $(echo $a) | grep "Hex layout" ; done > measuredm28x.flex &
 for a in $(< measuredm28y.dec); do /root/.local/bin/crackNum -f sp -- $(echo $a) | grep "Hex layout" ; done > measuredm28y.flex &
+#
+#
+for a in $(< measuredc12x.dec); do /root/.local/bin/crackNum -f sp -- $(echo $a) | grep "Hex layout" ; done > measuredc12x.flex &
+for a in $(< measuredc12y.dec); do /root/.local/bin/crackNum -f sp -- $(echo $a) | grep "Hex layout" ; done > measuredc12y.flex &
+#
+for a in $(< measuredc14x.dec); do /root/.local/bin/crackNum -f sp -- $(echo $a) | grep "Hex layout" ; done > measuredc14x.flex &
+for a in $(< measuredc14y.dec); do /root/.local/bin/crackNum -f sp -- $(echo $a) | grep "Hex layout" ; done > measuredc14y.flex &
+#
+for a in $(< measuredc16x.dec); do /root/.local/bin/crackNum -f sp -- $(echo $a) | grep "Hex layout" ; done > measuredc16x.flex &
+for a in $(< measuredc16y.dec); do /root/.local/bin/crackNum -f sp -- $(echo $a) | grep "Hex layout" ; done > measuredc16y.flex &
+#
+for a in $(< measuredc18x.dec); do /root/.local/bin/crackNum -f sp -- $(echo $a) | grep "Hex layout" ; done > measuredc18x.flex &
+for a in $(< measuredc18y.dec); do /root/.local/bin/crackNum -f sp -- $(echo $a) | grep "Hex layout" ; done > measuredc18y.flex &
+#
+for a in $(< measuredc20x.dec); do /root/.local/bin/crackNum -f sp -- $(echo $a) | grep "Hex layout" ; done > measuredc20x.flex &
+for a in $(< measuredc20y.dec); do /root/.local/bin/crackNum -f sp -- $(echo $a) | grep "Hex layout" ; done > measuredc20y.flex &
+#
+for a in $(< measuredc22x.dec); do /root/.local/bin/crackNum -f sp -- $(echo $a) | grep "Hex layout" ; done > measuredc22x.flex &
+for a in $(< measuredc22y.dec); do /root/.local/bin/crackNum -f sp -- $(echo $a) | grep "Hex layout" ; done > measuredc22y.flex &
+#
+for a in $(< measuredc24x.dec); do /root/.local/bin/crackNum -f sp -- $(echo $a) | grep "Hex layout" ; done > measuredc24x.flex &
+for a in $(< measuredc24y.dec); do /root/.local/bin/crackNum -f sp -- $(echo $a) | grep "Hex layout" ; done > measuredc24y.flex &
+#
+for a in $(< measuredc26x.dec); do /root/.local/bin/crackNum -f sp -- $(echo $a) | grep "Hex layout" ; done > measuredc26x.flex &
+for a in $(< measuredc26y.dec); do /root/.local/bin/crackNum -f sp -- $(echo $a) | grep "Hex layout" ; done > measuredc26y.flex &
+#
+for a in $(< measuredc28x.dec); do /root/.local/bin/crackNum -f sp -- $(echo $a) | grep "Hex layout" ; done > measuredc28x.flex &
+for a in $(< measuredc28y.dec); do /root/.local/bin/crackNum -f sp -- $(echo $a) | grep "Hex layout" ; done > measuredc28y.flex &
 #
 # convert qbit weigth
 #
@@ -148,11 +229,19 @@ for a in $(< z10k2cos.dec); do /root/.local/bin/crackNum -f sp -- $(echo $a) | g
 cat measuredm??x.flex > measuredmx.flex
 cat measuredm??y.flex > measuredmy.flex
 #
+cat measuredc??x.flex > measuredcx.flex
+cat measuredc??y.flex > measuredcy.flex
+
+#
 cat measuredm??.flex > measuredm.flex
 #
 # convert x y to hex
 grep "Hex layout" measuredmx.flex | tr -d ' ' | tr -d 'Hexlayout:' > measuredmx.fhex
 grep "Hex layout" measuredmy.flex | tr -d ' ' | tr -d 'Hexlayout:' > measuredmy.fhex
+#
+# convert x y to hex
+grep "Hex layout" measuredcx.flex | tr -d ' ' | tr -d 'Hexlayout:' > measuredcx.fhex
+grep "Hex layout" measuredcy.flex | tr -d ' ' | tr -d 'Hexlayout:' > measuredcy.fhex
 #
 # convert z results to hex
 grep "Hex layout" z10k.flex | tr -d ' ' | tr -d 'Hexlayout:' > z10k.fhex
@@ -194,4 +283,11 @@ paste time.hex pointsq.hex ndim.hex nsph.hex ndark.hex pointsq.hex version.hex m
 xxd -r -p sycamore_spheres_tipsy.hex sycamore_spheres_tipsy.bin
 # aaaand convert to little indian
 hexdump -v -e '1/4 "%08x"' -e '"\n"' sycamore_spheres_tipsy.bin | xxd -r -p >sycamore_spheres_tipsy_hexdump.bin
+#
+# assemble/weave hex, convert to bin
+paste time.hex pointsq.hex ndim.hex nsph.hex ndark.hex pointsq.hex version.hex measuredm.fhex measuredcx.fhex measuredcy.fhex z10k9.fhex displace.fhex displace.fhex displace.fhex displace.fhex displace.fhex measuredcx.fhex z10k9.fhex > sycamore_spheres_tipsy_bowl.hex
+# convert float hex string data as a bin file
+xxd -r -p sycamore_spheres_tipsy.hex sycamore_spheres_tipsy_bowl.bin
+# aaaand convert to little indian
+hexdump -v -e '1/4 "%08x"' -e '"\n"' sycamore_spheres_tipsy_bowl.bin | xxd -r -p >sycamore_spheres_tipsy_bowl_hexdump.bin
 #
