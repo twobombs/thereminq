@@ -4,22 +4,19 @@
 # a regular PC with 16 cores/threads will take ~6 hours to complete
 # results of this calculation will be placed in the qracknet-graph repo
 # 
+# we fetch the sycamore 12 to 28 qbit over 14 depth results and extract it for filter-feed processing
+#
+tar -xvzf /thereminq/miscfiles/sycamore_rings.tar.gz && cd sycamore_rings
+cat measure* > measured_supreme_12-28q14d.txt
+#
 # ==== here starts tipsy header declarations ======
-
 # T = time
 echo "0000000000000000" > time.hex
 echo "00030000" > ndim.hex
 echo "00000000" > nsph.hex
 echo "00000000" > ndark.hex
 echo "00010000" > version.hex
-
 # ==== here end tipsy special declarations =========
-
-# we fetch the sycamore 12 to 28 qbit over 14 depth results and extract it for filter-feed processing
-#
-tar -xvzf /thereminq/miscfiles/sycamore_rings.tar.gz && cd sycamore_rings
-cat measure* > measured_supreme_12-28q14d.txt
-#
 #
 # make z-coordinates based on amount of values ( same as in sycamore_spheres )
 #
