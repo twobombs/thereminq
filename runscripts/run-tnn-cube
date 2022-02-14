@@ -1,0 +1,14 @@
+# run benchmark for load & output simulation 
+# optional pointers:
+# export QRACK_QUNIT_SEPARABILITY_THRESHOLD=0.146466 
+# --use-host-dma
+#
+export QRACK_OCL_DEFAULT_DEVICE=2 && ./benchmarks --optimal-single --timeout=120000 --max-qubits=16 --benchmark-depth=16 --devices=0,0,0,0,1,1,1,1,2,2 --single test_stabilizer_t_nn --samples=10 --measure-output=/var/log/qrack/"t_nn_$(date +%F_%R_%S).log"
+export QRACK_OCL_DEFAULT_DEVICE=2 && ./benchmarks --optimal-single --timeout=120000 --max-qubits=25 --benchmark-depth=25 --devices=0,0,0,0,1,1,1,1,2,2 --single test_stabilizer_t_nn --samples=10 --measure-output=/var/log/qrack/"t_nn_$(date +%F_%R_%S).log"
+export QRACK_OCL_DEFAULT_DEVICE=2 && ./benchmarks --optimal-single --timeout=120000 --max-qubits=36 --benchmark-depth=36 --devices=0,0,0,0,1,1,1,1,2,2 --single test_stabilizer_t_nn --samples=10 --measure-output=/var/log/qrack/"t_nn_$(date +%F_%R_%S).log"
+export QRACK_OCL_DEFAULT_DEVICE=2 && ./benchmarks --optimal-single --timeout=120000 --max-qubits=49 --benchmark-depth=49 --devices=0,0,0,0,1,1,1,1,2,2 --single test_stabilizer_t_nn --samples=10 --measure-output=/var/log/qrack/"t_nn_$(date +%F_%R_%S).log"
+export QRACK_OCL_DEFAULT_DEVICE=2 && ./benchmarks --optimal-single --timeout=120000 --max-qubits=64 --benchmark-depth=64 --devices=0,0,0,0,1,1,1,1,2,2 --single test_stabilizer_t_nn --samples=10 --measure-output=/var/log/qrack/"t_nn_$(date +%F_%R_%S).log"
+export QRACK_OCL_DEFAULT_DEVICE=2 && ./benchmarks --optimal-single --timeout=120000 --max-qubits=81 --benchmark-depth=81 --devices=0,0,0,0,1,1,1,1,2,2 --single test_stabilizer_t_nn --samples=10 --measure-output=/var/log/qrack/"t_nn_$(date +%F_%R_%S).log"
+export QRACK_OCL_DEFAULT_DEVICE=2 && ./benchmarks --optimal-single --timeout=120000 --max-qubits=100 --benchmark-depth=100 --devices=0,0,0,0,1,1,1,1,2,2 --single test_stabilizer_t_nn --samples=10 --measure-output=/var/log/qrack/"t_nn_$(date +%F_%R_%S).log"
+export QRACK_OCL_DEFAULT_DEVICE=2 && ./benchmarks --optimal-single --timeout=120000 --max-qubits=121 --benchmark-depth=121 --devices=0,0,0,0,1,1,1,1,2,2 --single test_stabilizer_t_nn --samples=10 --measure-output=/var/log/qrack/"t_nn_$(date +%F_%R_%S).log"
+export QRACK_OCL_DEFAULT_DEVICE=2 && ./benchmarks --optimal-single --timeout=120000 --max-qubits=144 --benchmark-depth=144 --devices=0,0,0,0,1,1,1,1,2,2 --single test_stabilizer_t_nn --samples=10 --measure-output=/var/log/qrack/"t_nn_$(date +%F_%R_%S).log"
