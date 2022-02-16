@@ -287,7 +287,7 @@ hexdump -v -e '1/4 "%08x"' -e '"\n"' sycamore_spheres_tipsy.bin | xxd -r -p >syc
 # assemble/weave hex, convert to bin
 paste time.hex pointsq.hex ndim.hex nsph.hex ndark.hex pointsq.hex version.hex measuredm.fhex measuredcx.fhex measuredcy.fhex z10k9.fhex displace.fhex displace.fhex displace.fhex displace.fhex displace.fhex measuredcx.fhex z10k9.fhex > sycamore_spheres_tipsy_bowl.hex
 # convert float hex string data as a bin file
-xxd -r -p sycamore_spheres_tipsy.hex sycamore_spheres_tipsy_bowl.bin
+xxd -r -p sycamore_spheres_tipsy_bowl.hex sycamore_spheres_tipsy_bowl.bin
 # aaaand convert to little indian
 hexdump -v -e '1/4 "%08x"' -e '"\n"' sycamore_spheres_tipsy_bowl.bin | xxd -r -p >sycamore_spheres_tipsy_bowl_hexdump.bin
 #
