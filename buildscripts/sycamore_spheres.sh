@@ -24,8 +24,8 @@ echo "00010000" > version.hex
 # create a spere with z axis coordinate cos-system
 #
 seq 1 10000 > z10k.dec
-awk -v OFMT='%f' '{x=12*cos($1*0.0006); print x;}' z10k.dec > z10kcos.dec
-awk -v OFMT='%f' '{x=12*cos($1*0.0006)+45; print x;}' z10k.dec > z10k2cos.dec
+awk -v OFMT='%f' '{x=12*cos($1*0.0003); print x;}' z10k.dec > z10kcos.dec
+awk -v OFMT='%f' '{x=12*cos($1*0.0003)+45; print x;}' z10k.dec > z10k2cos.dec
 #
 # splice and convert for multithreaded processing
 head -n 10000 supreme_12q14d_results.txt | tr , '\n' | grep -v test > supreme_12q14d_results.dec
