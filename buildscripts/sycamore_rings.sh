@@ -21,8 +21,8 @@ echo "00010000" > version.hex
 # make z-coordinates based on amount of values ( same as in sycamore_spheres )
 #
 seq 1 10000 > z10k.dec
-awk '{x=28*-cos($1*0.0003); print x;}' z10k.dec > z10kcos.dec
-awk '{x=28*-cos($1*0.0003)+90; print x;}' z10k.dec > z10k2cos.dec
+awk '{x=12*-cos($1*0.0003); print x;}' z10k.dec > z10kcos.dec
+awk '{x=12*-sin($1*0.0003)+90; print x;}' z10k.dec > z10k2cos.dec
 #
 
 # the following scripts splices the workload into 10 separate 2-thread workloads. scale accordingly.
