@@ -45,7 +45,7 @@ To prevent these workload from taking up all resources of the system it is good 
 - Swap should be a dedicated and fast drive where possible NVMe RAID, equal to the bandwith of the GPU PCIe connection<br> <br>
 
 ## Deploy Bonsai ( https://github.com/treecode/Bonsai ) visualisation - requirements: Running NVidia X, CUDA and NVidia-Docker on host 
-- docker run --gpus all -v /tmp/.X11-unix:/tmp/.X11-unix -e DISPLAY=$DISPLAY -p 6080:6080 -v /run/user/1000/gdm/Xauthority:/root/.Xauthority -h $HOSTNAME twobombs/thereminq:bonsai 
+- docker run --gpus all -d -v /tmp/.X11-unix:/tmp/.X11-unix -e DISPLAY=$DISPLAY -p 6080:6080 -v /run/user/1000/gdm/Xauthority:/root/.Xauthority -h $HOSTNAME twobombs/thereminq:bonsai 
 
 - If you get an error similar to "Cannot connect to :0" please look at http://wiki.ros.org/docker/Tutorials/GUI $ xhost +local:root
 - If you get an error similar to "Cannot compile shader" please select nvidia as your primary OpenGL source $ prime-select nvidia
