@@ -25,7 +25,7 @@ echo "00010000" > version.hex
 #
 seq 1 10000 > z10k.dec
 awk -v OFMT='%f' '{x=12*cos($1*0.0003); print x;}' z10k.dec > z10kcos.dec
-awk -v OFMT='%f' '{x=12*cos($1*0.0003)+45; print x;}' z10k.dec > z10k2cos.dec
+awk -v OFMT='%f' '{x=12*sin($1*0.0003); print x;}' z10k.dec > z10k2cos.dec
 #
 # splice and convert for multithreaded processing
 head -n 10000 supreme_12q14d_results.txt | tr , '\n' | grep -v test > supreme_12q14d_results.dec
@@ -81,55 +81,55 @@ awk '{y=14*-cos($1*0.087912088); print y;}' measuredm28.dec > measuredm28y.dec
 #
 # subtract z coordinate from x/y points for spheres
 paste -d+ measuredm12x.dec z10kcos.dec > measuredbc12x.dec
-paste -d+ measuredm12y.dec z10kcos.dec > measuredbc12y.dec
+paste -d+ measuredm12y.dec z10k2cos.dec > measuredbc12y.dec
 #
 cat measuredbc12x.dec | bc > measuredc12x.dec
 cat measuredbc12y.dec | bc > measuredc12y.dec
 #
 paste -d+ measuredm14x.dec z10kcos.dec > measuredbc14x.dec
-paste -d+ measuredm14y.dec z10kcos.dec > measuredbc14y.dec
+paste -d+ measuredm14y.dec z10k2cos.dec > measuredbc14y.dec
 #
 cat measuredbc14x.dec | bc > measuredc14x.dec
 cat measuredbc14y.dec | bc > measuredc14y.dec
 #
 paste -d+ measuredm16x.dec z10kcos.dec > measuredbc16x.dec
-paste -d+ measuredm16y.dec z10kcos.dec > measuredbc16y.dec
+paste -d+ measuredm16y.dec z10k2cos.dec > measuredbc16y.dec
 #
 cat measuredbc16x.dec | bc > measuredc16x.dec
 cat measuredbc16y.dec | bc > measuredc16y.dec
 #
 paste -d+ measuredm18x.dec z10kcos.dec > measuredbc18x.dec
-paste -d+ measuredm18y.dec z10kcos.dec > measuredbc18y.dec
+paste -d+ measuredm18y.dec z10k2cos.dec > measuredbc18y.dec
 #
 cat measuredbc18x.dec | bc > measuredc18x.dec
 cat measuredbc18y.dec | bc > measuredc18y.dec
 #
 paste -d+ measuredm20x.dec z10kcos.dec > measuredbc20x.dec
-paste -d+ measuredm20y.dec z10kcos.dec > measuredbc20y.dec
+paste -d+ measuredm20y.dec z10k2cos.dec > measuredbc20y.dec
 #
 cat measuredbc20x.dec | bc > measuredc20x.dec
 cat measuredbc20y.dec | bc > measuredc20y.dec
 #
 paste -d+ measuredm22x.dec z10kcos.dec > measuredbc22x.dec
-paste -d+ measuredm22y.dec z10kcos.dec > measuredbc22y.dec
+paste -d+ measuredm22y.dec z10k2cos.dec > measuredbc22y.dec
 #
 cat measuredbc22x.dec | bc > measuredc22x.dec
 cat measuredbc22y.dec | bc > measuredc22y.dec
 #
 paste -d+ measuredm24x.dec z10kcos.dec > measuredbc24x.dec
-paste -d+ measuredm24y.dec z10kcos.dec > measuredbc24y.dec
+paste -d+ measuredm24y.dec z10k2cos.dec > measuredbc24y.dec
 #
 cat measuredbc24x.dec | bc > measuredc24x.dec
 cat measuredbc24y.dec | bc > measuredc24y.dec
 #
 paste -d+ measuredm26x.dec z10kcos.dec > measuredbc26x.dec
-paste -d+ measuredm26y.dec z10kcos.dec > measuredbc26y.dec
+paste -d+ measuredm26y.dec z10k2cos.dec > measuredbc26y.dec
 #
 cat measuredbc26x.dec | bc > measuredc26x.dec
 cat measuredbc26y.dec | bc > measuredc26y.dec
 #
 paste -d+ measuredm28x.dec z10kcos.dec > measuredbc28x.dec
-paste -d+ measuredm28y.dec z10kcos.dec > measuredbc28y.dec
+paste -d+ measuredm28y.dec z10k2cos.dec > measuredbc28y.dec
 #
 cat measuredbc28x.dec | bc > measuredc28x.dec
 cat measuredbc28y.dec | bc > measuredc28y.dec
