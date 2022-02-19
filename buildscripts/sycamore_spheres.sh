@@ -210,15 +210,15 @@ for a in $(< z10kcos.dec); do /root/.local/bin/crackNum -f sp -- $(echo $a) | gr
 #
 # convert qbit mass
 #
-for a in $(< measuredm12.dec); do /root/.local/bin/crackNum -f sp -- $(echo $a/268435 | bc -l) | grep "Hex layout" ; done > measuredm12.flex &
-for a in $(< measuredm14.dec); do /root/.local/bin/crackNum -f sp -- $(echo $a/268435 | bc -l) | grep "Hex layout" ; done > measuredm14.flex &
-for a in $(< measuredm16.dec); do /root/.local/bin/crackNum -f sp -- $(echo $a/268435 | bc -l) | grep "Hex layout" ; done > measuredm16.flex &
-for a in $(< measuredm18.dec); do /root/.local/bin/crackNum -f sp -- $(echo $a/268435 | bc -l) | grep "Hex layout" ; done > measuredm18.flex &
-for a in $(< measuredm20.dec); do /root/.local/bin/crackNum -f sp -- $(echo $a/268435 | bc -l) | grep "Hex layout" ; done > measuredm20.flex &
-for a in $(< measuredm22.dec); do /root/.local/bin/crackNum -f sp -- $(echo $a/268435 | bc -l) | grep "Hex layout" ; done > measuredm22.flex &
-for a in $(< measuredm24.dec); do /root/.local/bin/crackNum -f sp -- $(echo $a/268435 | bc -l) | grep "Hex layout" ; done > measuredm24.flex &
-for a in $(< measuredm26.dec); do /root/.local/bin/crackNum -f sp -- $(echo $a/268435 | bc -l) | grep "Hex layout" ; done > measuredm26.flex &
-for a in $(< measuredm28.dec); do /root/.local/bin/crackNum -f sp -- $(echo $a/268435 | bc -l) | grep "Hex layout" ; done > measuredm28.flex
+for a in $(< measuredm12.dec); do /root/.local/bin/crackNum -f sp -- $(echo $a*40000 | bc -l) | grep "Hex layout" ; done > measuredm12.flex &
+for a in $(< measuredm14.dec); do /root/.local/bin/crackNum -f sp -- $(echo $a*2441 | bc -l) | grep "Hex layout" ; done > measuredm14.flex &
+for a in $(< measuredm16.dec); do /root/.local/bin/crackNum -f sp -- $(echo $a*610 | bc -l) | grep "Hex layout" ; done > measuredm16.flex &
+for a in $(< measuredm18.dec); do /root/.local/bin/crackNum -f sp -- $(echo $a*153 | bc -l) | grep "Hex layout" ; done > measuredm18.flex &
+for a in $(< measuredm20.dec); do /root/.local/bin/crackNum -f sp -- $(echo $a*38 | bc -l) | grep "Hex layout" ; done > measuredm20.flex &
+for a in $(< measuredm22.dec); do /root/.local/bin/crackNum -f sp -- $(echo $a*9.5 | bc -l) | grep "Hex layout" ; done > measuredm22.flex &
+for a in $(< measuredm24.dec); do /root/.local/bin/crackNum -f sp -- $(echo $a*2.4 | bc -l) | grep "Hex layout" ; done > measuredm24.flex &
+for a in $(< measuredm26.dec); do /root/.local/bin/crackNum -f sp -- $(echo $a/1.6 | bc -l) | grep "Hex layout" ; done > measuredm26.flex &
+for a in $(< measuredm28.dec); do /root/.local/bin/crackNum -f sp -- $(echo $a/6.7 | bc -l) | grep "Hex layout" ; done > measuredm28.flex
 #
 # z coordinates are also float-ed - part b
 #
