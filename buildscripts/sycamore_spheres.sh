@@ -51,32 +51,32 @@ awk '{ print > (NR % 2 ? "measuredq28.dec" : "measuredm28.dec") }' supreme_28q14
 #
 #
 echo "starting cos/sin x/y calculations"
-awk '{x=6*-sin($1*0.087912088); print x;}' measuredm12.dec > measuredm12x.dec &
-awk '{y=6*-cos($1*0.087912088); print y;}' measuredm12.dec > measuredm12y.dec &
+awk '{x=6*sin($1*0.087912088); print x;}' measuredm12.dec > measuredm12x.dec &
+awk '{y=6*cos($1*0.087912088); print y;}' measuredm12.dec > measuredm12y.dec &
 #
-awk '{x=7*-sin($1*0.087912088); print x;}' measuredm14.dec > measuredm14x.dec &
-awk '{y=7*-cos($1*0.087912088); print y;}' measuredm14.dec > measuredm14y.dec &
+awk '{x=7*sin($1*0.087912088); print x;}' measuredm14.dec > measuredm14x.dec &
+awk '{y=7*cos($1*0.087912088); print y;}' measuredm14.dec > measuredm14y.dec &
 #
-awk '{x=8*-sin($1*0.087912088); print x;}' measuredm16.dec > measuredm16x.dec &
-awk '{y=8*-cos($1*0.087912088); print y;}' measuredm16.dec > measuredm16y.dec &
+awk '{x=8*sin($1*0.087912088); print x;}' measuredm16.dec > measuredm16x.dec &
+awk '{y=8*cos($1*0.087912088); print y;}' measuredm16.dec > measuredm16y.dec &
 #
-awk '{x=9*-sin($1*0.087912088); print x;}' measuredm18.dec > measuredm18x.dec &
-awk '{y=9*-cos($1*0.087912088); print y;}' measuredm18.dec > measuredm18y.dec &
+awk '{x=9*sin($1*0.087912088); print x;}' measuredm18.dec > measuredm18x.dec &
+awk '{y=9*cos($1*0.087912088); print y;}' measuredm18.dec > measuredm18y.dec &
 #
-awk '{x=10*-sin($1*0.087912088); print x;}' measuredm20.dec > measuredm20x.dec &
-awk '{y=10*-cos($1*0.087912088); print y;}' measuredm20.dec > measuredm20y.dec &
+awk '{x=10*sin($1*0.087912088); print x;}' measuredm20.dec > measuredm20x.dec &
+awk '{y=10*cos($1*0.087912088); print y;}' measuredm20.dec > measuredm20y.dec &
 #
-awk '{x=11*-sin($1*0.087912088); print x;}' measuredm22.dec > measuredm22x.dec &
-awk '{y=11*-cos($1*0.087912088); print y;}' measuredm22.dec > measuredm22y.dec &
+awk '{x=11*sin($1*0.087912088); print x;}' measuredm22.dec > measuredm22x.dec &
+awk '{y=11*cos($1*0.087912088); print y;}' measuredm22.dec > measuredm22y.dec &
 #
-awk '{x=12*-sin($1*0.087912088); print x;}' measuredm24.dec > measuredm24x.dec &
-awk '{y=12*-cos($1*0.087912088); print y;}' measuredm24.dec > measuredm24y.dec &
+awk '{x=12*sin($1*0.087912088); print x;}' measuredm24.dec > measuredm24x.dec &
+awk '{y=12*cos($1*0.087912088); print y;}' measuredm24.dec > measuredm24y.dec &
 #
-awk '{x=13*-sin($1*0.087912088); print x;}' measuredm26.dec > measuredm26x.dec &
-awk '{y=13*-cos($1*0.087912088); print y;}' measuredm26.dec > measuredm26y.dec &
+awk '{x=13*sin($1*0.087912088); print x;}' measuredm26.dec > measuredm26x.dec &
+awk '{y=13*cos($1*0.087912088); print y;}' measuredm26.dec > measuredm26y.dec &
 #
-awk '{x=14*-sin($1*0.087912088); print x;}' measuredm28.dec > measuredm28x.dec
-awk '{y=14*-cos($1*0.087912088); print y;}' measuredm28.dec > measuredm28y.dec
+awk '{x=14*sin($1*0.087912088); print x;}' measuredm28.dec > measuredm28x.dec
+awk '{y=14*cos($1*0.087912088); print y;}' measuredm28.dec > measuredm28y.dec
 #
 #
 # subtract z coordinate from x/y points for spheres
@@ -285,7 +285,7 @@ xxd -r -p sycamore_spheres_tipsy.hex sycamore_spheres_tipsy.bin
 hexdump -v -e '1/4 "%08x"' -e '"\n"' sycamore_spheres_tipsy.bin | xxd -r -p >sycamore_spheres_tipsy_hexdump.bin
 #
 # assemble/weave hex, convert to bin
-paste time.hex pointsq.hex ndim.hex nsph.hex ndark.hex pointsq.hex version.hex measuredm.fhex measuredcx.fhex measuredcy.fhex z10k9.fhex displace.fhex displace.fhex displace.fhex displace.fhex displace.fhex measuredcx.fhex z10k9.fhex > sycamore_spheres_tipsy_bowl.hex
+paste time.hex pointsq.hex ndim.hex nsph.hex ndark.hex pointsq.hex version.hex measuredm.fhex measuredcx.fhex measuredcy.fhex z10k2-9.fhex displace.fhex displace.fhex displace.fhex displace.fhex displace.fhex measuredcx.fhex z10k9.fhex > sycamore_spheres_tipsy_bowl.hex
 # convert float hex string data as a bin file
 xxd -r -p sycamore_spheres_tipsy_bowl.hex sycamore_spheres_tipsy_bowl.bin
 # aaaand convert to little indian
