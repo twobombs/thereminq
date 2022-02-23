@@ -6,10 +6,8 @@
 cd /qrack128/_build/
 #
 export QRACK_OCL_DEFAULT_DEVICE=2 && ./benchmarks --optimal --timeout=1200000 --max-qubits=16 --benchmark-depth=16 --devices=0,0,0,0,1,1,1,1 --single test_stabilizer_t_nn_d --samples=1000 --measure-output=/var/log/qrack/"t_nn_d_$(date +%F_%R_%S).log" &
-
 export QRACK_OCL_DEFAULT_DEVICE=2 && ./benchmarks --optimal --timeout=1200000 --max-qubits=25 --benchmark-depth=25 --devices=0,0,0,0,1,1,1,1 --single test_stabilizer_t_nn_d --samples=1000 --measure-output=/var/log/qrack/"t_nn_d_$(date +%F_%R_%S).log" &
 
-# 
 export QRACK_OCL_DEFAULT_DEVICE=2 && ./benchmarks --optimal --timeout=1200000 --max-qubits=36 --benchmark-depth=36 --devices=0,0,0,0,1,1,1,1 --single test_stabilizer_t_nn_d --samples=1000 --measure-output=/var/log/qrack/"t_nn_d_$(date +%F_%R_%S).log" &
 export QRACK_OCL_DEFAULT_DEVICE=2 && ./benchmarks --optimal --timeout=1200000 --max-qubits=36 --benchmark-depth=36 --devices=0,0,0,0,1,1,1,1 --single test_stabilizer_t_nn_d --samples=1000 --measure-output=/var/log/qrack/"t_nn_d_$(date +%F_%R_%S).log"
 
