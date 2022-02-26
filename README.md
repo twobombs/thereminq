@@ -35,7 +35,7 @@ Initial vnc password is 00000000 - noVNC website is avaliable at port 6080
 
 ### Tips for Managing high-Qubit workloads
 - Workloads with full entanglement and/or Quantum simulations that are at or exceed 30+ Qubits
-- Mixed workloads based on longer/larger circuits with partial entanglement that exceed 36+ Qubits<br> <br>
+- Mixed workloads based on longer/larger/deeper circuits with partial entanglement that exceed 36+ Qubits<br> <br>
 
 To prevent these workload from taking up all resources of the system it is good to take the following measures
 
