@@ -43,7 +43,7 @@ To prevent these workload from taking up all resources of the system it is good 
 - Start an instance with a limit for memory and/or swap. eg docker: '-m 16g --memory-swap 32g'
 - Disable OOM killers in the kernel and/or the container orchestrator
 - Docker: '--oom-kill-disable' and/or OOM host change: vm.overcommit_memory = 2 in /etc/sysctl.conf
-- Swap should be a dedicated and fast drive where possible NVMe RAID, equal to the bandwith of the GPU PCIe connection<br> <br>
+- Swap should be a dedicated and fast drive where possible NVMe RAID, equal to the bandwith of the GPU/PCIe<br> <br>
 
 ## Deploy Bonsai ( https://github.com/treecode/Bonsai ) visualisation - requirements: Running NVidia X, CUDA and NVidia-Docker on host 
 - docker run --gpus all -d -v /tmp/.X11-unix:/tmp/.X11-unix -e DISPLAY=$DISPLAY -p 6080:6080 -v /run/user/1000/gdm/Xauthority:/root/.Xauthority -h $HOSTNAME twobombs/thereminq:bonsai 
