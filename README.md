@@ -3,7 +3,7 @@
 
 ![](https://img.shields.io/docker/automated/jrottenberg/ffmpeg.svg)
 
-ThereminQ orchestrates a suite of best-of-class tools designed to control, extend and visualize data emanating from Quantum circuits using Qrack, ELK, Tipsy and Jupyter on CUDA and OpenCL accelerators.
+ThereminQ orchestrates a suite of best-of-class tools designed to control, extend and visualize data emanating to and from Quantum circuits using Qrack, ELK, Tipsy and Jupyter on CUDA and OpenCL accelerators.
 
 - Qrack - Qbit OCL Hardware Emulation Stack > https://github.com/vm6502q/qrack
 - Bonsai - Stellar data visualizer for QFT data and converter > https://github.com/treecode/Bonsai
