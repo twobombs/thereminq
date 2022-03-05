@@ -44,13 +44,11 @@ RUN curl -sSL https://get.haskellstack.org/ | sh
 RUN cd crackNum && stack path --local-bin && stack setup && stack init && stack build && stack install && stack clean && rm -R /crackNum
 
 # node run & benchmark script, make runnable 
-COPY runscripts/runcosmosdockergpu.sh /root/
-COPY runscripts/run-* /root/
-RUN chmod 744 /root/runcosmosdockergpu.sh && chmod 744 /root/run-*
+COPY runscripts/run* /root/
+RUN chmod 744 /root/run*
 
 #cleanup
 RUN mkdir /root/logs && mv /var/log/*.log /root/logs/
 
 EXPOSE 22 80 8801-8811
-
 ENTRYPOINT /root/run-node
