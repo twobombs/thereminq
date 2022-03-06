@@ -45,7 +45,7 @@ To prevent these workload from taking up all resources of the system it is good 
 - Docker: '--oom-kill-disable' and/or OOM host change: vm.overcommit_memory = 2 in /etc/sysctl.conf
 - Swap should be a dedicated and fast drive where possible NVMe RAID, equal to the bandwith of the GPU/PCIe<br> <br>
 
-### T_NN-d Results on an AMD Threadripper 1920 with 24GB RAM and a Tesla K80 24GB vRAM
+### T_NN-d Results on AMD Threadripper 1920 with 24GB RAM and a Tesla K80 24GB vRAM
 ![Screenshot from 2022-03-06 13-12-53](https://user-images.githubusercontent.com/12692227/156922673-f563cdfc-1a66-4e67-a5e9-ea557ab7bc5d.png)
 
 
