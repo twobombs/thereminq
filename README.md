@@ -3,6 +3,8 @@
 
 ![](https://img.shields.io/docker/automated/jrottenberg/ffmpeg.svg)
 
+[![ThereminQ data demo #1](http://img.youtube.com/vi/CgvKkK4-OlE/0.jpg)](https://youtu.be/CgvKkK4-OlE "ThereminQ data demo #1")
+
 ThereminQ orchestrates a suite of best-of-class tools designed to control, extend and visualize data emanating to and from Quantum circuits using Qrack, ELK, Tipsy and Jupyter on CUDA and OpenCL accelerators.
 
 - Qrack - Qbit OCL Hardware Emulation Stack > https://github.com/vm6502q/qrack
