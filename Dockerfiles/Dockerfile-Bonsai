@@ -1,4 +1,4 @@
-FROM nvidia/cudagl:11.4.2-devel-ubuntu20.04
+FROM twobombs/thereminq
 
 # install bonsai
 RUN apt update && export DEBIAN_FRONTEND=noninteractive && apt install -y git cmake-curses-gui && apt clean all
