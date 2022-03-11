@@ -10,7 +10,7 @@ RUN cd /Bonsai/runtime && cmake -DCMAKE_CXX_COMPILER=mpicxx -DUSE_CUB=0 -DUSE_OP
 
 # add and convert demo data
 RUN tar -xf /thereminq/miscfiles/qrack-cosmos.tar.gz -C /var/log/
-RUN cd /qracknet/buildscripts && ./makeqftipsy.sh
+RUN cd /thereminq/buildscripts && ./makeqftipsy.sh
 RUN cat /proc/cpuinfo > /thereminq/cpuinfo.txt
 
 EXPOSE 22 6080 8801-8811
