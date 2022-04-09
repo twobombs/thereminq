@@ -14,21 +14,22 @@ ThereminQ orchestrates a suite of best-of-class tools designed to control, exten
 
 Images can be run independantly but are made to work with the vQbit infrastructure HELM repo at https://github.com/twobombs/helm
 
-Installation setup and usage scenarios can be glanced at <script src="https://gist.github.com/twobombs/bb38050e84331307bf14c46d723b2a01.js"></script>
+Installation setup and usage scenarios can be glanced at here https://gist.github.com/twobombs/bb38050e84331307bf14c46d723b2a01
 
-![Screenshot from 2021-10-24 17-20-59](https://user-images.githubusercontent.com/12692227/138600676-e49722a2-3508-4fc2-a81e-4d5a7a312c2c.png)
-![Screenshot_from_2022-03-15_19-26-41](https://user-images.githubusercontent.com/12692227/158855774-b6294720-3769-409a-bf96-0945e2af842a.png)
-
-
-## Build on top of the CUDA-CLuster stack https://github.com/twobombs/cudacluster an addition to deploy-nvidia-docker https://github.com/twobombs/deploy-nvidia-docker
+## Build on top of the CUDA-CLuster stack https://github.com/twobombs/cudacluster and deploy-nvidia-docker https://github.com/twobombs/deploy-nvidia-docker WebUI
 - WebVNC, CUDA 11.2+ & OpenCL 1.2+ with NV, AMD & Intel HW support
 
 <img width="1435" alt="Screenshot 2021-05-04 at 15 10 27" src="https://user-images.githubusercontent.com/12692227/117008533-21d79280-aceb-11eb-993a-efa7d1123a1f.png">
 
 ![Screenshot from 2022-03-15 20-05-42](https://user-images.githubusercontent.com/12692227/158857290-fa4947e1-5792-4444-974e-7deb7c7b24f9.png)
 
-
 Initial vnc password is 00000000 - noVNC website is avaliable at port 6080
+
+## Kibana views with ThereminQ's data 
+
+![Screenshot from 2021-10-24 17-20-59](https://user-images.githubusercontent.com/12692227/138600676-e49722a2-3508-4fc2-a81e-4d5a7a312c2c.png)
+![Screenshot_from_2022-03-15_19-26-41](https://user-images.githubusercontent.com/12692227/158855774-b6294720-3769-409a-bf96-0945e2af842a.png)
+
 
 ## Deploy an instance of ThereminQ's WebUI controller container and/or select a specific workload type to run on your favorite orchestrator
 - docker run --gpus all --privileged -p 6080:6080 -v /var/run/docker.sock:/var/run/docker.sock:ro --device=/dev/dri:/dev/dri -d twobombs/thereminq:controller
