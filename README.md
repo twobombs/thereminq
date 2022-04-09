@@ -14,6 +14,8 @@ ThereminQ orchestrates a suite of best-of-class tools designed to control, exten
 
 Images can be run independantly but are made to work with the vQbit infrastructure HELM repo at https://github.com/twobombs/helm
 
+Installation setup and usage scenarios can be glanced at <script src="https://gist.github.com/twobombs/bb38050e84331307bf14c46d723b2a01.js"></script>
+
 ![Screenshot from 2021-10-24 17-20-59](https://user-images.githubusercontent.com/12692227/138600676-e49722a2-3508-4fc2-a81e-4d5a7a312c2c.png)
 ![Screenshot_from_2022-03-15_19-26-41](https://user-images.githubusercontent.com/12692227/158855774-b6294720-3769-409a-bf96-0945e2af842a.png)
 
