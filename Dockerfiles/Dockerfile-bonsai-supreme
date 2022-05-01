@@ -1,6 +1,0 @@
-FROM twobombs/thereminq:bonsai
-
-RUN cd /thereminq/buildscripts && /usr/bin/time ./sycamore_spheres.sh
-
-EXPOSE 22 6080 8801-8811
-ENTRYPOINT /root/run-bonsai
