@@ -1,0 +1,26 @@
+#!/bin/bash
+# WebUI@6080
+rm /tmp/.X0-lock && mv /var/log/*.log /root/logs/
+export LIBGL_ALWAYS_SOFTWARE=1&&Xvfb :0 -screen 0 1920x1080x24+32 -ac&
+sleep 10
+export DISPLAY=:0&&startxfce4&	
+x0vncserver -display :0 -passwordfile /root/.vnc/passwd&
+/usr/share/novnc/utils/launch.sh --vnc localhost:5900&
+
+export DISPLAY=:0&&xterm -e "xset s off"
+
+# start monitoring of kubelet state & qrack output
+filebeat setup -e
+metricbeat setup &
+service metricbeat start &
+service filebeat start &
+
+# start the SimulaQron, ProjectQ, Qrack train
+# simulaqron set backend projectq &
+# simulaqron &
+
+# precompile cl kernels for Qrack	
+cd /qrack/_build/ && ./qrack_cl_precompile
+
+# end run, do not stop container ( debug feature, we need an empty node doing nothing )
+tail -f /dev/null
