@@ -1,0 +1,6 @@
+FROM twobombs/thereminq:latest
+
+RUN apt update && apt install gnome-calculator mathomatic-primes mathomatic
+
+EXPOSE 22 80 8801-8811
+ENTRYPOINT /root/run-node
