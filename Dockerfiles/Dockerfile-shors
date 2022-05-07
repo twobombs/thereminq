@@ -2,7 +2,7 @@ FROM twobombs/thereminq:latest
 
 RUN apt update && apt install gnome-calculator mathomatic-primes mathomatic libssl-dev
 RUN git clone https://github.com/openssh/openssh-portable.git && cd openssh-portable && autoreconf && ./configure -DSSH_RSA_MINIMUM_MODULUS_SIZE=32 && make && mkdir /var/empty && make tests
-RUN git clone https://github.com/openssl/openssl.git && cd openssl && ./configure --enable-weak-ssl-ciphers -DOPENSSL_TLS_SECURITY_LEVEL=0 && make && make tests
+RUN git clone https://github.com/openssl/openssl.git && cd openssl && ./Configure enable-weak-ssl-ciphers -DOPENSSL_TLS_SECURITY_LEVEL=0 && make && make tests
 
 EXPOSE 22 80 8801-8811
 ENTRYPOINT /root/run-node
