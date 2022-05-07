@@ -1,3 +1,3 @@
-for i in {4096..65535}
-    do echo $i | matho-primes -c 1 -u $1 | ./shors_factoring $(($1*$i)) | grep "Found"
+for i in {16..55108}
+    do prime=$(matho-primes -c 1 -u $i) && echo $(($prime * 128)) | ./shors_factoring $1 | grep "Found"
 done
