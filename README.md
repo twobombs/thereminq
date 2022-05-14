@@ -64,7 +64,7 @@ To prevent these workload from taking up all resources of the system it is good 
 I did do or helped with some of the coding for glue, speed and data generation. <br>
 This stack was made so that you don't need to <br>
 
-## Code from the following awesome companies and initiatives are included in this container
+## Code from the following companies and initiatives are included in this container
 
 ![](https://user-images.githubusercontent.com/12692227/57654809-61c07f00-75d5-11e9-9005-38d60d8d4db4.png)
 
