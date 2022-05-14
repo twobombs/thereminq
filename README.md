@@ -61,14 +61,15 @@ To prevent these workload from taking up all resources of the system it is good 
 
 ![Screenshot from 2022-03-06 13-12-53](https://user-images.githubusercontent.com/12692227/156922673-f563cdfc-1a66-4e67-a5e9-ea557ab7bc5d.png)
 
-I did do or helped with some of the coding for glue, speed and data generation: however, this stack was made so that you don't need to <br>
-- this is a work in progess
+I did do or helped with some of the coding for glue, speed and data generation. <br>
+This stack was made so that you don't need to <br>
 
 ## Code from the following awesome companies and initiatives are included in this container
 
 ![](https://user-images.githubusercontent.com/12692227/57654809-61c07f00-75d5-11e9-9005-38d60d8d4db4.png)
 
-All rights and kudos belong to their respective owners. If (your) code resides in this container image and you don't want that please let me know.
+All rights and kudos belong to their respective owners. <br>
+If (your) code resides in this container image and you don't want that please let me know. <br>
 
 Code of conduct : Contributor Covenant 
 https://github.com/EthicalSource/contributor_covenant
