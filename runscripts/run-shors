@@ -22,5 +22,8 @@ service filebeat start &
 # precompile cl kernels for Qrack	
 cd /qrack/_build/ && ./qrack_cl_precompile
 
+# run shors' win loop
+./thereminq/buildscripts/shors_winloop.sh > /var/log/qrack/shors/"shors_primes_win_$(date +%F_%R_%S).log"
+
 # end run, do not stop container ( debug feature, we need an empty node doing nothing )
 tail -f /dev/null
