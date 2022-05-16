@@ -24,7 +24,7 @@ Installation setup and usage scenarios can be glanced at here https://gist.githu
 
 ![Screenshot from 2022-03-15 20-05-42](https://user-images.githubusercontent.com/12692227/158857290-fa4947e1-5792-4444-974e-7deb7c7b24f9.png)
 
-Initial vnc password is 00000000 - noVNC website is avaliable at port 6080
+Default vnc password is 00000000 - noVNC website is avaliable at port 6080
 
 ## Kibana views with ThereminQ's data 
 
