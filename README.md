@@ -9,9 +9,9 @@
 ThereminQ orchestrates a suite of best-of-class tools designed to control, extend and visualize data emanating to and from Quantum circuits using Qrack, ELK, Tipsy and Jupyter on CUDA and OpenCL accelerators.
 
 - Qrack - Qbit OCL Hardware Emulation Stack > https://github.com/vm6502q/qrack
-- Bonsai - Stellar data visualizer for QFT data and converter > https://github.com/treecode/Bonsai
-- Elastic Search/Lucene Interface for data interconnect > https://www.elastic.co/downloads/
-- TensorFlow/Board/Projector integrations > https://github.com/twobombs/tensors
+- Bonsai - Stellar data visualizer for QFT, Sycamore and TNN_d data > https://github.com/treecode/Bonsai
+- Elastic Search/Lucene Interface for Big Data interconnect > https://www.elastic.co/downloads/
+- TensorFlow/Board/Projector and Shors' RSA peypair analysis > https://github.com/twobombs/thereminq-tensors
 
 Images can be run independantly but are made to work with the vQbit infrastructure HELM repo at https://github.com/twobombs/helm
 
