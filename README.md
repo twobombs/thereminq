@@ -11,7 +11,7 @@ ThereminQ orchestrates a suite of best-of-class tools designed to control, exten
 - Qrack - Qbit OCL Hardware Emulation Stack > https://github.com/vm6502q/qrack
 - Bonsai - Stellar data visualizer for QFT, Sycamore and TNN_d data > https://github.com/treecode/Bonsai
 - Elastic Search/Lucene Interface for Big Data interconnect > https://www.elastic.co/downloads/
-- TensorFlow/Board/Projector and Shors' RSA peypair analysis > https://github.com/twobombs/thereminq-tensors
+- TensorFlow/Board/Projector and Shors' RSA keypair analysis > https://github.com/twobombs/thereminq-tensors
 
 Images can be run independantly but are made to work with the vQbit infrastructure HELM repo at https://github.com/twobombs/helm
 
