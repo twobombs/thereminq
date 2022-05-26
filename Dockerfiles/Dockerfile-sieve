@@ -1,0 +1,13 @@
+FROM twobombs/deploy-nvidia-docker:dev
+
+#install CPU prime generator
+RUN apt update && apt install gnome-calculator mathomatic-primes mathomatic libssl-dev && apt clean all
+
+#install CUDAsieve prime generator
+RUN apt update && apt install -y libboost-all-dev libprimesieve-dev && apt clean all
+RUN git clone https://github.com/curtisseizert/CUDASieve.git
+RUN ln /usr/local/cuda /opt/cuda
+RUN cd CUDASieve && mkdir obj && make && make test && make samples
+
+EXPOSE 22 80 8801-8811
+ENTRYPOINT /root/run-node
