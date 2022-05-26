@@ -10,4 +10,4 @@ RUN ln /usr/local/cuda /opt/cuda
 RUN cd CUDASieve && mkdir obj && make && make test && make samples
 
 EXPOSE 22 80 8801-8811
-ENTRYPOINT /root/run-node
+ENTRYPOINT /root/run
