@@ -9,5 +9,10 @@ RUN git clone https://github.com/curtisseizert/CUDASieve.git
 RUN ln /usr/local/cuda /opt/cuda
 RUN cd CUDASieve && mkdir obj && make && make test && make samples
 
+#fetch & install mtsieve
+RUN apt update && apt install -y subversion opencl-headers libgmp3-dev 
+RUN svn checkout https://svn.code.sf.net/p/mtsieve/svn/ mtsieve-svn
+RUN cd mtsieve-svn && make 
+
 EXPOSE 22 80 8801-8811
 ENTRYPOINT /root/run
