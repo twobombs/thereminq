@@ -10,7 +10,7 @@ RUN ln /usr/local/cuda /opt/cuda
 RUN cd CUDASieve && mkdir obj && make && make test && make samples
 
 #fetch & install mtsieve
-RUN apt update && apt install -y subversion opencl-headers libgmp3-dev 
+RUN apt update && apt install -y subversion opencl-headers libgmp3-dev && ldconfig 
 RUN svn checkout https://svn.code.sf.net/p/mtsieve/svn/ mtsieve-svn
 RUN cd mtsieve-svn && make 
 
