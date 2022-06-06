@@ -1,4 +1,4 @@
-FROM twobombs/deploy-nvidia-docker:dev
+FROM twobombs/cudacluster:dev
 
 #install CPU prime generator
 RUN apt update && apt install -y gnome-calculator mathomatic-primes mathomatic libssl-dev && apt clean all
