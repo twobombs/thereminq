@@ -15,15 +15,13 @@ metricbeat setup &
 service metricbeat start &
 service filebeat start &
 
-# start the SimulaQron, ProjectQ, Qrack train
-# simulaqron set backend projectq &
-# simulaqron &
-
-# precompile cl kernels for Qrack	
-cd /qrack/_build/ && ./qrack_cl_precompile
-
-# run shors' win loop
-./thereminq/buildscripts/shors_winloop.sh > /var/log/qrack/shors/"shors_primes_win_$(date +%F_%R_%S).log"
+# start rsaConverter, firefox session with lower yield rsa keygen site 
+# and qimcifa on C ( which might eat the host ) 
+#
+export DISPLAY=:0 && ./thereminq-tensors/runfiles/rsaConverter &
+export DISPLAY=:0 && gnome-calculator &
+export DISPLAY=:0 && chrome https://www.mobilefish.com/services/rsa_key_generation/rsa_key_generation.php &
+export DISPLAY=:0 && xterm -e "/root/shors_qimcifa_loop.sh > /var/log/thereminq/shors-qimcifa_loop_'$(date +%F_%R_%S).log'" 
 
 # end run, do not stop container ( debug feature, we need an empty node doing nothing )
 tail -f /dev/null
