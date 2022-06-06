@@ -1,4 +1,0 @@
-FROM twobombs/thereminq
-
-EXPOSE 22 80 8801-8811
-ENTRYPOINT /root/run-tnn-gpu2

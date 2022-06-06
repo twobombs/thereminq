@@ -1,6 +1,0 @@
-FROM twobombs/thereminq
-
-RUN apt install pocl-opencl-icd
-
-EXPOSE 22 80 8801-8811
-ENTRYPOINT /root/run-qft-cpu
