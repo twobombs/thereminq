@@ -34,15 +34,20 @@ Default vnc password is 00000000 - noVNC website is avaliable at port 6080
 
 ## Deploy an instance of ThereminQ's WebUI controller container and/or select a specific workload type to run on your favorite orchestrator
 - docker run --gpus all --privileged -p 6080:6080 -v /var/run/docker.sock:/var/run/docker.sock:ro --device=/dev/dri:/dev/dri -d twobombs/thereminq:controller
-- docker run -d --mount type=bind,source=/var/log/qrack,target=/var/log/qrack twobombs/thereminq:supreme-cpu
-- docker run --gpus all --device=/dev/dri:/dev/dri -d --mount type=bind,source=/var/log/qrack,target=/var/log/qrack twobombs/thereminq:cosmos-gpu1
+- docker run -ti --mount type=bind,source=/var/log/qrack,target=/var/log/qrack twobombs/thereminq bash /root/run-supreme-cpu
+- docker run --gpus all --device=/dev/dri:/dev/dri -ti --mount type=bind,source=/var/log/qrack,target=/var/log/qrack twobombs/thereminq bash /root/run-cosmos-gpu1
 - use --gpus all for NVidia-Docker hosts, in addition --privileged will expose all GPUs in the system, eg: Intel iGPUs<br> <br>
+
+All specialized workloads are listed in https://github.com/twobombs/thereminq/tree/master/runscripts
 
 ![Screenshot from 2021-10-24 17-23-18](https://user-images.githubusercontent.com/12692227/138600777-607fda67-52d5-4e24-9f19-8e30f36ffa29.png)
 
 
 ### Experimental  'bqp=bpp' stabilizer_t_nn high qbit workload
-- docker run --gpus all --device=/dev/dri:/dev/dri -d --mount type=bind,source=/var/log/qrack,target=/var/log/qrack twobombs/thereminq:tnn-gpu1<br> <br>
+- docker run --gpus all --device=/dev/dri:/dev/dri -t --mount type=bind,source=/var/log/qrack,target=/var/log/qrack twobombs/thereminq bash /root/run-tnn-gpu1<br> <br>
+
+### Experimental  Shors' high qbit workloads
+- docker run --gpus all --device=/dev/dri:/dev/dri -t --mount type=bind,source=/var/log/qrack,target=/var/log/qrack twobombs/thereminq bash /root/run-shors<br> <br>
 
 ### Tips for Managing high-Qubit workloads
 - Workloads with full entanglement and/or Quantum simulations that are at or exceed 30+ Qubits
