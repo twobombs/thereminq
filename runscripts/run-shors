@@ -20,7 +20,7 @@ service filebeat start &
 #
 export DISPLAY=:0 && ./thereminq-tensors/runfiles/rsaConverter &
 export DISPLAY=:0 && gnome-calculator &
-export DISPLAY=:0 && google-chrome-stable --no-sandbox https://www.mobilefish.com/services/rsa_key_generation/rsa_key_generation.php &
+export DISPLAY=:0 && google-chrome-stable --no-sandbox --password-store=basic https://www.mobilefish.com/services/rsa_key_generation/rsa_key_generation.php &
 export DISPLAY=:0 && xterm -e "/root/shors_qimcifa_loop.sh > /var/log/thereminq/shors-qimcifa_loop_'$(date +%F_%R_%S).log'" 
 
 # end run, do not stop container ( debug feature, we need an empty node doing nothing )
