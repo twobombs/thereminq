@@ -1,0 +1,7 @@
+# amd hack for opencl inside container
+# 
+apt-get install -y mesa-opencl-icd dialog clinfo
+wget https://repo.radeon.com/amdgpu-install/22.10.2/ubuntu/bionic/amdgpu-install_22.10.2.50102-1_all.deb
+dpkg -i amdgpu-install_22.10.2.50102-1_all.deb && amdgpu-install --accept-eula --usecase=opencl --open=rocr --no-dkms
+clinfo
+#
