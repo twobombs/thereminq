@@ -16,7 +16,7 @@ RUN svn checkout https://svn.code.sf.net/p/mtsieve/svn/ mtsieve-svn
 # RUN cd mtsieve-svn && make
 
 # vm6502q/qimcifa has an LGPL license. Report (re)use of code to Dan Strano.
-RUN git clone --branch opencl_bigint https://github.com/vm6502q/qimcifa.git && mv /qimcifa /qimfifa-bigint cd /qimcifa-bigint && cmake . && make
+RUN git clone --branch opencl_bigint https://github.com/vm6502q/qimcifa.git && mv /qimcifa /qimcifa-bigint && cd /qimcifa-bigint && cmake . && make
 RUN git clone https://github.com/vm6502q/qimcifa.git && cd /qimcifa && cmake . && make
 
 # install haskell, z3, num-utils, crackNum + dependancies
