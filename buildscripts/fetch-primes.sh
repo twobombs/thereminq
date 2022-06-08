@@ -9,7 +9,7 @@ cd primes
 
 for i in {1..200}
  do
-  wget 'http://www.primos.mat.br/dados/2T_part'$i'.7z'
+  wget 'http://www.primos.mat.br/dados/De_900G_a_1T_part'$i'.7z'
  done
 
 p7zip -d *.7z
