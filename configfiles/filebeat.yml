@@ -27,6 +27,8 @@ filebeat.inputs:
   paths:
     # - /var/log/*.log
     - /var/log/qrack/*
+    - /var/log/sieve/*
+    - /var/log/shors/*
     #- c:\programdata\elasticsearch\logs\*
 
   # Exclude lines. A list of regular expressions to match. It drops the lines that are
