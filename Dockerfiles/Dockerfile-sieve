@@ -12,7 +12,8 @@ RUN cd CUDASieve && mkdir obj && make && make test && make samples
 # fetch & install mtsieve
 RUN apt update && apt install -y subversion opencl-headers libgmp3-dev && ldconfig && ln -s /usr/lib/x86_64-linux-gnu/libOpenCL.so.1 /usr/lib/libOpenCL.so
 RUN svn checkout https://svn.code.sf.net/p/mtsieve/svn/ mtsieve-svn
-RUN cd mtsieve-svn && make
+# build disabled because one of the sieves are borked
+# RUN cd mtsieve-svn && make
 
 # install haskell, z3, num-utils, crackNum + dependancies
 RUN apt-get install -y z3 num-utils && apt clean all
