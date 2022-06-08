@@ -14,5 +14,7 @@ RUN apt update && apt install -y subversion opencl-headers libgmp3-dev && ldconf
 RUN svn checkout https://svn.code.sf.net/p/mtsieve/svn/ mtsieve-svn
 RUN cd mtsieve-svn && make 
 
+RUN mkdir /var/log/sieve
+
 EXPOSE 22 80 8801-8811
 ENTRYPOINT /root/run
