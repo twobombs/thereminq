@@ -8,7 +8,8 @@ RUN git clone https://github.com/openssh/openssh-portable.git && cd openssh-port
 RUN git clone https://github.com/openssl/openssl.git && cd openssl && ./Configure enable-weak-ssl-ciphers -DOPENSSL_TLS_SECURITY_LEVEL=0 && make && make install
 
 # vm6502q/qimcifa has an LGPL license. Report (re)use of code to Dan Strano.
-RUN git clone --branch opencl_bigint https://github.com/vm6502q/qimcifa.git && cd /qimcifa && cmake . && make
+RUN git clone --branch opencl_bigint https://github.com/vm6502q/qimcifa.git && mv /qimcifa /qimfifa-bigint cd /qimcifa-bigint && cmake . && make
+RUN git clone https://github.com/vm6502q/qimcifa.git && cd /qimcifa && cmake . && make
 
 RUN mkdir /var/log/shors && mkdir /var/log/qimcifa
 
