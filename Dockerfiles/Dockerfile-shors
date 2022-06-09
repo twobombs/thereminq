@@ -1,7 +1,7 @@
 FROM twobombs/thereminq:latest
 
 # install rsa primes UI & Shors' input requirement.
-RUN add-apt-repository -y ppa:linuxuprising/libpng12 && apt update && apt install -y cmake nodejs npm  gnome-calculator mathomatic-primes mathomatic libssl-dev libgmp3-dev libgtest-dev gnome-calculator mathomatic-primes mathomatic libssl-dev libboost-all-dev opencl-headers xxd libpng12-0 libcanberra-gtk-module gtk2-engines-pixbuf libcanberra-gtk3-module && apt clean all
+RUN add-apt-repository -y ppa:linuxuprising/libpng12 && apt update && apt install -y cmake xxd nodejs npm  gnome-calculator mathomatic-primes mathomatic libssl-dev libgmp3-dev libgtest-dev gnome-calculator mathomatic-primes mathomatic libssl-dev libboost-all-dev opencl-headers xxd libpng12-0 libcanberra-gtk-module gtk2-engines-pixbuf libcanberra-gtk3-module && apt clean all
 
 # nerfed rsa prime generators install
 RUN git clone https://github.com/openssh/openssh-portable.git && cd openssh-portable && autoreconf && sed -i 's/#define SSH_RSA_MINIMUM_MODULUS_SIZE.*/#define SSH_RSA_MINIMUM_MODULUS_SIZE   1024/g' sshkey.h && ./configure && make && mkdir /var/empty && make tests && make install
