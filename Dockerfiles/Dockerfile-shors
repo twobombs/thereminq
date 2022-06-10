@@ -1,5 +1,8 @@
 FROM twobombs/thereminq:latest
 
+# install apt packages because 
+RUN apt update && apt install -y cmake nodejs npm libssl-dev xxd libgmp3-dev && apt clean all
+
 # install rsa primes UI & Shors' input requirement.
 RUN add-apt-repository -y ppa:linuxuprising/libpng12 && apt update && apt install -y cmake xxd nodejs npm  gnome-calculator mathomatic-primes mathomatic libssl-dev libgmp3-dev libgtest-dev gnome-calculator mathomatic-primes mathomatic libssl-dev libboost-all-dev opencl-headers xxd libpng12-0 libcanberra-gtk-module gtk2-engines-pixbuf libcanberra-gtk3-module && apt clean all
 
@@ -10,6 +13,10 @@ RUN git clone https://github.com/openssl/openssl.git && cd openssl && ./Configur
 # vm6502q/qimcifa has an LGPL license. Report (re)use of code to Dan Strano.
 RUN git clone --branch opencl_bigint https://github.com/vm6502q/qimcifa.git && mv qimcifa qimfifa-bigint cd /qimcifa-bigint && cmake . && make
 RUN git clone https://github.com/vm6502q/qimcifa.git && cd /qimcifa && cmake . && make
+
+# NV's BigINT implementation + reqs
+RUN git clone https://github.com/google/googletest.git && cd googletest && cmake . && make && make install 
+RUN git clone https://github.com/NVlabs/CGBN.git && cd CGBN && mv /googletest/googletest gtest && make kepler
 
 RUN mkdir /var/log/shors && mkdir /var/log/qimcifa
 
