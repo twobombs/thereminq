@@ -19,7 +19,7 @@ service filebeat start &
 # and qimcifa on C ( which might eat the host ) 
 #
 export DISPLAY=:0 && gnome-calculator &
-export DISPLAY=:0 && google-chrome-stable --no-sandbox --password-store=basic https://www.mobilefish.com/services/rsa_key_generation/rsa_key_generation.php &
+export DISPLAY=:0 && google-chrome-stable --disable-fre --no-default-browser-check --no-first-run --no-sandbox --password-store=basic https://www.mobilefish.com/services/rsa_key_generation/rsa_key_generation.php &
 export DISPLAY=:0 && gnome-terminal
 
 # end run, do not stop container ( debug feature, we need an empty node doing nothing )
