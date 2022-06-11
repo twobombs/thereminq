@@ -21,7 +21,7 @@ service filebeat start &
 export DISPLAY=:0 && ./thereminq/miscfiles/rsaConverter &
 export DISPLAY=:0 && gnome-calculator &
 export DISPLAY=:0 && google-chrome-stable --disable-fre --no-default-browser-check --no-first-run --no-sandbox --password-store=basic https://www.mobilefish.com/services/rsa_key_generation/rsa_key_generation.php &
-export DISPLAY=:0 && xfce4-terminal -e "/root/run-shors_qimcifa.sh > /var/log/thereminq/shors-qimcifa_loop_'$(date +%F_%R_%S).log'" 
+export DISPLAY=:0 && xfce4-terminal -e "/root/run-shors_qimcifa.sh > /var/log/qimcifa/shors-qimcifa_loop_'$(date +%F_%R_%S).log'" 
 export DISPLAY=:0 && xfce4-terminal
 
 # end run, do not stop container ( debug feature, we need an empty node doing nothing )
