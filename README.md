@@ -47,7 +47,7 @@ All specialized workloads are listed in https://github.com/twobombs/thereminq/tr
 - docker run --gpus all --device=/dev/dri:/dev/dri -t --mount type=bind,source=/var/log/qrack,target=/var/log/qrack twobombs/thereminq bash /root/run-tnn-gpu1<br> <br>
 
 ### Experimental Shors' high qbit workloads
-- docker run --gpus all --device=/dev/dri:/dev/dri --ipc=host -d --mount type=bind,source=/var/log/shors,target=/var/log/shors twobombs/thereminq:shors <br> <br>
+- docker run --gpus all --device=/dev/dri:/dev/dri --ipc=host -d -p 6080:6080 --mount type=bind,source=/var/log/shors,target=/var/log/shors twobombs/thereminq:shors <br> <br>
 
 ### Tips for Managing high-Qubit workloads
 - Workloads with full entanglement and/or Quantum simulations that are at or exceed 30+ Qubits
