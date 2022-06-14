@@ -3,7 +3,7 @@
 #
 mkdir /var/log/sieve
 #
-# this wil generate a load of 200+ for 120 mins
+# this wil generate a load of ~150 for 5 mins
 # this script will fork 200 prime list generators
 # and place them in /log for filebeat to pick up
 # don't do this on 24 cores or less with ssd
