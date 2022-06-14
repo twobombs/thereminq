@@ -19,20 +19,6 @@ RUN svn checkout https://svn.code.sf.net/p/mtsieve/svn/ mtsieve-svn
 RUN git clone --branch opencl_bigint https://github.com/vm6502q/qimcifa.git && mv qimcifa qimcifa-bigint && cd qimcifa-bigint && cmake . && make
 RUN git clone https://github.com/vm6502q/qimcifa.git && cd /qimcifa && cmake . && make
 
-# install haskell, z3, num-utils, crackNum + dependancies
-RUN git clone https://github.com/LeventErkok/crackNum.git
-RUN apt-get install -y z3 num-utils && apt clean all
-RUN curl -sSL https://get.haskellstack.org/ | sh
-RUN cd crackNum && stack path --local-bin && stack setup && stack init && stack build && stack install && stack clean && rm -R /crackNum
-
-# install metricbeat for ES 7.4+ for pump-n-dump
-RUN wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add - 
-RUN apt-get install apt-transport-https
-RUN echo "deb https://artifacts.elastic.co/packages/7.x/apt stable main" | tee -a /etc/apt/sources.list.d/elastic-7.x.list
-RUN apt-get update && apt-get install metricbeat filebeat auditbeat && filebeat modules enable elasticsearch && filebeat modules enable system && filebeat modules enable osquery
-COPY configfiles/metricbeat.yml /etc/metricbeat/metricbeat.yml
-COPY configfiles/filebeat.yml /etc/filebeat/filebeat.yml
-
 RUN mkdir /var/log/sieve
 
 EXPOSE 22 80 8801-8811
