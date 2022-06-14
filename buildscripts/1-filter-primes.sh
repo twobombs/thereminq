@@ -11,5 +11,5 @@ mkdir /var/log/sieve
 for i in {1..199}
     do
 	echo $i
-	cat 2T_part$i* | sed 's/\s\+/\n/g' > /var/log/sieve/primes${i}.txt &
+	cat 2T_part$i.txt | sed 's/\s\+/\n/g' > /var/log/sieve/primes${i}.txt &
     done
