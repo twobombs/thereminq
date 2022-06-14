@@ -1,4 +1,4 @@
-FROM twobombs/cudacluster:dev
+FROM twobombs/thereminq:dev
 
 # install CPU prime generator
 RUN apt update && apt install -y gnome-calculator xxd mathomatic-primes mathomatic libssl-dev cmake && apt clean all
