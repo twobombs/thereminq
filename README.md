@@ -43,11 +43,13 @@ All specialized workloads are listed in https://github.com/twobombs/thereminq/tr
 ![Screenshot from 2021-10-24 17-23-18](https://user-images.githubusercontent.com/12692227/138600777-607fda67-52d5-4e24-9f19-8e30f36ffa29.png)
 
 
-### Experimental  'bqp=bpp' stabilizer_t_nn high qbit workload
+### Experimental 'bqp=bpp' stabilizer_t_nn high qbit workloads
 - docker run --gpus all --device=/dev/dri:/dev/dri -t --mount type=bind,source=/var/log/qrack,target=/var/log/qrack twobombs/thereminq bash /root/run-tnn-gpu1<br> <br>
 
-### Experimental Shors' high qbit workloads
-- docker run --gpus all --device=/dev/dri:/dev/dri --ipc=host -d -p 6080:6080 --mount type=bind,source=/var/log/shors,target=/var/log/shors twobombs/thereminq:shors <br> <br>
+### Experimental Quantum Inspired Qimcifa high qbit workloads
+- docker run --gpus all --device=/dev/dri:/dev/dri --ipc=host -d -p 6080:6080 --mount type=bind,source=/var/log/qimcifa,target=/var/log/qimcifa twobombs/thereminq:qimcifa <br> <br>
+
+### Note: --ipc=host in the docker command is a chrome requirement. If you don't need chrome in the session you can leave this out.
 
 ### Tips for Managing high-Qubit workloads
 - Workloads with full entanglement and/or Quantum simulations that are at or exceed 30+ Qubits
