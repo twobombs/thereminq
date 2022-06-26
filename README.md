@@ -49,7 +49,7 @@ All specialized workloads are listed in https://github.com/twobombs/thereminq/tr
 ### Experimental Quantum Inspired Qimcifa high qbit workloads
 - docker run --gpus all --device=/dev/dri:/dev/dri --ipc=host -d -p 6080:6080 --mount type=bind,source=/var/log/qimcifa,target=/var/log/qimcifa twobombs/thereminq:qimcifa <br> <br>
 
-### Note: --ipc=host in the docker command is a chrome requirement. If you don't need chrome in the session you can leave this out.
+#### note: --ipc=host in the docker command is a chrome requirement. If you don't need chrome in the session you can leave this out.
 
 ### Tips for Managing high-Qubit workloads
 - Workloads with full entanglement and/or Quantum simulations that are at or exceed 30+ Qubits
