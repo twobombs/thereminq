@@ -51,6 +51,9 @@ All specialized workloads are listed in https://github.com/twobombs/thereminq/tr
 
 #### note: --ipc=host in the docker command is a chrome requirement. If you don't need chrome in the session you can leave this out.
 
+![Screenshot from 2022-05-22 20-43-30](https://user-images.githubusercontent.com/12692227/169710747-32ef4926-0286-487a-b9ed-e8c676b2a43a.png)
+C-style Shors' with rsaConverter ( https://www.idrix.fr/Root/content/category/7/28/51/) and Qimcifa ( https://github.com/vm6502q/qimcifa )
+
 ### Tips for Managing high-Qubit workloads
 - Workloads with full entanglement and/or Quantum simulations that are at or exceed 30+ Qubits
 - Mixed workloads based on longer/larger/deeper circuits with partial entanglement that exceed 36+ Qubits<br> <br>
