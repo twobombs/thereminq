@@ -24,7 +24,9 @@ Installation setup and usage scenarios can be glanced at here https://gist.githu
 
 ![Screenshot from 2022-03-15 20-05-42](https://user-images.githubusercontent.com/12692227/158857290-fa4947e1-5792-4444-974e-7deb7c7b24f9.png)
 
-Default vnc password is 00000000 - noVNC website is avaliable at port 6080
+Initial vnc password is 00000000
+- noVNC website is avaliable at port 6080 
+- xRDP running at port 3389 to vnc 127.0.0.1:5900
 
 ## Kibana views with ThereminQ's data 
 
