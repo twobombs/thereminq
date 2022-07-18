@@ -1,0 +1,3 @@
+#!/bin/bash
+export QRACK_QPAGER_DEVICES=0,0,0,0,1,1,1,1,2,2,2,2,3,3,3,3,3
+./benchmarks --optimal --max-qubits=31 --single --samples=3 test_qft_cosmology
