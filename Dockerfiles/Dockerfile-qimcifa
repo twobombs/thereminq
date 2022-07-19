@@ -15,8 +15,8 @@ RUN git clone https://github.com/openssl/openssl.git && cd openssl && ./Configur
 RUN git clone https://github.com/vm6502q/qimcifa.git && cd /qimcifa && cmake . && make
 
 # NV's BigINT implementation + reqs
-RUN git clone https://github.com/google/googletest.git && cd googletest && cmake . && make && make install 
-RUN git clone https://github.com/NVlabs/CGBN.git && cd CGBN && mv /googletest/googletest gtest && make kepler
+# RUN git clone https://github.com/google/googletest.git && cd googletest && cmake . && make && make install 
+# RUN git clone https://github.com/NVlabs/CGBN.git && cd CGBN && mv /googletest/googletest gtest && make kepler
 
 RUN mkdir /var/log/shors && mkdir /var/log/qimcifa
 
