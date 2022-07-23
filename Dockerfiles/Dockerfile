@@ -1,7 +1,7 @@
 FROM twobombs/cudacluster
 
 # clone repos
-RUN git clone --recursive https://github.com/vm6502q/qrack.git
+RUN git clone --recursive https://github.com/unitaryfund/qrack/qrack.git
 RUN cp -r /qrack /qrack128
 RUN cp -r /qrack /qrack64
 RUN cp -r /qrack /qrack16
