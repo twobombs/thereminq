@@ -8,17 +8,23 @@
 
 ThereminQ orchestrates a suite of best-of-class tools designed to control, extend and visualize data emanating to and from Quantum circuits using Qrack, ELK, Tipsy and Jupyter on CUDA and OpenCL accelerators.
 
-- Qrack - Qbit OCL Hardware Emulation Stack > https://github.com/vm6502q/qrack
-- Bonsai - Stellar data visualizer for QFT, Sycamore and TNN_d data > https://github.com/treecode/Bonsai
-- Elastic Search/Lucene Interface for Big Data interconnect > https://www.elastic.co/downloads/
-- TensorFlow/Board/Projector and Shors' RSA keypair analysis > https://github.com/twobombs/thereminq-tensors
+- Qrack - Qbit OpenCL Hardware Emulation Stack https://github.com/vm6502q/qrack
+- Bonsai - Stellar data visualizer for QFT, Sycamore and TNN_d data https://github.com/treecode/Bonsai
+- Elastic Search/Lucene Interface for Big Data interconnect https://www.elastic.co/downloads/
 
-Images can be run independantly but are made to work with the vQbit infrastructure HELM repo at https://github.com/twobombs/helm
+Look also at the following images
+- Boards - a collection of QC Jupiter notebooks https://github.com/twobombs/thereminq-tensors
+- Shors' and Qimcifa https://github.com/twobombs/thereminq-tensors/blob/master/README.md#shors-rsa-ssh-keypair-factorization-and-2-primes-test-loop
 
+Other tags contain
+- QUDA                  http://lattice.github.io/quda/
+- cuQuantum             https://developer.nvidia.com/cuquantum-sdk
+
+Images can be run independantly but are made to work with the vQbit infrastructure K8s HELM repo at https://github.com/twobombs/helm
 Installation setup and usage scenarios can be glanced at here https://gist.github.com/twobombs/bb38050e84331307bf14c46d723b2a01
 
 ## Build on top of the CUDA-CLuster stack https://github.com/twobombs/cudacluster and deploy-nvidia-docker https://github.com/twobombs/deploy-nvidia-docker WebUI
-- WebVNC, CUDA 11.2+ & OpenCL 1.2+ with NV, AMD & Intel HW support
+- WebVNC, CUDA 11.4+ & OpenCL 1.2+ with NV, AMD & Intel HW support
 
 <img width="1435" alt="Screenshot 2021-05-04 at 15 10 27" src="https://user-images.githubusercontent.com/12692227/117008533-21d79280-aceb-11eb-993a-efa7d1123a1f.png">
 
