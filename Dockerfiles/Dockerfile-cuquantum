@@ -1,0 +1,6 @@
+FROM twobombs/cudacluster:samples
+
+RUN apt install cuquantum cuquantum-dev cuquantum-doc && apt clean all
+
+EXPOSE 6080
+ENTRYPOINT /root/run
