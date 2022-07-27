@@ -4,4 +4,4 @@ RUN apt install gfortran doxygen && apt clean all
 RUN git clone https://github.com/lattice/quda.git && mkdir qudabuild && cd qudabuild && cmake -DQUDA_GPU_ARCH=sm_37 -DQUDA_HETEROGENEOUS_ATOMIC=OFF /quda/ && make -i -k -j 2 && make install
 
 EXPOSE 6080
-ENTRYPOINT /root/run
+ENTRYPOINT /root/run-node
