@@ -1,13 +1,16 @@
-# run benchmark for load & output simulation 
+#!/bin/bash
+#
+# run TNN benchmark for load & output simulation 
 # optional pointers:
 # export QRACK_QUNIT_SEPARABILITY_THRESHOLD=0.146466 
 # --use-host-dma
 #
+# QRACK_QPAGER_DEVICES is now set to the card with the highest memory first (24GB), then the second GPU ( that has 2 GPUs of 12Gb each )
+# qrack128 compilation is optimised for high qubit operations. if you want to do <33Qbits use /qrack/_build
+# for TNN the combination of stabilizer, qpager on qunit-multi currently has the best speed and optimisation
+#
 cd /qrack128/_build/
 #
-# export QRACK_OCL_DEFAULT_DEVICE=0 && ./benchmarks --optimal-single --timeout=12000 --max-qubits=16 --benchmark-depth=16 --devices=0,0,0,0,1,1,1,1 --single test_stabilizer_t_nn_d --samples=1000 --measure-output=/var/log/qrack/"t_nn_d_$(date +%F_%R_%S).log" &
-# export QRACK_OCL_DEFAULT_DEVICE=1 && ./benchmarks --optimal-single --timeout=12000 --max-qubits=25 --benchmark-depth=25 --devices=0,0,0,0,1,1,1,1 --single test_stabilizer_t_nn_d --samples=1000 --measure-output=/var/log/qrack/"t_nn_d_$(date +%F_%R_%S).log" &
-# 
-export QRACK_OCL_DEFAULT_DEVICE=0 && time ./benchmarks --proc-bdt --optimal --oom-kill-disable --timeout=2000000 --max-qubits=40 --benchmark-depth=40 --devices=0,0,0,0,1,1,1,1 --single test_stabilizer_t_nn --samples=1000 --measure-output=/var/log/qrack/"t_nn_$(date +%F_%R_%S).log" &
-sleep 2
-# export QRACK_OCL_DEFAULT_DEVICE=1 && time ./benchmarks --proc-bdt --optimal --oom-kill-disable --timeout=2000000 --max-qubits=40 --benchmark-depth=40 --devices=1,1,1,1,0,0,0,0 --single test_stabilizer_t_nn --samples=1000 --measure-output=/var/log/qrack/"t_nn_$(date +%F_%R_%S).log"
+export QRACK_QPAGER_DEVICES=0,0,0,0,0,0,0,0,2,2,2,2,1,1,1,1
+export QRACK_OCL_DEFAULT_DEVICE=0 && time ./benchmarks --proc-stabilizer-qpager --layer-qunit-multi --timeout=2000000 --max-qubits=42 --devices=0,0,0,0,0,0,0,0,2,2,2,2,1,1,1,1 --benchmark-depth=42 --single test_stabilizer_t_nn --samples=100 --measure-output=/var/log/qrack/"t_nn_$(date +%F_%R_%S).log" &
+#
