@@ -73,10 +73,12 @@ To prevent these workload from taking up all resources of the system it is good 
 - Docker: '--oom-kill-disable' and/or OOM host change: vm.overcommit_memory = 2 in /etc/sysctl.conf
 - Swap should be a dedicated and fast drive where possible NVMe RAID, equal to the bandwith of the GPU/PCIe<br> <br>
 
-### T_NN-d Results on an AMD Threadripper 1920x 
-- 24 Threads, 24GB RAM, 64GB NVMe Swap and a Tesla K80 24GB
+### T_NN(-d) Results on an AMD Threadripper 1920x 
+- 24 Threads with 24GB RAM, 256GB NVMe Swap on a 3x RAID NVME drive - Tesla K80 2x12GB - Tesla M40 24GB - Ubuntu 20.04/22.04
 
 ![Screenshot from 2022-03-06 13-12-53](https://user-images.githubusercontent.com/12692227/156922673-f563cdfc-1a66-4e67-a5e9-ea557ab7bc5d.png)
+
+M40 + K80 run script https://github.com/twobombs/thereminq/blob/master/runscripts/run-tnn-cube-multi
 
 I did do or helped with some of the coding for glue, speed and data generation. <br>
 This stack was made so that you don't need to <br>
