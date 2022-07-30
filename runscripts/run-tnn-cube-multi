@@ -7,6 +7,8 @@
 #
 # QRACK_QPAGER_DEVICES is now set to the card with the highest memory first (24GB), then the second GPU ( that has 2 GPUs of 12Gb each )
 # qrack128 compilation is optimised for high qubit operations. if you want to do <33Qbits use /qrack/_build
+# https://github.com/twobombs/thereminq/blob/master/Dockerfiles/Dockerfile#L33
+#
 # for TNN the combination of stabilizer, qpager on qunit-multi currently has the best speed and optimisation
 #
 cd /qrack128/_build/
