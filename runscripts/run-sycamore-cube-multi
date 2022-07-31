@@ -1,0 +1,17 @@
+#!/bin/bash
+#
+#
+cd /qrack/_build
+export QRACK_QPAGER_DEVICES=2,2,2,2,0,0,0,0,0,0,0,0,1,1,1,1
+export QRACK_OCL_DEFAULT_DEVICE=2 && time ./benchmarks --proc-stabilizer-qpager --layer-qunit-multi --timeout=2000000 --max-qubits=32 --devices=2,2,2,2,0,0,0,0,0,0,0,0,1,1,1,1 --benchmark-depth=32 --single test_quantum_supremacy --samples=10 --measure-output=/var/log/qrack/"supreme_$(date +%F_%R_%S).log"
+#
+# ./benchmarks --optimal --max-qubits=30 --single --samples=30 test_qft_cosmology &
+# ./benchmarks --optimal --max-qubits=29 --single --samples=30 test_qft_cosmology &
+# export QRACK_OCL_DEFAULT_DEVICE=1
+# ./benchmarks --optimal --max-qubits=30 --single --samples=30 test_qft_cosmology &
+# ./benchmarks --optimal --max-qubits=29 --single --samples=30 test_qft_cosmology &
+# export QRACK_OCL_DEFAULT_DEVICE=2
+# ./benchmarks --optimal --max-qubits=30 --single --samples=30 test_qft_cosmology &
+# ./benchmarks --optimal --max-qubits=29 --single --samples=30 test_qft_cosmology
+# export QRACK_OCL_DEFAULT_DEVICE=3
+# ./benchmarks --optimal --max-qubits=30 --single --samples=3 test_qft_cosmology
