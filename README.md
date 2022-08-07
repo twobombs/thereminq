@@ -76,7 +76,7 @@ To prevent these workload from taking up all resources of the system it is good 
 ### Sycamore & T_NN(-d) Results on an AMD Threadripper 1920x 
 - 24 Threads with 24GB RAM, 256GB NVMe Swap on a 3x RAID NVME drive - Tesla K80 2x12GB - Tesla M40 24GB - Ubuntu 20.04/22.04
 
-![Screenshot from 2022-07-31 16-17-19](https://user-images.githubusercontent.com/12692227/182030672-ad2b8937-07e3-439c-8297-d832a69ef8dc.png)
+![Screenshot from 2022-08-07 19-20-29](https://user-images.githubusercontent.com/12692227/183307535-9e6ef662-8d26-43bb-9779-ccc0a0530acb.png)
 
 
 M40 + K80 run script https://github.com/twobombs/thereminq/blob/master/runscripts/run-tnn-cube-multi
