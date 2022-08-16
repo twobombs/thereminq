@@ -14,5 +14,5 @@
 cd /qrack128/_build/
 #
 export QRACK_QPAGER_DEVICES=0,0,0,0,0,0,0,0,2,2,2,2,1,1,1,1
-export QRACK_OCL_DEFAULT_DEVICE=0 && time ./benchmarks --proc-stabilizer-qpager --layer-qunit-multi --timeout=2000000 --max-qubits=49 --devices=0,0,0,0,0,0,0,0,2,2,2,2,1,1,1,1 --benchmark-depth=49 --single test_stabilizer_t_nn --samples=100 --measure-output=/var/log/qrack/"t_cc_$(date +%F_%R_%S).log" &
+export QRACK_OCL_DEFAULT_DEVICE=0 && time ./benchmarks --proc-stabilizer-qpager --layer-qunit-multi --timeout=2000000 --max-qubits=49 --devices=0,0,0,0,0,0,0,0,2,2,2,2,1,1,1,1 --benchmark-depth=49 --single test_stabilizer_t_cc_nn --samples=100 --measure-output=/var/log/qrack/"t_cc_$(date +%F_%R_%S).log" &
 #
