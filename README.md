@@ -83,7 +83,7 @@ M40 + K80 run script https://github.com/twobombs/thereminq/blob/master/runscript
 I did do or helped with some of the coding for glue, speed and data generation. <br>
 This stack was made so that you don't need to <br>
 
-If you want to do this without docker but straigh on baremetal here are some gists;
+### If you want to do this without docker but straight on baremetal here are some gists;
 
 https://gist.github.com/twobombs/c93f9bbf2afe98d795372d024d6b30d7
 
