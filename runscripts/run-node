@@ -19,7 +19,7 @@ service filebeat start &
 # precompile cl kernels for Qrack	
 cd /qrack/_build/ && ./qrack_cl_precompile &
 
-export DISPLAY=:0&&xterm -e "xset s off"
+export DISPLAY=:0&&xterm -e "xset s off" &
 export DISPLAY=:0&&xterm -e "neofetch && tail -f /dev/null" &
 
 # end run, do not stop container ( debug feature, we need an empty node doing nothing )
