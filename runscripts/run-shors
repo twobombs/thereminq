@@ -23,6 +23,8 @@ export DISPLAY=:0 && gnome-calculator &
 export DISPLAY=:0 && google-chrome-stable --disable-fre --no-default-browser-check --no-first-run --no-sandbox --password-store=basic https://bigprimes.org/RSA-challenge https://www.mobilefish.com/services/rsa_key_generation/rsa_key_generation.php &
 export DISPLAY=:0 && xfce4-terminal -e "/root/run-shors-qimcifa > /var/log/qimcifa/shors-qimcifa_$(date +%F_%R_%S).log" &
 export DISPLAY=:0 && xfce4-terminal &
+export DISPLAY=:0&&xterm -e "xset s off" &
+export DISPLAY=:0&&xterm -e "neofetch && tail -f /dev/null" &
 
 # end run, do not stop container ( debug feature, we need an empty node doing nothing )
 tail -f /dev/null
