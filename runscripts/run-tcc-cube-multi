@@ -17,7 +17,7 @@ export QRACK_QPAGER_DEVICES=8.0,6.1,6.2
 export QRACK_QPAGER_DEVICES_HOST_POINTER=2.0,2.1,2.2
 export QRACK_OCL_DEFAULT_DEVICE=0 
 export QRACK_MAX_PAGING_QB=31
-time ./benchmarks --proc-stabilizer-qpager --layer-qunit-multi --timeout=2000000 --max-qubits=36 --benchmark-depth=36 single test_stabilizer_t_cc_nn --samples=100 --measure-output=/var/log/qrack/"t_cc_$(date +%F_%R_%S).log"
+time ./benchmarks --proc-stabilizer-qpager --layer-qunit-multi --timeout=2000000 --max-qubits=36 --benchmark-depth=36 --single test_stabilizer_t_cc_nn --samples=100 --measure-output=/var/log/qrack/"t_cc_$(date +%F_%R_%S).log"
 #
 
 # export QRACK_OCL_DEFAULT_DEVICE=0 && export QRACK_MAX_PAGING_QB=33 && time ./benchmarks --proc-stabilizer-qpager --layer-qunit-multi --timeout=2000000 --max-qubits=49 --devices=0,0,0,0,0,0,0,0,2,2,2,2,1,1,1,1 --benchmark-depth=49 --single test_stabilizer_t_cc_nn --samples=100 --measure-output=/var/log/qrack/"t_cc_$(date +%F_%R_%S).log" &
