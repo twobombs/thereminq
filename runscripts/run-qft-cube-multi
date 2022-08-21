@@ -1,4 +1,20 @@
 #!/bin/bash
-export QRACK_QPAGER_DEVICES=0,0,0,0,1,1,1,1,2,2,2,2,3,3,3,3,3
-export QRACK_OCL_DEFAULT_DEVICE=0
-./benchmarks --optimal --max-qubits=31 --single --samples=3 test_qft_cosmology
+# older way of doing thing ( single card )
+# export QRACK_QPAGER_DEVICES=0,0,0,0,1,1,1,1,2,2,2,2,3,3,3,3,3
+# export QRACK_OCL_DEFAULT_DEVICE=0
+
+cd /qrack/_build
+
+# this is the way:
+#
+# select pages on cards and host; initiate default execution on unallocated card
+# forcing compute on all of the selected cards at the same time from the start
+# because this is QFT the advantage for vector compression = 0 so keep max paging qb => max-qubits
+#
+export QRACK_QPAGER_DEVICES=16.0,8.1,8.2
+export QRACK_QPAGER_DEVICES_HOST_POINTER=8.0,4.1,4.2
+export QRACK_OCL_DEFAULT_DEVICE=3
+export QRACK_MAX_PAGING_QB=30
+
+./benchmarks --proc-stabilizer-qpager --layer-qunit-multi --max-qubits=30 --single --samples=10 test_qft_cosmology
+# ./benchmarks --optimal-single --max-qubits=31 --single --samples=3 test_qft_cosmology
