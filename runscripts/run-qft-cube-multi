@@ -2,6 +2,7 @@
 # older way of doing thing ( single card )
 # export QRACK_QPAGER_DEVICES=0,0,0,0,1,1,1,1,2,2,2,2,3,3,3,3,3
 # export QRACK_OCL_DEFAULT_DEVICE=0
+# ./benchmarks --optimal-single --max-qubits=31 --single --samples=3 test_qft_cosmology
 
 cd /qrack/_build
 
@@ -17,4 +18,3 @@ export QRACK_OCL_DEFAULT_DEVICE=3
 export QRACK_MAX_PAGING_QB=30
 
 ./benchmarks --proc-stabilizer-qpager --layer-qunit-multi --max-qubits=30 --single --samples=10 test_qft_cosmology
-# ./benchmarks --optimal-single --max-qubits=31 --single --samples=3 test_qft_cosmology
