@@ -1,0 +1,6 @@
+FROM twobombs/thereminq:latest
+
+RUN apt update && apt install pocl-opencl-icd beignet-opencl-icd && apt clean all
+
+EXPOSE 22 80 8801-8811
+ENTRYPOINT /root/run-node
