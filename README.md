@@ -39,11 +39,11 @@ Initial vnc password is 00000000
 ![Screenshot_from_2022-03-15_19-26-41](https://user-images.githubusercontent.com/12692227/158855774-b6294720-3769-409a-bf96-0945e2af842a.png)
 
 
-## Deploy an instance of ThereminQ's WebUI controller container and/or select a specific workload type to run on your favorite orchestrator
-- docker run --gpus all --privileged -p 6080:6080 -v /var/run/docker.sock:/var/run/docker.sock:ro --device=/dev/dri:/dev/dri -d twobombs/thereminq:controller
+## Deploy an instance of ThereminQ's WebUI controller container and/or select a specific workload type and/or run on your favorite orchestrator
+- docker run --gpus all --privileged -p 6080:6080 --device=/dev/dri:/dev/dri --mount type=bind,source=/var/log/qrack,target=/var/log/qrack -d twobombs/thereminq:controller
 - docker run -ti --mount type=bind,source=/var/log/qrack,target=/var/log/qrack twobombs/thereminq bash /root/run-supreme-cpu
 - docker run --gpus all --device=/dev/dri:/dev/dri -ti --mount type=bind,source=/var/log/qrack,target=/var/log/qrack twobombs/thereminq bash /root/run-cosmos-gpu1
-- use --gpus all for NVidia-Docker hosts, in addition --privileged will expose all GPUs in the system, eg: Intel iGPUs<br> <br>
+- use --gpus all for NVidia-Docker hosts, in addition --privileged and --device=/dev/dri:/dev/dri will expose all GPUs in the system, eg: AMD/Intel iGPUs<br> <br>
 
 All specialized workloads are listed in https://github.com/twobombs/thereminq/tree/master/runscripts
 
