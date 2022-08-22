@@ -92,7 +92,7 @@ Recommendations: https://gist.github.com/twobombs/eee53194f7c3e00332b555bad0ae2a
 Runtime: https://gist.github.com/twobombs/9d9ec5d6fbca4b960b1df1f6e147b038
 
 
-## Code from the following companies and initiatives are included in this container
+## Code from the following companies and initiatives are in this container
 
 ![](https://user-images.githubusercontent.com/12692227/57654809-61c07f00-75d5-11e9-9005-38d60d8d4db4.png)
 
