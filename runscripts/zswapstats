@@ -1,0 +1,6 @@
+#!/bin/bash
+
+cd /sys/kernel/debug/zswap
+
+grep -R . /sys/kernel/debug/zswap/ && grep -R . /sys/module/zswap
+perl -E  "say $(cat stored_pages) * 4096 / $(cat pool_total_size)"
