@@ -83,7 +83,7 @@ M40 + K80 run script https://github.com/twobombs/thereminq/blob/master/runscript
 I did do or helped with some of the coding for glue, speed and data generation. <br>
 This stack was made so that you don't need to <br>
 
-### If you want to do this without docker and run this on baremetal here are some gists to help you along
+### If you want to reproduce these results and run this on baremetal here are some gists to help you along
 
 Install Guide: https://gist.github.com/twobombs/c93f9bbf2afe98d795372d024d6b30d7
 
@@ -91,6 +91,7 @@ Recommendations: https://gist.github.com/twobombs/eee53194f7c3e00332b555bad0ae2a
 
 Runtime: https://gist.github.com/twobombs/9d9ec5d6fbca4b960b1df1f6e147b038
 
+Again: it is wise to run the benchmarks program inside a main memory limited container with outflow to fast swap so that the system remains stable at intensive runs and high memory peaks
 
 ## Code from the following companies and initiatives are in this container
 
