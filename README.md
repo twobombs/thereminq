@@ -84,7 +84,7 @@ M40 + K80 run script https://github.com/twobombs/thereminq/blob/master/runscript
 I did do or helped with some of the coding for glue, speed and data generation. <br>
 This stack was made so that you don't need to <br>
 
-### If you want to reproduce these results and run this on baremetal here are some gists to help you along
+### If you want to reproduce these results and run this 'onprem' here are some gists to help you along
 
 Install Guide: https://gist.github.com/twobombs/c93f9bbf2afe98d795372d024d6b30d7
 
