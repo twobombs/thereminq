@@ -10,10 +10,10 @@ x0vncserver -display :0 -passwordfile /root/.vnc/passwd&
 xrdp &
 
 # start monitoring of kubelet state & qrack output
-filebeat setup -e
-metricbeat setup &
-service metricbeat start &
-service filebeat start &
+# filebeat setup -e
+# metricbeat setup &
+# service metricbeat start &
+# service filebeat start &
 
 # precompile cl kernels for Qrack	
 cd /qrack/_build/ && ./qrack_cl_precompile &
