@@ -4,9 +4,9 @@
 cd /qrack128/_build
 
 export QRACK_QPAGER_DEVICES=16.0,8.1,8.2
-export QRACK_QPAGER_DEVICES_HOST_POINTER=8.0,4.1,4.2
+export QRACK_QPAGER_DEVICES_HOST_POINTER=8.0,8.1,4.0,4.1,4.0,4.1
 export QRACK_OCL_DEFAULT_DEVICE=0
-export QRACK_MAX_PAGING_QB=31
+export QRACK_MAX_PAGING_QB=32
 
 time ./benchmarks --proc-stabilizer-qpager --layer-qunit-multi --timeout=2000000 --max-qubits=52 --benchmark-depth=20 --single test_quantum_supremacy --samples=100 --measure-output=/var/log/qrack/"supreme_$(date +%F_%R_%S).log"
 
