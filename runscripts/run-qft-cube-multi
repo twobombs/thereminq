@@ -14,7 +14,12 @@ cd /qrack/_build
 #
 export QRACK_QPAGER_DEVICES=16.0,8.1,8.2
 export QRACK_QPAGER_DEVICES_HOST_POINTER=8.0,4.1,4.2
-export QRACK_OCL_DEFAULT_DEVICE=3
+export QRACK_OCL_DEFAULT_DEVICE=0
 export QRACK_MAX_PAGING_QB=30
+
+export QRACK_QBDT_DEFAULT_OPT_IN=1
+export QRACK_ENABLE_QUNITMULTI_REDISTRIBUTE=1
+export QRACK_MAX_PAGING_QB=30
+export QRACK_MAX_CPU_QB=31
 
 ./benchmarks --proc-stabilizer-qpager --layer-qunit-multi --max-qubits=30 --single --samples=10 test_qft_cosmology
