@@ -12,14 +12,13 @@ cd /qrack/_build
 # forcing compute on all of the selected cards at the same time from the start
 # because this is QFT the advantage for vector compression = 0 so keep max paging qb => max-qubits
 #
-export QRACK_QPAGER_DEVICES=16.0,8.1,8.2
-export QRACK_QPAGER_DEVICES_HOST_POINTER=8.0,4.1,4.2
+# export QRACK_QPAGER_DEVICES=16.0,8.1,8.2
+# export QRACK_QPAGER_DEVICES_HOST_POINTER=8.0,4.1,4.2
 export QRACK_OCL_DEFAULT_DEVICE=0
 export QRACK_MAX_PAGING_QB=30
 
 export QRACK_QBDT_DEFAULT_OPT_IN=1
 export QRACK_ENABLE_QUNITMULTI_REDISTRIBUTE=1
-export QRACK_MAX_PAGING_QB=30
 export QRACK_MAX_CPU_QB=31
 
 ./benchmarks --proc-stabilizer-qpager --layer-qunit-multi --max-qubits=30 --single --samples=10 test_qft_cosmology --measure-output=/var/log/qrack/"measured_qft_$(date +%F_%R_%S).log"
