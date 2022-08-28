@@ -18,7 +18,7 @@ export QRACK_OCL_DEFAULT_DEVICE=0
 export QRACK_MAX_PAGING_QB=30
 
 export QRACK_QBDT_DEFAULT_OPT_IN=1
-export QRACK_ENABLE_QUNITMULTI_REDISTRIBUTE=1
-export QRACK_MAX_CPU_QB=31
+export QRACK_ENABLE_QUNITMULTI_REDISTRIBUTE=0
+export QRACK_MAX_CPU_QB=30
 
 ./benchmarks --proc-stabilizer-qpager --layer-qunit-multi --max-qubits=30 --single --samples=10 test_qft_cosmology --measure-output=/var/log/qrack/"measured_qft_$(date +%F_%R_%S).log"
