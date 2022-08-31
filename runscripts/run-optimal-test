@@ -15,5 +15,6 @@ export QRACK_OCL_DEFAULT_DEVICE=0
 
 
 export QRACK_QUNIT_SEPARABILITY_THRESHOLD=0.45 && export QRACK_OCL_DEFAULT_DEVICE=0 && ./benchmarks --optimal --single --max-qubits=54 --benchmark-depth=20 test_quantum_supremacy --samples=100 --measure-output=/var/log/qrack/"supreme_$(date +%F_%R_%S).log"
-
 export QRACK_QUNIT_SEPARABILITY_THRESHOLD=0.45 && export QRACK_OCL_DEFAULT_DEVICE=0 && ./benchmarks --layer-qunit --proc-hybrid --single --max-qubits=54 --benchmark-depth=20 test_quantum_supremacy --samples=100 --measure-output=/var/log/qrack/"supreme_$(date +%F_%R_%S).log"
+
+export QRACK_QUNIT_SEPARABILITY_THRESHOLD=0.3 && export QRACK_OCL_DEFAULT_DEVICE=0 && ./benchmarks --layer-qunit --proc-hybrid --timeout=2000000 --single --max-qubits=54 --benchmark-depth=20 test_noisy_sycamore --samples=100 --measure-output=/var/log/qrack/"supreme_$(date +%F_%R_%S).log"
