@@ -1,25 +1,14 @@
 #!/bin/bash
-# older way of doing thing ( single card )
-# export QRACK_QPAGER_DEVICES=0,0,0,0,1,1,1,1,2,2,2,2,3,3,3,3,3
-# export QRACK_OCL_DEFAULT_DEVICE=0
-# ./benchmarks --optimal-single --max-qubits=31 --single --samples=3 test_qft_cosmology
-
 cd /qrack128/_build
 
-# this is the way:
-#
-# select pages on cards and host; initiate default execution on unallocated card
-# forcing compute on all of the selected cards at the same time from the start
-# because this is QFT the advantage for vector compression = 0 so keep max paging qb => max-qubits
-#
-# export QRACK_QPAGER_DEVICES=16.0,8.1,8.2
 # export QRACK_QPAGER_DEVICES_HOST_POINTER=8.0,4.1,4.2
-# qbt allow no device selection (yet)
-#
-export QRACK_OCL_DEFAULT_DEVICE=0
-export QRACK_MAX_PAGING_QB=33
+# export QRACK_QBDT_DEFAULT_OPT_IN=1
+# export QRACK_ENABLE_QUNITMULTI_REDISTRIBUTE=1
+# K80 only
 
-export QRACK_QBDT_DEFAULT_OPT_IN=1
-export QRACK_ENABLE_QUNITMULTI_REDISTRIBUTE=1
+export QRACK_QUNIT_SEPARABILITY_THRESHOLD=0.45
+export QRACK_QPAGER_DEVICES=6.1,6.2
+export QRACK_OCL_DEFAULT_DEVICE=1
+export QRACK_MAX_PAGING_QB=31
 
-./benchmarks --proc-stabilizer-qpager --layer-qunit-multi --max-qubits=33 --single --samples=10 test_qft_cosmology --measure-output=/var/log/qrack/"measured_qft_$(date +%F_%R_%S).log"
+time ./benchmarks --proc-stabilizer-qpager --layer-qunit-multi --max-qubits=33 --single --samples=10 test_qft_cosmology --measure-output=/var/log/qrack/"measured_qft_$(date +%F_%R_%S).log"
