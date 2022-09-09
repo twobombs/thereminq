@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-export CUDA_VISIBLE_DEVICES=2,1
+export CUDA_VISIBLE_DEVICES=0,2,1
 #
 cd /qrack128/_build
 
@@ -9,10 +9,10 @@ cd /qrack128/_build
 # export QRACK_ENABLE_QUNITMULTI_REDISTRIBUTE=1
 # K80 only
 
-export QRACK_QUNIT_SEPARABILITY_THRESHOLD=0.45
-export QRACK_QPAGER_DEVICES=6.0,6.1
+export QRACK_QUNIT_SEPARABILITY_THRESHOLD=0.30
+export QRACK_QPAGER_DEVICES=12.0,6.1,6.2
 export QRACK_OCL_DEFAULT_DEVICE=0
-export QRACK_MAX_PAGING_QB=31
+export QRACK_MAX_PAGING_QB=32
 
 time ./benchmarks --proc-stabilizer-qpager --layer-qunit-multi --timeout=2000000 --max-qubits=52 --benchmark-depth=20 --single test_quantum_supremacy --samples=100 --measure-output=/var/log/qrack/"supreme_$(date +%F_%R_%S).log"
 
