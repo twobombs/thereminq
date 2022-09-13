@@ -1,15 +1,26 @@
 #!/bin/bash
-cd /qrack128/_build
+# cd /qrack128/_build
 
 # export QRACK_QPAGER_DEVICES_HOST_POINTER=8.0,4.1,4.2
 # export QRACK_QBDT_DEFAULT_OPT_IN=1
 # export QRACK_ENABLE_QUNITMULTI_REDISTRIBUTE=1
 # K80 only
 
-export QRACK_QUNIT_SEPARABILITY_THRESHOLD=0.30
-export QRACK_QPAGER_DEVICES=12.0,6.1,6.2
-export QRACK_OCL_DEFAULT_DEVICE=0
-export QRACK_MAX_PAGING_QB=33
+# export QRACK_QUNIT_SEPARABILITY_THRESHOLD=0.30
+# export QRACK_QPAGER_DEVICES=12.0,6.1,6.2
+# export QRACK_OCL_DEFAULT_DEVICE=0
+# export QRACK_MAX_PAGING_QB=33
+#
 
-time ./benchmarks --proc-stabilizer-qpager --layer-qunit-multi --max-qubits=33 --single --samples=10 test_qft_cosmology --measure-output=/var/log/qrack/"measured_qft_$(date +%F_%R_%S).log"
+export QRACK_OCL_DEFAULT_DEVICE=0
+export QRACK_QPAGER_DEVICES=8.0,4.2,4.1,2.3
+export QRACK_QPAGER_DEVICES_HOST_POINTER=8.0,8.1
+export QRACK_MAX_ALLOC_MB=30720
+export QRACK_MAX_PAGING_QB=32
+export QRACK_MAX_CPU_QB=32
+export QRACK_SEGMENT_GLOBAL_QB=2
+
+./benchmarks --optimal --single --max-qubits=32 --samples=1 test_qft_cosmology  --measure-output=/var/log/qrack/"measured_qft_$(date +%F_%R_%S).log"
+
+# time ./benchmarks --proc-stabilizer-qpager --layer-qunit-multi --max-qubits=33 --single --samples=10 test_qft_cosmology --measure-output=/var/log/qrack/"measured_qft_$(date +%F_%R_%S).log"
 # time ./benchmarks --optimal-cpu --layer-qunit-multi --max-qubits=33 --single --samples=1 test_qft_cosmology --measure-output=/var/log/qrack/"measured_qft_$(date +%F_%R_%S).log"
