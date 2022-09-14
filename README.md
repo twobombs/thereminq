@@ -51,7 +51,7 @@ All specialized workloads are listed in https://github.com/twobombs/thereminq/tr
 
 
 ### Experimental 'bqp=bpp' stabilizer_t_nn high qbit workloads
-- docker run --gpus all --device=/dev/dri:/dev/dri -t --mount type=bind,source=/var/log/qrack,target=/var/log/qrack twobombs/thereminq bash /root/run-tnn-gpu1<br> <br>
+- docker run --gpus all --device=/dev/dri:/dev/dri -ti --mount type=bind,source=/var/log/qrack,target=/var/log/qrack twobombs/thereminq bash /root/run-tnn-gpu1<br> <br>
 
 ### Experimental Quantum Inspired Qimcifa high qbit workloads
 - docker run --gpus all --device=/dev/dri:/dev/dri --ipc=host -d -p 6080:6080 --mount type=bind,source=/var/log/qimcifa,target=/var/log/qimcifa twobombs/thereminq:qimcifa <br> <br>
@@ -61,7 +61,11 @@ All specialized workloads are listed in https://github.com/twobombs/thereminq/tr
 ![Screenshot from 2022-05-22 20-43-30](https://user-images.githubusercontent.com/12692227/169710747-32ef4926-0286-487a-b9ed-e8c676b2a43a.png)
 C-style Shors' with rsaConverter ( https://www.idrix.fr/Root/content/category/7/28/51/) and Qimcifa ( https://github.com/vm6502q/qimcifa )
 
-### Tips for Managing high-Qubit workloads
+### To run ThereminQ as a VirtualCL controller 
+#### note: create the underlying directory structure as mentioned in the VCL readme of Qrackmin https://github.com/twobombs/qrackmin#vcl-qrackdocker
+eg: docker run --gpus all --device=/dev/dri:/dev/dri -ti --mount type=bind,source=/var/log/vcl,target=/var/log/vcl --mount type=bind,source=/var/log/qrack,target=/var/log/qrack twobombs/thereminq bash
+
+### Tips for Managing high-Qubit and/or high-Node workloads
 - Workloads with full entanglement and/or Quantum simulations that are at or exceed 30+ Qubits
 - Mixed workloads based on longer/larger/deeper circuits with partial entanglement that exceed 36+ Qubits<br> <br>
 
