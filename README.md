@@ -28,7 +28,6 @@ Installation setup and usage scenarios can be glanced at here https://gist.githu
 
 <img width="1435" alt="Screenshot 2021-05-04 at 15 10 27" src="https://user-images.githubusercontent.com/12692227/117008533-21d79280-aceb-11eb-993a-efa7d1123a1f.png">
 
-![Screenshot from 2022-03-15 20-05-42](https://user-images.githubusercontent.com/12692227/158857290-fa4947e1-5792-4444-974e-7deb7c7b24f9.png)
 
 Initial vnc password is 00000000
 - noVNC website is avaliable at port 6080 
@@ -63,7 +62,7 @@ C-style Shors' with rsaConverter ( https://www.idrix.fr/Root/content/category/7/
 
 ### To run ThereminQ as a VirtualCL controller 
 #### note: create the underlying directory structure as mentioned in the VCL readme of Qrackmin https://github.com/twobombs/qrackmin#vcl-qrackdocker
-eg: docker run --gpus all --device=/dev/dri:/dev/dri -ti --mount type=bind,source=/var/log/vcl,target=/var/log/vcl --mount type=bind,source=/var/log/qrack,target=/var/log/qrack twobombs/thereminq bash
+eg: docker run --gpus all --device=/dev/dri:/dev/dri -d --mount type=bind,source=/var/log/vcl,target=/var/log/vcl --mount type=bind,source=/var/log/qrack,target=/var/log/qrack twobombs/thereminq:vcl-controller
 
 ### Tips for Managing high-Qubit and/or high-Node workloads
 - Workloads with full entanglement and/or Quantum simulations that are at or exceed 30+ Qubits
