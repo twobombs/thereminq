@@ -11,9 +11,6 @@ x0vncserver -display :0 -passwordfile /root/.vnc/passwd&
 /usr/share/novnc/utils/launch.sh --vnc localhost:5900&
 xrdp &
 
-# precompile cl kernels for Qrack	
-cd /qrack/_build/ && ./qrack_cl_precompile &
-
 export DISPLAY=:0&&xterm -e "xset s off" &
 export DISPLAY=:0&&xterm -e "neofetch && tail -f /dev/null" &
 
@@ -22,5 +19,8 @@ cp /var/log/vcl/etc/vcl/nodes /etc/vcl/nodes
 
 # start vcl backend and controller
 cd /vcl-1.25/ && ./vcl start
+
+# precompile cl kernels for Qrack	
+./vclrun /qrack/_build/qrack_cl_precompile &
 
 tail -f /dev/null
