@@ -1,0 +1,4 @@
+FROM twobombs/thereminq:latest
+
+EXPOSE 22 80 255 6080 8801-8811
+ENTRYPOINT /root/run-vcl-controller-node
