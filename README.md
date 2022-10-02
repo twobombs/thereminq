@@ -73,7 +73,7 @@ To prevent these workload from taking up all resources of the system it is good 
 - System memory should be at least 16GB RAM with a minimum of 8 CPU cores
 - Start an instance with a limit for memory and/or swap. eg docker: '-m 16g --memory-swap 32g'
 - Disable OOM killers in the kernel and/or the container orchestrator
-- Docker: '--oom-kill-disable' and/or OOM host change: vm.overcommit_memory = 2 in /etc/sysctl.conf
+- OOM host change: add vm.overcommit_memory = 1 and vm.oom-kill = 0 in /etc/sysctl.conf
 - Swap should be a dedicated and fast drive where possible NVMe RAID, equal to the bandwith of the GPU/PCIe<br> <br>
 
 ### Sycamore & T_NN(-d) Results on an AMD Threadripper 1920x 
