@@ -1,0 +1,12 @@
+#!/bin/bash
+# cd /qrack/_build
+
+export QRACK_OCL_DEFAULT_DEVICE=4
+export QRACK_QPAGER_DEVICES=20.0,10.2,10.1,2.4
+export QRACK_QPAGER_DEVICES_HOST_POINTER=2.0,1.1
+export QRACK_MAX_ALLOC_MB=48000
+export QRACK_MAX_PAGING_QB=32
+export QRACK_MAX_CPU_QB=32
+export QRACK_SEGMENT_GLOBAL_QB=4
+
+time ./benchmarks --optimal --single --max-qubits=32 --samples=1 test_qft_cosmology  --measure-output=/var/log/qrack/"measured_qft_$(date +%F_%R_%S).log"
