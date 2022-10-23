@@ -77,8 +77,8 @@ To prevent these workload from taking up all resources of the system it is good 
 - OOM host change: add vm.overcommit_memory = 1 and vm.oom-kill = 0 in /etc/sysctl.conf
 - Swap should be a dedicated and fast drive where possible NVMe RAID, equal to the bandwith of the GPU/PCIe<br> <br>
 
-### Sycamore & T_NN(-d) Results on an AMD Threadripper 1920x 
-- 24 Threads with 24GB RAM, 256GB NVMe Swap on a 3x RAID NVME drive - Tesla K80 2x12GB - Tesla M40 24GB - Ubuntu 20.04/22.04
+### Sycamore & T_NN(-d) Results on an AMD Threadripper 1920X@4Ghz
+- 24 Threads with 32GB RAM, 128GB NVMe Swap on a 3x RAID NVME drive - Tesla K80 2x12GB - Tesla M40 24GB - Ubuntu 20.04/22.04
 
 [results under review https://docs.google.com/spreadsheets/d/1u2Qum9W768rMWIoKlz658i1P6RTmX1ekgartNMHuR-s ]
 
