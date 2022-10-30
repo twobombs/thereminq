@@ -11,6 +11,7 @@ cd /sys/kernel/debug/zswap
 grep -R . /sys/kernel/debug/zswap/ && grep -R . /sys/module/zswap
 perl -E  "say $(cat stored_pages) * 4096 / $(cat pool_total_size)"
 
-echo 2 | sudo tee /proc/sys/vm/overcommit_memory
+# always allow malloc() - got swap ? #128Gb+
+echo 1 | sudo tee /proc/sys/vm/overcommit_memory
 
 cat /proc/cpuinfo | grep 'MHz'
