@@ -8,10 +8,6 @@ export QRACK_SEGMENT_GLOBAL_QB=2
 export QRACK_MAX_CPU_QB=32
 
 export QRACK_QUNIT_SEPARABILITY_THRESHOLD=0.45
-./benchmarks --optimal --single --max-qubits=54 --samples=100 --benchmark-depth=12 test_quantum_supremacy --measure-output=/var/log/qrack/"sycamore_$(date +%F_%R_%S).log" 
-
-
-export QRACK_QUNIT_SEPARABILITY_THRESHOLD=0.45
 ./benchmarks --optimal-single --single --max-qubits=54 --samples=1000 --benchmark-depth=12 test_quantum_supremacy --measure-output=/var/log/qrack/"sycamore_$(date +%F_%R_%S).log" >> q0_45_12a.csv
 export QRACK_QUNIT_SEPARABILITY_THRESHOLD=0.40
 ./benchmarks --optimal-single --single --max-qubits=54 --samples=1000 --benchmark-depth=12 test_quantum_supremacy --measure-output=/var/log/qrack/"sycamore_$(date +%F_%R_%S).log" >> q0_40_12a.csv
