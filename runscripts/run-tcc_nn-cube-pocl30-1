@@ -1,0 +1,31 @@
+#!/bin/bash
+#
+# run TNN benchmark for load & output simulation 
+# optional pointers:
+# export QRACK_QUNIT_SEPARABILITY_THRESHOLD=0.146466 
+# --use-host-dma
+#
+# QRACK_QPAGER_DEVICES is now set to the card with the highest memory first (24GB), then the second GPU ( that has 2 GPUs of 12Gb each )
+# qrack128 compilation is optimised for high qubit operations. if you want to do <33Qbits use /qrack/_build
+# https://github.com/twobombs/thereminq/blob/master/Dockerfiles/Dockerfile#L33
+#
+# for TNN the combination of stabilizer, qpager on qunit-multi currently has the best speed and optimisation
+#
+# cd /qrack128/_build/
+#
+
+sleep $((RANDOM%10))
+
+export QRACK_QUNIT_SEPARABILITY_THRESHOLD=0.4275
+export QRACK_QPAGER_DEVICES=12.1
+# ,12.2,12.1,12.0
+export QRACK_QPAGER_DEVICES_HOST_POINTER=3.0,1.1
+export QRACK_OCL_DEFAULT_DEVICE=1
+export QRACK_MAX_PAGING_QB=30
+export QRACK_MAX_CPU_QUBITS=0
+export QRACK_MAX_ALLOC_MB=16000
+export QRACK_SEGMENT_GLOBAL_QB=0
+
+time ./benchmarks --optimal-single --timeout=2000 --max-qubits=32 --benchmark-depth=32 --single test_stabilizer_t_cc_nn --samples=100 --measure-output=/var/log/qrack/"t_cc_nn_boil30$(date +%F_%R_%S).log"
+
+./run-tcc_nn-cube-pocl30-1 &
