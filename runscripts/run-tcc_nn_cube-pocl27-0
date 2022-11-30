@@ -27,4 +27,4 @@ export QRACK_SEGMENT_GLOBAL_QB=0
 
 time ./benchmarks --optimal-single --timeout=2000 --max-qubits=32 --benchmark-depth=32 --single test_stabilizer_t_cc_nn --samples=100 --measure-output=/var/log/qrack/"t_cc_nn_boil27$(date +%F_%R_%S).log"
 
-./run-tcc_nn-cube-pocl30-1 &
+./run-tcc_nn-cube-pocl27-0 &
