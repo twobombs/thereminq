@@ -40,6 +40,7 @@ export QRACK_QUNIT_SEPARABILITY_THRESHOLD=0.10
 export QRACK_QUNIT_SEPARABILITY_THRESHOLD=0.05
 ./benchmarks --optimal-single --single --max-qubits=36 --samples=500 --benchmark-depth=5 test_stabilizer_t_cc_nn --measure-output=/var/log/qrack/"t_cc_nn36_$(date +%F_%R_%S).log" >> q1_05_5.csv
 unset QRACK_QUNIT_SEPARABILITY_THRESHOLD
+./benchmarks --optimal-single --single --max-qubits=36 --samples=500 --benchmark-depth=5 test_stabilizer_t_cc_nn --measure-output=/var/log/qrack/"t_cc_nn36_$(date +%F_%R_%S).log" >> q1_05_0.csv
 
 ./benchmarks --optimal-single --single --max-qubits=36 --samples=500 --benchmark-depth=5 test_stabilizer_t_cc_nn --measure-output=/var/log/qrack/"t_cc_nn36_$(date +%F_%R_%S).log" >> q1_00_5.csv
 export QRACK_QUNIT_SEPARABILITY_THRESHOLD=0.45
@@ -103,6 +104,7 @@ export QRACK_QUNIT_SEPARABILITY_THRESHOLD=0.10
 export QRACK_QUNIT_SEPARABILITY_THRESHOLD=0.05
 ./benchmarks --optimal-single --single --max-qubits=36 --samples=500 --benchmark-depth=8 test_stabilizer_t_cc_nn --measure-output=/var/log/qrack/"t_cc_nn36_$(date +%F_%R_%S).log" >> q1_05_8.csv
 unset QRACK_QUNIT_SEPARABILITY_THRESHOLD
+./benchmarks --optimal-single --single --max-qubits=36 --samples=500 --benchmark-depth=8 test_stabilizer_t_cc_nn --measure-output=/var/log/qrack/"t_cc_nn36_$(date +%F_%R_%S).log" >> q1_00_8.csv
 
 ./benchmarks --optimal-single --single --max-qubits=36 --samples=500 --benchmark-depth=8 test_stabilizer_t_cc_nn --measure-output=/var/log/qrack/"t_cc_nn36_$(date +%F_%R_%S).log" >> q1_00_8.csv
 export QRACK_QUNIT_SEPARABILITY_THRESHOLD=0.45
