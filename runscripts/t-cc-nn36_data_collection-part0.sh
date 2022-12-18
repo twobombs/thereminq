@@ -6,10 +6,10 @@ export  QRACK_OCL_DEFAULT_DEVICE=0
 unset QRACK_QUNIT_SEPARABILITY_THRESHOLD
 
 ./benchmarks --optimal-single --single --max-qubits=36 --samples=500 --benchmark-depth=4 test_stabilizer_t_cc_nn --measure-output=/var/log/qrack/"t_cc_nn36_$(date +%F_%R_%S).log" >> q_00_4.csv
-./benchmarks --optimal-single --single --max-qubits=36 --samples=500 --benchmark-depth=5 test_stabilizer_t_cc_nn --measure-output=/var/log/qrack/"t_cc_nn36_$(date +%F_%R_%S).log" >> q_05_5.csv
+./benchmarks --optimal-single --single --max-qubits=36 --samples=500 --benchmark-depth=5 test_stabilizer_t_cc_nn --measure-output=/var/log/qrack/"t_cc_nn36_$(date +%F_%R_%S).log" >> q_00_5.csv
 ./benchmarks --optimal-single --single --max-qubits=36 --samples=500 --benchmark-depth=6 test_stabilizer_t_cc_nn --measure-output=/var/log/qrack/"t_cc_nn36_$(date +%F_%R_%S).log" >> q_00_6.csv
 ./benchmarks --optimal-single --single --max-qubits=36 --samples=500 --benchmark-depth=7 test_stabilizer_t_cc_nn --measure-output=/var/log/qrack/"t_cc_nn36_$(date +%F_%R_%S).log" >> q_00_7.csv
-./benchmarks --optimal-single --single --max-qubits=36 --samples=500 --benchmark-depth=8 test_stabilizer_t_cc_nn --measure-output=/var/log/qrack/"t_cc_nn36_$(date +%F_%R_%S).log" >> q_05_8.csv
+./benchmarks --optimal-single --single --max-qubits=36 --samples=500 --benchmark-depth=8 test_stabilizer_t_cc_nn --measure-output=/var/log/qrack/"t_cc_nn36_$(date +%F_%R_%S).log" >> q_00_8.csv
 ./benchmarks --optimal-single --single --max-qubits=36 --samples=500 --benchmark-depth=9 test_stabilizer_t_cc_nn --measure-output=/var/log/qrack/"t_cc_nn36_$(date +%F_%R_%S).log" >> q_00_9.csv
 ./benchmarks --optimal-single --single --max-qubits=36 --samples=500 --benchmark-depth=10 test_stabilizer_t_cc_nn --measure-output=/var/log/qrack/"t_cc_nn36_$(date +%F_%R_%S).log" >> q_00_10.csv
 ./benchmarks --optimal-single --single --max-qubits=36 --samples=500 --benchmark-depth=11 test_stabilizer_t_cc_nn --measure-output=/var/log/qrack/"t_cc_nn36_$(date +%F_%R_%S).log" >> q_00_11.csv
