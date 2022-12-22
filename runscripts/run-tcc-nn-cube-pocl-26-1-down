@@ -72,4 +72,4 @@ time ./benchmarks --optimal-single --timeout=2000 --max-qubits=32 --benchmark-de
 export QRACK_MAX_PAGING_QB=26
 time ./benchmarks --optimal-single --timeout=2000 --max-qubits=32 --benchmark-depth=32 --single test_stabilizer_t_cc_nn --samples=100 --measure-output=/var/log/qrack/"t_cc_nn_boil26_$(date +%F_%R_%S).log"
 
-./run-tcc_nn-cube-pocl-26-1-down &
+./run-tcc-nn-cube-pocl-26-1-down &
