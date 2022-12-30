@@ -1,0 +1,17 @@
+#
+# this script installs zfs and enabled compressed swap
+#
+# creates a swap pool from /dev/sda enables zfs compression on the mount
+# mount the swapfile in the pool - make changes according to your specs
+#
+
+apt install zfsutils-linux -y
+zpool create swap sda
+
+zfs create -V 25G -b $(getconf PAGESIZE) -o compression=zle \
+      -o logbias=throughput -o sync=standard \
+      -o primarycache=metadata -o secondarycache=none \
+      -o com.sun:auto-snapshot=false swap/swap
+
+mkswap -f /dev/zvol/swap/swap
+swapon /dev/zvol/swap/swap
