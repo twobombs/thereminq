@@ -1,4 +1,5 @@
-#
+#!/bin/bash
+
 # this script installs zfs and enabled compressed swap
 #
 # creates a swap pool from /dev/sda enables zfs compression on the mount
