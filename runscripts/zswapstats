@@ -3,13 +3,15 @@
 # 
 
 echo 90 > /sys/module/zswap/parameters/max_pool_percent
-echo 100 > /sys/module/zswap/parameters/accept_threshold_percent
+echo 90 > /sys/module/zswap/parameters/accept_threshold_percent
 sysctl vm.swappiness=100
 
-# display stats
+# display zswap stats
 cd /sys/kernel/debug/zswap
 grep -R . /sys/kernel/debug/zswap/ && grep -R . /sys/module/zswap
 perl -E  "say $(cat stored_pages) * 4096 / $(cat pool_total_size)"
+
+# display zfs stats
 zfs get compressratio
 zpool iostat
 
