@@ -1,0 +1,6 @@
+#!/bin/bash
+#
+#
+cd /qrack/_build
+
+time ./benchmarks --optimal-cpu --proc-stabilizer-bdt --timeout=200000 --max-qubits=54 --benchmark-depth=16 --single test_quantum_supremacy --samples=10 --measure-output=/var/log/qrack/"supreme_cpu54$(date +%F_%R_%S).log"
