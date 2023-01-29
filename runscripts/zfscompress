@@ -9,7 +9,7 @@
 apt install zfsutils-linux -y
 zpool create swap sda
 
-zfs create -V 25G -b $(getconf PAGESIZE) -o compression=zstd-19 \
+zfs create -V 25G -b 8k -o compression=zstd-19 \
       -o logbias=throughput -o sync=standard \
       -o primarycache=metadata -o secondarycache=none \
       -o com.sun:auto-snapshot=false swap/swap
