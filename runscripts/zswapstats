@@ -12,7 +12,7 @@ grep -R . /sys/kernel/debug/zswap/ && grep -R . /sys/module/zswap
 perl -E  "say $(cat stored_pages) * 4096 / $(cat pool_total_size)"
 
 # display zfs stats
-zfs get compressratio
+zfs get compressratio | grep swap
 zpool iostat
 
 # always allow malloc() - got swap ? #128Gb+
