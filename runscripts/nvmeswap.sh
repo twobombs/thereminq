@@ -10,7 +10,7 @@ swapoff -a
 zpool destroy nvme
 
 mkdir /tmp/vram
-./vram/bin/vramfs /tmp/vram/ 8G &
+./vramfs/bin/vramfs /tmp/vram/ 8G &
 sleep 5
 
 cd /tmp/vram/
