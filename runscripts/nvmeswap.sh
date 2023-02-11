@@ -1,7 +1,7 @@
 #
 # this example script creates a zpool from 7 NVME disks and add
 # them as a compressible swap to the system with VRAM as bcache buffer
-# data on all VRAM/NVME disks will be destroyed. vram requirement in line 13
+# data on all VRAM/NVME disks will be destroyed. vram requirement in line 17-24
 #
 
 apt install -y libfuse3-dev bcache-tools
