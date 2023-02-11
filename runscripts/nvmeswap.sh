@@ -14,7 +14,8 @@ mkdir /tmp/vram
 sleep 5
 
 cd /tmp/vram/
-LOOPDEV=$(losetup -f)
+truncate -s 6G cache
+losetup /dev/loop33 /tmp/vram/cache 
 
 wipefs -a /dev/nvme0n1
 wipefs -a /dev/nvme1n1
@@ -31,10 +32,10 @@ make-bcache -B /dev/nvme3n1
 make-bcache -B /dev/nvme4n1
 make-bcache -B /dev/nvme5n1
 make-bcache -B /dev/nvme6n1
-make-bcache -C $LOOPDEV
+make-bcache -C /dev/loop33
 
-bcache-super-show $LOOPDEV | grep cset > bdisk
-cat bdisk > $bdisk
+bcache-super-show /dev/loop33 | grep cset | tr -s ' \t' '\n' | grep -v cset  > bdisk
+bdisk=$(<bdisk)
 
 echo $bdisk > /sys/block/bcache0/bcache/attach
 echo $bdisk > /sys/block/bcache1/bcache/attach
