@@ -31,7 +31,7 @@ make-bcache -B /dev/nvme3n1
 make-bcache -B /dev/nvme4n1
 make-bcache -B /dev/nvme5n1
 make-bcache -B /dev/nvme6n1
-name-bcache -C $LOOPDEV
+make-bcache -C $LOOPDEV
 
 bcache-super-show $LOOPDEV | grep cset > bdisk
 cat bdisk > $bdisk
