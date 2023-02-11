@@ -15,7 +15,7 @@ killall vramfs
 # create vram tmpfs
 mkdir /tmp/vram
 ./vramfs/bin/vramfs /tmp/vram/ 20G &
-sleep 5
+sleep 10
 
 # enter tmpfs and create block files
 cd /tmp/vram/
