@@ -45,6 +45,8 @@ make-bcache -B /dev/nvme5n1
 make-bcache -B /dev/nvme6n1
 make-bcache -C /dev/loop33
 
+sleep 5
+
 # extract cache tmpfs block UID
 bcache-super-show /dev/loop33 | grep cset | tr -s ' \t' '\n' | grep -v cset  > bdisk
 bdisk=$(<bdisk)
