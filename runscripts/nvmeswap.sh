@@ -71,7 +71,7 @@ echo writeback > /sys/block/bcache6/bcache/cache_mode
 
 # create zfs pool from bcache disk array, add l2arc and zslog for dedicated logging
 zpool create nvme /dev/bcache0 /dev/bcache1 /dev/bcache2 /dev/bcache3 /dev/bcache4 /dev/bcache5 /dev/bcache6
-zfs create -V 1.4T -b 8192 -o compression=off -o logbias=throughput -o com.sun:auto-snapshot=false nvme/swap
+zfs create -V 1.4T -b 8192 -o compression=off -o logbias=throughput -o sync=always -o primarycache=metadata -o secondarycache=none -o com.sun:auto-snapshot=false nvme/swap
 zpool add nvme cache /tmp/vram/l2arc
 zpool add nvme log /tmp/vram/zslog
 
