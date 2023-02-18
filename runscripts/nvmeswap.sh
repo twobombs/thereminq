@@ -27,13 +27,13 @@ truncate -s 3G zslog
 losetup /dev/loop33 /tmp/vram/cache 
 
 # wipe nvme disks
-wipefs -a /dev/nvme0n1
-wipefs -a /dev/nvme1n1
-wipefs -a /dev/nvme2n1
-wipefs -a /dev/nvme3n1
-wipefs -a /dev/nvme4n1
-wipefs -a /dev/nvme5n1
-wipefs -a /dev/nvme6n1
+wipefs -af /dev/nvme0n1
+wipefs -af /dev/nvme1n1
+wipefs -af /dev/nvme2n1
+wipefs -af /dev/nvme3n1
+wipefs -af /dev/nvme4n1
+wipefs -af /dev/nvme5n1
+wipefs -af /dev/nvme6n1
 
 # create cache setup
 make-bcache -B /dev/nvme0n1
@@ -70,7 +70,7 @@ echo writeback > /sys/block/bcache5/bcache/cache_mode
 echo writeback > /sys/block/bcache6/bcache/cache_mode
 
 # create zfs pool from bcache disk array, add l2arc and zslog for dedicated logging
-zpool create nvme /dev/bcache0 /dev/bcache1 /dev/bcache2 /dev/bcache3 /dev/bcache4 /dev/bcache5 /dev/bcache6
+zpool create nvme -f /dev/bcache0 /dev/bcache1 /dev/bcache2 /dev/bcache3 /dev/bcache4 /dev/bcache5 /dev/bcache6
 zfs create -V 1.4T -b 8192 -o compression=off -o logbias=throughput -o sync=always -o primarycache=metadata -o secondarycache=none -o com.sun:auto-snapshot=false nvme/swap
 zpool add nvme cache /tmp/vram/l2arc
 zpool add nvme log /tmp/vram/zslog
