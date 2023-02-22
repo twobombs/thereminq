@@ -1,6 +1,8 @@
-#!/bin/bash
+!/bin/bash
 # extreme swappiness, no-oom and a very big compression buffer for zswap
 # 
+
+bdisk=$(<bdisk)
 
 echo 90 > /sys/module/zswap/parameters/max_pool_percent
 echo 90 > /sys/module/zswap/parameters/accept_threshold_percent
@@ -10,12 +12,15 @@ sysctl vm.swappiness=100
 cd /sys/kernel/debug/zswap
 grep -R . /sys/kernel/debug/zswap/ && grep -R . /sys/module/zswap
 perl -E  "say $(cat stored_pages) * 4096 / $(cat pool_total_size)"
+free
 
 # display zfs stats
-zfs get compressratio | grep swap
+zfs get compressratio | grep swap 
 zpool iostat
 
 # always allow malloc() - got swap ? #128Gb+
 echo 1 | sudo tee /proc/sys/vm/overcommit_memory
+
+cat '/sys/fs/bcache/'$bdisk'/cache0/priority_stats'
 
 cat /proc/cpuinfo | grep 'MHz'
