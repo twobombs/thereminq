@@ -17,6 +17,7 @@ free
 # display zfs stats
 zfs get compressratio | grep swap 
 zpool iostat
+cat /proc/mdstat
 
 # always allow malloc() - got swap ? #128Gb+
 echo 1 | sudo tee /proc/sys/vm/overcommit_memory
