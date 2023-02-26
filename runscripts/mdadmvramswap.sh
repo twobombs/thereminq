@@ -13,8 +13,16 @@ zpool destroy nvme
 losetup -d /dev/loop33
 blockdev --flushbufs /dev/ram0
 
-# create 22GB brd
-modprobe brd rd_nr=1 rd_size=23068672
+# create vram tmpfs
+mkdir /tmp/vram
+./vramfs/bin/vramfs /tmp/vram/ 22G &
+sleep 10
+
+cd /tmp/vram/
+truncate -s 22G cache
+
+# setup cache as a blockdevice
+losetup /dev/loop33 /tmp/vram/cache
 
 sleep 5
 partprobe
@@ -32,19 +40,20 @@ sleep 10
 partprobe
 
 # create cache setup
-make-bcache -B --writeback /dev/nvme0n1
-make-bcache -B --writeback /dev/nvme1n1
-make-bcache -B --writeback /dev/nvme2n1
-make-bcache -B --writeback /dev/nvme3n1
-make-bcache -B --writeback /dev/nvme4n1
-make-bcache -B --writeback /dev/nvme5n1
-make-bcache -B --writeback /dev/nvme6n1
-make-bcache -C -w 4096 --writeback --wipe-bcache /dev/ram0
+make-bcache -B --block 4k --writeback /dev/nvme0n1
+make-bcache -B --block 4k --writeback /dev/nvme1n1
+make-bcache -B --block 4k --writeback /dev/nvme2n1
+make-bcache -B --block 4k --writeback /dev/nvme3n1
+make-bcache -B --block 4k --writeback /dev/nvme4n1
+make-bcache -B --block 4k --writeback /dev/nvme5n1
+make-bcache -B --block 4k --writeback /dev/nvme6n1
+make-bcache -C -w 4096 --writeback --wipe-bcache /dev/loop33
 
 sleep 5
+partprobe
 
 # extract cache tmpfs block UID
-bcache-super-show /dev/ram0 | grep cset | tr -s ' \t' '\n' | grep -v cset  > bdisk
+bcache-super-show /dev/loop33 | grep cset | tr -s ' \t' '\n' | grep -v cset  > bdisk
 bdisk=$(<bdisk)
 
 # inject ID into cache
