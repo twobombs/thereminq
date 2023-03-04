@@ -12,6 +12,7 @@ mdadm --stop /dev/md0
 zpool destroy nvme
 losetup -d /dev/loop33
 blockdev --flushbufs /dev/ram0
+echo 1 > /sys/block/bcache0/bcache/stop
 
 # create 22GB brd
 modprobe brd rd_nr=1 rd_size=23068672
