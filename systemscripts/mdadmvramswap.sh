@@ -12,6 +12,7 @@ mdadm --stop /dev/md0
 zpool destroy nvme
 losetup -d /dev/loop33
 blockdev --flushbufs /dev/ram0
+echo 1 > /sys/block/bcache0/bcache/stop
 
 # create vram tmpfs
 mkdir /tmp/vram
