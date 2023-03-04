@@ -91,3 +91,6 @@ zpool add nvme log /tmp/ram/zslog
 mkswap -f /dev/zvol/nvme/swap
 swapon /dev/zvol/nvme/swap
 zfs set compression=zstd-19 nvme
+
+# check cache mount status
+cat /sys/block/bcache0/bcache/state
