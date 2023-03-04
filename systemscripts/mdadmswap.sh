@@ -88,3 +88,6 @@ mdadm --create --verbose /dev/md0 --level=0 --raid-devices=7 /dev/bcache0 /dev/b
 # setup and mount swap
 mkswap -f /dev/md0
 swapon /dev/md0
+
+# check cache mount status
+cat /sys/block/bcache0/bcache/state
