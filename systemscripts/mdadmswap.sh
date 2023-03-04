@@ -14,6 +14,7 @@ zpool destroy nvme
 losetup -d /dev/loop33
 killall vramfs
 umount /tmp/ram
+echo 1 > /sys/block/bcache0/bcache/stop
 
 # create ram tmpfs
 #mkdir /tmp/ram
