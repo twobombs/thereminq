@@ -1,0 +1,24 @@
+#!/bin/bash
+#
+# run TNN benchmark for load & output simulation 
+# optional pointers:
+# --use-host-dma
+#
+# qrack128 compilation is optimised for high qubit operations. if you want to do <33Qbits use /qrack/_build
+# https://github.com/twobombs/thereminq/blob/master/Dockerfiles/Dockerfile#L33
+
+# benchmark: a very deep (400) and relatively wide(40) circuit is loaded into memory
+# MAX_ALLOC is set at 2.2TB eigenvector space, SEP_threshold needs to limit that
+# to more acceptable levels much like QUNIT_SEP so resources and run time stay 'nominal'
+
+#
+export QRACK_MAX_PAGING_QB=40
+export QRACK_MAX_CPU_QUBITS=40
+export QRACK_MAX_ALLOC_MB=2200000
+export QRACK_SEGMENT_GLOBAL_QB=0
+#
+export QRACK_QBDT_SEPARABILITY_THRESHOLD=0.00001
+
+#
+time ./benchmarks --optimal-cpu --timeout=2000 --max-qubits=40 --benchmark-depth=400 --single test_stabilizer_t_cc_nn --samples=1 --measure-output=/var/log/qrack/"t_cc_nn_$(date +%F_%R_%S).log"
+#
