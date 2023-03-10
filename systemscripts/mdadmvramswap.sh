@@ -15,11 +15,11 @@ echo 1 > /sys/block/bcache0/bcache/stop
 
 # create vram tmpfs
 mkdir /tmp/vram
-./vramfs/bin/vramfs /tmp/vram/ 22G &
+./vramfs/bin/vramfs /tmp/vram/ 23G &
 sleep 10
 
 cd /tmp/vram/
-truncate -s 22G cache
+truncate -s 23G cache
 
 # setup cache as a blockdevice
 losetup /dev/loop33 /tmp/vram/cache
