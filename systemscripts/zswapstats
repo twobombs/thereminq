@@ -1,12 +1,12 @@
 !/bin/bash
-# extreme swappiness, no-oom and a very big compression buffer for zswap
+# extremely low swappiness, no-oom and a very big compression buffer for zswap
 # 
 
 bdisk=$(<bdisk)
 
 echo 90 > /sys/module/zswap/parameters/max_pool_percent
 echo 90 > /sys/module/zswap/parameters/accept_threshold_percent
-sysctl vm.swappiness=100
+sysctl vm.swappiness=0
 
 # display zswap stats
 cd /sys/kernel/debug/zswap
@@ -17,6 +17,8 @@ free
 # display zfs stats
 zfs get compressratio | grep swap 
 zpool iostat
+
+# display mdadm stats
 cat /proc/mdstat
 
 # always allow malloc() - got swap ? #128Gb+
