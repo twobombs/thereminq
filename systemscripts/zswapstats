@@ -22,6 +22,9 @@ cat /proc/mdstat
 # always allow malloc() - got swap ? #128Gb+
 echo 1 | sudo tee /proc/sys/vm/overcommit_memory
 
+# extract cache tmpfs block UID
+bcache-super-show /dev/loop33 | grep cset | tr -s ' \t' '\n' | grep -v cset  > bdisk
+bdisk=$(<bdisk)
 cat '/sys/fs/bcache/'$bdisk'/cache0/priority_stats'
 
 cat /proc/cpuinfo | grep 'MHz'
