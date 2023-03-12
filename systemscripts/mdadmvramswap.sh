@@ -10,7 +10,6 @@ apt install -y libfuse3-dev bcache-tools
 swapoff -a
 mdadm --stop /dev/md0
 losetup -d /dev/loop33
-blockdev --flushbufs /dev/ram0
 echo 1 > /sys/block/bcache0/bcache/stop
 
 # create vram tmpfs
