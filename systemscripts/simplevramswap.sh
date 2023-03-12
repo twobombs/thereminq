@@ -1,7 +1,7 @@
 #
 # this example script creates a mdadm from 1 SATA disk and add
 # it as a swap to the system with VRAM as bcache buffer
-# data on all VRAM/NVME disks will be destroyed. vram requirement in line 16
+# data on all VRAM/NVME disks will be destroyed. vram requirement in line 16 - 19
 #
 
 apt install -y libfuse3-dev bcache-tools
