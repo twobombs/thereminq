@@ -17,8 +17,8 @@ export QRACK_MAX_CPU_QUBITS=40
 export QRACK_MAX_ALLOC_MB=2200000
 export QRACK_SEGMENT_GLOBAL_QB=0
 #
-export QRACK_QBDT_SEPARABILITY_THRESHOLD=0.00001
-
+export QRACK_QBDT_SEPARABILITY_THRESHOLD=0.001
+export QRACK_QUNIT_SEPARABILITY_THRESHOLD=0.45
 #
 time ./benchmarks --optimal-cpu --timeout=2000 --max-qubits=40 --benchmark-depth=400 --single test_stabilizer_t_cc_nn --samples=1 --measure-output=/var/log/qrack/"t_cc_nn_$(date +%F_%R_%S).log"
 #
