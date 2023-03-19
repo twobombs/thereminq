@@ -1,3 +1,5 @@
+#!/bin/bash
+
 #
 # this example script creates a mdadm from 11 NVME disks and add
 # them as a compressible swap to the system with VRAM as bcache buffer
