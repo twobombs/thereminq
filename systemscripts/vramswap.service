@@ -1,0 +1,14 @@
+[Unit]
+Description=Swap on NVME Video RAM
+After=default.target
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/root/mdadmvramswap.sh
+TimeoutStartSec=0
+# Prevent swapping
+MemorySwapMax=0
+
+[Install]
+WantedBy=default.target
