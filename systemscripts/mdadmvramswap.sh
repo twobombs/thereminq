@@ -16,7 +16,7 @@ echo 1 > /sys/block/bcache0/bcache/stop
 
 # create vram tmpfs
 mkdir /tmp/vram
-./vramfs/bin/vramfs /tmp/vram/ 23G &
+./root/vramfs/bin/vramfs /tmp/vram/ 23G &
 sleep 10
 truncate -s 23G /tmp/vram/cache
 
