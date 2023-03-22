@@ -5,7 +5,6 @@
 # them as a compressible swap to the system with VRAM as bcache buffer
 # data on all VRAM/NVME disks will be destroyed. vram requirement in line 13
 #
-
 apt install -y libfuse3-dev bcache-tools
 
 # clean up for setup
@@ -13,6 +12,7 @@ swapoff -a
 mdadm --stop /dev/md0
 losetup -d /dev/loop33
 echo 1 > /sys/block/bcache0/bcache/stop
+sysctl vm.swappiness=0
 
 # create vram tmpfs
 mkdir /tmp/vram
