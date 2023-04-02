@@ -9,7 +9,7 @@
 ThereminQ orchestrates a suite of best-of-class tools designed to control, extend and visualize data emanating to and from Quantum circuits using Qrack, ELK, Tipsy and Jupyter on CUDA and OpenCL accelerators.
 
 - Qrack - Qbit OpenCL Hardware Emulation Stack https://github.com/vm6502q/qrack
-- Bonsai - Stellar data visualizer for QFT, Sycamore and TNN_d data https://github.com/treecode/Bonsai
+- Bonsai - Stellar data visualizer for QFT, Sycamore, TNN_d and SDRP validation https://github.com/treecode/Bonsai
 - Elastic Search/Lucene Interface for Big Data interconnect https://www.elastic.co/downloads/
 
 Look also at the following images
@@ -23,7 +23,8 @@ Other tags contain
 Images can be run independantly but are made to work with the vQbit infrastructure K8s HELM repo at https://github.com/twobombs/helm
 Installation setup and usage scenarios can be glanced at here https://gist.github.com/twobombs/bb38050e84331307bf14c46d723b2a01
 
-## Build on top of the CUDA-CLuster stack https://github.com/twobombs/cudacluster and deploy-nvidia-docker https://github.com/twobombs/deploy-nvidia-docker WebUI
+### Build on CUDA-CLuster stack https://github.com/twobombs/cudacluster 
+### and deploy-nvidia-docker https://github.com/twobombs/deploy-nvidia-docker WebUI
 - WebVNC, CUDA 11.4+ & OpenCL 1.2+ with NV, AMD & Intel HW support
 
 <img width="1435" alt="Screenshot 2021-05-04 at 15 10 27" src="https://user-images.githubusercontent.com/12692227/117008533-21d79280-aceb-11eb-993a-efa7d1123a1f.png">
@@ -33,12 +34,7 @@ Initial vnc password is 00000000
 - noVNC website is avaliable at port 6080 
 - xRDP running at port 3389 to vnc 127.0.0.1:5900
 
-## Kibana views with ThereminQ's data 
-
-![Screenshot_from_2022-03-15_19-26-41](https://user-images.githubusercontent.com/12692227/158855774-b6294720-3769-409a-bf96-0945e2af842a.png)
-
-
-## Deploy an instance of ThereminQ's WebUI controller container and/or select a specific workload type and/or run on your favorite orchestrator
+### Docker: deploy an instance of ThereminQ's WebUI controller container
 - docker run --gpus all --privileged -p 6080:6080 --device=/dev/dri:/dev/dri --mount type=bind,source=/var/log/qrack,target=/var/log/qrack -d twobombs/thereminq:controller
 - docker run -ti --mount type=bind,source=/var/log/qrack,target=/var/log/qrack twobombs/thereminq bash /root/run-supreme-cpu
 - docker run --gpus all --device=/dev/dri:/dev/dri -ti --mount type=bind,source=/var/log/qrack,target=/var/log/qrack twobombs/thereminq bash /root/run-cosmos-gpu1
