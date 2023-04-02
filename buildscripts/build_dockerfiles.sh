@@ -1,8 +1,6 @@
-# build qracknet image and its required services
+# build example thereminq image and its required services
 
 # docker build --no-cache -t twobombs/thereminq:latest ./
-
-cd .. 
 
 docker build -t twobombs/thereminq:latest ./
 
