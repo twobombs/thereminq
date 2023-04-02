@@ -28,8 +28,3 @@ docker build -t twobombs/thereminq:supreme-cpu -f ./Dockerfile-supreme-cpu .
 docker build -t twobombs/thereminq:supreme-gpu1 -f ./Dockerfile-supreme-gpu1 .
 docker build -t twobombs/thereminq:supreme-gpu2 -f ./Dockerfile-supreme-gpu2 .
 docker build -t twobombs/thereminq:supreme-multi -f ./Dockerfile-supreme-multi .
-
-docker build -t twobombs/thereminq:unittest -f ./Dockerfile-unittest .
-docker build -t twobombs/thereminq:dummyload -f ./Dockerfile-dummyload .
-docker build -t twobombs/thereminq:bonsai -f ./Dockerfile-Bonsai .
-docker build -t twobombs/thereminq:tipsydev -f ./Dockerfile-tipsydev .
