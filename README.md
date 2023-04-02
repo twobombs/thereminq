@@ -80,10 +80,7 @@ To prevent these workload from taking up all resources of the system it is good 
 
 M40 + K80 run script https://github.com/twobombs/thereminq/blob/master/runscripts/run-tnn-cube-multi
 
-I did do or helped with some of the coding for glue, speed and data generation. <br>
-This stack was made so that you don't need to <br>
-
-### If you want to reproduce these results and run this 'onprem' here are some gists to help you along
+### If you want to reproduce these results here are some gists to help you along
 
 Install Guide: https://gist.github.com/twobombs/c93f9bbf2afe98d795372d024d6b30d7
 
