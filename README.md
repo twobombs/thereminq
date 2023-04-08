@@ -6,7 +6,9 @@
 
 [![ThereminQ data demo #1](http://img.youtube.com/vi/CgvKkK4-OlE/0.jpg)](https://youtu.be/CgvKkK4-OlE "ThereminQ data demo #1")
 
-ThereminQ orchestrates a suite of best-of-class tools designed to control, extend and visualize data emanating to and from Quantum circuits using Qrack, ELK, Tipsy and Jupyter on CUDA and OpenCL accelerators.
+-------------
+
+### ThereminQ orchestrates a suite of best-of-class tools designed to control, extend and visualize data emanating to and from Quantum circuits using Qrack, ELK, Tipsy and Jupyter on CUDA and OpenCL accelerators.
 
 - Qrack - Qbit OpenCL Hardware Emulation Stack https://github.com/vm6502q/qrack
 - Bonsai - Stellar data visualizer for QFT, Sycamore, TNN_d and SDRP validation https://github.com/treecode/Bonsai
@@ -20,8 +22,10 @@ Other tags contain
 - QUDA                  http://lattice.github.io/quda/
 - cuQuantum             https://developer.nvidia.com/cuquantum-sdk
 
-Images can be run independantly but are made to work with the vQbit infrastructure K8s HELM repo at https://github.com/twobombs/helm
+Images can be run independant but are also made to work with the vQbit infrastructure K8s HELM repo at https://github.com/twobombs/helm
 Installation setup and usage scenarios can be glanced at here https://gist.github.com/twobombs/bb38050e84331307bf14c46d723b2a01
+
+-------------
 
 ### Build on CUDA-CLuster stack https://github.com/twobombs/cudacluster 
 ### and deploy-nvidia-docker https://github.com/twobombs/deploy-nvidia-docker WebUI
@@ -34,6 +38,8 @@ Initial vnc password is 00000000
 - noVNC website is avaliable at port 6080 
 - xRDP running at port 3389 to vnc 127.0.0.1:5900
 
+-------------
+
 ### Docker: deploy an instance of ThereminQ's WebUI controller container
 - docker run --gpus all --privileged -p 6080:6080 --device=/dev/dri:/dev/dri --mount type=bind,source=/var/log/qrack,target=/var/log/qrack -d twobombs/thereminq:controller
 - docker run -ti --mount type=bind,source=/var/log/qrack,target=/var/log/qrack twobombs/thereminq bash /root/run-supreme-cpu
@@ -44,6 +50,7 @@ All specialized workloads are listed in https://github.com/twobombs/thereminq/tr
 
 ![Screenshot from 2021-10-24 17-23-18](https://user-images.githubusercontent.com/12692227/138600777-607fda67-52d5-4e24-9f19-8e30f36ffa29.png)
 
+-------------
 
 ### Experimental 'bqp=bpp' stabilizer_t_nn high qbit workloads
 - docker run --gpus all --device=/dev/dri:/dev/dri -ti --mount type=bind,source=/var/log/qrack,target=/var/log/qrack twobombs/thereminq bash /root/run-tnn-gpu1<br> <br>
@@ -56,9 +63,7 @@ All specialized workloads are listed in https://github.com/twobombs/thereminq/tr
 ![Screenshot from 2022-05-22 20-43-30](https://user-images.githubusercontent.com/12692227/169710747-32ef4926-0286-487a-b9ed-e8c676b2a43a.png)
 C-style Shors' with rsaConverter ( https://www.idrix.fr/Root/content/category/7/28/51/) and Qimcifa ( https://github.com/vm6502q/qimcifa )
 
-### To run ThereminQ as a VirtualCL controller 
-#### note: create the underlying directory structure as mentioned in the VCL readme of Qrackmin https://github.com/twobombs/qrackmin#vcl-qrackdocker
-eg: docker run --gpus all --device=/dev/dri:/dev/dri -d --mount type=bind,source=/var/log/vcl,target=/var/log/vcl --mount type=bind,source=/var/log/qrack,target=/var/log/qrack twobombs/thereminq:vcl-controller
+-------------
 
 ### Tips for Managing high-Qubit and/or high-Node workloads
 - Workloads with full entanglement and/or Quantum simulations that are at or exceed 30+ Qubits
@@ -72,6 +77,8 @@ To prevent these workload from taking up all resources of the system it is good 
 - Disable OOM killers in the kernel and/or the container orchestrator ( --oom-kill-disable )
 - OOM host change: add vm.overcommit_memory = 1 and vm.oom-kill = 0 in /etc/sysctl.conf
 - Swap should be a dedicated and fast drive where possible NVMe RAID, equal to the bandwith of the GPU/PCIe<br> <br>
+
+-------------
 
 ### Sycamore & T_NN(-d) Results on an AMD Threadripper 1920X@4Ghz
 - 24 Threads with 32GB RAM, 128GB NVMe Swap on a 3x RAID NVME drive - Tesla K80 2x12GB - Tesla M40 24GB - Ubuntu 20.04/22.04
@@ -88,7 +95,15 @@ Recommendations: https://gist.github.com/twobombs/eee53194f7c3e00332b555bad0ae2a
 
 Runtime: https://gist.github.com/twobombs/9d9ec5d6fbca4b960b1df1f6e147b038
 
-Again: it is wise to run the benchmarks program inside a main memory limited container with outflow to fast swap so that the system remains stable at intensive runs and high memory peaks
+Note: it is wise to run the benchmarks program inside a main memory limited container with outflow to fast swap so that the system remains stable at intensive runs and high memory peaks
+
+-------------
+
+### To run ThereminQ as a VirtualCL controller 
+#### note: create the underlying directory structure as mentioned in the VCL readme of Qrackmin https://github.com/twobombs/qrackmin#vcl-qrackdocker
+eg: docker run --gpus all --device=/dev/dri:/dev/dri -d --mount type=bind,source=/var/log/vcl,target=/var/log/vcl --mount type=bind,source=/var/log/qrack,target=/var/log/qrack twobombs/thereminq:vcl-controller
+
+-------------
 
 ## Code from the following companies and initiatives are in this container
 
