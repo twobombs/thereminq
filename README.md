@@ -80,7 +80,7 @@ To prevent these workload from taking up all resources of the system it is good 
 
 -------------
 
-### Sycamore, QFT & T_NN(-d) Results on an AMD Threadripper 1920X@4Ghz
+### Sycamore, QFT & T_NN(-d) Results on an AMD Threadripper 1920X@4.2Ghz
 - 24 Threads with 32GB RAM, 2.5TB NVMe Swap on a 11x RAID NVME drive - Tesla K80 24GB - Tesla M40 24GB
 
 [results https://docs.google.com/spreadsheets/d/1u2Qum9W768rMWIoKlz658i1P6RTmX1ekgartNMHuR-s ]
