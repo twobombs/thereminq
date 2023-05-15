@@ -1,0 +1,33 @@
+# This CITATION.cff file was generated with cffinit.
+# Visit https://bit.ly/cffinit to generate yours today!
+
+cff-version: 1.2.0
+title: ThereminQ
+message: >-
+  If you use this software, please cite it using the
+  metadata from this file.
+type: software
+authors:
+  - given-names: Aryan Jacques
+    family-names: Blaauw
+    email: ablaauw@gmx.net
+    orcid: 'https://orcid.org/0000-0002-5657-7824'
+identifiers:
+  - type: url
+    value: 'https://arxiv.org/abs/2304.14969'
+repository-code: 'https://github.com/twobombs/thereminq'
+url: 'https://github.com/twobombs'
+repository-artifact: 'https://hub.docker.com/r/twobombs/thereminq'
+abstract: >-
+  ThereminQ orchestrates a suite of best-of-class tools
+  designed to control extend and visualize data emanating
+  for Quantum circuits using Qrack ELK Tipsy Jupyter CUDA
+  and OpenCL accelerators
+keywords:
+  - docker
+  - cuda
+  - quantum computing
+  - opencl
+license: GPL-3.0+
+version: 4.x
+date-released: '2023-05-23'
