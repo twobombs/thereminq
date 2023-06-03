@@ -1,6 +1,7 @@
 FROM twobombs/cudacluster:samples
 
 RUN apt install cuquantum cuquantum-dev cuquantum-doc && apt clean all
+RUN git clone https://github.com/NVIDIA/cuQuantum.git
 
 EXPOSE 6080
 ENTRYPOINT /root/run
