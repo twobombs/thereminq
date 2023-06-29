@@ -1,14 +1,13 @@
 #!/bin/bash
 #
 # run TNN benchmark for load & output simulation 
-
+#
 export QRACK_QUNIT_SEPARABILITY_THRESHOLD=0.50
-export QRACK_QPAGER_DEVICES=10.1
-#,10.0
-#,11.1,11.4
+export QRACK_QPAGER_DEVICES=10.1,10.0
 export QRACK_QPAGER_DEVICES_HOST_POINTER=10.0,4.1
 export QRACK_OCL_DEFAULT_DEVICE=1
-export QRACK_MAX_PAGING_QB=32
+export QRACK_MAX_PAGING_QB=29
 export QRACK_MAX_ALLOC_MB=10000
+export QRACK_MAX_PAGE_QB=27
 #
-time ./benchmarks --optimal-single --timeout=2000 --max-qubits=27 --benchmark-depth=420 --single test_stabilizer_t_cc_nn --samples=10 --measure-output=/var/log/qrack/"t_cc_nn_$(date +%F_%R_%S).log"
+time ./benchmarks --optimal --timeout=2000 --max-qubits=36 --benchmark-depth=20 --single test_stabilizer_t_cc_nn --benchmark-resamples=10 --samples=10 --measure-output=/var/log/qrack/"t_cc_nn_$(date +%F_%R_%S).log"
