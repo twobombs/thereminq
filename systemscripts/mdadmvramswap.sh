@@ -20,7 +20,7 @@ mkdir /tmp/vram
 sleep 10
 # truncate -s 23G /tmp/vram/cache
 echo "filling vRAM buffer"
-dd if=/dev/zero of=/tmp/vram/test bs=128K count=180000 conv=fdatasync
+dd if=/dev/zero of=/tmp/vram/cache bs=128K count=180000 conv=fdatasync
 
 # setup cache as a blockdevice
 losetup /dev/loop33 /tmp/vram/cache
