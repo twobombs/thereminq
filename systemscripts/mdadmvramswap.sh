@@ -14,11 +14,13 @@ losetup -d /dev/loop33
 echo 1 > /sys/block/bcache0/bcache/stop
 sysctl vm.swappiness=0
 
-# create vram tmpfs
+# create vram tmpfs - example assumes 24GB vRAM framebuffer
 mkdir /tmp/vram
 ./vramfs /tmp/vram/ 23G &
 sleep 10
-truncate -s 23G /tmp/vram/cache
+# truncate -s 23G /tmp/vram/cache
+echo "filling vRAM buffer"
+dd if=/dev/zero of=/tmp/vram/test bs=128K count=180000 conv=fdatasync
 
 # setup cache as a blockdevice
 losetup /dev/loop33 /tmp/vram/cache
