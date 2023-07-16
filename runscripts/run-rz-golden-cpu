@@ -1,0 +1,13 @@
+#!/bin/bash
+#
+# run Clifford-RZ CPU benchmark with weak sampling for load & output simulation 
+#
+# export QRACK_QUNIT_SEPARABILITY_THRESHOLD=0.50
+# export QRACK_QPAGER_DEVICES=10.1,10.0
+# export QRACK_QPAGER_DEVICES_HOST_POINTER=10.0,4.1
+# export QRACK_OCL_DEFAULT_DEVICE=0
+# export QRACK_MAX_PAGING_QB=30
+# export QRACK_MAX_ALLOC_MB=10000
+# export QRACK_MAX_PAGE_QB=27
+#
+time ./benchmarks --optimal-cpu --enable-weak-sampling --benchmark-max-magic=3 --timeout=2000 --max-qubits=36 --benchmark-depth=2000 --single test_stabilizer_rz --samples=1 --measure-output=/var/log/qrack/"stab_rz_$(date +%F_%R_%S).log"
