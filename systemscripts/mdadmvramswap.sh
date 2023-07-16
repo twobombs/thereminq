@@ -16,7 +16,7 @@ sysctl vm.swappiness=0
 
 # create vram tmpfs
 mkdir /tmp/vram
-./root/vramfs/bin/vramfs /tmp/vram/ 23G &
+./vramfs /tmp/vram/ 23G &
 sleep 10
 truncate -s 23G /tmp/vram/cache
 
