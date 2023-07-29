@@ -11,13 +11,13 @@
 #
 # for TNN the combination of stabilizer, qpager on qunit-multi currently has the best speed and optimisation
 #
-cd /qrack128/_build/
+# cd /qrack128/_build/
 #
-export QRACK_QPAGER_DEVICES=8.0,4.1,4.2
+# export QRACK_QPAGER_DEVICES=8.0,4.1,4.2
 # export QRACK_QPAGER_DEVICES_HOST_POINTER=8.0,8.1,4.0,4.1,4.0,4.1
-export QRACK_OCL_DEFAULT_DEVICE=0 
-export QRACK_MAX_PAGING_QB=31
-export QRACK_MAX_ALLOC_MB=18432
+# export QRACK_OCL_DEFAULT_DEVICE=0 
+# export QRACK_MAX_PAGING_QB=31
+# export QRACK_MAX_ALLOC_MB=18432
 #
 time ./benchmarks --optimal --timeout=2000000 --max-qubits=36 --benchmark-depth=36 --single test_stabilizer_t_cc_nn --samples=100 --measure-output=/var/log/qrack/"t_cc_$(date +%F_%R_%S).log"
 #
