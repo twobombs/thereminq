@@ -1,4 +1,4 @@
-FROM twobombs/thereminq:dev
+FROM twobombs/qrackmin:1804
 
 # install apt packages because 
 RUN apt update && apt install -y cmake nodejs npm libssl-dev xxd libgmp3-dev pocl-opencl-icd && apt clean all
