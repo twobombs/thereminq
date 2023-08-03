@@ -55,8 +55,9 @@ All specialized workloads are listed in https://github.com/twobombs/thereminq/tr
 ### Experimental 'bqp=bpp' stabilizer_t_nn high qbit workloads
 - docker run --gpus all --device=/dev/dri:/dev/dri -ti --mount type=bind,source=/var/log/qrack,target=/var/log/qrack twobombs/thereminq bash /root/run-tnn-gpu1<br> <br>
 
-### Experimental Quantum Inspired Qimcifa high qbit workloads
-- docker run --gpus all --device=/dev/dri:/dev/dri --ipc=host -d -p 6080:6080 twobombs/thereminq:qimcifa <br> <br>
+### Archived: experimental Quantum Inspired Qimcifa high qbit workloads ( Shors' Monte Carlo )
+- docker run --gpus all --device=/dev/dri:/dev/dri -d twobombs/thereminq:qimcifa <br> <br>
+![Screenshot from 2023-07-08 11-20-49](https://github.com/twobombs/thereminq/assets/12692227/adf196cd-948a-475e-836e-275400dc461b)
 
 #### note: --ipc=host in the docker command is a chrome requirement. If you don't need chrome in the session you can leave this out.
 
