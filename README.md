@@ -57,7 +57,8 @@ All specialized workloads are listed in https://github.com/twobombs/thereminq/tr
 
 ### Archived: experimental Quantum Inspired Qimcifa high qbit workloads ( Shors' Monte Carlo )
 - docker run --gpus all --device=/dev/dri:/dev/dri -d twobombs/thereminq:qimcifa <br> <br>
-![Screenshot from 2023-07-08 11-20-49](https://github.com/twobombs/thereminq/assets/12692227/adf196cd-948a-475e-836e-275400dc461b)
+![Screenshot from 2023-08-03 19-47-00](https://github.com/twobombs/thereminq/assets/12692227/6204d15a-5035-40d8-acb4-13c481c89f60)
+
 
 #### note: --ipc=host in the docker command is a chrome requirement. If you don't need chrome in the session you can leave this out.
 
