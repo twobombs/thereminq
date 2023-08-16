@@ -101,7 +101,7 @@ eg: docker run --gpus all --device=/dev/dri:/dev/dri -d --mount type=bind,source
 
 -------------
 
-### Questions/Remarks/Ideas/Experiences - https://discord.gg/GHAC2kRfEH
+### Questions / Remarks / Ideas / Experiences - https://discord.gg/GHAC2kRfEH
 
 ## Code from the following companies and initiatives are in this container
 
