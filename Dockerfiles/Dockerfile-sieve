@@ -13,7 +13,7 @@ RUN cd CUDASieve && mkdir obj && make && make test && make samples
 RUN apt update && apt install -y subversion opencl-headers libgmp3-dev && ldconfig && ln -s /usr/lib/x86_64-linux-gnu/libOpenCL.so.1 /usr/lib/libOpenCL.so
 RUN svn checkout https://svn.code.sf.net/p/mtsieve/svn/ mtsieve-svn
 # build disabled because one of the sieves are borked
-# RUN cd mtsieve-svn && make
+RUN cd mtsieve-svn && make
 
 # vm6502q/qimcifa has an LGPL license. Report (re)use of code to Dan Strano.
 # RUN git clone --branch opencl_bigint https://github.com/vm6502q/qimcifa.git && mv qimcifa qimcifa-bigint && cd qimcifa-bigint && cmake . && make
