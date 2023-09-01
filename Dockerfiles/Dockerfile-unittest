@@ -1,4 +1,4 @@
-FROM twobombs/thereminq:latest
+FROM twobombs/qrackmin:pocl
 
 RUN cd /qrack/_build/ && ./unittest
 
