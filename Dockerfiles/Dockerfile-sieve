@@ -15,9 +15,10 @@ RUN svn checkout https://svn.code.sf.net/p/mtsieve/svn/ mtsieve-svn
 # build disabled because one of the sieves are borked
 RUN cd mtsieve-svn && make
 
-# vm6502q/qimcifa has an LGPL license. Report (re)use of code to Dan Strano.
-# RUN git clone --branch opencl_bigint https://github.com/vm6502q/qimcifa.git && mv qimcifa qimcifa-bigint && cd qimcifa-bigint && cmake . && make
-RUN git clone https://github.com/vm6502q/qimcifa.git && cd /qimcifa && cmake . && make
+# vm6502q/qimcifa has an LGPL license. Report (re)use of code to Dan Strano
+RUN git clone https://github.com/vm6502q/qimcifa.git && mv qimcifa qimcifa32 && cd /qimcifa32 && cmake -DBIG_INT_BITS=32 . && make
+RUN git clone https://github.com/vm6502q/qimcifa.git && mv qimcifa qimcifa64 && cd /qimcifa64 && cmake -DBIG_INT_BITS=64 . && make
+RUN git clone https://github.com/vm6502q/qimcifa.git && mv qimcifa qimcifa128 && cd /qimcifa128 && cmake -DBIG_INT_BITS=128 . && make
 
 RUN mkdir /var/log/sieve
 
