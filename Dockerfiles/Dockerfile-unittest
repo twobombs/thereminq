@@ -1,6 +1,7 @@
 FROM twobombs/qrackmin:pocl
 
-RUN cd /qrack/_build/ && ./unittest
+# dockerhub doesn't work 
+# RUN ./qrack/_build/unittest
 
 EXPOSE 22 80 8801-8811
 ENTRYPOINT /qrack/_build/unittest
