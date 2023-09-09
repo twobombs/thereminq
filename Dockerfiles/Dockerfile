@@ -12,6 +12,10 @@ RUN git clone https://github.com/twobombs/thereminq.git && git clone https://git
 # install features
 RUN apt-get update && apt-get -y install build-essential cmake opencl-headers openssh-server wget vim-common opencl-headers curl libfreetype6-dev autotools-dev libicu-dev libbz2-dev libboost-all-dev && apt-get clean all
 
+# fetch cuquantum
+RUN apt install cuquantum cuquantum-dev && apt clean all
+RUN git clone https://github.com/NVIDIA/cuQuantum.git
+
 # install metricbeat for ES 7.4+
 RUN wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add - 
 RUN apt-get install apt-transport-https
