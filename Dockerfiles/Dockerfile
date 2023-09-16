@@ -10,7 +10,7 @@ RUN cp -r /qrack /qrack8
 RUN git clone https://github.com/twobombs/thereminq.git && git clone https://github.com/LeventErkok/crackNum.git && git clone https://github.com/pnnl/QASMBench.git
 
 # install features
-RUN apt-get update && apt-get -y install build-essential cmake opencl-headers openssh-server wget vim-common opencl-headers curl libfreetype6-dev autotools-dev libicu-dev libbz2-dev libboost-all-dev && apt-get clean all
+RUN apt-get update && apt-get -y install libcutensor1 libcutensor-dev libcutensor-doc build-essential cmake opencl-headers openssh-server wget vim-common opencl-headers curl libfreetype6-dev autotools-dev libicu-dev libbz2-dev libboost-all-dev && apt-get clean all
 
 # fetch cuquantum
 RUN apt install cuquantum cuquantum-dev && apt clean all
