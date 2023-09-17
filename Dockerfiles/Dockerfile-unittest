@@ -1,6 +1,6 @@
 FROM twobombs/qrackmin
 
-dockerhub doesn't work 
+# dockerhub doesn't work 
 RUN ./qrack/_build/unittest > unittest.txt 
 
 EXPOSE 22 80 8801-8811
