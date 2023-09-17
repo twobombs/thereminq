@@ -91,7 +91,7 @@ Recommendations: https://gist.github.com/twobombs/eee53194f7c3e00332b555bad0ae2a
 
 Runtime: https://gist.github.com/twobombs/9d9ec5d6fbca4b960b1df1f6e147b038
 
-Note: it is wise to run the benchmarks program inside a main memory limited container with outflow to fast swap so that the system remains stable at intensive runs and high memory peaks
+Note: it is wise to run the benchmarks program inside a main memory limited container with outflow to fast swap so that the system remains stable at intensive runs and high memory peaks - with fast swap we mean FAST NVME RAID0 swap https://github.com/twobombs/thereminq/blob/master/NVME%20RAID0%20swap%20caching%20on%20(V)RAM.pdf
 
 -------------
 
