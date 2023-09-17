@@ -1,4 +1,4 @@
-FROM twobombs/qrackmin
+FROM twobombs/thereminq
 
 # dockerhub doesn't work 
 RUN ./qrack/_build/unittest > unittest.txt 
