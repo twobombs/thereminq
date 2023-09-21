@@ -1,7 +1,7 @@
 FROM twobombs/thereminq
 
 # dockerhub doesn't work 
-RUN ./qrack/_build/unittest 2>/dev/null
+RUN ./qrack/_build/unittest > unittest.txt && return 0
 
 EXPOSE 22 80 8801-8811
 ENTRYPOINT /qrack/_build/unittest
