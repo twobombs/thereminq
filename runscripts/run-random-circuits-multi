@@ -1,0 +1,23 @@
+#!/bin/bash
+#
+# run circuit sampling 
+#
+
+#export QRACK_QUNIT_SEPARABILITY_THRESHOLD=0.50
+#export QRACK_QPAGER_DEVICES=10.1,10.0
+#export QRACK_QPAGER_DEVICES_HOST_POINTER=10.0,4.1
+#export QRACK_OCL_DEFAULT_DEVICE=1
+#export QRACK_MAX_PAGING_QB=29
+#export QRACK_MAX_ALLOC_MB=10000
+#export QRACK_MAX_PAGE_QB=29
+#
+export QRACK_OCL_DEFAULT_DEVICE=0 
+time ./benchmarks --optimal-single --timeout=2000 --max-qubits=27 --benchmark-depth=27 --single test_random_circuit_sampling --benchmark-resamples=10 --samples=10 --measure-output=/var/log/qrack/"circuit_sampling_$(date +%F_%R_%S).log" &
+
+export QRACK_OCL_DEFAULT_DEVICE=1
+time ./benchmarks --optimal-single --timeout=2000 --max-qubits=27 --benchmark-depth=27 --single test_random_circuit_sampling --benchmark-resamples=10 --samples=10 --measure-output=/var/log/qrack/"circuit_sampling_$(date +%F_%R_%S).log" &
+
+export QRACK_OCL_DEFAULT_DEVICE=2
+time ./benchmarks --optimal-single --timeout=2000 --max-qubits=27 --benchmark-depth=27 --single test_random_circuit_sampling --benchmark-resamples=10 --samples=10 --measure-output=/var/log/qrack/"circuit_sampling_$(date +%F_%R_%S).log" &
+
+
