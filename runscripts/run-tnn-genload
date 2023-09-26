@@ -3,4 +3,4 @@
 #export QRACK_QPAGER_DEVICES=10.0
 #export QRACK_QPAGER_DEVICES_HOST_POINTER=10.0,2.1
 
-./benchmarks --optimal-single -m=28 --benchmark-depth=28 --single --samples=10 --measure-output=/var/log/qrack/"t_nn_genload_$(date +%F_%R_%S).log" test_circuit_t_nn_generate_and_load
+./benchmarks --optimal --measure-shots=1024 -m=28 --benchmark-depth=28 --single --samples=10 --measure-output=/var/log/qrack/"t_nn_genload_$(date +%F_%R_%S).log" test_circuit_t_nn_generate_and_load
