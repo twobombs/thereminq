@@ -10,4 +10,4 @@
 # export QRACK_MAX_ALLOC_MB=10000
 # export QRACK_MAX_PAGE_QB=27
 #
-time ./benchmarks --optimal-cpu --enable-weak-sampling --benchmark-max-magic=3 --timeout=2000 --max-qubits=36 --benchmark-depth=2000 --single test_stabilizer_rz --samples=1 --measure-output=/var/log/qrack/"stab_rz_$(date +%F_%R_%S).log"
+time ./benchmarks --optimal-cpu --measure-shots=1024 --enable-weak-sampling --benchmark-max-magic=3 --timeout=2000 --max-qubits=36 --benchmark-depth=2000 --single test_stabilizer_rz --samples=1 --measure-output=/var/log/qrack/"stab_rz_$(date +%F_%R_%S).log"
