@@ -26,50 +26,50 @@ export QRACK_MAX_ALLOC_MB=12000
 export QRACK_SEGMENT_GLOBAL_QB=0
 
 export QRACK_MAX_PAGING_QB=4
-time ./benchmarks --optimal-single --timeout=2000 --max-qubits=32 --benchmark-depth=32 --single test_stabilizer_t_cc_nn --samples=100 --measure-output=/var/log/qrack/"t_cc_nn_boil4_$(date +%F_%R_%S).log"
+time ./benchmarks --optimal --measure-shots=1024 --timeout=2000 --max-qubits=32 --benchmark-depth=32 --single test_stabilizer_t_cc_nn --samples=100 --measure-output=/var/log/qrack/"t_cc_nn_boil4_$(date +%F_%R_%S).log"
 export QRACK_MAX_PAGING_QB=5
-time ./benchmarks --optimal-single --timeout=2000 --max-qubits=32 --benchmark-depth=32 --single test_stabilizer_t_cc_nn --samples=100 --measure-output=/var/log/qrack/"t_cc_nn_boil5_$(date +%F_%R_%S).log"
+time ./benchmarks --optimal --measure-shots=1024 --timeout=2000 --max-qubits=32 --benchmark-depth=32 --single test_stabilizer_t_cc_nn --samples=100 --measure-output=/var/log/qrack/"t_cc_nn_boil5_$(date +%F_%R_%S).log"
 export QRACK_MAX_PAGING_QB=6
-time ./benchmarks --optimal-single --timeout=2000 --max-qubits=32 --benchmark-depth=32 --single test_stabilizer_t_cc_nn --samples=100 --measure-output=/var/log/qrack/"t_cc_nn_boil6_$(date +%F_%R_%S).log"
+time ./benchmarks --optimal --measure-shots=1024 --timeout=2000 --max-qubits=32 --benchmark-depth=32 --single test_stabilizer_t_cc_nn --samples=100 --measure-output=/var/log/qrack/"t_cc_nn_boil6_$(date +%F_%R_%S).log"
 export QRACK_MAX_PAGING_QB=7
-time ./benchmarks --optimal-single --timeout=2000 --max-qubits=32 --benchmark-depth=32 --single test_stabilizer_t_cc_nn --samples=100 --measure-output=/var/log/qrack/"t_cc_nn_boil7_$(date +%F_%R_%S).log"
+time ./benchmarks --optimal --measure-shots=1024 --timeout=2000 --max-qubits=32 --benchmark-depth=32 --single test_stabilizer_t_cc_nn --samples=100 --measure-output=/var/log/qrack/"t_cc_nn_boil7_$(date +%F_%R_%S).log"
 export QRACK_MAX_PAGING_QB=8
-time ./benchmarks --optimal-single --timeout=2000 --max-qubits=32 --benchmark-depth=32 --single test_stabilizer_t_cc_nn --samples=100 --measure-output=/var/log/qrack/"t_cc_nn_boil8_$(date +%F_%R_%S).log"
+time ./benchmarks --optimal --measure-shots=1024 --timeout=2000 --max-qubits=32 --benchmark-depth=32 --single test_stabilizer_t_cc_nn --samples=100 --measure-output=/var/log/qrack/"t_cc_nn_boil8_$(date +%F_%R_%S).log"
 export QRACK_MAX_PAGING_QB=9
-time ./benchmarks --optimal-single --timeout=2000 --max-qubits=32 --benchmark-depth=32 --single test_stabilizer_t_cc_nn --samples=100 --measure-output=/var/log/qrack/"t_cc_nn_boil9_$(date +%F_%R_%S).log"
+time ./benchmarks --optimal --measure-shots=1024e --timeout=2000 --max-qubits=32 --benchmark-depth=32 --single test_stabilizer_t_cc_nn --samples=100 --measure-output=/var/log/qrack/"t_cc_nn_boil9_$(date +%F_%R_%S).log"
 export QRACK_MAX_PAGING_QB=10
-time ./benchmarks --optimal-single --timeout=2000 --max-qubits=32 --benchmark-depth=32 --single test_stabilizer_t_cc_nn --samples=100 --measure-output=/var/log/qrack/"t_cc_nn_boil10_$(date +%F_%R_%S).log"
+time ./benchmarks --optimal --measure-shots=1024 --timeout=2000 --max-qubits=32 --benchmark-depth=32 --single test_stabilizer_t_cc_nn --samples=100 --measure-output=/var/log/qrack/"t_cc_nn_boil10_$(date +%F_%R_%S).log"
 export QRACK_MAX_PAGING_QB=11
-time ./benchmarks --optimal-single --timeout=2000 --max-qubits=32 --benchmark-depth=32 --single test_stabilizer_t_cc_nn --samples=100 --measure-output=/var/log/qrack/"t_cc_nn_boil11_$(date +%F_%R_%S).log"
+time ./benchmarks --optimal --measure-shots=1024 --timeout=2000 --max-qubits=32 --benchmark-depth=32 --single test_stabilizer_t_cc_nn --samples=100 --measure-output=/var/log/qrack/"t_cc_nn_boil11_$(date +%F_%R_%S).log"
 export QRACK_MAX_PAGING_QB=12
-time ./benchmarks --optimal-single --timeout=2000 --max-qubits=32 --benchmark-depth=32 --single test_stabilizer_t_cc_nn --samples=100 --measure-output=/var/log/qrack/"t_cc_nn_boil12_$(date +%F_%R_%S).log"
+time ./benchmarks --optimal --measure-shots=1024 --timeout=2000 --max-qubits=32 --benchmark-depth=32 --single test_stabilizer_t_cc_nn --samples=100 --measure-output=/var/log/qrack/"t_cc_nn_boil12_$(date +%F_%R_%S).log"
 export QRACK_MAX_PAGING_QB=13
-time ./benchmarks --optimal-single --timeout=2000 --max-qubits=32 --benchmark-depth=32 --single test_stabilizer_t_cc_nn --samples=100 --measure-output=/var/log/qrack/"t_cc_nn_boil13_$(date +%F_%R_%S).log"
+time ./benchmarks --optimal --measure-shots=1024 --timeout=2000 --max-qubits=32 --benchmark-depth=32 --single test_stabilizer_t_cc_nn --samples=100 --measure-output=/var/log/qrack/"t_cc_nn_boil13_$(date +%F_%R_%S).log"
 export QRACK_MAX_PAGING_QB=14
-time ./benchmarks --optimal-single --timeout=2000 --max-qubits=32 --benchmark-depth=32 --single test_stabilizer_t_cc_nn --samples=100 --measure-output=/var/log/qrack/"t_cc_nn_boil14_$(date +%F_%R_%S).log"
+time ./benchmarks --optimal --measure-shots=1024 --timeout=2000 --max-qubits=32 --benchmark-depth=32 --single test_stabilizer_t_cc_nn --samples=100 --measure-output=/var/log/qrack/"t_cc_nn_boil14_$(date +%F_%R_%S).log"
 export QRACK_MAX_PAGING_QB=15
-time ./benchmarks --optimal-single --timeout=2000 --max-qubits=32 --benchmark-depth=32 --single test_stabilizer_t_cc_nn --samples=100 --measure-output=/var/log/qrack/"t_cc_nn_boil15_$(date +%F_%R_%S).log"
+time ./benchmarks --optimal --measure-shots=1024 --timeout=2000 --max-qubits=32 --benchmark-depth=32 --single test_stabilizer_t_cc_nn --samples=100 --measure-output=/var/log/qrack/"t_cc_nn_boil15_$(date +%F_%R_%S).log"
 export QRACK_MAX_PAGING_QB=16
-time ./benchmarks --optimal-single --timeout=2000 --max-qubits=32 --benchmark-depth=32 --single test_stabilizer_t_cc_nn --samples=100 --measure-output=/var/log/qrack/"t_cc_nn_boil16_$(date +%F_%R_%S).log"
+time ./benchmarks --optimal --measure-shots=1024 --timeout=2000 --max-qubits=32 --benchmark-depth=32 --single test_stabilizer_t_cc_nn --samples=100 --measure-output=/var/log/qrack/"t_cc_nn_boil16_$(date +%F_%R_%S).log"
 export QRACK_MAX_PAGING_QB=17
-time ./benchmarks --optimal-single --timeout=2000 --max-qubits=32 --benchmark-depth=32 --single test_stabilizer_t_cc_nn --samples=100 --measure-output=/var/log/qrack/"t_cc_nn_boil17_$(date +%F_%R_%S).log"
+time ./benchmarks --optimal --measure-shots=1024 --timeout=2000 --max-qubits=32 --benchmark-depth=32 --single test_stabilizer_t_cc_nn --samples=100 --measure-output=/var/log/qrack/"t_cc_nn_boil17_$(date +%F_%R_%S).log"
 export QRACK_MAX_PAGING_QB=18
-time ./benchmarks --optimal-single --timeout=2000 --max-qubits=32 --benchmark-depth=32 --single test_stabilizer_t_cc_nn --samples=100 --measure-output=/var/log/qrack/"t_cc_nn_boil18_$(date +%F_%R_%S).log"
+time ./benchmarks --optimal --measure-shots=1024 --timeout=2000 --max-qubits=32 --benchmark-depth=32 --single test_stabilizer_t_cc_nn --samples=100 --measure-output=/var/log/qrack/"t_cc_nn_boil18_$(date +%F_%R_%S).log"
 export QRACK_MAX_PAGING_QB=19
-time ./benchmarks --optimal-single --timeout=2000 --max-qubits=32 --benchmark-depth=32 --single test_stabilizer_t_cc_nn --samples=100 --measure-output=/var/log/qrack/"t_cc_nn_boil19_$(date +%F_%R_%S).log"
+time ./benchmarks --optimal --measure-shots=1024 --timeout=2000 --max-qubits=32 --benchmark-depth=32 --single test_stabilizer_t_cc_nn --samples=100 --measure-output=/var/log/qrack/"t_cc_nn_boil19_$(date +%F_%R_%S).log"
 export QRACK_MAX_PAGING_QB=20
-time ./benchmarks --optimal-single --timeout=2000 --max-qubits=32 --benchmark-depth=32 --single test_stabilizer_t_cc_nn --samples=100 --measure-output=/var/log/qrack/"t_cc_nn_boil20_$(date +%F_%R_%S).log"
+time ./benchmarks --optimal --measure-shots=1024 --timeout=2000 --max-qubits=32 --benchmark-depth=32 --single test_stabilizer_t_cc_nn --samples=100 --measure-output=/var/log/qrack/"t_cc_nn_boil20_$(date +%F_%R_%S).log"
 export QRACK_MAX_PAGING_QB=21
-time ./benchmarks --optimal-single --timeout=2000 --max-qubits=32 --benchmark-depth=32 --single test_stabilizer_t_cc_nn --samples=100 --measure-output=/var/log/qrack/"t_cc_nn_boil21_$(date +%F_%R_%S).log"
+time ./benchmarks --optimal --measure-shots=1024 --timeout=2000 --max-qubits=32 --benchmark-depth=32 --single test_stabilizer_t_cc_nn --samples=100 --measure-output=/var/log/qrack/"t_cc_nn_boil21_$(date +%F_%R_%S).log"
 export QRACK_MAX_PAGING_QB=22
-time ./benchmarks --optimal-single --timeout=2000 --max-qubits=32 --benchmark-depth=32 --single test_stabilizer_t_cc_nn --samples=100 --measure-output=/var/log/qrack/"t_cc_nn_boil22_$(date +%F_%R_%S).log"
+time ./benchmarks --optimal --measure-shots=1024 --timeout=2000 --max-qubits=32 --benchmark-depth=32 --single test_stabilizer_t_cc_nn --samples=100 --measure-output=/var/log/qrack/"t_cc_nn_boil22_$(date +%F_%R_%S).log"
 export QRACK_MAX_PAGING_QB=23
-time ./benchmarks --optimal-single --timeout=2000 --max-qubits=32 --benchmark-depth=32 --single test_stabilizer_t_cc_nn --samples=100 --measure-output=/var/log/qrack/"t_cc_nn_boil23_$(date +%F_%R_%S).log"
+time ./benchmarks --optimal --measure-shots=1024 --timeout=2000 --max-qubits=32 --benchmark-depth=32 --single test_stabilizer_t_cc_nn --samples=100 --measure-output=/var/log/qrack/"t_cc_nn_boil23_$(date +%F_%R_%S).log"
 export QRACK_MAX_PAGING_QB=24
-time ./benchmarks --optimal-single --timeout=2000 --max-qubits=32 --benchmark-depth=32 --single test_stabilizer_t_cc_nn --samples=100 --measure-output=/var/log/qrack/"t_cc_nn_boil24_$(date +%F_%R_%S).log"
+time ./benchmarks --optimal --measure-shots=1024 --timeout=2000 --max-qubits=32 --benchmark-depth=32 --single test_stabilizer_t_cc_nn --samples=100 --measure-output=/var/log/qrack/"t_cc_nn_boil24_$(date +%F_%R_%S).log"
 export QRACK_MAX_PAGING_QB=25
-time ./benchmarks --optimal-single --timeout=2000 --max-qubits=32 --benchmark-depth=32 --single test_stabilizer_t_cc_nn --samples=100 --measure-output=/var/log/qrack/"t_cc_nn_boil25_$(date +%F_%R_%S).log"
+time ./benchmarks --optimal --measure-shots=1024 --timeout=2000 --max-qubits=32 --benchmark-depth=32 --single test_stabilizer_t_cc_nn --samples=100 --measure-output=/var/log/qrack/"t_cc_nn_boil25_$(date +%F_%R_%S).log"
 export QRACK_MAX_PAGING_QB=26
-time ./benchmarks --optimal-single --timeout=2000 --max-qubits=32 --benchmark-depth=32 --single test_stabilizer_t_cc_nn --samples=100 --measure-output=/var/log/qrack/"t_cc_nn_boil26_$(date +%F_%R_%S).log"
+time ./benchmarks --optimal --measure-shots=1024 --timeout=2000 --max-qubits=32 --benchmark-depth=32 --single test_stabilizer_t_cc_nn --samples=100 --measure-output=/var/log/qrack/"t_cc_nn_boil26_$(date +%F_%R_%S).log"
 
 ./run-tcc-nn-cube-pocl-26-1-down &
