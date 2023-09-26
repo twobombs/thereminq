@@ -20,7 +20,7 @@ export QRACK_MAX_PAGING_QB=32
 export QRACK_MAX_CPU_QB=32
 export QRACK_SEGMENT_GLOBAL_QB=2
 
-time ./benchmarks --optimal --single --max-qubits=32 --samples=1 test_qft_cosmology  --measure-output=/var/log/qrack/"measured_qft_$(date +%F_%R_%S).log"
+time ./benchmarks --optimal --measure-shots=1024 --single --max-qubits=32 --samples=1 test_qft_cosmology  --measure-output=/var/log/qrack/"measured_qft_$(date +%F_%R_%S).log"
 
-# time ./benchmarks --proc-stabilizer-qpager --layer-qunit-multi --max-qubits=33 --single --samples=10 test_qft_cosmology --measure-output=/var/log/qrack/"measured_qft_$(date +%F_%R_%S).log"
-# time ./benchmarks --optimal-cpu --layer-qunit-multi --max-qubits=33 --single --samples=1 test_qft_cosmology --measure-output=/var/log/qrack/"measured_qft_$(date +%F_%R_%S).log"
+# time ./benchmarks --optimal --measure-shots=1024 --max-qubits=33 --single --samples=10 test_qft_cosmology --measure-output=/var/log/qrack/"measured_qft_$(date +%F_%R_%S).log"
+# time ./benchmarks --optimal --measure-shots=1024 --max-qubits=33 --single --samples=1 test_qft_cosmology --measure-output=/var/log/qrack/"measured_qft_$(date +%F_%R_%S).log"
