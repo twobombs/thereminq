@@ -11,4 +11,4 @@ export QRACK_MAX_PAGING_QB=31
 export QRACK_MAX_CPU_QB=31
 export QRACK_SEGMENT_GLOBAL_QB=5
 
-cd /vcl-1.25 && ./vclrun /qrack/_build/benchmarks --optimal --single --max-qubits=31 --samples=1 test_qft_cosmology  --measure-output=/var/log/qrack/"measured_vcl_qft_$(date +%F_%R_%S).log"
+cd /vcl-1.25 && ./vclrun /qrack/_build/benchmarks --optimal --measure-shots=1024 --single --max-qubits=31 --samples=1 test_qft_cosmology  --measure-output=/var/log/qrack/"measured_vcl_qft_$(date +%F_%R_%S).log"
