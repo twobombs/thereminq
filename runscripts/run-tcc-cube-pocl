@@ -21,9 +21,9 @@ export QRACK_OCL_DEFAULT_DEVICE=3
 export QRACK_MAX_PAGING_QB=32
 export QRACK_MAX_ALLOC_MB=48000
 #
-time ./benchmarks --optimal --timeout=2000 --max-qubits=32 --benchmark-depth=8 --single test_stabilizer_t_cc --samples=100 --measure-output=/var/log/qrack/"t_cc_$(date +%F_%R_%S).log"
+time ./benchmarks --optimal --measure-shots=1024 --timeout=2000 --max-qubits=32 --benchmark-depth=8 --single test_stabilizer_t_cc --samples=100 --measure-output=/var/log/qrack/"t_cc_$(date +%F_%R_%S).log"
 #
 
-# export QRACK_OCL_DEFAULT_DEVICE=0 && export QRACK_MAX_PAGING_QB=33 && time ./benchmarks --proc-stabilizer-qpager --layer-qunit-multi --timeout=2000000 --max-qubits=49 --devices=0,0,0,0,0,0,0,0,2,2,2,2,1,1,1,1 --benchmark-depth=49 --single test_stabilizer_t_cc_nn --samples=100 --measure-output=/var/log/qrack/"t_cc_$(date +%F_%R_%S).log" &
+# export QRACK_OCL_DEFAULT_DEVICE=0 && export QRACK_MAX_PAGING_QB=33 && time ./benchmarks --optimal --measure-shots=1024 --timeout=2000000 --max-qubits=49 --devices=0,0,0,0,0,0,0,0,2,2,2,2,1,1,1,1 --benchmark-depth=49 --single test_stabilizer_t_cc_nn --samples=100 --measure-output=/var/log/qrack/"t_cc_$(date +%F_%R_%S).log" &
 #
 ./run-tcc-cube-pocl &
