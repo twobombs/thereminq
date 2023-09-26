@@ -20,4 +20,4 @@ export QRACK_OCL_DEFAULT_DEVICE=0
 # export QRACK_QUNIT_SEPARABILITY_THRESHOLD=0.3 && export QRACK_OCL_DEFAULT_DEVICE=0 && ./benchmarks --layer-qunit --proc-hybrid --timeout=2000000 --single --max-qubits=54 --benchmark-depth=20 test_noisy_sycamore --samples=100 --measure-output=/var/log/qrack/"supreme_$(date +%F_%R_%S).log"
 
 # test for container vs host compilation
-export CUDA_VISIBLE_DEVICES=0,1,2 && export QRACK_OCL_DEFAULT_DEVICE=0 && ./benchmarks --optimal --single --max-qubits=36 --benchmark-depth=7 --timeout=20000 test_stabilizer_t_cc_nn --measure-output=/var/log/qrack/"t_cc_nn_$(date +%F_%R_%S).log"
+export CUDA_VISIBLE_DEVICES=0,1,2 && export QRACK_OCL_DEFAULT_DEVICE=0 && ./benchmarks --optimal --measure-shots=1024 --single --max-qubits=36 --benchmark-depth=7 --timeout=20000 test_stabilizer_t_cc_nn --measure-output=/var/log/qrack/"t_cc_nn_$(date +%F_%R_%S).log"
