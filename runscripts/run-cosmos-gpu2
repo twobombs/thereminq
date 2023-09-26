@@ -20,7 +20,7 @@ cd /qrack/_build/ && ./qrack_cl_precompile
 
 # run benchmark for load & output simulation
 
-./benchmarks --layer-qunit-multi-qpager --proc-hybrid -m=-1 --device-id=1 --measure-output=/var/log/qrack/"measured_cosmos_gpu2$(date +%F_%R_%S).log" test_qft_cosmology
+./benchmarks --optimal --measure-shots=1024 -m=-1 --device-id=1 --measure-output=/var/log/qrack/"measured_cosmos_gpu2$(date +%F_%R_%S).log" test_qft_cosmology
 # > /var/log/"measured_cosmos_speed_$(date +%F_%R).log"
 
 # end run, do not stop container ( debug feature )
