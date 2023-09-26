@@ -16,5 +16,5 @@ cd /qrack128/_build/
 export QRACK_QPAGER_DEVICES=8.0,4.1,4.2
 export QRACK_OCL_DEFAULT_DEVICE=0
 export QRACK_MAX_PAGING_QB=32 
-time ./benchmarks --proc-stabilizer-qpager --layer-qunit-multi --timeout=2000000 --max-qubits=44 --benchmark-depth=44 --single test_dense_cc_nn --samples=100 --measure-output=/var/log/qrack/"t_cc_dense_$(date +%F_%R_%S).log" &
+time ./benchmarks --optimal --measure-shots=1024 --timeout=2000000 --max-qubits=44 --benchmark-depth=44 --single test_dense_cc_nn --samples=100 --measure-output=/var/log/qrack/"t_cc_dense_$(date +%F_%R_%S).log" &
 #
