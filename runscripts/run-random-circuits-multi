@@ -12,12 +12,12 @@
 #export QRACK_MAX_PAGE_QB=29
 #
 export QRACK_OCL_DEFAULT_DEVICE=0 
-time ./benchmarks --optimal-single --timeout=2000 --max-qubits=27 --benchmark-depth=27 --single test_random_circuit_sampling --benchmark-resamples=10 --samples=10 --measure-output=/var/log/qrack/"circuit_sampling_$(date +%F_%R_%S).log" &
+time ./benchmarks --optimal --measure-shots=1024 --timeout=2000 --max-qubits=27 --benchmark-depth=27 --single test_random_circuit_sampling --benchmark-resamples=10 --samples=10 --measure-output=/var/log/qrack/"circuit_sampling_$(date +%F_%R_%S).log" &
 
 export QRACK_OCL_DEFAULT_DEVICE=1
-time ./benchmarks --optimal-single --timeout=2000 --max-qubits=27 --benchmark-depth=27 --single test_random_circuit_sampling --benchmark-resamples=10 --samples=10 --measure-output=/var/log/qrack/"circuit_sampling_$(date +%F_%R_%S).log" &
+time ./benchmarks --optimal --measure-shots=1024 --timeout=2000 --max-qubits=27 --benchmark-depth=27 --single test_random_circuit_sampling --benchmark-resamples=10 --samples=10 --measure-output=/var/log/qrack/"circuit_sampling_$(date +%F_%R_%S).log" &
 
 export QRACK_OCL_DEFAULT_DEVICE=2
-time ./benchmarks --optimal-single --timeout=2000 --max-qubits=27 --benchmark-depth=27 --single test_random_circuit_sampling --benchmark-resamples=10 --samples=10 --measure-output=/var/log/qrack/"circuit_sampling_$(date +%F_%R_%S).log" &
+time ./benchmarks --optimal --measure-shots=1024 --timeout=2000 --max-qubits=27 --benchmark-depth=27 --single test_random_circuit_sampling --benchmark-resamples=10 --samples=10 --measure-output=/var/log/qrack/"circuit_sampling_$(date +%F_%R_%S).log" &
 
 
