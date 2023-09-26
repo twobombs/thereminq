@@ -18,6 +18,6 @@ export QRACK_MAX_CPU_QUBITS=40
 export QRACK_MAX_ALLOC_MB=22000000
 export QRACK_SEGMENT_GLOBAL_QB=0
 #
-time ./benchmarks --optimal-cpu --timeout=2000 --max-qubits=40 --benchmark-depth=400 --single test_stabilizer_t_cc_nn --samples=1 --measure-output=/var/log/qrack/"t_cc_nn_$(date +%F_%R_%S).log"
+time ./benchmarks --optimal-cpu --measure-shots=1024 --timeout=2000 --max-qubits=40 --benchmark-depth=400 --single test_stabilizer_t_cc_nn --samples=1 --measure-output=/var/log/qrack/"t_cc_nn_$(date +%F_%R_%S).log"
 #
 
