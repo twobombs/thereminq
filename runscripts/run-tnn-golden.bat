@@ -7,4 +7,4 @@ set QRACK_MAX_PAGING_QB=29
 set QRACK_MAX_ALLOC_MB=10000
 set QRACK_MAX_PAGE_QB=27
 
-qrack_windows_x86_benchmarks.exe --optimal --timeout=2000 --max-qubits=36 --benchmark-depth=20 --single test_stabilizer_t_cc_nn --benchmark-resamples=10 --samples=10 --measure-output=t_cc_nn.log
+qrack_windows_x86_benchmarks.exe --optimal --measure-shots=1024 --timeout=2000 --max-qubits=36 --benchmark-depth=20 --single test_stabilizer_t_cc_nn --benchmark-resamples=10 --samples=10 --measure-output=t_cc_nn.log
