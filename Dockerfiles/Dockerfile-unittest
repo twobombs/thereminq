@@ -2,7 +2,7 @@ FROM twobombs/thereminq
 
 # dockerhub doesn't work 
 
-RUN  ./qrack/_build/unittest --layer-qtensornetwork >/dev/null 2>&1
+RUN  ./qrack/_build/unittest --optimal-cpu --layer-qtensornetwork >/dev/null 2>&1
 
 EXPOSE 22 80 8801-8811
 ENTRYPOINT /qrack/_build/unittest
