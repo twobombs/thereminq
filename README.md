@@ -72,12 +72,17 @@ All specialized workloads are listed [here](https://github.com/twobombs/theremin
 
 ### Experimental `bqp=bpp stabilizer_t_nn` high qbit workloads
 ```bash
-docker run --gpus all --device=/dev/dri:/dev/dri -ti --mount type=bind,source=/var/log/qrack,target=/var/log/qrack twobombs/thereminq bash /root/run-tnn-gpu1
+docker run --gpus all \
+--device=/dev/dri:/dev/dri \
+-ti \
+--mount type=bind,source=/var/log/qrack,target=/var/log/qrack twobombs/thereminq bash /root/run-tnn-gpu1
 ```
 
 ### Archived: Quantum Inspired Qimcifa high qbit workloads ( BigINT OpenCL - Shors' Monte Carlo on 18.04 )
 ```bash
-docker run --gpus all --device=/dev/dri:/dev/dri -d twobombs/thereminq:qimcifa 
+docker run --gpus all \
+--device=/dev/dri:/dev/dri \
+-d twobombs/thereminq:qimcifa 
  ```
  
 ![Screenshot from 2023-08-03 19-47-00](https://github.com/twobombs/thereminq/assets/12692227/6204d15a-5035-40d8-acb4-13c481c89f60)
