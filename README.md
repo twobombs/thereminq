@@ -8,11 +8,10 @@
 
 -------------
 
-### ThereminQ orchestrates a suite of best-of-class tools designed to control, extend and visualize data emanating to and from Quantum circuits using Qrack, ELK, Tipsy and Jupyter on CUDA and OpenCL accelerators.
+### ThereminQ orchestrates a suite of best-of-class tools designed to control, extend and visualize data emanating to and from Quantum circuits using Qrack, Tipsy and Jupyter on CUDA and OpenCL accelerators.
 
 - [Qrack - Qbit OpenCL Hardware Emulation Stack](https://github.com/vm6502q/qrack)
 - [Bonsai - Stellar data visualizer for QFT, Sycamore, TNN_d and SDRP validation](https://github.com/treecode/Bonsai)
-- [Elastic Search/Lucene Interface for Big Data interconnect](https://www.elastic.co/downloads/)
 
 Look also at the following Python enabled images
 - [Boards - a collection of QC Jupiter notebooks](https://github.com/twobombs/thereminq-tensors)
@@ -28,12 +27,10 @@ Installation setup and usage scenarios can be glanced at [here](https://gist.git
 
 -------------
 
-### Build on CUDA-CLuster [stack](https://github.com/twobombs/cudacluster )
-### and [deploy-nvidia-docker](https://github.com/twobombs/deploy-nvidia-docker) WebUI
-- WebVNC, CUDA 11.4+ & OpenCL 1.2+ with NV, AMD & Intel HW support
+### Build on  [deploy-nvidia-docker](https://github.com/twobombs/deploy-nvidia-docker) and [CUDA-CLuster](https://github.com/twobombs/cudacluster )
+- WebVNC, CUDA 12+ & OpenCL 1.2+ with NV, AMD & Intel HW support
 
 <img width="1435" alt="Screenshot 2021-05-04 at 15 10 27" src="https://user-images.githubusercontent.com/12692227/117008533-21d79280-aceb-11eb-993a-efa7d1123a1f.png">
-
 
 Initial vnc password is `00000000`
 - noVNC website is avaliable at port `6080` 
