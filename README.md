@@ -96,10 +96,10 @@ docker run --gpus all \
 To prevent these workload from taking up all resources of the system it is good to take the following measures
 
 - System memory should be at least the amount of RAM where the statevector will fit into
-- From 30 qubits ( eg: QFT ) count 8GB RAM Memory (and 4 cores with POCL) doubling every additional qubit 
-- Start an instance with a limit for memory and/or swap. eg docker: '-m 16g --memory-swap 32g'
-- Disable OOM killers in the kernel and/or the container orchestrator ( --oom-kill-disable )
-- OOM host change: add vm.overcommit_memory = 1 and vm.oom-kill = 0 in /etc/sysctl.conf
+- From 30 qubits ( eg: QFT ) count 8GB RAM Memory (and 4 cores with `POCL`) doubling every additional qubit 
+- Start an instance with a limit for memory and/or swap. eg docker: `-m 16g --memory-swap 32g`
+- Disable OOM killers in the kernel and/or the container orchestrator ( `--oom-kill-disable` )
+- OOM host change: add `vm.overcommit_memory` = 1 and `vm.oom-kill = 0` in `/etc/sysctl.conf`
 - Swap should be a dedicated and fast drive where possible NVMe RAID, equal to the bandwith of the GPU/PCIe<br> <br>
 
 -------------
