@@ -78,7 +78,7 @@ docker run --gpus all \
 --mount type=bind,source=/var/log/qrack,target=/var/log/qrack twobombs/thereminq bash /root/run-tnn-gpu1
 ```
 
-### Archived: Quantum Inspired Qimcifa high qbit workloads ( BigINT OpenCL - Shors' Monte Carlo on 18.04 )
+### Quantum Inspired Qimcifa high qbit workloads ( BigINT OpenCL - Shors' Monte Carlo )
 ```bash
 docker run --gpus all \
 --device=/dev/dri:/dev/dri \
