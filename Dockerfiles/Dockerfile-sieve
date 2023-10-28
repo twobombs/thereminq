@@ -5,7 +5,7 @@ RUN apt update && apt install -y gnome-calculator xxd mathomatic-primes mathomat
 
 # install CUDAsieve prime generator
 RUN apt update && apt install -y libboost-all-dev libprimesieve-dev && apt clean all
-RUN git clone https://github.com/curtisseizert/CUDASieve.git
+RUN git clone --depth=1 https://github.com/curtisseizert/CUDASieve.git
 RUN ln /usr/local/cuda /opt/cuda
 RUN cd CUDASieve && mkdir obj && make && make test && make samples
 
@@ -16,9 +16,9 @@ RUN svn checkout https://svn.code.sf.net/p/mtsieve/svn/ mtsieve-svn
 RUN cd mtsieve-svn && make
 
 # vm6502q/qimcifa has an LGPL license. Report (re)use of code to Dan Strano
-# RUN git clone https://github.com/vm6502q/qimcifa.git && mv qimcifa qimcifa64 && cd /qimcifa64 && cmake -DBIG_INT_BITS=64 . && make
-# RUN git clone https://github.com/vm6502q/qimcifa.git && mv qimcifa qimcifa128 && cd /qimcifa128 && cmake -DBIG_INT_BITS=128 . && make
-# RUN git clone https://github.com/vm6502q/qimcifa.git && mv qimcifa qimcifa512 && cd /qimcifa512 && cmake -DBIG_INT_BITS=512 . && make
+# RUN git clone --depth=1 https://github.com/vm6502q/qimcifa.git && mv qimcifa qimcifa64 && cd /qimcifa64 && cmake -DBIG_INT_BITS=64 . && make
+# RUN git clone --depth=1 https://github.com/vm6502q/qimcifa.git && mv qimcifa qimcifa128 && cd /qimcifa128 && cmake -DBIG_INT_BITS=128 . && make
+# RUN git clone --depth=1 https://github.com/vm6502q/qimcifa.git && mv qimcifa qimcifa512 && cd /qimcifa512 && cmake -DBIG_INT_BITS=512 . && make
 
 RUN mkdir /var/log/sieve
 
