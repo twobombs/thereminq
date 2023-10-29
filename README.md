@@ -14,8 +14,8 @@
 - [Bonsai - Stellar data visualizer for QFT, Sycamore, TNN_d and SDRP validation](https://github.com/treecode/Bonsai)
 
 Look also at the following Python enabled images
-- [Boards - a collection of QC Jupiter notebooks](https://github.com/twobombs/thereminq-tensors)
-- [Shors' and Qimcifa](https://github.com/twobombs/thereminq-tensors/blob/master/README.md#shors-rsa-ssh-keypair-factorization-and-2-primes-test-loop)
+- [VDI with a collection of QC Jupiter notebooks](https://github.com/twobombs/thereminq-tensors)
+- [Factoring with Shors' and Qimcifa](https://github.com/twobombs/thereminq-tensors/blob/master/README.md#shors-rsa-ssh-keypair-factorization-and-2-primes-test-loop)
 
 Other tags contain
 - [QUDA](http://lattice.github.io/quda/)
