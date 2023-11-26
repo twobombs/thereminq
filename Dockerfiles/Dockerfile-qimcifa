@@ -32,9 +32,9 @@ RUN git clone --depth=1 --branch opencl_bigint https://github.com/vm6502q/qimcif
 RUN mkdir /var/log/shors && mkdir /var/log/qimcifa
 
 # vnc settings
-COPY xorg.conf /usr/share/X11/xorg.conf.d/
-COPY passwd /root/.vnc/
-COPY xstartup /root/.vnc/
+COPY configfiles/xorg.conf /usr/share/X11/xorg.conf.d/
+COPY configfiles/passwd /root/.vnc/
+COPY configfiles/xstartup /root/.vnc/
 RUN chmod 755 /root/.vnc/xstartup
 
 EXPOSE 22 80 8801-8811
