@@ -10,17 +10,17 @@
 #export QRACK_QUNIT_SEPARABILITY_THRESHOLD=0.40
 #export QRACK_QPAGER_DEVICES=12.2
 #export QRACK_QPAGER_DEVICES_HOST_POINTER=12.0,1.1
-export QRACK_OCL_DEFAULT_DEVICE=0
+#export QRACK_OCL_DEFAULT_DEVICE=2
 #export QRACK_MAX_ALLOC_MB=12000
 
 #export QRACK_MAX_PAGING_QB=26
-export QRACK_MAX_PAGE_QB=25
+#export QRACK_MAX_PAGE_QB=26
 
 #export QRACK_SEGMENT_GLOBAL_QB=2
 
 # run benchmark for load & output simulation
 
-./benchmarks --optimal-single --layer-qtensornetwork --proc-bdt-hybrid --devices=0,0,0,0 --use-host-dma --single --measure-shots=10000 -m=28 --samples=1 --measure-output=/var/log/qrack/"measured_cosmos_$(date +%F_%R_%S).log" test_qft_cosmology
+./benchmarks --optimal-cpu --layer-qtensornetwork --proc-bdt-hybrid --use-host-dma --measure-shots=10000 -m=30 --single --samples=1 --measure-output=/var/log/qrack/"measured_cosmos_$(date +%F_%R_%S).log" test_qft_cosmology
 
 # sleep 5
 # ./benchmarks --optimal --measure-shots=1024 --proc-stabilizer-qpager -m=27 --device-id=1 --single --samples=1000 --measure-output=/var/log/qrack/"measured_cosmos_$(date +%F_%R_%S).log" test_qft_cosmology
