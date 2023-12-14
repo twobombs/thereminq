@@ -20,7 +20,7 @@ export QRACK_MAX_PAGE_QB=26
 
 # run benchmark for load & output simulation
 
-./benchmarks --optimal --layer-qtensornetwork --proc-bdt-hybrid --devices=2,2,2,2,2,2,1,1,1,1,1,1 --use-host-dma --measure-shots=10000 -m=30 --single --samples=10 --measure-output=/var/log/qrack/"measured_cosmos_graph_30_$(date +%F_%R_%S).log" test_qft_cosmology
+./benchmarks --optimal --layer-qtensornetwork --proc-bdt-hybrid --devices=2,2,2,2,2,2,1,1,1,1,1,1 --use-host-dma --measure-shots=10000 -m=30 --single --benchmark-depth=33 --samples=10 --measure-output=/var/log/qrack/"measured_cosmos_graph_30_$(date +%F_%R_%S).log" test_qft_cosmology
 
 # sleep 5
 # ./benchmarks --optimal --measure-shots=1024 --proc-stabilizer-qpager -m=27 --device-id=1 --single --samples=1000 --measure-output=/var/log/qrack/"measured_cosmos_$(date +%F_%R_%S).log" test_qft_cosmology
