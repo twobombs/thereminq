@@ -1,7 +1,4 @@
 #!/bin/bash
-# start the SimulaQron, ProjectQ, Qrack train
-# simulaqron set backend projectq &
-# simulaqron &
 
 # precompile cl kernels for Qrack	
 cd /qrack/_build/ && ./qrack_cl_precompile
