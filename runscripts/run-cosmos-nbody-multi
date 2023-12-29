@@ -1,11 +1,7 @@
 #!/bin/bash
 
-# start the SimulaQron, ProjectQ, Qrack train
-# simulaqron set backend projectq &
-# simulaqron &
-
 # precompile cl kernels for Qrack	
-# cd /qrack/_build/ && ./qrack_cl_precompile
+cd /qrack/_build/ && ./qrack_cl_precompile
 
 export QRACK_QUNIT_SEPARABILITY_THRESHOLD=0.40
 #export QRACK_QPAGER_DEVICES=12.2
