@@ -1,4 +1,5 @@
-#
+#!/bin/bash
+
 # this example script creates a mdadm array from 1 NVME disks and add
 # them as a compressible swap to the system with VRAM as bcache buffer
 # data on all VRAM/NVME disks will be destroyed. vram requirement in line 24
