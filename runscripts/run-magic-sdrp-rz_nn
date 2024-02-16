@@ -1,0 +1,18 @@
+#!/bin/bash
+
+# precompile cl kernels for Qrack	
+cd /qrack/_build/ && ./qrack_cl_precompile
+
+#export QRACK_QUNIT_SEPARABILITY_THRESHOLD=0.40
+#export QRACK_QPAGER_DEVICES=12.2
+#export QRACK_QPAGER_DEVICES_HOST_POINTER=12.0,1.1
+
+export QRACK_OCL_DEFAULT_DEVICE=1
+#export QRACK_MAX_ALLOC_MB=12000
+
+#export QRACK_MAX_PAGING_QB=26
+export QRACK_MAX_PAGE_QB=26
+#export QRACK_SEGMENT_GLOBAL_QB=2
+
+# run benchmark for magic-sdrp-rz_nn
+./benchmarks --layer-qengine --proc-stabilizer --samples=1 --max-qubits=64 --benchmark-max-magic=2 test_stabilizer_rz_nn
