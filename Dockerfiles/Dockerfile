@@ -7,7 +7,7 @@ RUN cp -r /qrack /qrack128cuda
 RUN cp -r /qrack /qrack64
 RUN cp -r /qrack /qrack16
 RUN cp -r /qrack /qrack8
-RUN git clone --depth=1 https://github.com/twobombs/thereminq.git && git clone --depth=1 https://github.com/LeventErkok/crackNum.git && git clone --depth=1 https://github.com/pnnl/QASMBench.git
+RUN git clone --depth=1 https://github.com/twobombs/thereminq.git && git clone --depth=1 https://github.com/pnnl/QASMBench.git
 
 # install features
 RUN apt-get update && apt-get -y install libcutensor1 libcutensor-dev libcutensor-doc build-essential cmake opencl-headers openssh-server wget vim-common opencl-headers curl libfreetype6-dev autotools-dev libicu-dev libbz2-dev libboost-all-dev && apt-get clean all
@@ -45,6 +45,7 @@ ENV LANG="en_US.UTF-8"
 
 # install haskell, z3, num-utils, crackNum + dependancies
 RUN apt-get install z3 num-utils && apt clean all
+RUN wget https://github.com/LeventErkok/crackNum/archive/refs/tags/v3.3.tar.gz && tar -xzvf v3.3.tar.gz && mv crackNum-3.3 crackNum
 RUN curl -sSL https://get.haskellstack.org/ | sh
 RUN cd crackNum && stack path --local-bin && stack setup && stack init && stack build && stack install && stack clean && rm -R /crackNum
 
