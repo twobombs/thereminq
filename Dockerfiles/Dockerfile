@@ -2,11 +2,7 @@ FROM twobombs/cudacluster
 
 # clone repos
 RUN git clone --depth=1 --recursive https://github.com/unitaryfund/qrack.git
-RUN cp -r /qrack /qrack128
-RUN cp -r /qrack /qrack128cuda
-RUN cp -r /qrack /qrack64
-RUN cp -r /qrack /qrack16
-RUN cp -r /qrack /qrack8
+RUN cp -r /qrack /qrack128 && cp -r /qrack /qrack128cuda && cp -r /qrack /qrack64 && cp -r /qrack /qrack16 && cp -r /qrack /qrack8
 RUN git clone --depth=1 https://github.com/twobombs/thereminq.git && git clone --depth=1 https://github.com/pnnl/QASMBench.git
 
 # install features
