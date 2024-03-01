@@ -31,6 +31,9 @@ RUN git clone --depth=1 --branch opencl_bigint https://github.com/vm6502q/qimcif
 
 RUN mkdir /var/log/shors && mkdir /var/log/qimcifa
 
+# git clone thereminq-tensors scripts 
+RUN git clone --depth=1 https://github.com/twobombs/thereminq-tensors.git
+
 # vnc settings
 COPY configfiles/xorg.conf /usr/share/X11/xorg.conf.d/
 COPY configfiles/passwd /root/.vnc/
