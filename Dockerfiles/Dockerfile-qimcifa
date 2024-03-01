@@ -19,8 +19,8 @@ RUN apt update && apt install -y cmake xxd nodejs gnome-calculator mathomatic-pr
 # RUN git clone --depth=1 https://github.com/openssl/openssl.git && cd openssl && ./Configure enable-weak-ssl-ciphers -DOPENSSL_TLS_SECURITY_LEVEL=0 && make && make install
 
 # vm6502q/qimcifa has an LGPL license. Report (re)use of code to Dan Strano
-RUN git clone --depth=1 https://github.com/vm6502q/qimcifa.git && mv qimcifa qimcifa64 && cd /qimcifa64 && cmake -DBIG_INT_BITS=64 . && make
-# RUN git clone --depth=1 https://github.com/vm6502q/qimcifa.git && mv qimcifa qimcifa128 && cd /qimcifa128 && cmake -DBIG_INT_BITS=128 . && make
+# RUN git clone --depth=1 https://github.com/vm6502q/qimcifa.git && mv qimcifa qimcifa64 && cd /qimcifa64 && cmake -DBIG_INT_BITS=64 . && make
+RUN git clone --depth=1 https://github.com/vm6502q/qimcifa.git && mv qimcifa qimcifa128 && cd /qimcifa128 && cmake -DBIG_INT_BITS=128 . && make
 # RUN git clone --depth=1 https://github.com/vm6502q/qimcifa.git && mv qimcifa qimcifa512 && cd /qimcifa512 && cmake -DBIG_INT_BITS=512 . && make
 # old bigint build
 RUN git clone --depth=1 --branch opencl_bigint https://github.com/vm6502q/qimcifa.git && mv qimcifa qimcifa-bigint && cd qimcifa-bigint && cmake . && make
