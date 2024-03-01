@@ -14,7 +14,7 @@ RUN cp /usr/share/novnc/vnc.html /usr/share/novnc/index.html && mkdir /root/.vnc
 RUN apt update && apt install -y cmake xxd nodejs gnome-calculator mathomatic-primes mathomatic libssl-dev libgmp3-dev libgtest-dev gnome-calculator mathomatic-primes mathomatic libssl-dev libboost-all-dev opencl-headers xxd libcanberra-gtk-module gtk2-engines-pixbuf libcanberra-gtk3-module && apt clean all
 # npm libpng12-0
 
-# nerfed rsa prime generators install
+# nerfed rsa prime generators install ( no need when RSA keys > 64 bits )
 # RUN git clone --depth=1 https://github.com/openssh/openssh-portable.git && cd openssh-portable && autoreconf && sed -i 's/#define SSH_RSA_MINIMUM_MODULUS_SIZE.*/#define SSH_RSA_MINIMUM_MODULUS_SIZE   1024/g' sshkey.h && ./configure && make && mkdir /var/empty && make tests && make install
 # RUN git clone --depth=1 https://github.com/openssl/openssl.git && cd openssl && ./Configure enable-weak-ssl-ciphers -DOPENSSL_TLS_SECURITY_LEVEL=0 && make && make install
 
