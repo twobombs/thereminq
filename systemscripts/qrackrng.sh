@@ -2,6 +2,7 @@
 #
 # set default device when multigpu; every GPU can generate a stream to be consolidated to /tmp/qrackrng
 export QRACK_OCL_DEFAULT_DEVICE=0
+
 # 24 qubit qft fluctuations are used as rng feed
 ./benchmarks --optimal --measure-shots=1 -m=24 --samples=999999999 --single --measure-output /tmp/test_qft_cosmology.txt test_qft_cosmology &
 
