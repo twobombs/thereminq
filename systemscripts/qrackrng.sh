@@ -13,6 +13,6 @@ tail -f /tmp/test_qft_cosmology.txt | hexdump -v -e '1/4 "%08x"' -e '"\n"' | xxd
 losetup -d /dev/loop99 > /dev/null
 losetup /dev/loop99 /tmp/qrackrng
 
-# tail output of rng device
-tail -f /dev/qrackrng
+# tail output of qrackrng device
+tail -f /dev/loop99
 #
