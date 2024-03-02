@@ -1,5 +1,5 @@
 #!/bin/bash
-#
+# a qft qrack random number generator written as a PoC in bash 
 # set default device when multigpu; every GPU can generate a stream to be consolidated to /tmp/qrackrng
 export QRACK_OCL_DEFAULT_DEVICE=0
 
@@ -7,7 +7,8 @@ export QRACK_OCL_DEFAULT_DEVICE=0
 ./benchmarks --optimal --binary-output --measure-shots=1 -m=24 --samples=999999999 --single --measure-output /tmp/test_qft_cosmology.txt test_qft_cosmology &
 
 # convert decimal qft fluctuations to hex converted binary output
-tail -f /tmp/test_qft_cosmology.txt | hexdump -v -e '1/4 "%08x"' -e '"\n"' | xxd -r -p > /tmp/qrackrng &
+# tail -f /tmp/test_qft_cosmology.txt | hexdump -v -e '1/4 "%08x"' -e '"\n"' | xxd -r -p /tmp/qrackrng &
+tail -f test_qft_cosmology.txt | tr -d '\n' | xxd -r -p > /tmp/qrackrng &
 
 # disconnect & setup loop device with qrackrng output 
 losetup -d /dev/loop99 > /dev/null
