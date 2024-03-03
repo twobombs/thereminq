@@ -4,7 +4,7 @@ echo extracting 200M of entropy
 
 head -c 200M /dev/urandom | split -b 20M
 
-echo compressing 200M of entropy using all the threads
+echo compressing all 20MB chunks of entropy using all the threads
 
 tar -c --use-compress-program=pigz -f xaa.tar.gz xaa &
 tar -c --use-compress-program=pigz -f xab.tar.gz xab &
