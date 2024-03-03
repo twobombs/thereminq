@@ -12,6 +12,7 @@
 
 - [Qrack - Qbit OpenCL Hardware Emulation Stack](https://github.com/vm6502q/qrack)
 - [Bonsai - Stellar data visualizer for QFT, Sycamore, TNN_d and SDRP validation](https://github.com/treecode/Bonsai)
+- [Qimcifa - Quantum-inspired Monte Carlo integer factoring algorithm](https://github.com/vm6502q/qimcifa)
 
 Look also at the following Python enabled images
 - [VDI with a collection of QC Jupiter notebooks](https://github.com/twobombs/thereminq-tensors)
