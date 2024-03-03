@@ -4,7 +4,7 @@
 # and qimcifa on C ( which might eat the host ) 
 #
 export DISPLAY=:0 && gnome-calculator &
-export DISPLAY=:0 && google-chrome-stable --disable-fre --no-default-browser-check --no-first-run --no-sandbox --password-store=basic https://www.mobilefish.com/services/rsa_key_generation/rsa_key_generation.php &
+export DISPLAY=:0 && google-chrome-stable --disable-fre --no-default-browser-check --no-first-run --no-sandbox --password-store=basic https://www.mobilefish.com/services/rsa_key_generation/rsa_key_generation.php https://bigprimes.org/RSA-challenge  &
 export DISPLAY=:0 && gnome-terminal &
 
 export DISPLAY=:0&&xterm -e "xset s off"
