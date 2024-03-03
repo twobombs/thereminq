@@ -76,14 +76,14 @@ docker run --gpus all \
 --mount type=bind,source=/var/log/qrack,target=/var/log/qrack twobombs/thereminq bash /root/run-tnn-gpu1
 ```
 
-### Quantum Inspired Qimcifa high qbit workloads ( BigINT OpenCL - Shors' Monte Carlo )
+### Quantum Inspired Qimcifa high qbit workloads 
 ```bash
 docker run --gpus all \
 --device=/dev/dri:/dev/dri \
 -d twobombs/thereminq:qimcifa 
  ```
- 
-![Screenshot from 2023-08-03 19-47-00](https://github.com/twobombs/thereminq/assets/12692227/6204d15a-5035-40d8-acb4-13c481c89f60)
+ ![Screenshot from 2024-03-03 12-51-11](https://github.com/twobombs/thereminq/assets/12692227/1e5bc408-34a8-4306-b469-e36d0eb8ff08)
+
 
 -------------
 
