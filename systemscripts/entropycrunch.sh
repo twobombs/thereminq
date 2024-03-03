@@ -1,4 +1,5 @@
 #!/bin/bash
+# this is a standard /dev/urandom entropy test
 
 echo extracting 200M of entropy
 
