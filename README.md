@@ -76,7 +76,7 @@ docker run --gpus all \
 --mount type=bind,source=/var/log/qrack,target=/var/log/qrack twobombs/thereminq bash /root/run-tnn-gpu1
 ```
 
-### Quantum Inspired Qimcifa high qbit workloads - [Qrackmin](https://github.com/twobombs/qrackmin) base iamge - CLI only
+### Quantum Inspired Qimcifa high qbit workloads - [Qrackmin](https://github.com/twobombs/qrackmin) base image - CLI only
 ```bash
 docker run --gpus all \
 --device=/dev/dri:/dev/dri \
