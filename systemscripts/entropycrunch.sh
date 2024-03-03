@@ -2,7 +2,7 @@
 
 echo extracting 200M of entropy
 
-head -c 200M /dev/urandom | hexdump -v -e '1/4 "%08x"' | split -b 20M
+head -c 200M /dev/urandom | split -b 20M
 
 echo compressing 200M of entropy using all the threads
 
