@@ -17,8 +17,9 @@ RUN cd mtsieve-svn && make
 
 # vm6502q/qimcifa has an LGPL license. Report (re)use of code to Dan Strano
 # RUN git clone --depth=1 https://github.com/vm6502q/qimcifa.git && mv qimcifa qimcifa64 && cd /qimcifa64 && cmake -DBIG_INT_BITS=64 . && make
-RUN git clone --depth=1 https://github.com/vm6502q/qimcifa.git && mv qimcifa qimcifa128 && cd /qimcifa128 && cmake -DBIG_INT_BITS=128 -DUSE_GMP=OFF -DUSE_BOOST=OFF . && make
-# RUN git clone --depth=1 https://github.com/vm6502q/qimcifa.git && mv qimcifa qimcifa512 && cd /qimcifa512 && cmake -DBIG_INT_BITS=512 . && make
+RUN git clone --depth=1 https://github.com/vm6502q/qimcifa.git && mv qimcifa qimcifa128 && cd /qimcifa128 && cmake -DBIG_INT_BITS=128 . && make
+RUN git clone --depth=1 https://github.com/vm6502q/qimcifa.git && mv qimcifa qimcifa512 && cd /qimcifa512 && cmake -DBIG_INT_BITS=512 . && make
+RUN git clone --depth=1 https://github.com/vm6502q/qimcifa.git && mv qimcifa qimcifa1024 && cd /qimcifa1024 && cmake -DBIG_INT_BITS=1024 . && make
 # old bigint build
 RUN git clone --depth=1 --branch opencl_bigint https://github.com/vm6502q/qimcifa.git && mv qimcifa qimcifa-bigint && cd qimcifa-bigint && cmake . && make
 
