@@ -1,7 +1,7 @@
 FROM twobombs/thereminq:dev
 
 # install CPU prime generator
-RUN apt update && apt install -y gnome-calculator xxd mathomatic-primes mathomatic libssl-dev cmake && apt clean all
+RUN apt update && apt install -y gnome-calculator xxd mathomatic-primes mathomatic libssl-dev pybind11-dev cmake && apt clean all
 
 # install CUDAsieve prime generator
 RUN apt update && apt install -y libboost-all-dev libprimesieve-dev && apt clean all
