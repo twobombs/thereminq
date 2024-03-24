@@ -25,7 +25,7 @@ export QRACK_QPAGER_DEVICES=16.0
 # place default OCL device outside scope of 4 cards
 # each card has 10GB reserved for the state vector
 export QRACK_OCL_DEFAULT_DEVICE=4
-export QRACK_QPAGER_DEVICES=10.1,10.2,10.0,10.3
+export QRACK_QPAGER_DEVICES=10.3,10.2,10.1,10.0
 ./benchmarks --optimal --layer-qtensornetwork --proc-bdt-hybrid --measure-shots=10000 -m=31 --single --samples=1 --measure-output=/var/log/qrack/"measured_cosmos_$(date +%F_%R_%S).log" test_qft_cosmology 
 
 # separate run (disabled)
