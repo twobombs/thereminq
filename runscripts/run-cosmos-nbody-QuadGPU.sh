@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # precompile cl kernels for Qrack	
-#cd /qrack/_build/ && ./qrack_cl_precompile
+./qrack_cl_precompile
 
 #export QRACK_QUNIT_SEPARABILITY_THRESHOLD=0.40
 #export QRACK_QPAGER_DEVICES=10.3,10.0,10.1,10.2
