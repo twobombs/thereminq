@@ -8,12 +8,12 @@
 #export QRACK_OCL_DEFAULT_DEVICE=3
 
 # default settings for whole run
-export QRACK_QPAGER_DEVICES_HOST_POINTER=10.0,1.1
-export QRACK_MAX_ALLOC_MB=10000
+export QRACK_QPAGER_DEVICES_HOST_POINTER=8.0,1.1
+export QRACK_MAX_ALLOC_MB=56000
 
 export QRACK_MAX_PAGING_QB=32
 export QRACK_MAX_PAGE_QB=27
-export QRACK_SEGMENT_GLOBAL_QB=2
+export QRACK_SEGMENT_GLOBAL_QB=6
 
 # run benchmark for load & output simulation
 
@@ -23,10 +23,10 @@ export QRACK_QPAGER_DEVICES=16.0
 ./benchmarks --optimal --layer-qtensornetwork --proc-bdt-hybrid --measure-shots=10000 -m=30 --single --samples=1 --measure-output=/var/log/qrack/"measured_cosmos_$(date +%F_%R_%S).log" test_qft_cosmology
 
 # place default OCL device outside scope of 4 cards
-# each card has 10GB reserved for the state vector
+# chunks of 8GB are reserved for the state vector
 export QRACK_OCL_DEFAULT_DEVICE=4
-export QRACK_QPAGER_DEVICES=10.3,10.2,10.1,10.0
-./benchmarks --optimal --layer-qtensornetwork --proc-bdt-hybrid --measure-shots=10000 -m=31 --single --samples=1 --measure-output=/var/log/qrack/"measured_cosmos_$(date +%F_%R_%S).log" test_qft_cosmology 
+export QRACK_QPAGER_DEVICES=8.0,8.3,8.2,8.3,8.1,8.3,8.0
+./benchmarks --optimal --layer-qtensornetwork --proc-bdt-hybrid --measure-shots=10000 -m=32 --single --samples=1 --measure-output=/var/log/qrack/"measured_cosmos_$(date +%F_%R_%S).log" test_qft_cosmology 
 
 # separate run (disabled)
 # export QRACK_OCL_DEFAULT_DEVICE=2
