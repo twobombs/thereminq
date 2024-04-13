@@ -1,6 +1,7 @@
 # ThereminQ - CLassiC
 ## Orchestrating Qrack, Bonsai, Qimcifa and Tipsy in OpenCL, VCL and CUDA 
-<img width="200" alt="ThereminQ" src="https://user-images.githubusercontent.com/12692227/147117984-86c4b4b6-d55d-41ba-aab8-f056a6403902.gif">
+
+<img width="1000" alt="ThereminQ" src="https://github.com/twobombs/thereminq-tensors/assets/12692227/a299e650-6513-43d1-afab-ba036aa5e12e">
 
 ![](https://img.shields.io/docker/automated/jrottenberg/ffmpeg.svg)
 
