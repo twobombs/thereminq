@@ -15,7 +15,7 @@ RUN git clone --depth=1 https://github.com/NVIDIA/cuQuantum.git
 # install open-interpreter
 RUN pip3 install open-interpreter && pip cache purge
 # fetch ollama
-RUN curl -fsSL https://ollama.com/install.sh | sh
+RUN curl -fsSL https://ollama.com/install.sh | sh && apt clean all
 
 # install metricbeat for ES 7.4+
 # RUN wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add - 
