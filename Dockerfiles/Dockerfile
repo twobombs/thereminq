@@ -6,11 +6,16 @@ RUN cp -r /qrack /qrack128 && cp -r /qrack /qrack128cuda && cp -r /qrack /qrack6
 RUN git clone --depth=1 https://github.com/twobombs/thereminq.git && git clone --depth=1 https://github.com/pnnl/QASMBench.git
 
 # install features
-RUN apt-get update && apt-get -y install libcutensor1 libcutensor-dev libcutensor-doc build-essential cmake opencl-headers openssh-server wget vim-common opencl-headers curl libfreetype6-dev autotools-dev libicu-dev libbz2-dev libboost-all-dev && apt-get clean all
+RUN apt-get update && apt-get -y install libcutensor1 libcutensor-dev libcutensor-doc build-essential cmake opencl-headers openssh-server wget vim-common opencl-headers curl libfreetype6-dev autotools-dev libicu-dev libbz2-dev libboost-all-dev python3-pip && apt-get clean all
 
 # fetch cuquantum
 RUN apt install cuquantum cuquantum-dev && apt clean all
 RUN git clone --depth=1 https://github.com/NVIDIA/cuQuantum.git
+
+# install open-interpreter
+RUN pip3 install open-interpreter && pip cache purge
+# fetch ollama
+RUN curl -fsSL https://ollama.com/install.sh | sh
 
 # install metricbeat for ES 7.4+
 # RUN wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add - 
