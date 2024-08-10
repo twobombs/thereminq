@@ -6,7 +6,7 @@ RUN cp -r /qrack /qrack128 && cp -r /qrack /qrack128cuda && cp -r /qrack /qrack6
 RUN git clone --depth=1 https://github.com/twobombs/thereminq.git && git clone --depth=1 https://github.com/pnnl/QASMBench.git
 
 # install features
-RUN apt-get update && apt-get -y install libcutensor-dev build-essential cmake opencl-headers openssh-server wget vim-common opencl-headers curl libfreetype6-dev autotools-dev libicu-dev libbz2-dev libboost-all-dev python3-pip && apt-get clean all
+# RUN apt-get update && apt-get -y install build-essential cmake opencl-headers openssh-server wget vim-common opencl-headers curl libfreetype6-dev autotools-dev libicu-dev libbz2-dev libboost-all-dev python3-pip && apt-get clean all
 
 # fetch cuquantum
 RUN apt install cuquantum cuquantum-dev && apt clean all
