@@ -9,7 +9,7 @@ RUN git clone --depth=1 https://github.com/twobombs/thereminq.git && git clone -
 # RUN apt-get update && apt-get -y install build-essential cmake opencl-headers openssh-server wget vim-common opencl-headers curl libfreetype6-dev autotools-dev libicu-dev libbz2-dev libboost-all-dev python3-pip && apt-get clean all
 
 # fetch cuquantum
-RUN apt install cuquantum cuquantum-dev && apt clean all
+# RUN apt install cuquantum cuquantum-dev && apt clean all
 RUN git clone --depth=1 https://github.com/NVIDIA/cuQuantum.git
 
 # install open-interpreter
