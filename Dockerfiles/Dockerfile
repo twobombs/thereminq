@@ -1,4 +1,4 @@
-FROM twobombs/cudacluster
+FROM twobombs/cudacluster:2204dev
 
 # clone repos
 RUN git clone --depth=1 --recursive https://github.com/unitaryfund/qrack.git
@@ -13,7 +13,7 @@ RUN git clone --depth=1 https://github.com/twobombs/thereminq.git && git clone -
 RUN git clone --depth=1 https://github.com/NVIDIA/cuQuantum.git
 
 # install open-interpreter
-RUN pip3 install --break-system-packages open-interpreter && pip cache purge
+RUN pip3 install open-interpreter && pip cache purge
 # fetch ollama
 RUN curl -fsSL https://ollama.com/install.sh | sh && apt clean all
 
