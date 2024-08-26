@@ -1,9 +1,9 @@
 #!/bin/bash
 # this is a standard /dev/urandom entropy test
 
-echo extracting 200M of entropy
+echo extracting 2000M of entropy
 
-head -c 200M /dev/urandom | split -b 20M
+head -c 2000M /dev/urandom | split -b 200M
 
 echo compressing all 20MB chunks of entropy using all the threads
 
