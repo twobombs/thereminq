@@ -1,0 +1,7 @@
+FROM twobombs/thereminq
+
+RUN apt-get install g++ make libsdl2-dev libomp-dev -y && apt clean
+RUN git clone https://github.com/Lumorti/Quandoom && cd Quandoom && make
+
+EXPOSE 22 80 255 8801-8811
+ENTRYPOINT /root/run-node
