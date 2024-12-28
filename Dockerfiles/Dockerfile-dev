@@ -1,4 +1,4 @@
-FROM twobombs/cudacluster:dev
+FROM twobombs/cudacluster:2204dev
 
 # clone repos
 RUN git clone  --depth=1 --recursive https://github.com/vm6502q/qrack.git
