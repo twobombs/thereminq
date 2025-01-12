@@ -21,11 +21,19 @@ Look also at the following Python enabled images
 
 Other tags contain
 - [QUDA](http://lattice.github.io/quda/)
-- [cuQuantum](https://developer.nvidia.com/cuquantum-sdk)
+- [cuQuantum](https://developer.nvidia.com/cuquantum-sdk) with [QSVM](https://github.com/Tim-Li/cuTN-QSVM)
 
 Images can be run independant but are also made to work with the vQbit infrastructure K8s HELM [repo](https://github.com/twobombs/helm)
 
 Installation setup and usage scenarios can be glanced at [here](https://gist.github.com/twobombs/bb38050e84331307bf14c46d723b2a01)
+
+```bash
+docker run --gpus all \
+--privileged \ 
+-p 6080:6080 \
+--device=/dev/dri:/dev/dri \
+-d twobombs/thereminq:cuquantum
+```
 
 -------------
 
@@ -69,7 +77,7 @@ All specialized workloads are listed [here](https://github.com/twobombs/theremin
 
 -------------
 
-### Experimental `bqp=bpp stabilizer_t_nn` high qbit workloads
+### Experimental `bqp=bpp stabilizer_t_nn` 30+ qbit workloads
 ```bash
 docker run --gpus all \
 --device=/dev/dri:/dev/dri \
@@ -88,7 +96,7 @@ docker run --gpus all \
 
 -------------
 
-### Tips for Managing high-Qubit and/or high-Node workloads
+### Tips for Managing high-Qubit and/or high-Node statevector workloads
 - Workloads with full entanglement and/or Quantum simulations that are at or exceed 30+ Qubits
 - Mixed workloads based on longer/larger/deeper circuits with partial entanglement that exceed 36+ Qubits<br> <br>
 
