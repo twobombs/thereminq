@@ -38,7 +38,7 @@ RUN cd /qrack128/include && mkdir CL && cd /qrack128 && mkdir _build && cd _buil
 RUN apt install cuquantum cuquantum-dev cuquantum-doc && apt clean all
 RUN git clone --depth=1 https://github.com/NVIDIA/cuQuantum.git
 
-RUN apt update && apt install python3 && python3-pip && apt clean all
+RUN apt update && apt install python3 python3-pip && apt clean all
 RUN git clone https://github.com/Tim-Li/cuTN-QSVM.git && cd cuTN-QSVM && pip3 install -r requirements.txt && pip3 cache purge
 
 EXPOSE 6080
