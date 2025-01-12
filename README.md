@@ -23,17 +23,17 @@ Other tags contain
 - [QUDA](http://lattice.github.io/quda/)
 - [cuQuantum](https://developer.nvidia.com/cuquantum-sdk) with [QSVM](https://github.com/Tim-Li/cuTN-QSVM)
 
-Images can be run independant but are also made to work with the vQbit infrastructure K8s HELM [repo](https://github.com/twobombs/helm)
-
-Installation setup and usage scenarios can be glanced at [here](https://gist.github.com/twobombs/bb38050e84331307bf14c46d723b2a01)
-
 ```bash
 docker run --gpus all \
 --privileged \ 
 -p 6080:6080 \
 --device=/dev/dri:/dev/dri \
--d twobombs/thereminq:cuquantum
+-d twobombs/thereminq:[tag]
 ```
+
+Images can be run independant but are also made to work with the vQbit infrastructure K8s HELM [repo](https://github.com/twobombs/helm)
+
+Installation setup and usage scenarios can be glanced at [here](https://gist.github.com/twobombs/bb38050e84331307bf14c46d723b2a01)
 
 -------------
 
