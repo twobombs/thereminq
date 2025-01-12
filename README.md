@@ -28,7 +28,7 @@ docker run --gpus all \
 --privileged \ 
 -p 6080:6080 \
 --device=/dev/dri:/dev/dri \
--d twobombs/thereminq:[tag]
+-d twobombs/thereminq[:tag]
 ```
 
 Images can be run independant but are also made to work with the vQbit infrastructure K8s HELM [repo](https://github.com/twobombs/helm)
