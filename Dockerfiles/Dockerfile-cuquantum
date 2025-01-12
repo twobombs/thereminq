@@ -1,4 +1,4 @@
-FROM twobombs/cudacluster:samples
+FROM twobombs/cudacluster:2204dev
 
 # clone repo
 RUN git clone --depth=1 --recursive https://github.com/unitaryfund/qrack.git
